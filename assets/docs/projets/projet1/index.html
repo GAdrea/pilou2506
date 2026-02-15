@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculateur d'heures supplémentaires</title>
+  </head>
+  <body>
+    <h1>Calcul des heures supplémentaires / 残業計算機</h1>
+
+    <div class="container">
+      <div class="card">
+        <h2>Fais-toi plaisir! / お楽しみ</h2>
+
+
+
+        <form>
+          <label class="switch" for="toggle-switch">    
+            <input type="checkbox" id="toggle-switch" aria-label="Changer le mode d'affichage" />
+            <span class="slider round"></span>
+          </label>
+          <label for="starting-time">Début / 開始</label>
+          <label for="starting-date" class="hide"
+            >Date et heures / 日付と時間</label
+          >
+          <input type="date" id="starting-date" required />
+          <input type="time" id="starting-time" required />
+          <label for="ending-time">Fin / 終了</label>
+          <label for="ending-date" class="hide"
+            >Date et heures / 日付と時間</label
+          >
+          <input type="date" id="ending-date" required />
+          <input type="time" id="ending-time" required />
+          <label for="actual-ending-time">Fin réelle / 実労働終了</label>
+          <label for="actual-ending-date" class="hide"
+            >Date et heures / 日付と時間</label
+          >
+          <input type="date" id="actual-ending-date" required />
+          <input type="time" id="actual-ending-time" required />
+          <button type="submit">
+            Alors? Combien de temps aujourd'hui? / どれぐらいかな？
+          </button>
+        </form>
+        <p class="working-hours"></p>
+        <p class="result"></p>
+        <p class="comment"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
