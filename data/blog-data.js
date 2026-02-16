@@ -125,9 +125,8 @@ Je suis parti comme je suis rentré : dans l'indifférence générale. Pas de po
     id: "martinique",
     title: "Mes racines antillaises",
     image: "/assets/img/posts/1767992050685.jpg",
-    description:
-      "Faire découvrir les accras de morue à mes collègues japonais.",
-    date: "2024-01-01",
+    description: "Parce que je n'oublie pas d'où je viens.",
+    date: "2026-01-10",
     content: `
       <p>Salut c'est Pilou !👋
 
