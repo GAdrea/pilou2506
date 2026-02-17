@@ -51,6 +51,8 @@ Peu importe votre projet ou votre âge (enfin soyez raisonnables tout de même),
 Même si vous échouez, il en restera toujours quelque chose. Et croyez-moi, c'est bien plus gratifiant que de participer au festival du "j'aurais dû" à la fin de sa vie.</p>
     `,
   },
+  //Article suivant
+
   {
     id: "inalco",
     title: "Mes meilleures années à l'université",
@@ -83,6 +85,8 @@ Même si vous échouez, il en restera toujours quelque chose. Et croyez-moi, c'e
 <p>À bon entendeur... 😉</p>
     `,
   },
+
+  //Article suivant
   {
     id: "demission",
     title: "La mort de ma carrière. (Bon débarras !)",
@@ -121,6 +125,113 @@ Je suis parti comme je suis rentré : dans l'indifférence générale. Pas de po
 <p>En espérant que ça vous aidera ! ✨</p>
     `,
   },
+  //Article suivant
+  {
+    id: "Fukuoka",
+    title: "Fukuoka, une ville où il fait bon vivre",
+    image: "assets/img/posts/1770182783755.png",
+    description:
+      "Sincèrement, je ne me verrai pas vivre autre part que dans cette ville.",
+    date: "2026-02-05",
+    content: `
+      <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🍜 Fukuoka : Pourquoi j’ai fini dans le sud (et pourquoi je ne veux plus en bouger) 🇯🇵</strong></p>
+
+​<p>On me demande souvent : « Mais pourquoi Fukuoka ? Pourquoi pas Tokyo pour les néons ou Kyoto pour les temples ? » 🏯</p>
+
+​<p>La réponse courte ? Le hasard. La réponse longue ? Mon CV a fait le tour du Japon pour un stage et Fukuoka est le seul endroit qui a dit "Oui". 😂</p>
+
+​<p><strong>Le rêve de Weeb brisé (ou presque) : 🎮</strong></p>
+
+<p>Au début, je me voyais déjà vivre à Tokyo, à deux pas d'Akihabara. Et non, ce n'est pas parce que je suis un gros weeb, qu'est-ce que vous croyez ? C'était... pour la science. 🧪</p>
+
+<p>Sauf qu'en tant qu'étudiant en galère, trouver un appart à distance à Tokyo, c'est comme essayer de finir un boss de Dark Souls avec un cure-dent (je sais c'est parfaitement faisable !).</p>
+
+​<p>Finalement, seul l'Institut Français de Fukuoka m'a ouvert ses portes pour mon stage. 6 mois plus tard, le coup de foudre était scellé. ⚡️</p>
+
+​<p>Pourquoi Fukuoka, c'est mon cheat code du Japon :</p>
+<p>✅ Une ville à taille humaine (ni trop étouffante, ni morte).</p>
+<p>✅ Les gens sont (vraiment) sympas.</p>
+<p>✅ La mer, la montagne et l'aéroport sont à quelques minutes de métro. ✈️⛰️</p>
+<p>✅ Le coût de la vie qui ne te force pas à vendre un rein pour payer ton studio.</p>
+
+​<p>Bon, redescendons sur terre : 🧊</p>
+<p>Ce n'est pas le paradis non plus. Qui dit loyer moins cher, dit salaire... moins élevé. Les opportunités pro ne pleuvent pas autant qu'à la capitale. Faut pas s'emballer non plus, l'argent ne tombe pas des cerisiers. 🌸💸</p>
+
+​<p>Mais entre les sources thermales de Beppu, les friandises de Dazaifu et le village Ninja de Saga (où je me suis éclaté, mais je rappelle que JE NE SUIS PAS UN WEEB), la région de Kyushu a une âme que j'apprécie particulièrement. Et pourtant, je suis parisien (et fier de l'être !😎)</p>
+
+​<p>Bref, si vous venez pour le tourisme ou pour vous installer, Fukuoka est une pépite. Qui sait ? On se croisera peut-être au détour d'un bar ou d'un stand de Ramen ! 🍜🍻</p>
+    `,
+  },
+  //Article suivant
+
+  {
+    id: "tournoismash",
+    title: "Mon premier tournoi de Smash Bros Melee",
+    image: "assets/img/posts/1770173203134.png",
+    description: "Une expérience unique et inoubliable !",
+    date: "2026-02-04",
+    content: `
+       <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎮 Smash Bros : L’épopée européenne de l’équipe « Sans Anesthésie » 🏥💉</strong></p>
+​<p>Après ma confiance aveugle de casual, puis mon retour brutal sur terre, voici l’apothéose : ma première (et seule) participation à un tournoi européen en double avec mon rival de toujours. 🥊✨</p>
+
+​<p>Le duo de choc : On débarque avec un nom d'équipe plein de finesse : « Sans Anesthésie ». Le concept ? Docteur Mario et son assistant Marth prêts à briser des côtes pour la science. 👨‍⚕️🗡️</p>
+
+​<p><strong>La stratégie de l'instinct :</strong></p>
+<p>Problème : on a passé des milliers d’heures à se taper dessus, mais ZÉRO minute à coopérer. Résultat ? On y est allés à l’instinct total. Mon rival en première ligne pour découper tout ce qui bouge, et moi en soutien avec mes pilules pour gérer les gêneurs. Étonnamment, ça marchait... jusqu'à ce qu'on tombe sur des joueurs vraiment sérieux. On s’est fait sortir, mais avec style (et j'ai quand même pris ma petite correction par le champion britannique, histoire de garder l'habitude). 🇬🇧💀</p>
+
+​<p><strong>L'anecdote "Petite fierté" :</strong></p>
+Le plus drôle ? Un joueur s'est plaint à mon rival que je le « sous-estimais » parce que je n'utilisais pas de techniques avancées comme le wavedash contre lui. Il pensait que je le méprisais...
+
+<p>Mon rival, après avoir éclaté de rire, a dû lui expliquer la triste réalité : je n'étais pas arrogant, j'étais juste incapable de le faire en plein match. Passer pour un génie hautain alors qu'on galère juste avec ses doigts, tu parles d'une ironie du sort 😅</p>
+
+​<p>Bref, une ambiance extra, des rencontres géniales et une dose d'humilité supplémentaire. Que demander de plus ?😁</p>
+
+​<p>Et vous, c'est quoi le move technique que vous n'avez jamais réussi à sortir en match ? 👇</p>
+      `,
+  },
+
+  //Article suivant
+
+  {
+    id: "franceoujapon",
+    title: "La France ou le Japon ?",
+    image: "assets/img/posts/1769992083148.png",
+    description: "Entre les deux, mon coeur balance.",
+    date: "2026-02-02",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🇯🇵 Japon : J'ai débloqué le succès "Rêve réalisé", et maintenant ? 🎮🌀</strong></p>
+
+<p>Avant d'aller plus loin, une petite dose de transparence : oui, j'utilise l'IA pour m'aider à mettre mes idées en forme et générer mes visuels. Mais les tripes, les souvenirs et les coups de gueule, eux, sont 100% authentiques. C’est mon histoire, sans filtre. 😉</p>
+
+<p>Cela fait un moment que je suis ici. Je ne compterai pas les années, je trouve que ça fait trop "succès Steam" un peu naze. Mais le constat est là : la lune de miel est terminée depuis un bail, et pour être honnête... je ne sais plus du tout où je vais. J'ai l'impression de partir à la dérive. 🚣‍♂️🌊</p>
+
+<p>Le paradoxe de l'expat' : J'aime ce pays. Les paysages, la bouffe, les mangas, les amitiés solides que j'ai forgées... tout ça est bien réel. Si je râle souvent (faut bien faire honneur à mes gènes français ! 🥖), ce n'est pas par haine, mais par lucidité. Ignorer les problèmes d'un pays n'est pas une preuve d'amour, c'est du déni. D'autant plus que c'est pas comme ça qu'on les règle.</p>
+
+<p>Le mur de la réalité : 🧱</p>
+<p>J'ai lutté de toutes mes forces pour réaliser mon rêve : vivre au Japon. Mais une fois le drapeau planté au sommet, je n'ai pas pensé à la suite. Je me suis juste battu pour "rester".</p>
+Et aujourd'hui, je suis fatigué.
+
+<p>⚡ Fatigué de cette épée de Damoclès au-dessus de mon visa qui peut frapper n'importe quand sans aucune raison.</p>
+
+<p>⚡ Fatigué de me dire qu'avec les nouvelles politiques de Sanae (on ne te remercie pas !), le combat passe d'un mode "Difficile" à un "Die and retry" sans retry justement.</p>
+
+<p>Lâcher prise est douloureux quand on a investi autant de temps et d'âme dans un projet. Pourtant, malgré le brouillard, je regarde le chemin parcouru avec fierté.</p>
+<p>Je suis venu, j'ai vu, j'ai vécu. Et ça, personne ne pourra me l'enlever. 🛡️✨</p>
+
+<p>Je ne sais pas de quoi demain sera fait, mais je suis fier d'en être arrivé là. 😊</p>
+
+<p>Et vous, vous avez déjà eu l'impression d'avoir atteint votre but sans savoir quoi faire après ? On partage nos doutes en commentaires ? 👇</p>
+
+       `,
+  },
+
+  //Article suivant
   {
     id: "martinique",
     title: "Mes racines antillaises",
