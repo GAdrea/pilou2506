@@ -20,6 +20,43 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "bountyhunter",
+    title: "Bientôt ma tête mise à prix ?",
+    image: "assets/img/posts/1771370392077.png",
+    description: "Y'a des moments, faut savoir s'arrêter quand même...",
+    date: "2026-02-19",
+    content: `
+         <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🕵️‍♂️ Bounty Hunter au Japon 💴</strong></p>
+
+<p>Bon, on ne va pas se mentir : j’espérais secrètement que Sanae rate son pari. Mais non. Madame a raflé les trois quarts des sièges. Apparemment, sa popularité est aussi solide que le déni japonais face aux problèmes démographiques. Félicitations quand même, le message est passé : c'est elle la boss. 👋👑</p>
+
+<p>Mais le plus croustillant arrive. 🍿</p>
+<p>J’ai vu passer des posts sur l'Article 66 du règlement sur le contrôle de l'immigration. Le concept est simple, efficace, et un tantinet flippant : dénoncez un immigrant en situation illégale et touchez jusqu' à 50 000 yens de prime. 💴✨</p>
+
+<p>Faisons les comptes : Avec le yen qui continue sa chute libre vers les abysses, ça nous fait environ 275 euros. Oui, vous avez bien lu. Pour le prix d’une console d'occasion ou d’un chariot plein de courses, vous pouvez devenir le "chasseur de primes" du quartier. 🤠💸</p>
+
+<p>Mais comment faire?</p>
+<p>Pour toucher le pactole, il ne suffit pas de pointer du doigt. Il faut fournir :</p>
+<p>📍 Le nom</p>
+<p>📍 L’adresse</p>
+<p>📍 Le lieu de travail</p>
+<p>📍 Et même... la routine quotidienne de la personne.</p>
+<p>Est-ce que vous sentez l’odeur de la paranoïa qui s’installe dans l’immeuble ? 👃❄️</p>
+<p>Le problème ?</p>
+<p>Le Japon a déjà un penchant assez prononcé pour les règles et la délation (le "Wa" a ses limites). Rappeler l'existence de cette prime dans un climat anti-immigration agressif, c'est comme jeter de l'essence sur un feu de forêt.</p>
+
+<p>Surtout quand on sait que l'attribution d'un visa ici relève parfois de la magie noire ou du lancer de dés. On se demande où s'arrête la sécurité et où commence le délire pur et simple. ✋🚫</p>
+
+<p>En soi, la loi existe pour la sécurité, soit. Mais entre les mains d'une politique ultra-ferme et d'une population incitée financièrement à surveiller son prochain, on risque de passer de "pays paisible" à "épisode de Black Mirror" assez rapidement. 🎞️🤡</p>
+
+<p>Reste à savoir si tout ça est vrai ou non. Seul l'avenir nous le dira.</p>
+       `,
+  },
+
+  //article suivant
+  {
     id: "reconversion professionnelle",
     title: "Il n'est jamais trop tard pour changer de carrière",
     image: "/assets/img/posts/1771088738054.png",
