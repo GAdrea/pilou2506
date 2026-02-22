@@ -20,6 +20,37 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "MetroidPrime",
+    title: "Metroid Prime sur GameCube. Le coup de foudre !",
+    image: "assets/img/posts/17716635736951.png",
+    description: "Une des mes licences favorites !.",
+    date: "2026-02-22",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+  <p>🪐 Metroid : Comment je suis devenu un explorateur spatial (alors que je suis un gros poltron) 🚀🛡️</p>
+
+  <p>On va mettre les choses au clair : Sonic restera à jamais mon premier amour. Mais aujourd'hui, on va parler d'une licence qui ne me prédestinait à rien : Metroid.</p>
+
+  <p>Franchement, entre les extraterrestres visqueux, les monstres géants et le vide intersidéral, absolument rien ne devait me plaire. Et pourtant... Merci qui ? Merci Smash Bros Melee ! C’est grâce à Nintendo qui se tape dessus que j’ai enfin compris qu’il y avait un paquet de licences fascinantes en dehors de Mario et Pokémon. 🥊✨</p>
+
+  <p>Le choc Metroid Prime : 🎮</p>
+  <p>Mon baptême du feu s'est fait sur GameCube avec Metroid Prime. Un pari osé pour la licence étant donné que la formule avait radicalement changé, mais quelle claque ! Se retrouver dans le casque de Samus, scanner des rapports anciens, arpenter une planète seul avec comme seules informations, tes propres découvertes... J'ai adoré. On ne te raconte pas l'histoire, on te laisse la découvrir comme un vrai archéologue de l'espace. 🕵️‍♂️🗿</p>
+  <p>Que dire des combats et des thèmes musicaux iconiques par ailleurs !</p>
+
+  <p>La confession qui tue : 🤐</p>
+  <p>Oui, je sais, je vais me faire huer... mais je n’ai jamais fini Super Metroid sur SNES. La honte, je sais. Mais à force de voir des génies le finir en 12 minutes dans des speedruns, j’ai l’impression d’avoir déjà fait le tour du propriétaire sans même avoir touché à la manette. 🏃💨</p>
+  <p>Cependant j'ai joué à la plupart des opus principaux.</p>
+
+  <p>L'attente infinie : ⏳</p>
+  <p>Un grand bravo à Retro Studios pour la saga Prime. Et oui, j'inclus le 4 dans le lot ! Que vous le vouliez ou non, il était très bien ! Même si le monde ouvert faisait un peu pitié, l'arc narratif est là et je reste confiant. Par contre, les gars... pitié. Ne nous faites pas attendre encore 18 ans. Ma vue baisse et mes réflexes aussi, j'aimerais bien le finir avant la retraite. 😅👵</p>
+
+  <p>Metroid Prime est un incontournable du jeu vidéo et avec le remaster sur Switch, vous pouvez le faire en bénéficiant de meilleurs graphismes et performances de jeu!</p>
+       `,
+  },
+
+  //Article suivant
+  {
     id: "bountyhunter",
     title: "Bientôt ma tête mise à prix ?",
     image: "assets/img/posts/1771370392077.png",
