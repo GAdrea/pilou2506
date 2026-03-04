@@ -20,6 +20,77 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "Butsukari",
+    title: "Une (autre) triste réalité du Japon",
+    image: "assets/img/posts/1772557605962.png",
+    description: "Le phénomène existe malheureusement...",
+    date: "2026-03-04",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>💢 Le Japon, pays de la politesse... ou du placage de rugby ? 🇯🇵</p> 
+<p>On nous rabâche que les Japonais sont l’incarnation de la douceur et du respect. 😇</p>
+
+<p>Allez donc demander son avis à la petite fille qui s'est fait violemment percuter en plein carrefour de Shibuya, sous l'œil de la caméra de sa mère. La vidéo a fait le tour du web, et franchement, la "bonté à l’état pur" en prend un sacré coup dans l’aile. 📉🤡</p>
+
+<p>Le phénomène "Butsukari" : 🥊</p>
+<p>Ce n'est pas un accident, c'est un sport national (non officiel). On appelle ça les Butsukari Otoko (ou Onna pour les dames, car l'égalité des sexes progresse enfin... dans la connerie).</p>
+
+Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus faibles) dans la rue ou le métro. Pourquoi ? Pour "évacuer le stress". ✨
+
+<p>L'Éden terrestre a ses failles : 🧊</p>
+<p>Le Japon est un pays merveilleux, mais c’est aussi celui où la pression sociale est telle qu’on a inventé des sociétés pour "disparaître" administrativement et refaire sa vie ailleurs.</p>
+<p>Celles et ceux qui n'en ont pas les moyens ont trouvé une alternative au yoga : passer leurs nerfs sur des passants.</p>
+<p>Étrange pour un pays qui prône l'harmonie, non ? 🤫</p>
+
+<p>Le piège à touristes (littéralement) : ⚠️🚔</p>
+<p>Si ça vous arrive, surtout, ne jouez pas les héros. Si vous rendez le coup, l'agresseur appellera la police en hurlant que c'est vous qui l'avez attaqué.</p>
+
+<p>La solution ? Soyez digne d'un joueur de foot professionnel : tombez, simulez une blessure atroce et appelez la police. C’est ridicule, c’est une perte de temps, mais c’est le seul moyen de "riposter" . 🎭🚑</p>
+
+<p>Mon humble avis : 🎤🔥</p>
+<p>Passer ses nerfs sur les autres parce que ta vie est une purge, c'est juste être un "colossal connard". J'ai parfois eu envie de faire goûter mes semelles à certains clients, mais je ne le fais pas. Pourquoi ? Parce que je suis un adulte, pas un enfant frustré.</p>
+
+<p>Sérieusement, si ces gens ont autant d'énergie à revendre pour emmerder le monde, qu'on les branche sur des générateurs. Ça ferait une excellente alternative propre au nucléaire. ⚡️🌱</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "Changement de carrière",
+    title: "Je devrais envisager un changement de carrière",
+    image: "assets/img/posts/1772177998756.png",
+    description:
+      "Franchement, je me prends trop la tête avec mon travail actuel...",
+    date: "2026-03-01",
+    content: `
+         <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>🎤 Ma vie a changé (ou comment j'ai perdu 3h de sommeil pour du vent) 🏨💸</p>
+
+<p>On m'avait prévenu : « Cette conférence sur la communication va être extraordinaire, elle va littéralement CHANGER TA VIE ! ».</p>
+
+<p>Quand une manager RH te sort ça alors que tu viens de finir ton service de nuit et que tu reprends le soir même, tu sais déjà que tu vas passer un moment... mémorable.</p>
+<p>Pour info: les mangas ont effectivement changé ma vie, cette conférence a juste flingué ma sieste. 😴💢</p>
+
+<p>Le spectacle à 2500 dollars (plus 3 nuits offertes, restons humbles) :</p>
+
+<p>1️⃣ La science du vide : Le "conférencier" pose un acronyme scientifique pompeux sur... des trucs que tes parents sont censés t'avoir appris à 10 ans si ton éducation n'a pas été un échec total. Mais apparemment, pour certains, c'est une révélation divine. 🤔</p>
+
+<p>2️⃣ Le professionnalisme "Premium" : Un PowerPoint tellement mal monté que les éléments se chevauchent. Le mec fait les réglages en direct devant l'assemblée. Pour un organisme qui nous évalue sans pitié au quotidien, le culot est monumental. À ce prix-là, j’attendais au moins une police de caractère lisible. 📉💻</p>
+
+<p>3️⃣ L'activité "remplissage" : Une dynamique de groupe de 45 minutes pour un concept qu’on comprend en 30 secondes. C’est long, c’est plat, et le contenu est plus vide que mon compte en banque après un passage à Akihabara. 🌀</p>
+
+<p>La conclusion ?</p>
+<p>La manager avait raison : cette conférence a EFFECTIVEMENT changé ma vie. 🌈</p>
+
+<p>J’ai compris qu’on pouvait débiter des évidences avec un PowerPoint foireux, faire faire des jeux de rôle interminables et repartir avec un chèque de 2500 dollars et des nuits gratuites.</p>
+<p>C’est décidé, j’arrête l’hôtellerie, je deviens charlatan. 🥂💸</p>
+       `,
+  },
+
+  //Article suivant
+  {
     id: "MetroidPrime",
     title: "Metroid Prime sur GameCube. Le coup de foudre !",
     image: "assets/img/posts/17716635736951.png",
