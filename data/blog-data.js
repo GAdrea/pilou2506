@@ -399,4 +399,84 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
 <p><strong>Et vous, c'est quoi l'anecdote qui a marqué votre enfance ou votre éducation ?</strong> Dites-moi tout ! 👇</p>
     `,
   },
+  //Article suivant
+  {
+    id: "Jeux et Mangas",
+    title: "Comment mes passions m'ont mené au Japon ?",
+    image: "assets/img/posts/1767949329427.jpg",
+    description: "Parfois, il suffit d'un rien pour aller loin",
+    date: "2026-01-09",
+    content: `
+         <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎮 Des pixels à la réalité : Comment mes passions m’ont mené au Japon 🇯🇵</strong></p>
+<p>Tout a commencé avec une manette entre les mains et des pages de manga qui se tournent...</p>
+<p>Si on m’avait dit, à l’époque de la Super Nintendo et de la Megadrive, que ces moments allaient définir ma vie d’adulte, je ne l’aurais sans doute pas cru !</p>
+
+<p><strong>🕹️ Côté Gaming : Mon premier jeu ? Mario Paint. Mais mon vrai coup de foudre, celui qui a fait de moi un gamer, c’est Sonic. Que de souvenirs passés sur Sonic 2 et Sonic 3 à essayer de finir les niveaux avec ma sœur ! C’est là qu’est né mon amour pour les jeux vidéos qui m'a fait découvrir énormément de licences incroyables !</strong></p>
+
+<p><strong>🐉 Côté Manga : J’ai grandi avec les classiques. Dragon Ball, Nicky Larson... (bon, j'avoue, j’avais un peu plus de mal avec les Chevaliers du Zodiaque 😅).</strong></p>
+
+<p><strong>🍃 Le déclic : Et puis, au collège, il y a eu Naruto. Ce n'était plus juste une lecture, c'était une révélation. C’est à cause (ou grâce !) à l’univers de Konoha que j’ai décidé d’apprendre le japonais et, finalement, de m’expatrier ici.</strong></p>
+<p>J'ai ensuite enchaîné par tellement de mangas que je ne pourrais pas tous les citer mais de Kimetsu no yaiba à Shingeki no kyojin en passant par Gundam. La liste serait bien trop longue😅</p>
+
+<p>Tout ça pour vous dire que vos "passions d'enfance" ne sont jamais futiles. Ce sont elles qui m'ont donné les ailes pour poursuivre mes rêves jusqu'au bout du monde. ✈️✨</p>
+
+<p>Croyez en vos rêves, même s'ils naissent devant une console ou un tome de manga !</p>
+
+<p>Et vous, quelle est LA licence ou LE manga qui a changé votre vision du monde ?</p>
+</p>
+       `,
+  },
+  //Article suivant
+  {
+    id: "Prof de français",
+    title: "Moi , professeur de français",
+    image: "assets/img/posts/1767770770640.jpg",
+    description: "Mon expérience de professeur de FLE au Japon.",
+    date: "2026-01-08",
+    content: `
+         <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>Je voulais vous partager mon expérience en tant que professeur au Japon avec cette petite mise en contexte.</p>
+
+<p>Tout a commencé ici, à Fukuoka.📍</p>
+
+<p>C'était ma toute première expérience dans l’enseignement, et quelle aventure !</p>
+<p>J'ai eu la chance de plonger directement dans le grand bain avec des classes de tous niveaux. 📚 Ce que j'en retiens ? Une immersion fascinante dans la psychologie japonaise :</p>
+
+<p>👨‍🎓 Le sérieux avant tout : Mes étudiants étaient d'une assiduité exemplaire. Mais j'ai vite compris que le plus grand défi n'était pas la grammaire, mais la "réflexion critique". Au pays de l'harmonie, donner son opinion personnelle ou débattre est un exercice bien plus complexe qu'il n'y paraît !</p>
+
+<p>🤝 Le sens du service (encore !) : Ma mission ne s'arrêtait pas à la salle de classe. Entre deux cours, il m'arrivait de gérer l'accueil et la réception. Ce n'était pas sur mon contrat, mais avec le recul, c'est ce genre d'imprévus qui m'a le plus appris sur la gestion humaine au Japon.</p>
+<p>Même si cette école a aujourd'hui fermé ses portes, les rencontres et les amitiés créées là-bas restent l'un de mes plus beaux souvenirs de mon début de vie ici.</p>
+
+<p>✨ Ce n'est que le début... Dans mes prochains posts, je vous raconterai des anecdotes plus précises sur mes cours et mes élèves.</p>
+       `,
+  },
+  //Article suivant
+  {
+    id: "Enchanté",
+    title: "Ravi de vous rencontrer !",
+    image: "assets/img/posts/Gemini_Generated_Image_lornm2lornm2lorn.png",
+    description: "Une petite présentation de ma modeste personne.",
+    date: "2026-01-07",
+    content: `
+  
+
+<p><strong>Salut moi c'est Pilou !👋</strong></p>
+
+<p>Bienvenue à vous !</p>
+
+<p>Après m'être installé(e) au pays du Soleil-Levant, j'ai décidé d'ouvrir cette fenêtre sur mon quotidien pour vous partager ce que c'est que de vivre et travailler ici.</p>
+
+<p>Loin des clichés de cartes postales (même si elles sont magnifiques, comme vous pouvez le voir sur cette photo ! ⛩️), je vous emmènerai avec moi :</p>
+<p>Dans les coulisses de la vie quotidienne à la japonaise.</p>
+
+<p>À travers les défis et les surprises du monde du travail nippon. 💼</p>
+<p>Et bien sûr, on partagera ensemble mes passions de toujours : le gaming et les mangas. 🎮📚</p>
+
+<p>Au plaisir d'échanger avec vous !</p>
+
+       `,
+  },
 ];
