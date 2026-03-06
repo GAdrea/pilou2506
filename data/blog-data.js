@@ -369,6 +369,121 @@ Et aujourd'hui, je suis fatigué.
 
        `,
   },
+  //Article suivant
+  {
+    id: "coup de gueule",
+    title: "Mon premier coup de gueule au Japon.",
+    image: "/assets/img/posts/1764849244855.jpg",
+    description: "Et loin d'être le seul...",
+    date: "2026-01-14",
+    content: `
+      <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>Petit coup de gueule du jour.(Eh oui, ça m'arrive)📢</p>
+
+<p>Le 21 octobre 2025, le Japon a élu sa première femme Première Ministre. Les médias s'extasient, mais soyons honnêtes : on s'en fout que ce soit une femme. Ce qui compte, c'est son programme, pas ce qu'elle a entre les jambes. Et parlons-en du programme justement !</p>
+
+<p>📉 "Du travail, du travail et encore du travail"</p>
+
+<p>C’est son slogan phare. Comment peut-on encore prôner le travail acharné alors que c’est précisément ce modèle qui vide les berceaux et détruit la santé mentale des Japonais depuis des décennies ? On ne fonde pas une famille quand on finit à 22h tous les soirs. Alors que certaines entreprises à Tokyo prouvent que la flexibilité booste la productivité, le gouvernement Takaichi veut nous ramener à l’ère Showa.</p>
+
+<p>💸 Le braquage des Visas</p>
+
+<p>On passe de 60€ à 400€ pour un renouvellement travail, et 1000€ pour la résidence permanente. Je ne sais pas ce qu'ils fument au gouvernement, mais par pitié, arrêtez tout de suite : c'est dangereux pour votre santé (et notre portefeuille). 🚬🚫</p>
+
+<p>⚖️ Le bouc émissaire à 3%</p>
+
+<p>C'est fascinant de voir les politiciens se servir des 3 % d’étrangers pour faire peur à la population. On nous parle de "bons" et de "mauvais" étrangers... C'est quoi les critères au juste ? On pourrait appliquer les mêmes à la sphère politique japonaise, le résultat serait... intéressant. 🤔</p>
+
+<p>Bref : Réarmement, contrôle des médias, recul du droit des femmes... Tout ça porté par une femme avec un programme écrit par des vieux pour des vieux. 👴</p>
+
+<p>Le Japon bouge, certes, mais pas dans le bon sens. Mais bon, "c'est une femme au pouvoir", alors tout va bien, non ? 🤡</p>
+
+<p>Au cas où ça ne serait pas clair, non je n'aime pas beaucoup cette dame...</p>
+
+    `,
+  },
+  //Article suivant
+  {
+    id: "Second métier",
+    title: "Mon deuxième métier par rapport à l'enseignement.",
+    image: "/assets/img/posts/1768158884660.jpg",
+    description: "Faire découvrir la France aux jeunes Japonais.",
+    date: "2026-01-13",
+    content: `
+      <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>🇫🇷 Mon autre métier: Faire découvrir la France aux jeunes Japonais 🇯🇵</p>
+
+<p>Si je vous parle souvent de l'hôtellerie ou de mes cours de langue, il y a un job qui m'accompagne depuis bien plus longtemps : animateur culturel. 🎤</p>
+
+<p>Cela fait déjà un bon moment que je parcours les écoles primaires, les collèges et les lycées de ma région pour présenter ma culture.</p>
+
+<p>D'habitude, le job est plutôt "chill" : je montre des vidéos de Paris, on parle de gastronomie, on écoute de la musique... Et j'en profite au passage pour leur présenter la Martinique parce que ça fait aussi partie de mon patrimoine culturel !😁</p>
+
+<p>Mais parfois, les demandes sont... surprenantes. 🤯</p>
+
+<p>Un jour, un lycée m'a demandé de présenter l'arsenal nucléaire français. Le tout en 15 minutes chrono ! ⏳</p>
+<p>Oui, vous avez bien lu. Résumer la dissuasion nucléaire d'une puissance mondiale entre deux cours de maths, c’est comme essayer de faire entrer un camembert entier dans un dé à coudre. J’ai à peine eu le temps d’effleurer le sujet que c’était déjà fini.</p>
+
+<p>Les élèves avaient préparé une présentation sur les dangers du nucléaire (merci le voyage scolaire à Hiroshima et Nagasaki). Leur conclusion ? "C’est mal, il faut tout supprimer." 🚫☢️</p>
+
+<p>C’est là que j'ai sorti ma franchise (avec leur permission, hein !). Au pays de l'harmonie où on évite de froisser son voisin, j'ai posé les vraies questions :</p>
+
+<p>1️⃣ Réalisme : Personne ne va supprimer ses armes demain. La France a le strict minimum pour se défendre, pas pour conquérir le monde. 🛡️</p>
+
+<p>2️⃣ Conséquences : Vous voulez supprimer le nucléaire ? Ok, mais soyez prêts à jeter vos smartphones, couper la clim et oublier tout le confort moderne auquel vous êtes habitués. Pour l’instant, c’est l’énergie la plus propre qu’on ait, même si la gestion des déchets est une galère.</p>
+
+<p>Supprimer tout, tout de suite, sans alternative ? C’est de la folie furieuse. 🌀</p>
+
+<p>C’était un échange passionnant et surtout nécessaire. Parce qu'au-delà des clichés, mon job c'est aussi ça : apporter un peu de nuance et d'esprit critique dans un système qui préfère souvent éviter les conflits d'opinions.</p>
+
+    `,
+  },
+  //Article suivant
+  {
+    id: "Hôtel",
+    title: "L'hôtellerie de luxe au Japon",
+    image: "/assets/img/posts/hotelpost.png",
+    description: "Le rêve des uns, le cauchemar des autres...",
+    date: "2026-01-12",
+    content: `
+      <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>🏨 Luxe au Japon : Le rêve des uns, le cauchemar des autres. 🇯🇵</p>
+
+<p>On dit souvent qu’au Japon, le service est un art. On parle d’Omotenashi, de perfection, d’anticipation. Le client n’est pas seulement roi, il est Dieu. 👑✨</p>
+
+<p>J’ai passé 5 ans dans l’un des plus grands hôtels de luxe du pays (je tairai le nom pour l’instant). 5 ans à observer cette machine de précision où l'on va toujours au-delà des attentes pour satisfaire la moindre exigence.</p>
+
+<p>Mais aujourd’hui, je vais vous dire la vérité : je hais ce métier.</p>
+
+<p>Derrière les sourires ciselés et le prestige des établissements, il y a un coût que personne ne mentionne jamais : le coût humain.</p>
+
+<p>🚫 Heures supplémentaires abusives et sous-payées.</p>
+
+<p>🚫 Pressions hiérarchiques étouffantes.</p>
+
+<p>🚫 Rigidité administrative d'un autre temps.</p>
+
+<p>🚫 Un équilibre de vie qui n'existe tout simplement pas.</p>
+
+<p>On vend du rêve aux clients, mais on vampirise la vie des employés. J'ai vu des dégâts que je qualifierais d'irréversibles. J'en ai moi-même fait les frais.</p>
+
+<p>Dans ma prochaine vidéo, j’ai décidé de tout vous raconter sans filtre :</p>
+
+<p>✅ Les moments de grâce et le prestige du métier.</p>
+
+<p>❌ Les difficultés d’adaptation et la fatigue mentale.</p> 
+
+<p>🌀 Ce que signifie réellement "travailler" au Japon pour un étranger.</p>
+
+<p>C’est sans doute la vidéo la plus personnelle que j'ai préparée jusqu'ici.</p>
+
+<p>Avez-vous des questions spécifiques sur le travail au Japon ? Posez-les moi en commentaire, j'y répondrai peut-être en vidéo ! 👇</p>
+</p>
+    `,
+  },
 
   //Article suivant
   {
