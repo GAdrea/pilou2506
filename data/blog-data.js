@@ -20,6 +20,51 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "Sonic",
+    title: "Sonic le héros de ma vie !",
+    image: "assets/img/posts/1772873413229.png",
+    description:
+      "La licence qui a fait de moi le gamer que je suis aujourd'hui !",
+    date: "2026-03-08",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🔵 Sonic the Hedgehog ou la naissance d'un gamer.</strong></p>
+
+<p>Ça y est, je lâche le morceau. On va parler de LA licence. Celle qui a fait de moi le gamer (un peu aigri, mais passionné) que je suis aujourd'hui. Mon héros absolu, mon champion toutes catégories : Sonic.</p>
+
+<p>La trahison originelle : 🎮</p>
+<p>Ma première console était une Super Nintendo. J'ai passé des heures sur Mario Paint et les Tiny Toons. J'ai même essayé de faire plaisir à mon père en jouant à son jeu de Formule 1 (désolé Papa, c’était vraiment pas fun 😅). Mais le vrai séisme est arrivé avec la Megadrive.</p>
+<p>Sonic 1 a changé ma vie. Le perso était cool, rapide, les musiques étaient des chefs-d'œuvre. J'étais jeune, impressionnable, et il n'en fallait pas plus.✨</p>
+​Sonic 1 a changé ma vie. Le perso était cool, rapide, les musiques étaient des chefs-d'œuvre. J'étais jeune, impressionnable, et il n'en fallait pas plus.✨
+
+<p>Les souvenirs de famille : 👫</p>
+<p>Je ne peux pas parler de Sonic sans mentionner ma sœur. On a passé des après-midis entiers sur Sonic 2 et surtout Sonic 3 (mon chouchou). Le mode coop avec Sonic et Tails, c'était le feu ! On se battait pas, on vivait une aventure ensemble!</p>
+<p>Je ne peux pas parler de Sonic sans mentionner ma sœur. On a passé des après-midis entiers sur Sonic 2 et surtout Sonic 3 (mon chouchou). Le mode coop avec Sonic et Tails, c'était le feu ! On se battait pas, on vivait une aventure ensemble!</p>
+
+<p>Et les dessins animés... Je pouvais chanter le générique de Sonic et Sally par cœur avant de partir à l'école. Spoiler : je peux encore le faire aujourd'hui, mais c'est moins socialement acceptable à mon âge. 🎤🙄</p>
+
+<p>L'amour inconditionnel (et un peu masochiste) : ❤️🩹</p>
+<p>Être fan de Sonic, c'est comme être dans une relation toxique. Il y a eu des hauts incroyables et des bas... très bas. Mais même devant les opus les plus médiocres, mon amour n'a jamais faibli.</p>
+<p>🏆 Mon Panthéon Personnel :</p>
+<p>Épisodes 2D :</p>
+<p>Sonic 3 & Knuckles (Mon sommet, indétrônable) 👑</p>
+<p>Sonic Advance 2 & 3 (Le plaisir portable)</p>
+<p>Sonic Rush Adventure (Où j'ai quand même fait le 2ème meilleur temps mondial sur un stage, respectez-moi un peu 😎)</p>
+<p>Sonic Mania (Le retour aux sources parfait)</p>
+<p>Épisodes 3D :</p>
+<p>Sonic Unleashed (Mon préféré, qu'importe ce qu'en disent les rageux) 🐺</p>
+<p>Sonic Adventure 1 & 2 (La nostalgie qui parle plus fort que la raison)</p>
+<p>Sonic Frontiers (oui oui, il était bien!)</p>
+<p>Sonic Générations</p>
+<p>Sonic Riders (si si vraiment !)</p>
+<p>Bref, Sonic c'est plus qu'un jeu, c'est mon enfance qui continue de courir à 300km/h!</p>
+</p>
+      `,
+  },
+
+  //Article suivant
+  {
     id: "Butsukari",
     title: "Une (autre) triste réalité du Japon",
     image: "assets/img/posts/1772557605962.png",
