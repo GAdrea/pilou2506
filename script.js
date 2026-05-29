@@ -110,7 +110,7 @@ if (canvas) {
         }
     }
 
-    for (let i = 0; i < 60; i++) particles.push(new Particle());
+    for (let i = 0; i < 30; i++) particles.push(new Particle());
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -133,16 +133,23 @@ function buildCarousel({ items, maxItems, slidesId, dotsId, renderSlide, interva
     slidesRoot.innerHTML = '';
     if (dotsRoot) dotsRoot.innerHTML = '';
 
+    // Grille d'empilement : tous les slides occupent la même cellule,
+    // seule l'opacité change — pas de switch absolute/relative qui casse la hauteur.
+    slidesRoot.style.display = 'grid';
+
     limited.forEach((item, idx) => {
         const slide = document.createElement('div');
-        slide.className = 'transition-opacity duration-500 ' + (idx === 0 ? 'opacity-100' : 'opacity-0 absolute inset-0');
+        slide.style.gridArea = '1 / 1';
+        slide.style.transition = 'opacity 0.5s ease';
+        slide.style.opacity = idx === 0 ? '1' : '0';
+        slide.style.pointerEvents = idx === 0 ? '' : 'none';
         slide.innerHTML = renderSlide(item);
         slidesRoot.appendChild(slide);
 
         if (dotsRoot) {
             const dot = document.createElement('button');
-            dot.className = 'w-2 h-2 rounded-full ' + (idx === 0 ? 'bg-hibiscus' : 'bg-slate-400/60');
-            dot.setAttribute('aria-label', 'Aller à l’élément ' + (idx + 1));
+            dot.style.cssText = 'width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;transition:opacity 0.3s,background 0.3s;background:' + (idx === 0 ? '#ff4d6d' : '#94a3b8') + ';opacity:' + (idx === 0 ? '1' : '0.4');
+            dot.setAttribute('aria-label', 'Aller à l\'élément ' + (idx + 1));
             dot.addEventListener('click', () => setActive(idx));
             dotsRoot.appendChild(dot);
         }
@@ -154,24 +161,31 @@ function buildCarousel({ items, maxItems, slidesId, dotsId, renderSlide, interva
 
     function setActive(index) {
         slides.forEach((s, i) => {
-            if (i === index) {
-                s.classList.remove('opacity-0', 'absolute');
-                s.classList.add('opacity-100', 'relative');
-            } else {
-                s.classList.remove('opacity-100', 'relative');
-                s.classList.add('opacity-0', 'absolute');
-            }
+            s.style.opacity = i === index ? '1' : '0';
+            s.style.pointerEvents = i === index ? '' : 'none';
         });
         dots.forEach((d, i) => {
-            d.className = 'w-2 h-2 rounded-full ' + (i === index ? 'bg-hibiscus' : 'bg-slate-400/60');
+            d.style.background = i === index ? '#ff4d6d' : '';
+            d.style.opacity = i === index ? '1' : '0.4';
         });
         current = index;
     }
 
-    setInterval(() => {
+    let timer = setInterval(() => {
         const next = (current + 1) % slides.length;
         setActive(next);
     }, intervalMs);
+
+    // Pause l'autoplay si l'utilisateur interagit avec les dots
+    if (dotsRoot) {
+        dotsRoot.addEventListener('click', () => {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                const next = (current + 1) % slides.length;
+                setActive(next);
+            }, intervalMs);
+        });
+    }
 }
 
 function parseDateSafe(str) {
@@ -203,7 +217,7 @@ function resolveHomeImage(path) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Ne construire les carrousels que sur la page d’accueil
+    // Ne construire les carrousels que sur la page d'accueil
     if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
         const articles = sortByDateDesc(window.BLOG_ARTICLES);
         buildCarousel({
@@ -218,8 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `
                     <div class="flex justify-center">
                       <div class="glass rounded-3xl w-full max-w-xs flex flex-col items-stretch overflow-hidden">
-                        <div class="h-64 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
-                            ${imgSrc ? `<img src="${imgSrc}" alt="${article.title || ''}" class="max-h-full max-w-full object-contain" loading="lazy">` : ''}
+                        <div class="h-52 bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                            ${imgSrc ? `<img src="${imgSrc}" alt="${article.title || ''}" class="w-full h-full object-cover object-center" loading="lazy">` : '<div class="w-full h-full flex items-center justify-center text-4xl">📝</div>'}
                         </div>
                         <div class="p-6 flex-1 flex flex-col">
                             <h3 class="text-xl font-bold mb-2">${article.title}</h3>
@@ -252,8 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `
                     <div class="flex justify-center">
                       <div class="glass rounded-3xl w-full max-w-xs flex flex-col items-stretch overflow-hidden">
-                        <div class="h-64 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
-                            ${imgSrc ? `<img src="${imgSrc}" alt="${project.title || ''}" class="max-h-full max-w-full object-contain" loading="lazy">` : `<div class="text-hibiscus text-4xl">💻</div>`}
+                        <div class="h-52 bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                            ${imgSrc ? `<img src="${imgSrc}" alt="${project.title || ''}" class="w-full h-full object-cover object-center" loading="lazy">` : `<div class="w-full h-full flex items-center justify-center text-hibiscus text-4xl">💻</div>`}
                         </div>
                         <div class="p-6 flex-1 flex flex-col">
                             <h3 class="text-xl font-bold mb-2">${project.title}</h3>
@@ -292,8 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `
                     <div class="flex justify-center">
                       <div class="glass bg-slate-900/80 text-white rounded-3xl w-full max-w-xs flex flex-col items-stretch overflow-hidden">
-                        <div class="h-64 bg-slate-800 flex items-center justify-center relative">
-                            ${imgSrc ? `<img src="${imgSrc}" alt="${title}" class="max-h-full max-w-full object-contain" loading="lazy">` : ''}
+                        <div class="h-52 bg-slate-800 overflow-hidden relative">
+                            ${imgSrc ? `<img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover object-center" loading="lazy">` : ''}
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
                                 <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center group-hover:bg-hibiscus transition">
                                     ${playIconSvg}
