@@ -126,6 +126,13 @@ function renderArticle(article) {
     const contentBlock = content ? `<div class="article-content">${content}</div>` : '';
 
     container.innerHTML = `
+        <nav class="flex items-center flex-wrap gap-1 text-sm text-slate-500 dark:text-slate-400 mb-6" aria-label="Fil d'Ariane">
+            <a href="../../index.html" class="hover:text-hibiscus transition">Accueil</a>
+            <span class="opacity-40 mx-1">/</span>
+            <a href="blog.html" class="hover:text-hibiscus transition">Blog</a>
+            <span class="opacity-40 mx-1">/</span>
+            <span class="text-slate-700 dark:text-slate-300 font-medium">${escapeHtml(article.title)}</span>
+        </nav>
         <a href="blog.html" class="inline-flex items-center gap-2 text-hibiscus font-bold mb-8 hover:underline">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />

@@ -145,18 +145,10 @@ function buildCarousel({ items, maxItems, slidesId, dotsId, renderSlide, interva
         slide.style.pointerEvents = idx === 0 ? '' : 'none';
         slide.innerHTML = renderSlide(item);
         slidesRoot.appendChild(slide);
-
-        if (dotsRoot) {
-            const dot = document.createElement('button');
-            dot.style.cssText = 'width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;transition:opacity 0.3s,background 0.3s;background:' + (idx === 0 ? '#ff4d6d' : '#94a3b8') + ';opacity:' + (idx === 0 ? '1' : '0.4');
-            dot.setAttribute('aria-label', 'Aller à l\'élément ' + (idx + 1));
-            dot.addEventListener('click', () => setActive(idx));
-            dotsRoot.appendChild(dot);
-        }
     });
 
     const slides = Array.from(slidesRoot.children);
-    const dots = dotsRoot ? Array.from(dotsRoot.children) : [];
+    const dotBtns = [];
     let current = 0;
 
     function setActive(index) {
@@ -164,27 +156,58 @@ function buildCarousel({ items, maxItems, slidesId, dotsId, renderSlide, interva
             s.style.opacity = i === index ? '1' : '0';
             s.style.pointerEvents = i === index ? '' : 'none';
         });
-        dots.forEach((d, i) => {
-            d.style.background = i === index ? '#ff4d6d' : '';
+        dotBtns.forEach((d, i) => {
+            d.style.background = i === index ? '#ff4d6d' : '#94a3b8';
             d.style.opacity = i === index ? '1' : '0.4';
         });
         current = index;
     }
 
-    let timer = setInterval(() => {
-        const next = (current + 1) % slides.length;
-        setActive(next);
-    }, intervalMs);
+    let timer = setInterval(() => setActive((current + 1) % slides.length), intervalMs);
 
-    // Pause l'autoplay si l'utilisateur interagit avec les dots
+    function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => setActive((current + 1) % slides.length), intervalMs);
+    }
+
     if (dotsRoot) {
-        dotsRoot.addEventListener('click', () => {
-            clearInterval(timer);
-            timer = setInterval(() => {
-                const next = (current + 1) % slides.length;
-                setActive(next);
-            }, intervalMs);
+        dotsRoot.style.display = 'flex';
+        dotsRoot.style.alignItems = 'center';
+        dotsRoot.style.gap = '8px';
+
+        const arrowCss = 'border:none;cursor:pointer;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(148,163,184,0.2);color:inherit;transition:background 0.2s;flex-shrink:0;padding:0;';
+
+        function makeArrow(dPath, label, onClick) {
+            const btn = document.createElement('button');
+            btn.setAttribute('aria-label', label);
+            btn.style.cssText = arrowCss;
+            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="' + dPath + '"/></svg>';
+            btn.addEventListener('click', onClick);
+            return btn;
+        }
+
+        if (slides.length > 1) {
+            dotsRoot.appendChild(makeArrow('M15 19l-7-7 7-7', 'Précédent', () => {
+                setActive((current - 1 + slides.length) % slides.length);
+                resetTimer();
+            }));
+        }
+
+        limited.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;padding:0;flex-shrink:0;transition:all 0.3s;background:' + (idx === 0 ? '#ff4d6d' : '#94a3b8') + ';opacity:' + (idx === 0 ? '1' : '0.4') + ';';
+            dot.setAttribute('aria-label', 'Aller à l\'élément ' + (idx + 1));
+            dot.addEventListener('click', () => { setActive(idx); resetTimer(); });
+            dotsRoot.appendChild(dot);
+            dotBtns.push(dot);
         });
+
+        if (slides.length > 1) {
+            dotsRoot.appendChild(makeArrow('M9 5l7 7-7 7', 'Suivant', () => {
+                setActive((current + 1) % slides.length);
+                resetTimer();
+            }));
+        }
     }
 }
 
