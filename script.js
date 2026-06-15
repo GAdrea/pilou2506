@@ -61,62 +61,145 @@ if (scrollTopBtn) {
     });
 }
 
-// --- PARTICULES ---
+// --- FOND DIGITAL : LIGNES CIRCUITS ---
+// Palette : Martinique (hibiscus #ff4d6d), France (#3b82f6), Japon (#bc002d), Gamer (#00d4ff)
 const canvas = document.getElementById('particles-canvas');
 if (canvas) {
     const ctx = canvas.getContext('2d');
-    let particles = [];
+    const LINE_COUNT = 45;
+    const GRID_SPACING = 40;
 
-    function getColors() {
-        return html.classList.contains('dark') 
-            ? ['#ff4d6d', '#bc002d', '#475569', '#1e293b']
-            : ['#ffb7c5', '#ff4d6d', '#002395', '#ff8c00'];
-    }
+    const DARK_PALETTE  = ['#00d4ff','#00d4ff','#00d4ff','#00b4d8','#ff4d6d','#ff4d6d','#3b82f6','#bc002d','#f59e0b'];
+    const LIGHT_PALETTE = ['#0066cc','#0066cc','#3b82f6','#cc0033','#1a3a8f','#bc002d','#e08000'];
+
+    const isDark = () => html.classList.contains('dark');
+    let bgGrad = null;
 
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        bgGrad = null;
     }
-
     window.addEventListener('resize', resize);
     resize();
 
-    class Particle {
-        constructor() {
-            this.reset();
-        }
+    class DigitalLine {
+        constructor() { this.reset(); }
+
         reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 4 + 1;
-            this.speedX = Math.random() * 1 - 0.5;
-            this.speedY = Math.random() * 1 + 0.2;
-            this.color = getColors()[Math.floor(Math.random() * 4)];
-            this.opacity = Math.random() * 0.5 + 0.2;
+            const w = canvas.width;
+            const h = canvas.height;
+            this.startX = Math.random() * w;
+            this.startY = Math.random() * h;
+
+            // 8 directions : esthétique circuit imprimé
+            const angle = Math.floor(Math.random() * 8) * (Math.PI / 4);
+            this.dx = Math.cos(angle);
+            this.dy = Math.sin(angle);
+
+            this.speed = 1.5 + Math.random() * 3.5;
+            this.segmentLength = 60 + Math.random() * 200;
+            this.maxTravel = this.segmentLength + Math.sqrt(w * w + h * h);
+            this.headDist = Math.random() * this.segmentLength * 0.8;
+            this.done = false;
+
+            const palette = isDark() ? DARK_PALETTE : LIGHT_PALETTE;
+            this.color = palette[Math.floor(Math.random() * palette.length)];
+            this.width = 0.5 + Math.random() * 1.5;
+            this.glow = isDark() ? 8 + Math.random() * 12 : 2 + Math.random() * 4;
         }
+
+        get tailDist() { return Math.max(0, this.headDist - this.segmentLength); }
+
         update() {
-            this.y += this.speedY;
-            this.x += this.speedX;
-            if (this.y > canvas.height) this.y = -10;
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
+            this.headDist += this.speed;
+            if (this.tailDist >= this.maxTravel) this.done = true;
         }
+
         draw() {
-            ctx.globalAlpha = this.opacity;
-            ctx.fillStyle = this.color;
+            const hx = this.startX + this.dx * this.headDist;
+            const hy = this.startY + this.dy * this.headDist;
+            const tx = this.startX + this.dx * this.tailDist;
+            const ty = this.startY + this.dy * this.tailDist;
+
+            if (hx === tx && hy === ty) return;
+
+            ctx.save();
+            ctx.lineWidth = this.width;
+            ctx.shadowBlur = this.glow;
+            ctx.shadowColor = this.color;
+
+            try {
+                const grad = ctx.createLinearGradient(tx, ty, hx, hy);
+                grad.addColorStop(0, 'rgba(0,0,0,0)');
+                grad.addColorStop(0.4, this.color + '55');
+                grad.addColorStop(1, this.color);
+                ctx.strokeStyle = grad;
+            } catch (e) {
+                ctx.strokeStyle = this.color;
+            }
+
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.moveTo(tx, ty);
+            ctx.lineTo(hx, hy);
+            ctx.stroke();
+
+            // Nœud lumineux en tête de ligne
+            ctx.beginPath();
+            ctx.fillStyle = '#ffffff';
+            ctx.globalAlpha = 0.9;
+            ctx.shadowBlur = 14;
+            ctx.shadowColor = this.color;
+            ctx.arc(hx, hy, this.width + 0.8, 0, Math.PI * 2);
             ctx.fill();
+
+            ctx.restore();
         }
     }
 
-    for (let i = 0; i < 30; i++) particles.push(new Particle());
+    let lines = Array.from({ length: LINE_COUNT }, () => new DigitalLine());
+
+    function drawBackground() {
+        if (isDark()) {
+            if (!bgGrad) {
+                bgGrad = ctx.createRadialGradient(
+                    canvas.width * 0.5, canvas.height * 0.4, 0,
+                    canvas.width * 0.5, canvas.height * 0.5,
+                    Math.max(canvas.width, canvas.height) * 0.85
+                );
+                bgGrad.addColorStop(0, '#0d1525');
+                bgGrad.addColorStop(1, '#050a12');
+            }
+            ctx.fillStyle = bgGrad;
+        } else {
+            ctx.fillStyle = '#f0f5ff';
+        }
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function drawGrid() {
+        if (!isDark()) return;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(0, 212, 255, 0.04)';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        for (let x = 0; x <= canvas.width; x += GRID_SPACING) {
+            ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
+        }
+        for (let y = 0; y <= canvas.height; y += GRID_SPACING) {
+            ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
+        }
+        ctx.stroke();
+        ctx.restore();
+    }
 
     function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-            p.update();
-            p.draw();
+        drawBackground();
+        drawGrid();
+        lines.forEach((line, i) => {
+            line.update();
+            line.draw();
+            if (line.done) lines[i] = new DigitalLine();
         });
         requestAnimationFrame(animate);
     }
