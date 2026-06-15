@@ -1,9 +1,4 @@
-/**
- * Blog : affichage des articles définis dans data/blog-data.js
- * Les articles se publient en éditant le fichier de données, pas sur la page.
- */
-
-const BASE_URL = '../..'; // depuis pages/blog/ vers la racine du projet
+const BASE_URL = '../..';
 
 function getArticles() {
     const list = window.BLOG_ARTICLES;

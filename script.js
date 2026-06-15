@@ -123,6 +123,47 @@ if (canvas) {
     animate();
 }
 
+// --- CAROUSEL INFINI À DÉFILEMENT AUTOMATIQUE ---
+function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60 }) {
+    const trackEl = document.getElementById(trackId);
+    if (!trackEl || !Array.isArray(items) || items.length === 0) return;
+
+    const CARD_W = 280;
+    const GAP = 20;
+    const STEP = CARD_W + GAP;
+
+    trackEl.innerHTML = '';
+    trackEl.style.cssText = 'display:flex;gap:' + GAP + 'px;will-change:transform;';
+
+    // Dupliquer les articles pour la boucle transparente
+    [...items, ...items].forEach(item => {
+        const el = document.createElement('div');
+        el.style.cssText = 'flex-shrink:0;width:' + CARD_W + 'px;';
+        el.innerHTML = renderCard(item);
+        trackEl.appendChild(el);
+    });
+
+    const loopWidth = items.length * STEP; // largeur d'un seul set
+    let offset = 0;
+    let lastTime = null;
+    let paused = false;
+
+    function tick(ts) {
+        if (lastTime !== null && !paused) {
+            offset += pxPerSec * (ts - lastTime) / 1000;
+            if (offset >= loopWidth) offset -= loopWidth;
+            trackEl.style.transform = 'translateX(-' + offset + 'px)';
+        }
+        lastTime = ts;
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    const section = trackEl.closest('section') || trackEl.parentElement;
+    section.addEventListener('mouseenter', () => { paused = true; });
+    section.addEventListener('mouseleave', () => { paused = false; });
+}
+
 // --- HOME CAROUSELS (blog / web / vidéo) ---
 function buildCarousel({ items, maxItems, slidesId, dotsId, renderSlide, intervalMs = 6000 }) {
     const slidesRoot = document.getElementById(slidesId);
@@ -220,32 +261,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ne construire les carrousels que sur la page d'accueil
     if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
         const articles = sortByDateDesc(window.BLOG_ARTICLES);
-        buildCarousel({
+        buildInfiniteScroll({
             items: articles,
-            maxItems: 3,
-            slidesId: 'homeBlogSlides',
-            dotsId: 'homeBlogDots',
-            renderSlide: (article) => {
+            trackId: 'homeBlogSlides',
+            renderCard: (article) => {
                 const imgSrc = resolveHomeImage(article.image || '');
                 const link = 'pages/blog/article.html?id=' + encodeURIComponent(article.id);
                 const desc = article.description || '';
                 return `
-                    <div class="flex justify-center">
-                      <div class="glass rounded-3xl w-full max-w-xs flex flex-col items-stretch overflow-hidden">
-                        <div class="h-52 bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                    <a href="${link}" class="glass rounded-2xl flex flex-col overflow-hidden hover:scale-[1.02] transition-transform duration-300 block">
+                        <div class="h-44 bg-slate-200 dark:bg-slate-800 overflow-hidden flex-shrink-0">
                             ${imgSrc ? `<img src="${imgSrc}" alt="${article.title || ''}" class="w-full h-full object-cover object-center" loading="lazy">` : '<div class="w-full h-full flex items-center justify-center text-4xl">📝</div>'}
                         </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold mb-2">${article.title}</h3>
-                            ${desc ? `<p class="text-slate-600 dark:text-slate-400 text-sm mb-4">${desc}</p>` : ''}
-                            <div class="mt-auto pt-2">
-                                <a href="${link}" class="w-full inline-flex justify-center items-center bg-hibiscus text-white font-bold py-2.5 px-4 rounded-xl text-sm hover:brightness-110 transition">
-                                    Consulter
-                                </a>
-                            </div>
+                        <div class="p-4 flex flex-col flex-1">
+                            <h3 class="font-bold text-sm leading-snug mb-1">${article.title}</h3>
+                            ${desc ? `<p class="text-slate-500 dark:text-slate-400 text-xs line-clamp-2">${desc}</p>` : ''}
                         </div>
-                      </div>
-                    </div>
+                    </a>
                 `;
             }
         });
