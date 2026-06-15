@@ -38,10 +38,10 @@ function renderCards() {
 
     projects.forEach((project) => {
         const card = document.createElement('article');
-        card.className = 'glass rounded-3xl overflow-hidden group';
+        card.className = 'hud-card group';
         const imgSrc = imageSrc(project.image);
         const tagsHtml = Array.isArray(project.tags) && project.tags.length
-            ? `<div class="flex gap-2 mt-3 flex-wrap">${project.tags.map(t => `<span class="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-lg text-xs font-bold">${escapeHtml(t)}</span>`).join('')}</div>`
+            ? `<div class="flex gap-2 mt-3 flex-wrap">${project.tags.map(t => `<span class="hud-tag">${escapeHtml(t)}</span>`).join('')}</div>`
             : '';
         card.innerHTML = `
             <div class="h-48 overflow-hidden">

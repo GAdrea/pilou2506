@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr" class="light">
+<!doctype html>
+<html lang="fr" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,9 @@
               frBlue: "#002395",
               mtOrange: "#ff8c00",
               hibiscus: "#ff4d6d",
+              neonCyan: "#00d4ff",
+              hudBg: "#050a12",
+              hudSurface: "#0d1525",
             },
           },
         },
@@ -26,72 +29,46 @@
     </script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    class="text-slate-900 dark:text-slate-100"
-  >
+
+  <body class="text-slate-100 min-h-screen">
     <canvas id="particles-canvas"></canvas>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 p-4 md:p-6">
+    <nav class="fixed top-0 w-full z-50 hud-nav-bar">
       <div
-        class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 shadow-xl"
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
       >
         <!-- Logo -->
-        <div class="text-2xl font-black tracking-tighter">
-          PI<span class="text-blue-600">L</span
-          ><span class="text-red-600">OU</span>
-        </div>
+        <a href="#home" class="text-2xl font-black tracking-tighter">
+          PI<span class="neon-text-cyan" style="color: #00d4ff">L</span
+          ><span class="neon-text-pink" style="color: #ff4d6d">OU</span>
+        </a>
 
         <!-- Desktop Menu -->
-        <div
-          class="hidden lg:flex items-center space-x-6 font-semibold text-sm"
-        >
-          <a href="#home" class="hover:text-hibiscus transition">Accueil</a>
-          <a href="pages/blog/blog.html" class="hover:text-hibiscus transition"
-            >Blog</a
-          >
-          <a
-            href="pages/web/projets-web.html"
-            class="hover:text-hibiscus transition"
-            >Projets Web</a
-          >
-          <a
-            href="pages/video/projets-video.html"
-            class="hover:text-hibiscus transition"
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#home" class="nav-link">Accueil</a>
+          <a href="pages/blog/blog.html" class="nav-link">Blog</a>
+          <a href="pages/web/projets-web.html" class="nav-link">Projets Web</a>
+          <a href="pages/video/projets-video.html" class="nav-link"
             >Projets Vidéo</a
           >
-          <a
-            href="pages/about/qui-suis-je.html"
-            class="hover:text-hibiscus transition"
+          <a href="pages/about/qui-suis-je.html" class="nav-link"
             >Qui suis-je ?</a
           >
-          <a
-            href="pages/contact/contact.html"
-            class="hover:text-hibiscus transition"
-            >Contact</a
-          >
-
-          <!-- Dark Mode Toggle -->
-          <button
-            id="themeToggle"
-            class="p-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:scale-110 transition"
-          >
-            <span id="themeIcon">🌞</span>
-          </button>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
 
-        <!-- Mobile Controls -->
-        <div class="flex lg:hidden items-center space-x-4">
+        <!-- Mobile burger -->
+        <div class="flex lg:hidden">
           <button
-            id="themeToggleMobile"
-            class="p-2 rounded-xl bg-slate-200 dark:bg-slate-800"
+            id="burgerBtn"
+            class="p-2"
+            title="Menu"
+            style="color: #00d4ff"
           >
-            <span id="themeIconMobile">🌞</span>
-          </button>
-          <button id="burgerBtn" class="p-2" title="Menu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8"
+              class="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -108,19 +85,20 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div
       id="mobileMenu"
-      class="fixed inset-0 z-[60] glass flex flex-col items-center justify-center space-y-8 text-2xl font-bold lg:hidden"
+      class="fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 lg:hidden"
     >
       <button
         id="closeMenu"
-        class="absolute top-8 right-8"
-        title="Fermer le menu"
+        class="absolute top-6 right-6"
+        title="Fermer"
+        style="color: #00d4ff"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
+          class="h-9 w-9"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -133,66 +111,79 @@
           />
         </svg>
       </button>
-      <a href="#home" class="mobile-nav-link">Accueil</a>
-      <a href="pages/blog/blog.html" class="mobile-nav-link">Blog</a>
+      <a href="#home" class="mobile-nav-link">// Accueil</a>
+      <a href="pages/blog/blog.html" class="mobile-nav-link">// Blog</a>
       <a href="pages/web/projets-web.html" class="mobile-nav-link"
-        >Projets Web</a
+        >// Projets Web</a
       >
       <a href="pages/video/projets-video.html" class="mobile-nav-link"
-        >Projets Vidéo</a
+        >// Projets Vidéo</a
       >
       <a href="pages/about/qui-suis-je.html" class="mobile-nav-link"
-        >Qui suis-je ?</a
+        >// Qui suis-je ?</a
       >
-      <a href="pages/contact/contact.html" class="mobile-nav-link">Contact</a>
+      <a href="#contact" class="mobile-nav-link">// Contact</a>
     </div>
+
     <!-- Hero Section -->
     <header id="home" class="min-h-screen flex items-center pt-20 px-6">
       <div
         class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full"
       >
         <div class="space-y-6">
-          <div
-            class="inline-flex items-center space-x-2 bg-white/50 dark:bg-slate-800/50 px-4 py-2 rounded-full border border-hibiscus/20"
-          >
-            <span class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></span>
+          <!-- Badge HUD -->
+          <div class="hud-badge">
             <span
-              class="text-xs font-bold uppercase tracking-widest text-hibiscus"
-              >Direct du Japon</span
-            >
+              class="w-2 h-2 rounded-full blink"
+              style="background: #bc002d"
+            ></span>
+            LIVE · TOKYO, JAPAN
           </div>
+
+          <!-- Titre -->
           <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
             Bonjour,<br />je suis
-            <span class="font-black">
-              <span class="text-600 font-black tracking-tighter">PI</span
-              ><span class="text-blue-600">L</span
-              ><span class="text-red-600">OU👋</span>
+            <span class="block mt-2">
+              PI<span style="color: #00d4ff" class="neon-text-cyan">L</span
+              ><span style="color: #ff4d6d" class="neon-text-pink">OU</span
+              ><span style="font-size: 0.75em">👋</span>
             </span>
           </h1>
-          <p
-            class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-xl"
-          >
-            Français originaire de la Martinique, je partage mon quotidien
-            d'expatrié via mes projets vidéos et web. Bienvenue dans mon univers
-            tricolore.
+
+          <!-- Description -->
+          <p class="text-lg text-slate-400 max-w-xl leading-relaxed">
+            Français originaire de la
+            <span style="color: #ff4d6d" class="font-semibold">Martinique</span
+            >, expatrié au
+            <span style="color: #bc002d" class="font-semibold">Japon</span>. Dev
+            web · Créateur vidéo · Passionné de culture otaku.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="#web"
-              class="bg-hibiscus text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:brightness-110 transition"
-              >Mes Projets</a
-            >
-            <a
-              href="#contact"
-              class="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 px-8 py-4 rounded-2xl font-bold hover:border-hibiscus transition"
-              >Me contacter</a
-            >
+
+          <!-- Stats HUD -->
+          <div class="flex gap-6 flex-wrap">
+            <div class="hud-stat">
+              LOC <span class="val">35.67°N 139.65°E</span>
+            </div>
+            <div class="hud-stat">
+              STATUS <span class="val blink">ONLINE</span>
+            </div>
+            <div class="hud-stat">
+              STACK <span class="val">WEB · VIDEO</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#web" class="hud-btn hud-btn-primary">Mes Projets</a>
+            <a href="#contact" class="hud-btn hud-btn-outline">Me contacter</a>
           </div>
         </div>
+
+        <!-- Image -->
         <div class="relative flex justify-center">
           <img
             src="/assets/img/posts/1764651106820.jpg"
-            alt="Pilou Chibi"
+            alt="Pilou"
             class="w-full max-w-md animate-float"
           />
         </div>
@@ -200,11 +191,13 @@
     </header>
 
     <!-- Blog Section -->
-    <section id="blog" class="py-24 bg-slate-100 dark:bg-slate-900/50 overflow-hidden">
+    <section
+      id="blog"
+      class="py-24 overflow-hidden"
+      style="background: rgba(13, 21, 37, 0.5)"
+    >
       <div class="max-w-7xl mx-auto px-6 mb-12">
-        <h2 class="text-4xl font-bold section-title">
-          Derniers Articles
-        </h2>
+        <h2 class="text-4xl font-bold section-title">Derniers Articles</h2>
       </div>
       <div id="homeBlogCarousel">
         <div id="homeBlogSlides"></div>
@@ -212,14 +205,14 @@
     </section>
 
     <!-- Web Projects -->
-    <section id="web" class="py-24 px-6 bg-white/40 dark:bg-transparent backdrop-blur-sm">
+    <section id="web" class="py-24 px-6">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold section-title mb-12">Projets Web</h2>
         <div id="homeWebCarousel" class="relative">
-          <div class="overflow-hidden rounded-3xl">
+          <div class="overflow-hidden">
             <div id="homeWebSlides" class="relative"></div>
           </div>
-          <div id="homeWebDots" class="flex justify-center gap-2 mt-4"></div>
+          <div id="homeWebDots" class="flex justify-center gap-3 mt-6"></div>
         </div>
       </div>
     </section>
@@ -227,72 +220,69 @@
     <!-- Video Projects -->
     <section
       id="video"
-      class="py-24 px-6 bg-slate-900 text-white rounded-[4rem] mx-4 overflow-hidden"
+      class="py-24 px-6"
+      style="background: rgba(13, 21, 37, 0.5)"
     >
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12">Projets Vidéo</h2>
+        <h2 class="text-4xl font-bold section-title mb-12">Projets Vidéo</h2>
         <div id="homeVideoCarousel" class="relative">
-          <div class="overflow-hidden rounded-3xl">
+          <div class="overflow-hidden">
             <div id="homeVideoSlides" class="relative"></div>
           </div>
-          <div id="homeVideoDots" class="flex justify-center gap-2 mt-4"></div>
+          <div id="homeVideoDots" class="flex justify-center gap-3 mt-6"></div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 px-6 bg-white/40 dark:bg-transparent backdrop-blur-sm">
+    <section id="about" class="py-24 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="order-2 lg:order-1 relative">
+          <div class="order-2 lg:order-1 relative flex justify-center">
             <img
               src="assets/img/avatar/pilou/1763656713266(1).png"
               class="w-full max-w-md mx-auto drop-shadow-2xl"
               alt="Pilou About"
             />
           </div>
+
           <div class="order-1 lg:order-2 space-y-8">
             <h2 class="text-5xl font-extrabold section-title">Qui suis-je ?</h2>
-            <div
-              class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed text-lg"
-            >
+            <div class="space-y-4 text-slate-400 leading-relaxed text-lg">
               <p>
                 Je m'appelle Pilou. Mon parcours est un pont entre trois
-                cultures magnifiques. Né en
-                <span class="text-hibiscus font-bold">Martinique</span>,
+                cultures magnifiques. Né à
+                <span style="color: #ff4d6d" class="font-bold">Paris</span>,
                 j'emporte partout avec moi la chaleur et la résilience de mon
-                île.
+                île,
+                <span style="color: #ff4d6d" class="font-bold">Martinique</span
+                >.
               </p>
               <p>
                 Passionné depuis l'enfance par l'informatique et la culture
-                otaku, j'ai décidé de sauter le pas pour m'installer au
-                <span class="text-red-600 font-bold">Japon</span>. Ce n'est pas
-                seulement un voyage, c'est mon nouveau quotidien.
+                otaku, j'ai décidé de m'installer au
+                <span style="color: #bc002d" class="font-bold">Japon</span>. Ce
+                n'est pas seulement un voyage, c'est mon nouveau quotidien.
               </p>
               <p>
                 Aujourd'hui, j'utilise mes compétences en développement web et
-                en création vidéo pour documenter cette aventure et aider les
-                entreprises à briller numériquement.
+                en création vidéo pour documenter cette aventure.
               </p>
             </div>
+
+            <!-- Flag cards -->
             <div class="flex gap-4">
-              <div class="text-center p-4 glass rounded-2xl flex-1 transition-colors duration-300 hover:bg-blue-600 group">
-                <div class="text-3xl mb-1">🇲🇶</div>
-                <div class="text-[10px] font-bold uppercase text-slate-400 group-hover:text-white transition-colors duration-300">
-                  Origine
-                </div>
+              <div class="hud-card text-center p-4 flex-1">
+                <div class="text-3xl mb-2">🇲🇶</div>
+                <div class="hud-stat">Origine</div>
               </div>
-              <div class="text-center p-4 glass rounded-2xl flex-1">
-                <div class="text-3xl mb-1">🇫🇷</div>
-                <div class="text-[10px] font-bold uppercase text-slate-400">
-                  Culture
-                </div>
+              <div class="hud-card text-center p-4 flex-1">
+                <div class="text-3xl mb-2">🇫🇷</div>
+                <div class="hud-stat">Culture</div>
               </div>
-              <div class="text-center p-4 glass rounded-2xl flex-1 transition-colors duration-300 hover:bg-red-600 group">
-                <div class="text-3xl mb-1">🇯🇵</div>
-                <div class="text-[10px] font-bold uppercase text-slate-400 group-hover:text-white transition-colors duration-300">
-                  Présent
-                </div>
+              <div class="hud-card text-center p-4 flex-1">
+                <div class="text-3xl mb-2">🇯🇵</div>
+                <div class="hud-stat">Présent</div>
               </div>
             </div>
           </div>
@@ -301,50 +291,45 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 bg-slate-100 dark:bg-slate-900/50">
+    <section
+      id="contact"
+      class="py-24 px-6"
+      style="background: rgba(13, 21, 37, 0.5)"
+    >
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-8">On travaille ensemble ?</h2>
-        <div class="glass p-8 md:p-12 rounded-[2.5rem] shadow-2xl">
+        <h2 class="text-4xl font-bold section-title mb-4">
+          On travaille ensemble ?
+        </h2>
+        <p class="text-slate-400 mb-10">
+          Un projet web, une collaboration vidéo, ou juste un bonjour.
+        </p>
+
+        <div class="hud-card p-8 md:p-12">
           <form class="space-y-6 text-left" onsubmit="event.preventDefault()">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <label
-                  class="block text-xs font-bold uppercase text-slate-400 mb-2"
-                  >Nom</label
-                >
-                <input
-                  type="text"
-                  placeholder="Votre nom"
-                  class="w-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl p-4 focus:border-hibiscus outline-none transition"
-                />
+                <label class="hud-label">Nom</label>
+                <input type="text" placeholder="Votre nom" class="hud-input" />
               </div>
               <div>
-                <label
-                  class="block text-xs font-bold uppercase text-slate-400 mb-2"
-                  >Email</label
-                >
+                <label class="hud-label">Email</label>
                 <input
                   type="email"
                   placeholder="votre@email.com"
-                  class="w-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl p-4 focus:border-hibiscus outline-none transition"
+                  class="hud-input"
                 />
               </div>
             </div>
             <div>
-              <label
-                class="block text-xs font-bold uppercase text-slate-400 mb-2"
-                >Message</label
-              >
+              <label class="hud-label">Message</label>
               <textarea
                 rows="4"
                 placeholder="Votre message..."
-                class="w-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl p-4 focus:border-hibiscus outline-none transition"
+                class="hud-input"
               ></textarea>
             </div>
-            <button
-              class="w-full bg-hibiscus text-white font-bold py-4 rounded-xl hover:brightness-110 transition shadow-lg"
-            >
-              Envoyer mon message
+            <button type="submit" class="hud-btn hud-btn-primary w-full">
+              Envoyer le message
             </button>
           </form>
         </div>
@@ -352,18 +337,19 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/60 backdrop-blur-sm">
+    <footer class="py-12 px-6 hud-footer">
       <div
         class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
       >
         <div class="text-xl font-black">
-          PI<span class="text-blue-600">L</span
-          ><span class="text-red-600">OU</span>
+          PI<span style="color: #00d4ff">L</span
+          ><span style="color: #ff4d6d">OU</span>
         </div>
-        <div class="flex items-center space-x-6 text-slate-400">
+        <div class="flex items-center space-x-6 text-slate-500">
           <a
             href="#"
-            class="hover:text-hibiscus transition"
+            class="hover:text-neonCyan transition"
+            style="--tw-text-opacity: 1"
             aria-label="YouTube"
             title="YouTube"
           >
@@ -380,7 +366,7 @@
           </a>
           <a
             href="#"
-            class="hover:text-hibiscus transition"
+            class="hover:text-neonCyan transition"
             aria-label="Instagram"
             title="Instagram"
           >
@@ -396,19 +382,24 @@
             </svg>
           </a>
         </div>
-        <p class="text-xs text-slate-400">© Pilou</p>
+        <p class="text-xs text-slate-600">© Pilou</p>
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- Scroll to top -->
     <button
       id="scrollTopBtn"
-      class="fixed bottom-8 right-8 w-14 h-14 bg-hibiscus text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition z-50"
+      class="fixed bottom-8 right-8 w-14 h-14 flex items-center justify-center z-50"
       title="Retour en haut"
+      style="
+        background: #00d4ff;
+        color: #050a12;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+      "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
+        class="h-7 w-7"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -421,9 +412,11 @@
         />
       </svg>
     </button>
+
     <script src="data/blog-data.js"></script>
     <script src="data/web-data.js"></script>
     <script src="data/video-data.js"></script>
+    <script src="assets/js/digital-bg.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

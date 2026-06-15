@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="light">
+<html lang="fr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,13 @@
             theme: {
                 extend: {
                     colors: {
-                        jpRed: '#bc002d',
-                        frBlue: '#002395',
-                        mtOrange: '#ff8c00',
-                        hibiscus: '#ff4d6d',
+                        jpRed:     '#bc002d',
+                        frBlue:    '#002395',
+                        mtOrange:  '#ff8c00',
+                        hibiscus:  '#ff4d6d',
+                        neonCyan:  '#00d4ff',
+                        hudBg:     '#050a12',
+                        hudSurface:'#0d1525',
                     }
                 }
             }
@@ -23,32 +26,26 @@
     </script>
     <link rel="stylesheet" href="../../style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen">
+<body class="text-slate-100 min-h-screen">
 
     <canvas id="particles-canvas"></canvas>
 
-    <nav class="fixed top-0 w-full z-50 p-4 md:p-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3 shadow-xl">
+    <nav class="fixed top-0 w-full z-50 hud-nav-bar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
             <a href="../../index.html" class="text-2xl font-black tracking-tighter">
-                PI<span class="text-blue-600">L</span><span class="text-red-600">OU</span>
+                PI<span style="color:#00d4ff">L</span><span style="color:#ff4d6d">OU</span>
             </a>
-            <div class="hidden lg:flex items-center space-x-6 font-semibold text-sm">
-                <a href="../../index.html#home" class="hover:text-hibiscus transition">Accueil</a>
-                <a href="../blog/blog.html" class="hover:text-hibiscus transition">Blog</a>
-                <a href="projets-web.html" class="text-hibiscus">Projets Web</a>
-                <a href="../video/projets-video.html" class="hover:text-hibiscus transition">Projets Vidéo</a>
-                <a href="../../index.html#about" class="hover:text-hibiscus transition">Qui suis-je ?</a>
-                <a href="../../index.html#contact" class="hover:text-hibiscus transition">Contact</a>
-                <button id="themeToggle" class="p-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:scale-110 transition">
-                    <span id="themeIcon">🌞</span>
-                </button>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="../../index.html#home"       class="nav-link">Accueil</a>
+                <a href="../blog/blog.html"            class="nav-link">Blog</a>
+                <a href="projets-web.html"             class="nav-link active">Projets Web</a>
+                <a href="../video/projets-video.html" class="nav-link">Projets Vidéo</a>
+                <a href="../about/qui-suis-je.html"   class="nav-link">Qui suis-je ?</a>
+                <a href="../../index.html#contact"    class="nav-link">Contact</a>
             </div>
-            <div class="flex lg:hidden items-center space-x-4">
-                <button id="themeToggleMobile" class="p-2 rounded-xl bg-slate-200 dark:bg-slate-800">
-                    <span id="themeIconMobile">🌞</span>
-                </button>
-                <button id="burgerBtn" class="p-2" title="Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex lg:hidden">
+                <button id="burgerBtn" type="button" class="p-2" title="Menu" style="color:#00d4ff">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
@@ -56,128 +53,51 @@
         </div>
     </nav>
 
-    <div id="mobileMenu" class="fixed inset-0 z-[60] glass flex flex-col items-center justify-center space-y-8 text-2xl font-bold lg:hidden">
-        <button id="closeMenu" class="absolute top-8 right-8" title="Fermer le menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div id="mobileMenu" class="fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 lg:hidden">
+        <button id="closeMenu" type="button" class="absolute top-6 right-6" title="Fermer" style="color:#00d4ff">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-        <a href="../../index.html#home" class="mobile-nav-link">Accueil</a>
-        <a href="../blog/blog.html" class="mobile-nav-link">Blog</a>
-        <a href="projets-web.html" class="mobile-nav-link text-hibiscus">Projets Web</a>
-        <a href="../video/projets-video.html" class="mobile-nav-link">Projets Vidéo</a>
-        <a href="../../index.html#about" class="mobile-nav-link">Qui suis-je ?</a>
-        <a href="../../index.html#contact" class="mobile-nav-link">Contact</a>
+        <a href="../../index.html#home"       class="mobile-nav-link">// Accueil</a>
+        <a href="../blog/blog.html"            class="mobile-nav-link">// Blog</a>
+        <a href="projets-web.html"             class="mobile-nav-link active">// Projets Web</a>
+        <a href="../video/projets-video.html" class="mobile-nav-link">// Projets Vidéo</a>
+        <a href="../about/qui-suis-je.html"   class="mobile-nav-link">// Qui suis-je ?</a>
+        <a href="../../index.html#contact"    class="mobile-nav-link">// Contact</a>
     </div>
 
     <main class="pt-28 pb-24 px-6">
         <div class="max-w-7xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold section-title mb-12">Projets Web</h1>
-
             <section>
-                <div id="webCards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-                <p id="webEmpty" class="text-slate-500 dark:text-slate-400 text-center py-12 hidden">
-                    Aucun projet pour le moment. Ajoutez des entrées dans <code class="bg-slate-200 dark:bg-slate-700 px-1 rounded">data/web-data.js</code>.
+                <div id="webCards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <p id="webEmpty" class="text-slate-500 text-center py-12 hidden">
+                    Aucun projet pour le moment.
                 </p>
             </section>
         </div>
     </main>
 
-    <footer class="py-12 px-6 border-t border-slate-200 dark:border-slate-800">
+    <footer class="py-12 px-6 hud-footer">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="../../index.html" class="text-xl font-black">PI<span class="text-blue-600">L</span><span class="text-red-600">OU</span></a>
-            <div class="flex items-center space-x-6 text-slate-400">
-                <a href="#" class="hover:text-hibiscus transition" aria-label="YouTube" title="YouTube">
+            <a href="../../index.html" class="text-xl font-black">
+                PI<span style="color:#00d4ff">L</span><span style="color:#ff4d6d">OU</span>
+            </a>
+            <div class="flex items-center space-x-6 text-slate-500">
+                <a href="#" aria-label="YouTube" title="YouTube">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
-                <a href="#" class="hover:text-hibiscus transition" aria-label="Instagram" title="Instagram">
+                <a href="#" aria-label="Instagram" title="Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
             </div>
-            <p class="text-xs text-slate-400">© Pilou</p>
+            <p class="text-xs text-slate-600">© Pilou</p>
         </div>
     </footer>
 
     <script src="../../data/web-data.js"></script>
     <script src="projets-web.js"></script>
-    <script>
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const themeToggleMobile = document.getElementById('themeToggleMobile');
-        const themeIcon = document.getElementById('themeIcon');
-        const themeIconMobile = document.getElementById('themeIconMobile');
-        function toggleTheme() {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                themeIcon.innerText = '🌞';
-                themeIconMobile.innerText = '🌞';
-                localStorage.theme = 'light';
-            } else {
-                html.classList.add('dark');
-                themeIcon.innerText = '🌙';
-                themeIconMobile.innerText = '🌙';
-                localStorage.theme = 'dark';
-            }
-        }
-        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-        if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-            if (themeIcon) themeIcon.innerText = '🌙';
-            if (themeIconMobile) themeIconMobile.innerText = '🌙';
-        }
-        const burgerBtn = document.getElementById('burgerBtn');
-        const closeMenu = document.getElementById('closeMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-        function toggleMenu() { mobileMenu.classList.toggle('open'); document.body.classList.toggle('overflow-hidden'); }
-        if (burgerBtn) burgerBtn.addEventListener('click', toggleMenu);
-        if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-        const canvas = document.getElementById('particles-canvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            function getColors() {
-                return html.classList.contains('dark') ? ['#ff4d6d', '#bc002d', '#475569', '#1e293b'] : ['#ffb7c5', '#ff4d6d', '#002395', '#ff8c00'];
-            }
-            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-            window.addEventListener('resize', resize); resize();
-            class Particle {
-                constructor() { this.reset(); }
-                reset() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 4 + 1;
-                    this.speedX = Math.random() * 1 - 0.5;
-                    this.speedY = Math.random() * 1 + 0.2;
-                    this.color = getColors()[Math.floor(Math.random() * 4)];
-                    this.opacity = Math.random() * 0.5 + 0.2;
-                }
-                update() {
-                    this.y += this.speedY;
-                    this.x += this.speedX;
-                    if (this.y > canvas.height) this.y = -10;
-                    if (this.x > canvas.width) this.x = 0;
-                    if (this.x < 0) this.x = canvas.width;
-                }
-                draw() {
-                    ctx.globalAlpha = this.opacity;
-                    ctx.fillStyle = this.color;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-            for (let i = 0; i < 60; i++) particles.push(new Particle());
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => { p.update(); p.draw(); });
-                requestAnimationFrame(animate);
-            }
-            animate();
-        }
-    </script>
+    <script src="../../assets/js/digital-bg.js"></script>
 </body>
 </html>

@@ -40,22 +40,22 @@ function renderCards() {
 
     videos.forEach((video) => {
         const card = document.createElement('article');
-        card.className = 'group';
+        card.className = 'hud-card group';
         const imgSrc = imageSrc(video.image);
         const thumbBlock = `
-            <div class="relative rounded-3xl overflow-hidden aspect-video shadow-2xl bg-slate-800">
+            <div class="relative overflow-hidden aspect-video" style="background:#0d1525">
                 <img src="${imgSrc}" alt="${escapeHtml(video.title)}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
-                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div class="w-20 h-20 bg-white/20 backdrop-blur rounded-full flex items-center justify-center group-hover:bg-hibiscus transition text-white">
+                <div class="absolute inset-0 flex items-center justify-center" style="background:rgba(0,0,0,0.4)">
+                    <div class="w-16 h-16 flex items-center justify-center transition" style="border:2px solid rgba(0,212,255,0.6);color:#00d4ff">
                         ${playIconSvg}
                     </div>
                 </div>
             </div>
         `;
         const textBlock = `
-            <div class="mt-6">
-                <h3 class="text-2xl font-bold">${escapeHtml(video.title)}</h3>
-                ${video.description ? `<p class="text-slate-500 dark:text-slate-400 mt-2">${escapeHtml(video.description)}</p>` : ''}
+            <div class="p-5">
+                <h3 class="text-xl font-bold">${escapeHtml(video.title)}</h3>
+                ${video.description ? `<p class="mt-2 text-sm" style="color:#64748b">${escapeHtml(video.description)}</p>` : ''}
             </div>
         `;
         if (video.url) {

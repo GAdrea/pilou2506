@@ -39,7 +39,7 @@ function renderCards() {
 
     articles.forEach((article) => {
         const card = document.createElement('article');
-        card.className = 'glass rounded-3xl overflow-hidden group';
+        card.className = 'hud-card group';
         const imgSrc = imageSrc(article.image);
         const url = `article.html?id=${encodeURIComponent(article.id)}`;
         card.innerHTML = `
