@@ -10,6 +10,18 @@
 </head>
 <body class="text-slate-100 min-h-screen">
 
+<div id="page-loader">
+    <div class="loader-scan"></div>
+    <div class="loader-logo">
+        PI<span style="color:#00d4ff">L</span><span style="color:#ff4d6d">OU</span>
+    </div>
+    <div class="loader-bar-track">
+        <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-status">INITIALISATION...</div>
+</div>
+
+
     <canvas id="particles-canvas"></canvas>
 
     <nav class="fixed top-0 w-full z-50 hud-nav-bar">
@@ -105,5 +117,6 @@
     <script src="../../data/blog-data.js"></script>
     <script src="blog.js"></script>
     <script src="../../assets/js/digital-bg.js"></script>
+    <script src="../../assets/js/transitions.js"></script>
 </body>
 </html>
