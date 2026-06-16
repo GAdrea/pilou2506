@@ -50,72 +50,230 @@
     </div>
 
     <main class="pt-28 pb-24 px-6">
-        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+        <div class="max-w-5xl mx-auto">
 
-            <!-- Texte -->
-            <div class="order-2 lg:order-1 space-y-6">
-                <h1 class="text-4xl md:text-5xl font-extrabold section-title">Qui suis-je ?</h1>
-
-                <p class="text-slate-400 leading-relaxed text-lg">
-                    Je m'appelle Pilou. Je suis né à
-                    <span style="color:#ff4d6d" class="font-bold">Paris</span>,
-                    j'ai grandi avec la culture
-                    <span style="color:#3b82f6" class="font-bold">française et martiniquaise</span>
-                    et je vis aujourd'hui au
-                    <span style="color:#bc002d" class="font-bold">Japon</span>.
-                    Mon parcours est un pont permanent entre ces trois univers.
-                </p>
-                <p class="text-slate-400 leading-relaxed text-lg">
-                    Apprenti Développeur web, créateur de contenu vidéo et passionné de culture otaku,
-                    j'utilise le code et la caméra pour raconter mon quotidien d'expatrié, documenter
-                    mes projets et partager ce que j'apprends en chemin.
-                </p>
-                <p class="text-slate-400 leading-relaxed text-lg">Sur ce site, tu trouveras :</p>
-                <ul class="space-y-2 text-slate-400">
-                    <li class="flex items-start gap-2">
-                        <span style="color:#00d4ff" class="mt-1 flex-shrink-0">▸</span>
-                        des <strong class="text-slate-200">articles de blog</strong> sur la vie au Japon et mes réflexions ;
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span style="color:#00d4ff" class="mt-1 flex-shrink-0">▸</span>
-                        des <strong class="text-slate-200">projets web</strong> pour m'améliorer et aider d'autres personnes ;
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span style="color:#00d4ff" class="mt-1 flex-shrink-0">▸</span>
-                        des <strong class="text-slate-200">projets vidéo</strong> où je mélange narration, montage et univers geek.
-                    </li>
-                </ul>
-                <p class="text-slate-400 leading-relaxed text-lg">
-                    Mon objectif : construire un portfolio vivant, qui évolue avec moi, et qui donne envie
-                    à d'autres de se lancer — dans le code, la création ou l'aventure à l'étranger.
-                </p>
-            </div>
-
-            <!-- Colonne droite : image + flags -->
-            <div class="order-1 lg:order-2">
-                <div class="hud-card p-6 md:p-8 flex flex-col items-center gap-6">
-                    <img
-                        src="/assets/img/posts/1764651106820.jpg"
-                        alt="Pilou"
-                        class="w-48 h-48 object-cover"
-                        style="border:1px solid rgba(0,212,255,0.25)"
-                    />
+            <!-- ═══ HERO ═══ -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-5xl font-extrabold section-title">Qui suis-je ?</h1>
+                    <p class="text-slate-400 leading-relaxed text-lg">
+                        Je m'appelle <strong class="text-slate-100">Grégorhy</strong>, dit Pilou.
+                        Né à <span style="color:#ff4d6d" class="font-bold">Paris</span> de racines
+                        <span style="color:#ff8c00" class="font-bold">martiniquaises</span>,
+                        expatrié au <span style="color:#bc002d" class="font-bold">Japon</span> depuis 2014.
+                        Mon parcours est un pont permanent entre ces trois univers.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        Après 5 ans et 8 mois dans l'hôtellerie de luxe, j'ai tout plaqué pour me lancer
+                        dans le développement web et la création de contenu — lettre de démission dans une
+                        enveloppe de funérailles à l'appui. ⚰️
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="../blog/blog.html" class="hud-btn hud-btn-primary">Lire le blog</a>
+                        <a href="../contact/contact.html" class="hud-btn" style="border-color:rgba(0,212,255,0.3);color:#94a3b8">Me contacter</a>
+                    </div>
+                </div>
+                <div class="hud-card p-8 flex flex-col items-center gap-6">
+                    <img src="/assets/img/posts/1764651106820.jpg" alt="Pilou"
+                         class="w-40 h-40 object-cover rounded-full"
+                         style="border:2px solid rgba(0,212,255,0.4)" />
                     <div class="w-full grid grid-cols-3 gap-3 text-center">
                         <div class="hud-card py-3">
                             <div class="text-2xl mb-1">🇲🇶</div>
-                            <div class="hud-stat">Origine</div>
+                            <div class="hud-stat text-xs">Origine</div>
                         </div>
                         <div class="hud-card py-3">
                             <div class="text-2xl mb-1">🇫🇷</div>
-                            <div class="hud-stat">Culture</div>
+                            <div class="hud-stat text-xs">Culture</div>
                         </div>
                         <div class="hud-card py-3">
                             <div class="text-2xl mb-1">🇯🇵</div>
-                            <div class="hud-stat">Présent</div>
+                            <div class="hud-stat text-xs">Présent</div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- ═══ STATS ═══ -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
+                <div class="hud-card p-6 text-center reveal">
+                    <div class="text-4xl font-black mb-1" style="color:#00d4ff" data-count="12">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">ans au Japon</div>
+                </div>
+                <div class="hud-card p-6 text-center reveal">
+                    <div class="text-4xl font-black mb-1" style="color:#ff4d6d" data-count="17">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">articles publiés</div>
+                </div>
+                <div class="hud-card p-6 text-center reveal">
+                    <div class="text-4xl font-black mb-1" style="color:#ff8c00" data-count="3">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">langues parlées</div>
+                </div>
+                <div class="hud-card p-6 text-center reveal">
+                    <div class="text-4xl font-black mb-1" style="color:#bc002d" data-count="100">0</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-widest">% motivé</div>
+                </div>
+            </div>
+
+            <!-- ═══ TIMELINE ═══ -->
+            <section class="mb-24">
+                <h2 class="text-2xl font-bold mb-12 section-title">Mon parcours</h2>
+                <div class="relative" id="timeline">
+
+                    <!-- Ligne verticale -->
+                    <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px"
+                         style="background:linear-gradient(to bottom,transparent,rgba(0,212,255,0.4),transparent)"></div>
+
+                    <!-- Événements -->
+                    <div class="space-y-10">
+
+                        <div class="timeline-item reveal flex md:flex-row-reverse gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(0,212,255,0.5)">🌴</div>
+                            <div class="hud-card p-5 md:w-1/2 ml-4 md:ml-0 md:mr-8">
+                                <span class="text-xs font-bold" style="color:#00d4ff">Enfance</span>
+                                <h3 class="font-bold text-lg mt-1">Paris × Martinique</h3>
+                                <p class="text-slate-400 text-sm mt-2">Bercé par le rétrogaming (Sonic, Mario, Megadrive), les mangas (Naruto, Dragon Ball) et la double culture franco-antillaise.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item reveal flex gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2 md:pr-8">
+                                <div class="hud-card p-5">
+                                    <span class="text-xs font-bold" style="color:#ff8c00">2010–2013</span>
+                                    <h3 class="font-bold text-lg mt-1">INALCO — Japonais</h3>
+                                    <p class="text-slate-400 text-sm mt-2">3 ans d'études intensives à l'Institut National des Langues et Civilisations Orientales. Kanjis, examens en japonais, la voie de la tortue.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(255,140,0,0.5)">📖</div>
+                            <div class="hud-card p-5 md:hidden ml-4">
+                                <span class="text-xs font-bold" style="color:#ff8c00">2010–2013</span>
+                                <h3 class="font-bold text-lg mt-1">INALCO — Japonais</h3>
+                                <p class="text-slate-400 text-sm mt-2">3 ans d'études intensives. Kanjis, examens en japonais, la voie de la tortue.</p>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <div class="timeline-item reveal flex md:flex-row-reverse gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(188,0,45,0.5)">⛩️</div>
+                            <div class="hud-card p-5 md:w-1/2 ml-4 md:ml-0 md:mr-8">
+                                <span class="text-xs font-bold" style="color:#bc002d">2014</span>
+                                <h3 class="font-bold text-lg mt-1">Fukuoka — Le coup de foudre</h3>
+                                <p class="text-slate-400 text-sm mt-2">Stage à l'Institut Français de Fukuoka. La ville devait être Tokyo, le hasard a tout changé. 6 mois plus tard, le coup de foudre était scellé.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item reveal flex gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2 md:pr-8">
+                                <div class="hud-card p-5">
+                                    <span class="text-xs font-bold" style="color:#ff4d6d">2015–2016</span>
+                                    <h3 class="font-bold text-lg mt-1">Professeur de FLE & Animateur culturel</h3>
+                                    <p class="text-slate-400 text-sm mt-2">Enseignement du français à des élèves japonais. Interventions dans écoles, collèges et lycées. De la grammaire au nucléaire français.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(255,77,109,0.5)">🎤</div>
+                            <div class="hud-card p-5 md:hidden ml-4">
+                                <span class="text-xs font-bold" style="color:#ff4d6d">2015–2016</span>
+                                <h3 class="font-bold text-lg mt-1">Professeur de FLE & Animateur culturel</h3>
+                                <p class="text-slate-400 text-sm mt-2">Enseignement du français. Interventions dans écoles, collèges et lycées.</p>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <div class="timeline-item reveal flex md:flex-row-reverse gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(100,116,139,0.5)">🏨</div>
+                            <div class="hud-card p-5 md:w-1/2 ml-4 md:ml-0 md:mr-8">
+                                <span class="text-xs font-bold" style="color:#64748b">2017–2023</span>
+                                <h3 class="font-bold text-lg mt-1">Hôtellerie de luxe — Les années de nuit</h3>
+                                <p class="text-slate-400 text-sm mt-2">5 ans et 8 mois dans l'un des plus grands hôtels du Japon. Nuits solitaires, management toxique, valises à 3h du matin. Et des heures creuses utilisées pour apprendre à coder.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item reveal flex gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2 md:pr-8">
+                                <div class="hud-card p-5">
+                                    <span class="text-xs font-bold" style="color:#00d4ff">2024</span>
+                                    <h3 class="font-bold text-lg mt-1">La Démission Épique ⚰️</h3>
+                                    <p class="text-slate-400 text-sm mt-2">Lettre rédigée par l'IA, glissée dans une enveloppe de funérailles japonaise. La manager : "C'est une enveloppe pour les morts." Pilou : "Ça tombe bien, c'est l'enterrement de ma carrière ici."</p>
+                                </div>
+                            </div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(0,212,255,0.8);box-shadow:0 0 12px rgba(0,212,255,0.3)">🚀</div>
+                            <div class="hud-card p-5 md:hidden ml-4">
+                                <span class="text-xs font-bold" style="color:#00d4ff">2024</span>
+                                <h3 class="font-bold text-lg mt-1">La Démission Épique ⚰️</h3>
+                                <p class="text-slate-400 text-sm mt-2">Lettre IA + enveloppe de funérailles. "C'est l'enterrement de ma carrière ici." 🥂</p>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <div class="timeline-item reveal flex md:flex-row-reverse gap-8 md:gap-0 items-start">
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div class="timeline-dot flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl z-10 md:-mx-6"
+                                 style="background:#050a12;border:2px solid rgba(255,140,0,0.8);box-shadow:0 0 12px rgba(255,140,0,0.3)">💻</div>
+                            <div class="hud-card p-5 md:w-1/2 ml-4 md:ml-0 md:mr-8">
+                                <span class="text-xs font-bold" style="color:#ff8c00">2025–2026</span>
+                                <h3 class="font-bold text-lg mt-1">Dev Web & Créateur de contenu</h3>
+                                <p class="text-slate-400 text-sm mt-2">Du portage de valises au portage de code. Développement web assisté par l'IA, projets Shopify, ce portfolio — et une caméra pour raconter tout ça.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ COMPÉTENCES ═══ -->
+            <section class="mb-24">
+                <h2 class="text-2xl font-bold mb-10 section-title">Compétences</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+
+                    <!-- Langues -->
+                    <div class="reveal">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Langues</h3>
+                        <div class="space-y-5" id="langSkills">
+                            <div data-lang="Français 🇫🇷" data-pct="100" data-color="#002395"></div>
+                            <div data-lang="Japonais 🇯🇵" data-pct="85" data-color="#bc002d"></div>
+                            <div data-lang="Anglais 🇬🇧" data-pct="90" data-color="#ff8c00"></div>
+                            <div data-lang="Créole 🇲🇶" data-pct="45" data-color="#ff4d6d"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tech -->
+                    <div class="reveal">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Tech & Outils</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">HTML5 / CSS3</span>
+                            <span class="skill-badge">JavaScript ES6+</span>
+                            <span class="skill-badge">Tailwind CSS</span>
+                            <span class="skill-badge">Shopify / Liquid</span>
+                            <span class="skill-badge">Power Automate</span>
+                            <span class="skill-badge">Premiere Pro</span>
+                            <span class="skill-badge">After Effects</span>
+                            <span class="skill-badge">Git / GitHub</span>
+                            <span class="skill-badge">LLM & Prompting</span>
+                            <span class="skill-badge">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ CTA ═══ -->
+            <section class="hud-card p-10 text-center reveal">
+                <p class="text-slate-400 mb-2 text-sm uppercase tracking-widest">Envie d'en savoir plus ?</p>
+                <h2 class="text-2xl font-bold mb-6">On collabore ?</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="../blog/blog.html" class="hud-btn hud-btn-primary">Lire le blog</a>
+                    <a href="../web/projets-web.html" class="hud-btn" style="border-color:rgba(255,140,0,0.4);color:#ff8c00">Voir les projets</a>
+                    <a href="../contact/contact.html" class="hud-btn" style="border-color:rgba(0,212,255,0.3);color:#94a3b8">Me contacter</a>
+                </div>
+            </section>
+
         </div>
     </main>
 
