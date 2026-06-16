@@ -21,6 +21,7 @@
 window.BLOG_ARTICLES = [
   {
     id: "Sonic",
+    category: "Gaming",
     title: "Sonic le héros de ma vie !",
     image: "assets/img/posts/1772873413229.png",
     description:
@@ -66,6 +67,7 @@ window.BLOG_ARTICLES = [
   //Article suivant
   {
     id: "Butsukari",
+    category: "Société",
     title: "Une (autre) triste réalité du Japon",
     image: "assets/img/posts/1772557605962.png",
     description: "Le phénomène existe malheureusement...",
@@ -103,6 +105,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
   //Article suivant
   {
     id: "Changement de carrière",
+    category: "Hôtellerie",
     title: "Je devrais envisager un changement de carrière",
     image: "assets/img/posts/1772177998756.png",
     description:
@@ -137,6 +140,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
   //Article suivant
   {
     id: "MetroidPrime",
+    category: "Gaming",
     title: "Metroid Prime sur GameCube. Le coup de foudre !",
     image: "assets/img/posts/17716635736951.png",
     description: "Une des mes licences favorites !.",
@@ -168,6 +172,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
   //Article suivant
   {
     id: "bountyhunter",
+    category: "Société",
     title: "Bientôt ma tête mise à prix ?",
     image: "assets/img/posts/1771370392077.png",
     description: "Y'a des moments, faut savoir s'arrêter quand même...",
@@ -205,6 +210,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
   //article suivant
   {
     id: "reconversion professionnelle",
+    category: "Carrière",
     title: "Il n'est jamais trop tard pour changer de carrière",
     image: "/assets/img/posts/1771088738054.png",
     description: "Le déclic qui a changé ma vie",
@@ -239,6 +245,7 @@ Même si vous échouez, il en restera toujours quelque chose. Et croyez-moi, c'e
 
   {
     id: "inalco",
+    category: "Japon",
     title: "Mes meilleures années à l'université",
     image: "/assets/img/posts/1770713031580.png",
     description: "On dirait pas comme ça mais je vous jure que c'est vrai !",
@@ -273,6 +280,7 @@ Même si vous échouez, il en restera toujours quelque chose. Et croyez-moi, c'e
   //Article suivant
   {
     id: "demission",
+    category: "Hôtellerie",
     title: "La mort de ma carrière. (Bon débarras !)",
     image: "/assets/img/posts/1770536430634.png",
     description:
@@ -312,6 +320,7 @@ Je suis parti comme je suis rentré : dans l'indifférence générale. Pas de po
   //Article suivant
   {
     id: "Fukuoka",
+    category: "Japon",
     title: "Fukuoka, une ville où il fait bon vivre",
     image: "assets/img/posts/1770182783755.png",
     description:
@@ -352,6 +361,7 @@ Je suis parti comme je suis rentré : dans l'indifférence générale. Pas de po
 
   {
     id: "tournoismash",
+    category: "Gaming",
     title: "Mon premier tournoi de Smash Bros Melee",
     image: "assets/img/posts/1770173203134.png",
     description: "Une expérience unique et inoubliable !",
@@ -382,6 +392,7 @@ Le plus drôle ? Un joueur s'est plaint à mon rival que je le « sous-estimais 
 
   {
     id: "franceoujapon",
+    category: "Japon",
     title: "La France ou le Japon ?",
     image: "assets/img/posts/1769992083148.png",
     description: "Entre les deux, mon coeur balance.",
@@ -417,6 +428,7 @@ Et aujourd'hui, je suis fatigué.
   //Article suivant
   {
     id: "coup de gueule",
+    category: "Société",
     title: "Mon premier coup de gueule au Japon.",
     image: "/assets/img/posts/1764849244855.jpg",
     description: "Et loin d'être le seul...",
@@ -451,6 +463,7 @@ Et aujourd'hui, je suis fatigué.
   //Article suivant
   {
     id: "Second métier",
+    category: "Carrière",
     title: "Mon deuxième métier par rapport à l'enseignement.",
     image: "/assets/img/posts/1768158884660.jpg",
     description: "Faire découvrir la France aux jeunes Japonais.",
@@ -488,6 +501,7 @@ Et aujourd'hui, je suis fatigué.
   //Article suivant
   {
     id: "Hôtel",
+    category: "Hôtellerie",
     title: "L'hôtellerie de luxe au Japon",
     image: "/assets/img/posts/hotelpost.png",
     description: "Le rêve des uns, le cauchemar des autres...",
@@ -533,6 +547,7 @@ Et aujourd'hui, je suis fatigué.
   //Article suivant
   {
     id: "martinique",
+    category: "Antilles",
     title: "Mes racines antillaises",
     image: "/assets/img/posts/1767992050685.jpg",
     description: "Parce que je n'oublie pas d'où je viens.",
@@ -562,6 +577,7 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
   //Article suivant
   {
     id: "Jeux et Mangas",
+    category: "Gaming",
     title: "Comment mes passions m'ont mené au Japon ?",
     image: "assets/img/posts/1767949329427.jpg",
     description: "Parfois, il suffit d'un rien pour aller loin",
@@ -591,6 +607,7 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
   //Article suivant
   {
     id: "Prof de français",
+    category: "Carrière",
     title: "Moi , professeur de français",
     image: "assets/img/posts/1767770770640.jpg",
     description: "Mon expérience de professeur de FLE au Japon.",
@@ -616,6 +633,7 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
   //Article suivant
   {
     id: "Enchanté",
+    category: "Japon",
     title: "Ravi de vous rencontrer !",
     image: "assets/img/posts/Gemini_Generated_Image_lornm2lornm2lorn.png",
     description: "Une petite présentation de ma modeste personne.",
