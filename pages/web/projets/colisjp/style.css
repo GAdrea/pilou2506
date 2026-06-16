@@ -1,0 +1,667 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 0 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+  min-width: 1200px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 50px;
+}
+th:nth-child(2),
+td:nth-child(2) {
+  width: 80px;
+}
+th:nth-child(3),
+td:nth-child(3) {
+  width: 180px;
+}
+th:nth-child(4),
+td:nth-child(4) {
+  width: 120px;
+}
+th:nth-child(5),
+td:nth-child(5) {
+  width: 100px;
+}
+th:nth-child(6),
+td:nth-child(6) {
+  width: 140px;
+}
+th:nth-child(7),
+td:nth-child(7) {
+  width: 80px;
+}
+th:nth-child(8),
+td:nth-child(8) {
+  width: 100px;
+}
+th:nth-child(9),
+td:nth-child(9) {
+  width: 100px;
+}
+th:nth-child(10),
+td:nth-child(10) {
+  width: 100px;
+}
+th:nth-child(11),
+td:nth-child(11) {
+  width: 100px;
+}
+th:nth-child(12),
+td:nth-child(12) {
+  width: 120px;
+}
+th:nth-child(13),
+td:nth-child(13) {
+  width: 160px;
+}
+th:nth-child(14),
+td:nth-child(14) {
+  width: 140px;
+}
+th:nth-child(15),
+td:nth-child(15) {
+  width: 140px;
+}
+
+th {
+  background-color: #f4f4f4;
+  white-space: nowrap;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 95%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.payment-mode {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+select.payment-mode:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+.price-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.price-container input {
+  width: calc(95% - 25px);
+  padding: 8px;
+}
+
+.price-container span {
+  position: absolute;
+  right: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* 日付入力フィールドのスタイル */
+.date-input {
+  display: none;
+}
+
+/* 日付表示のスタイル */
+.date-display {
+  display: none;
+}
+
+td {
+  position: relative;
+}
+
+/* カレンダー入力を半透明にして、カスタム表示を見えるようにする */
+input[type="date"] {
+  position: relative;
+  z-index: 1;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  padding: 2px;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* カレンダーアイコンのカスタマイズ */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  padding: 0;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  .payment-mode {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  input[type="date"] {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .staff-select {
+    padding: 6px;
+    font-size: 14px;
+  }
+}
+
+@media print {
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  .payment-mode {
+    border: none;
+  }
+
+  input[type="date"] {
+    border: none;
+  }
+
+  .date-display {
+    background: none;
+  }
+
+  input[type="date"] {
+    color: transparent;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  .staff-select {
+    border: none;
+  }
+}
+
+/* 合計金額フィールドのスタイル */
+.total-price {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.total-price:focus {
+  outline: none;
+}
+
+/* 無効化された入力フィールドのスタイル */
+.disabled-input {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.disabled-input:focus {
+  outline: none;
+}
+
+/* 合計金額と釣銭フィールドのスタイル */
+.total-price,
+.change-output {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.total-price:focus,
+.change-output:focus {
+  outline: none;
+}
+
+/* Style uniforme pour tous les selects */
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+select:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Style spécifique pour le select de la colonne 担当者 */
+.staff-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 14px;
+}
+
+.staff-select:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Style pour le champ de quantité */
+.box-quantity {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.box-quantity:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Style pour le bouton d'ajout de colis */
+.add-package-btn {
+  padding: 5px 10px;
+  border: 2px solid #2196f3;
+  background-color: white;
+  color: #2196f3;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.add-package-btn:hover {
+  background-color: #2196f3;
+  color: white;
+}
+
+.add-package-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+}
+
+/* Style pour les champs en lecture seule */
+.readonly-input {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  border-color: #dee2e6;
+}
+
+.readonly-input:focus {
+  outline: none;
+  border-color: #dee2e6;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.clear-btn:hover {
+  background-color: #c82333;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+}
+
+.print-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.print-btn:hover {
+  background-color: #138496;
+}
+
+.transfer-btn {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.transfer-btn:hover {
+  background-color: #5a32a3;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #eee;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.current-date {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Style pour les champs verrouillés */
+.locked-input {
+  background-color: #f8f9fa !important;
+  border-color: #dee2e6 !important;
+  color: #495057 !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+select.locked-input {
+  background-color: #f8f9fa !important;
+  border-color: #dee2e6 !important;
+  color: #495057 !important;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.locked-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Style pour la case à cocher lorsque la ligne est verrouillée */
+input[type="checkbox"]:checked {
+  accent-color: #28a745;
+}
+
+.transfer-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transfer-container select {
+  min-width: 150px;
+}
+
+.staff-selector-container {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  gap: 10px;
+}
+
+.staff-selector-container label {
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.staff-selector-container select {
+  min-width: 200px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Style pour le contrôle des cases à cocher */
+.checkbox-control {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #5a6268;
+}
+
+.toggle-btn.active {
+  background-color: #28a745;
+}
+
+.toggle-btn.active:hover {
+  background-color: #218838;
+}
+
+/* Style pour le conteneur de nom */
+.name-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.name-container input {
+  width: calc(100% - 25px);
+  padding-right: 25px;
+}
+
+.name-suffix {
+  position: absolute;
+  right: 5px;
+  font-weight: normal;
+  color: #333;
+  pointer-events: none;
+}
+
+/* Style pour les messages temporaires */
+.temporary-message {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.temporary-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.temporary-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.temporary-message.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.temporary-message.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.temporary-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Style pour les lignes qui ont à la fois des frais de transport et des frais de matériaux */
+tr.mixed-item {
+  background-color: #f0f0ff; /* Violet très clair */
+  position: relative;
+}
+
+tr.mixed-item::after {
+  content: "運賃・資材";
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 10px;
+  color: #8a2be2; /* Violet */
+  background-color: rgba(240, 240, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* Style pour le copyright */
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+@media print {
+  .copyright {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: center;
+    display: block;
+  }
+}

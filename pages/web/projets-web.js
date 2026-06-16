@@ -16,6 +16,12 @@ function imageSrc(path) {
     return BASE_URL + '/' + path.replace(/^\//, '');
 }
 
+function resolveUrl(path) {
+    if (!path || path === '#') return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('//')) return path;
+    return BASE_URL + '/' + path.replace(/^\//, '');
+}
+
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
@@ -40,6 +46,7 @@ function renderCards() {
         const card = document.createElement('article');
         card.className = 'hud-card group';
         const imgSrc = imageSrc(project.image);
+        const demoUrl = resolveUrl(project.demoUrl || project.url);
         const tagsHtml = Array.isArray(project.tags) && project.tags.length
             ? `<div class="flex gap-2 mt-3 flex-wrap">${project.tags.map(t => `<span class="hud-tag">${escapeHtml(t)}</span>`).join('')}</div>`
             : '';
@@ -51,6 +58,7 @@ function renderCards() {
                 <h3 class="text-xl font-bold">${escapeHtml(project.title)}</h3>
                 ${project.description ? `<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">${escapeHtml(project.description)}</p>` : ''}
                 ${tagsHtml}
+                ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink mt-4">Voir la démo</a>` : ''}
             </div>
         `;
         container.appendChild(card);
