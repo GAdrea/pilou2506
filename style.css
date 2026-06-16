@@ -420,3 +420,110 @@ body::after {
     transform: translateY(0);
 }
 .timeline-item.reveal { transition-delay: 0.1s; }
+
+/* ════════════════════════════════════════════════════════════
+   PAGE LOADER & TRANSITIONS
+   ════════════════════════════════════════════════════════════ */
+
+/* Corps de page — invisible par défaut, JS ajoute .page-loaded */
+body {
+    opacity: 0;
+}
+body.page-loaded {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+body.page-exit {
+    opacity: 0 !important;
+    transform: translateY(-10px);
+    transition: opacity 0.35s ease, transform 0.35s ease !important;
+}
+
+/* ── Loader overlay ── */
+#page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #050a12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: opacity 0.5s ease;
+}
+#page-loader.loader-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+#page-loader.loader-gone {
+    display: none;
+}
+
+/* Coins HUD */
+#page-loader::before,
+#page-loader::after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+}
+#page-loader::before {
+    top: 24px; left: 24px;
+    border-top: 2px solid rgba(0,212,255,0.5);
+    border-left: 2px solid rgba(0,212,255,0.5);
+}
+#page-loader::after {
+    bottom: 24px; right: 24px;
+    border-bottom: 2px solid rgba(0,212,255,0.5);
+    border-right: 2px solid rgba(0,212,255,0.5);
+}
+
+/* Logo loader */
+.loader-logo {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ligne de scan */
+.loader-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,212,255,0.6), transparent);
+    animation: scanLine 1.2s ease-in-out forwards;
+}
+@keyframes scanLine {
+    0%   { top: 0%;   opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Barre de progression loader */
+.loader-bar-track {
+    width: 200px;
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.loader-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00d4ff, #ff4d6d);
+    border-radius: 2px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Texte status */
+.loader-status {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0,212,255,0.5);
+    font-family: 'Poppins', monospace;
+}
