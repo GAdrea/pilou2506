@@ -23,7 +23,7 @@ window.BLOG_ARTICLES = [
     id: "efforts-ne-trahissent-jamais",
     category: "Carrière",
     title: "Les efforts ne trahissent jamais !",
-    image: "assets/img/posts/1768154325287.jpg",
+    image: "assets/img/posts/1781334702125.png",
     description: "Quand l'initiative se heurte au mur de l'inertie.",
     date: "2026-06-15",
     content: `
@@ -61,7 +61,7 @@ window.BLOG_ARTICLES = [
     id: "japon-a-lille-wakuwaku",
     category: "Japon",
     title: "Le Japon à Lille ! ça vaut le détour !",
-    image: "",
+    image: "assets/img/posts/1778232908742.png",
     description: "Une asso lilloise qui fait découvrir le vrai Japon.",
     date: "2026-05-08",
     content: `
@@ -96,7 +96,7 @@ window.BLOG_ARTICLES = [
     id: "visa-gijinkoku-2026",
     category: "Japon",
     title: "Toucher le fond et creuser encore",
-    image: "",
+    image: "assets/img/posts/1777423195742.png",
     description: "Le visa qui veut des bras, pas des gens.",
     date: "2026-04-30",
     content: `
@@ -130,7 +130,7 @@ window.BLOG_ARTICLES = [
     id: "nuitard-formation-autodidacte",
     category: "Hôtellerie",
     title: "Être payé pour étudier, c'est pas si mal en fait !",
-    image: "",
+    image: "assets/img/posts/1777025133680.png",
     description: "Ce qu'on fait vraiment quand on travaille la nuit à l'hôtel.",
     date: "2026-04-25",
     content: `
@@ -165,7 +165,7 @@ window.BLOG_ARTICLES = [
     id: "omotenashi-rythme-effrene",
     category: "Hôtellerie",
     title: "Un rythme effréné et destructeur",
-    image: "",
+    image: "assets/img/posts/1775903217948.png",
     description: "Le prix caché de l'excellence du service japonais.",
     date: "2026-04-12",
     content: `
@@ -199,7 +199,7 @@ window.BLOG_ARTICLES = [
     id: "confessions-intimes",
     category: "Société",
     title: "Confessions (pas trop) intimes",
-    image: "",
+    image: "assets/img/posts/1774806564593.png",
     description: "Le CV (presque) complet du type derrière le blog.",
     date: "2026-04-02",
     content: `
@@ -235,7 +235,7 @@ window.BLOG_ARTICLES = [
     id: "tales-of-anglais",
     category: "Gaming",
     title: "Tales of : Mon meilleur professeur d'anglais",
-    image: "",
+    image: "assets/img/posts/1774490198695.png",
     description: "Comment ma PSP m'a sauvé en cours d'anglais.",
     date: "2026-03-26",
     content: `
@@ -265,7 +265,7 @@ window.BLOG_ARTICLES = [
     id: "zelda-legende",
     category: "Gaming",
     title: "Une autre de mes licences préférées ! Quelle légende !",
-    image: "",
+    image: "assets/img/posts/1774323805268.png",
     description: "L'autre licence qui a fait pleurer (et dépenser) mon portefeuille.",
     date: "2026-03-24",
     content: `
@@ -298,7 +298,7 @@ window.BLOG_ARTICLES = [
     id: "sommet-takaichi-trump",
     category: "Japon",
     title: "Nan sérieusement, fallait oser !",
-    image: "",
+    image: "assets/img/posts/1774067311192.png",
     description: "Quand la diplomatie ressemble à une capitulation polie.",
     date: "2026-03-21",
     content: `
@@ -334,7 +334,7 @@ window.BLOG_ARTICLES = [
     id: "jesta-visa-prix-or",
     category: "Japon",
     title: "Il serait peut-être temps de partir",
-    image: "",
+    image: "assets/img/posts/1773417901570.png",
     description: "JESTA, visa à 200 000 yens... Sanae frappe encore.",
     date: "2026-03-17",
     content: `
@@ -367,7 +367,7 @@ window.BLOG_ARTICLES = [
     id: "communaute-francaise-fukuoka",
     category: "Société",
     title: "Une communauté bienveillante",
-    image: "",
+    image: "assets/img/posts/1773198299391.png",
     description: "Le secret pour survivre à l'expatriation : ne pas se couper de ses racines.",
     date: "2026-03-11",
     content: `
