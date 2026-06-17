@@ -10,51 +10,6 @@
 </head>
 <body class="text-slate-100 min-h-screen">
 
-<div id="page-loader">
-    <div class="loader-grid"></div>
-
-    <!-- Coins HUD -->
-    <div class="loader-corner tl"><svg viewBox="0 0 64 64" fill="none"><path d="M2 22V2H22" stroke="#00d4ff" stroke-width="2"/><path d="M2 36V62" stroke="#00d4ff" stroke-width="1" opacity="0.4"/><path d="M36 2H62" stroke="#00d4ff" stroke-width="1" opacity="0.4"/></svg></div>
-    <div class="loader-corner tr"><svg viewBox="0 0 64 64" fill="none"><path d="M2 22V2H22" stroke="#00d4ff" stroke-width="2"/><path d="M2 36V62" stroke="#00d4ff" stroke-width="1" opacity="0.4"/><path d="M36 2H62" stroke="#00d4ff" stroke-width="1" opacity="0.4"/></svg></div>
-    <div class="loader-corner bl"><svg viewBox="0 0 64 64" fill="none"><path d="M2 22V2H22" stroke="#ff4d6d" stroke-width="2"/><path d="M2 36V62" stroke="#ff4d6d" stroke-width="1" opacity="0.4"/><path d="M36 2H62" stroke="#ff4d6d" stroke-width="1" opacity="0.4"/></svg></div>
-    <div class="loader-corner br"><svg viewBox="0 0 64 64" fill="none"><path d="M2 22V2H22" stroke="#ff4d6d" stroke-width="2"/><path d="M2 36V62" stroke="#ff4d6d" stroke-width="1" opacity="0.4"/><path d="M36 2H62" stroke="#ff4d6d" stroke-width="1" opacity="0.4"/></svg></div>
-
-    <!-- Métadonnées techniques -->
-    <div class="loader-meta top-left">SYS://PILOU_PORTFOLIO<br>NODE: FUKUOKA-JP</div>
-    <div class="loader-meta bottom-right">LAT 33.5902° N<br>LON 130.4017° E</div>
-
-    <!-- Anneau central + logo -->
-    <div class="loader-ring-wrap">
-        <svg viewBox="0 0 160 160">
-            <circle class="ring-track"    cx="80" cy="80" r="70" />
-            <circle class="ring-progress" id="loaderRingProgress" cx="80" cy="80" r="70" transform="rotate(-90 80 80)" />
-            <circle class="ring-spin"     cx="80" cy="80" r="58" />
-            <g class="ring-ticks">
-                <circle cx="80" cy="80" r="76" fill="none" stroke="rgba(0,212,255,0.15)" stroke-width="1" stroke-dasharray="1 11" />
-            </g>
-        </svg>
-        <div class="loader-core">
-            <div class="loader-logo glitch" id="loaderLogo">
-                PI<span style="color:#00d4ff">L</span><span style="color:#ff4d6d">OU</span>
-            </div>
-            <div class="loader-pct" id="loaderPct">0%</div>
-        </div>
-    </div>
-
-    <!-- Console de logs -->
-    <div class="loader-console" id="loaderConsole"></div>
-
-    <!-- Barre + statut -->
-    <div class="loader-bar-track">
-        <div class="loader-bar-fill" id="loaderBarFill"></div>
-    </div>
-    <div class="loader-status-row">
-        <span class="loader-status" id="loaderStatus">INITIALISATION...</span>
-        <span class="loader-cursor"></span>
-    </div>
-</div>
-
-
     <canvas id="particles-canvas"></canvas>
 
     <nav class="fixed top-0 w-full z-50 hud-nav-bar">
@@ -126,6 +81,5 @@
     <script src="../../data/web-data.js"></script>
     <script src="projets-web.js"></script>
     <script src="../../assets/js/digital-bg.js"></script>
-    <script src="../../assets/js/transitions.js"></script>
 </body>
 </html>
