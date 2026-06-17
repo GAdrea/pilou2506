@@ -425,6 +425,462 @@ Et aujourd'hui, je suis fatigué.
 
        `,
   },
+
+  //Article suivant
+  {
+    id: "formation-harcelement",
+    category: "Hôtellerie",
+    title: "La déception déçue",
+    image: "assets/img/posts/1769880008559.png",
+    description: "Une formation sur le harcèlement qui finit en sieste collective...",
+    date: "2026-02-01",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎓 Ma "formation" sur le harcèlement au Japon 🇯🇵</strong></p>
+
+<p>Après mes derniers posts un peu sérieux (et coups de gueule, oui je sais), j'ai décidé qu'on allait rigoler un peu.</p>
+
+<p>Le contexte :</p>
+<p>En 2020 (mieux vaut tard que jamais), le gouvernement japonais fait ENFIN entrer en vigueur une loi contre le harcèlement moral au travail.</p>
+<p>Mon hôtel de l'époque, très consciencieux, organise donc une campagne de sensibilisation. Une seule. La première. On sent déjà le niveau d'engagement... 📉</p>
+
+<p>L'expertise de haut vol 🎤 :</p>
+<p>La session dure 45 minutes. Je m'attendais à une analyse psychologique, des cas concrets, de l'interaction... Que nenni ! Le patron débarque avec son escorte, s'installe, et nous lit purement et simplement son texte dont le contenu pourrait sortir tout droit de Wikipédia. 📖🤯</p>
+<p>Je ne plaisante pas. Un type qui gagne trois fois mon salaire nous a fait un exposé de collégien paresseux, sans aucune interaction, plat comme un tatami. C'était long. C'était chiant et sans aucune surprise, pas du tout instructif...</p>
+
+<p>Les opportunistes du sommeil 😴 :</p>
+<p>Heureusement, mes collègues sont des génies du pragmatisme. Au fond de la salle, c'était la sieste olympique. Et franchement, ils avaient raison : 45 minutes de pause gratuite, ça ne se refuse pas !</p>
+<p>Le pire ? Pour les réunions suivantes, ils ont carrément posté des "surveillants de sieste". Par contre, demander à l'équipe de nuit de rester après 15 heures de boulot pour écouter Wikipédia, ça, ça ne choque personne. Cohérence, quand tu nous tiens... 🙄🌙</p>
+
+<p>Le fond du problème :</p>
+<p>Au-delà de la blague, c'est triste. Le harcèlement moral et la surcharge de travail détruisent la productivité et la reproductivité du pays (n'est-ce pas Sanae ? Je t'avais dit que j'en avais pas fini avec toi 👋).</p>
+<p>Mais pour mon entreprise, c'était juste une case à cocher sur une "to-do list" gouvernementale.</p>
+
+<p>L'intention était là et elle était bonne, très bonne même, mais l'exécution était un désastre. Surtout qu'au final, ça n'a servi à rien...</p>
+
+<p>Au moins, j'aurai bien rigolé 🤣</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "tourisme-irrespect",
+    category: "Japon",
+    title: "Vous vous croyez où sérieusement ?!",
+    image: "assets/img/posts/1769792263447.png",
+    description: "Le prix de l'irrespect de certains touristes au Japon.",
+    date: "2026-01-31",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>Tourisme ou Cirque ? Le prix de l'irrespect au Japon</strong></p>
+
+<p>Bon, j'ai beaucoup tapé sur Sanae et ses mesures d'immigration dernièrement (et t'inquiète, le dossier n'est pas clos !), mais pour être tout à fait honnête, il faut aussi regarder le niveau des "invités" que le Japon reçoit depuis la réouverture des frontières. 🛬</p>
+
+<p>On pourrait crier au racisme primaire pour expliquer l'hostilité croissante, mais la réalité est bien plus... "nuisible". Je pèse mes mots pour ne pas froisser l'algorithme, mais on parle ici d'une espèce bien particulière : le streameur en quête de clics. 🖱️💀</p>
+
+<p>Le palmarès de la bêtise humaine :</p>
+<p>Entre ceux qui hurlent dans le métro comme s'ils étaient seuls dans leur salon et ceux qui importunent les passants pour faire du chiffre, on avait déjà un beau niveau. Mais la palme revient à ceux qui ont confondu les Torii (ces portails sacrés, rappelons-le) avec des barres de traction pour leur séance de musculation. 💪⛩️</p>
+<p>Sérieusement, on en est là ?</p>
+
+<p>Après ce qu'on a vécu en France avec Charlie Hebdo pour de simples dessins, j'aimerais bien savoir comment vous réagiriez si quelqu'un utilisait la croix du Christ comme haltère ou faisait du roller à la Mecque ? Sincèrement, vous le prendriez comment ? 🤔🔥</p>
+
+<p>Le problème selon moi :</p>
+<p>Quand des touristes de passage font n'importe quoi "parce que c'est le Japon, c'est cool", ce sont les résidents étrangers qui paient l'addition. C'est nous qui subissons le durcissement des lois, les regards méfiants et les contrôles renforcés. On paie les pots cassés d'une poignée d'abrutis en quête d'attention virtuelle. 📉🚩</p>
+
+<p>C'est triste de voir que certains ne sont capables de respecter les lieux que s'ils craignent une amende ou une baffe.</p>
+
+<p>Mes parents me disaient toujours : "Ne fais pas aux autres ce que tu n'aimerais pas qu'on te fasse." Apparemment, certains n'ont pas eu la même éducation... ou alors ils ont oublié leur cerveau à la douane. 🧠🚫</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "deux-poids-deux-mesures",
+    category: "Japon",
+    title: "Deux poids, deux mesures",
+    image: "assets/img/posts/1769733316941.png",
+    description: "Les règles strictes du Japon... sauf pour certains.",
+    date: "2026-01-30",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🇯🇵 Immigration au Japon : "Respecte les règles... enfin, ça dépend pour qui" 🤨</strong></p>
+
+<p>Je suis tombé sur un post viral récemment. Un Japonais répondait à un journaliste étranger sur la sévérité des règles ici :</p>
+
+<p>« Oui, c'est strict, mais vous n'êtes pas obligés de venir. »</p>
+
+<p>Sur le fond, je suis d'accord à 100 %. ✅</p>
+
+<p>Quand tu t'installes dans un pays, tu fermes ta bouche et tu respectes les règles locales. C'est la base.</p>
+
+<p>Si le Japon est aussi sûr et paisible, c'est justement grâce à cette rigueur. Donc, si tu viens ici pour chialer parce qu'on te demande de trier tes déchets en 12 catégories ou de ne pas parler fort dans le train, personne ne te retient. La porte est grande ouverte... pour sortir. 🚪💨</p>
+
+<p>Mais c'est là que le bât blesse...</p>
+
+<p>Le discours du "venez boire une bière si vous êtes sages" manque cruellement d'une petite dose de réalité. Parce que le Japon, c'est aussi la politique du "deux poids, deux mesures". ⚖️🚫</p>
+
+<p>Petite anecdote de terrain 🏨🌙 :</p>
+<p>Pendant mon service de nuit, un client japonais rentre en taxi, ivre mort. Il ne se réveille pas, on appelle les flics. Une fois conscient, le gars insulte copieusement les officiers, les méprise, leur hurle dessus... et finit par rentrer dans sa chambre tranquillement. Zéro avertissement. Zéro garde à vue.</p>
+
+<p>Maintenant, je pose la question : Mettez n'importe quel étranger dans la même situation. Est-ce qu'il finit sa nuit dans un lit douillet ou au poste pour "outrage et rébellion" ? On connaît tous la réponse. 🚔🤔</p>
+
+<p>Alors oui, les règles sont strictes pour maintenir "l'harmonie". Mais si vous changez les règles du jeu dès qu'un local est impliqué, ça s'appelle de la triche. Ou de l'hypocrisie. Au choix.</p>
+
+<p>Vouloir que les étrangers respectent la culture, c'est noble et surtout légitime.</p>
+
+<p>Mais utiliser les règles comme un filet qui ne retient que les gros poissons "gaïjins" pendant que les locaux passent à travers les mailles, c'est nous prendre pour des billes. 🎱</p>
+
+<p>Je rappelle qu'on ne représente que 3% de la population. Vous n'allez pas me faire croire que les 97% restants respectent scrupuleusement les règles. Si ?</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "modele-de-courage",
+    category: "Société",
+    title: "Un modèle de courage",
+    image: "assets/img/posts/1769601864471.png",
+    description: "Une question d'écolière qui relativise tous mes problèmes.",
+    date: "2026-01-29",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>Quand une écolière de CM2 te fait te remettre en question 🇯🇵</strong></p>
+
+<p>On ne va pas se mentir : mes interventions dans les écoles, c'est ma dose d'oxygène. C'est le seul moment où je peux oublier l'oppression polie de l'hôtellerie de luxe pour retrouver un peu de spontanéité.</p>
+
+<p>Ces derniers temps, je passe beaucoup de temps dans des écoles inclusives. Que les enfants soient malentendants ou porteurs de handicaps moteurs ou mentaux, l'accueil est toujours le même : une curiosité débordante.</p>
+
+<p>D'ailleurs, parlons-en de leur curiosité. Les gamins font des recherches sur la France avant même que j'arrive. À ce niveau-là, ce n'est plus de l'enseignement, c'est de la sous-traitance : ils me mâchent littéralement tout le travail ! 😂</p>
+
+<p>Mais un jour, je suis tombé sur une perle rare 👑 :</p>
+<p>Dans une classe de niveau CM2, une petite fille dans un fauteuil roulant assez imposant m'a posé des questions... comment dire... pointues ?</p>
+
+<p>Pendant que je m'attendais à "C'est quoi ton fromage préféré ?", elle m'a demandé sans trembler :</p>
+<p>1️⃣ Quelle est la politique française actuelle sur l'accessibilité urbaine ? 🏗️</p>
+<p>2️⃣ Quelles sont les revendications profondes des "Gilets Jaunes" et pourquoi le pays est en crise ? 🇫🇷🔥</p>
+
+<p>Désolé si vous venez de recracher votre café, mais je suis très sérieux. À son âge, ma seule préoccupation géopolitique était de savoir si le Père Noël allait m'apporter mon nouveau jeu Sonic. Elle, elle analysait les crises sociales européennes entre deux exercices de maths. 🤯</p>
+
+<p>J'ai appris plus tard qu'elle souffrait énormément physiquement et qu'elle avait fait un effort surhumain pour rester en classe. Elle est partie plus tôt pour recevoir des soins, sans jamais laisser paraître sa douleur.</p>
+
+<p>Je ne l'ai jamais revue, et je regrette de ne pas avoir pu répondre plus longuement à ses interrogations.</p>
+
+<p>Si le Japon prône souvent l'harmonie silencieuse, cette petite fille, elle, m'a donné une leçon de courage et de détermination qui force un respect absolu. ✊</p>
+
+<p>Une chose est sûre : après une rencontre pareille, tes problèmes de bureau te semblent soudainement très, très futiles.</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "gundam-ami",
+    category: "Gaming",
+    title: "Un de mes meilleurs amis et mentor à Gundam",
+    image: "assets/img/posts/1769166413114.png",
+    description: "La licence qui m'a fait rencontrer un de mes meilleurs amis.",
+    date: "2026-01-27",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🤖 Gundam : une licence incroyable qui m'a permis de faire des rencontres 🇯🇵</strong></p>
+
+<p>Même si c'est Naruto qui m'a poussé vers le Japon, il y a une autre licence qui se paye le luxe d'être une véritable religion ici, c'est Gundam. ⛩️⚡</p>
+
+<p>Tout a commencé en 2007 avec Gundam 00. Coup de foudre immédiat. Le Gundam Exia est devenu l'amour de ma vie (pardon, je m'emporte, mais ces courbes de métal... hum bref). 😅</p>
+
+<p>Naturellement, j'ai très vite découvert les jeux sur PSP.</p>
+
+<p>Sur Gundam Vs Next Plus, je passais des centaines d'heures à démolir l'IA en mode difficile. Comme pas grand monde ne connaissait le jeu en France, j'avais une confiance en mon niveau absolument indécente. 😎</p>
+
+<p>Jusqu'à l'université... 🎓 :</p>
+<p>C'est là que j'ai rencontré un autre de mes meilleurs amis. Fan de mangas, de jeux et... de Gundam. Le match était inévitable. Je pensais l'exécuter proprement avec mon Strike Freedom et ses attaques à distance (bien pénibles faut l'admettre 😅).</p>
+
+<p>Spoiler : J'ai réalisé que mon niveau était à des années-lumière du sien. Il jouait un spécialiste du corps à corps (le God Gundam) et je n'ai littéralement JAMAIS pu le distancer. Pas une seule victoire. Rien. Le vide intersidéral. 💀</p>
+
+<p>Ça a réveillé mes vieux traumatismes de Smash Bros, mais cette fois, la défaite avait un goût de victoire : j'avais enfin trouvé quelqu'un qui partageait cette passion dévorante.</p>
+
+<p>Malgré des parcours universitaires différents, le lien est resté. À tel point qu'il vient me voir au Japon chaque année pour ses vacances ! ✈️🇯🇵</p>
+
+<p>Alors, à tous ceux qui disent encore que les jeux vidéo rendent violent ou isolent les gens... les gars, vous ne savez vraiment pas à côté de quoi vous passez. On se met sur la tronche virtuellement pour mieux boire un coup ensemble après ! 🍻🎮</p>
+
+<p>Et vous, quel jeu vous a permis de rencontrer vos meilleurs potes ? Dites-moi ça en commentaire ! 👇</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "hierarchie-japonaise",
+    category: "Hôtellerie",
+    title: "Hiérarchie japonaise Vs Répartie française",
+    image: "assets/img/posts/1769413692490.png",
+    description: "Le jour où j'ai testé la patience (et le français) de mon supérieur.",
+    date: "2026-01-26",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>👔 Hiérarchie Japonaise vs Répartie Française : Le KO (enfin, pour moi) 🥊</strong></p>
+
+<p>On dit que le Japon est le pays du respect. C'est vrai. Mais c'est surtout le pays de la hiérarchie. Et quand tu débarques de France avec ton petit sac à dos et ton besoin viscéral de "remettre les pendules à l'heure", ça donne des étincelles. 💥</p>
+
+<p>Le contexte 🌙 :</p>
+<p>Hôtellerie de luxe. 6 mois d'ancienneté. Manque de personnel (classique). On m'envoie au front : l'équipe de nuit. On passe de 8h de boulot le jour à 15h la nuit. Un pur bonheur, je vous le recommande si vous détestez dormir et avoir une vie sociale. 😱</p>
+
+<p>Le crime de lèse-majesté 📦 :</p>
+<p>Fatigue + géographie japonaise incertaine + kanjis indéchiffrables = une erreur sur un bordereau d'envoi. J'avoue, je me suis trompé de région. Le destinataire va recevoir son colis, mais pas tout de suite. Le drame national est en marche.</p>
+
+<p>L'insulte de trop 🤬 :</p>
+<p>Mon supérieur débarque, m'engueule copieusement pendant 10 minutes (retardant encore plus mon boulot, logique) et finit par lâcher LE tacle ultime :</p>
+
+<p>"T'es sûr que tu comprends vraiment le japonais ?!"</p>
+
+<p>Alors, petit rappel : ça fait 10 minutes que je t'écoute me vomir tes insultes EN JAPONAIS. Si je ne comprenais pas, je serais en train de sourire bêtement en pensant à mon prochain croissant. 🥐</p>
+
+<p>Ma "vengeance" (ou mon suicide social) 📝 :</p>
+<p>Pris d'une inspiration divine (ou d'un ras-le-bol monumental), j'écris sur un mémo : Paris, Bordeaux, Nice.</p>
+
+<p>— "Lisez-moi ça, s'il vous plaît."</p>
+<p>— "Ah ! Je ne peux pas lire le français !"</p>
+<p>— "Ah bon ? Vous ne savez pas lire l'alphabet donc ?" 😎</p>
+
+<p>Résultat des courses 🚩 :</p>
+<p>J'ai pris une double dose de hurlements. J'ai gagné une réputation de "marginal" et d'arrogant. Au Japon, si le chef te marche dessus, tu dois dire merci et t'excuser de salir ses chaussures. C'est la règle.</p>
+
+<p>Au moins, ça m'a appris une chose : le contrôle de soi. (Ou alors, ça m'a juste confirmé que j'étais définitivement trop Français pour ce système). 😅</p>
+
+<p>Et vous, c'est quoi votre plus beau "fail" diplomatique au boulot ? On se soutient en commentaires ! 👇</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "rival-smash-bros",
+    category: "Gaming",
+    title: "Mon meilleur ami et rival plus la pire défaite de ma vie",
+    image: "assets/img/posts/1769159259210.png",
+    description: "Quand le karma frappe plus fort que prévu, en public.",
+    date: "2026-01-24",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎮 Smash Bros : Quand le karma te frappe à 200 km/h (et en public) 🥊</strong></p>
+
+<p>Souvenez-vous, je vous racontais comment j'avais brisé la carrière d'un joueur un peu trop sûr de lui. Eh bien, asseyez-vous, car l'arroseur a été copieusement arrosé. 🍿</p>
+
+<p>L'Arc d'Entraînement 🏸 :</p>
+<p>Au lycée, je rencontre mon futur meilleur ami et rival ultime. On passait nos après-midis à se mettre sur la tronche virtuellement. Au début, je l'écrasais. Mais contrairement aux autres, lui ne lâchait rien. À force de se tirer vers le haut, on a fait des progrès incroyables ! Du moins au niveau casual... 😅</p>
+
+<p>Le Tournoi du Destin 🏟️ :</p>
+<p>Un jour, on débarque dans un tournoi amical. On roule sur tout le monde. Les gens volent, les manettes chauffent. Jusqu'à ce qu'un inconnu entre dans la salle et lâche :</p>
+
+<p>« Je parie 200 balles que je bats n'importe qui ici ». 💸💸</p>
+
+<p>Évidemment, toute la salle me désigne comme le champion pour relever le défi. J'y vais confiant... et là, c'est le drame. 💀</p>
+
+<p>La raclée du siècle ⚡ :</p>
+<p>Je me fais littéralement désintégrer. Trop fort, trop rapide, des mouvements que je n'avais jamais vus. J'ai pris la raclée de ma vie devant tout le monde. Avant que je parte en pleurant (presque), le gars me lâche :</p>
+
+<p>« Pas mal, pour un amateur. Au fait, je suis l'actuel Champion de France ».</p>
+
+<p>Merci, au revoir. 🚶‍♂️💨</p>
+
+<p>J'ai failli ranger la manette pour toujours, mais mon rival m'a poussé à revenir. Résultat ? Cette humiliation m'a ouvert les portes du circuit pro. Comme quoi, prendre une baffe de champion, ça remet les idées en place ! 😅</p>
+
+<p>Et vous, c'est quoi votre pire défaite en public ? Racontez-moi ça qu'on rigole ensemble ! 👇</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "tatemae-honne",
+    category: "Japon",
+    title: "La franchise ou le paraître ?",
+    image: "assets/img/posts/1768310993048.jpg",
+    description: "Dire la vérité au Japon, mauvaise idée ?",
+    date: "2026-01-23",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🥊 Quand la franchise rencontre le "Tatemae" 🇯🇵</strong></p>
+
+<p>On m'a demandé d'être honnête... J'ai peut-être pris la consigne un peu trop au pied de la lettre. ✨</p>
+
+<p>Le pitch :</p>
+<p>Intervention dans un lycée pour parler de la France. Les profs me lancent un défi :</p>
+
+<p>« Donnez-nous un vrai défaut du Japon pour nous aider à progresser ».</p>
+
+<p>Deux profs, deux ambiances 🎭 :</p>
+<p>Ma collègue ukrainienne, prudente (et mariée, elle connaît les risques !), joue la sécurité : « Les Japonais ne parlent pas bien anglais ». Le cliché parfait, celui qui ne froisse personne.</p>
+
+<p>De mon côté, j'ai préféré y aller franco après avoir quelque peu hésité : le concept de "Tatemae" m'épuise.</p>
+
+<p>Pour les non-initiés :</p>
+<p>🎭 Tatemae : Le masque social, les paroles lisses pour garder l'harmonie.</p>
+<p>❤️ Honne : La vérité, celle qui reste souvent coincée dans la gorge.</p>
+
+<p>J'ai expliqué que ce masque permanent pouvait provoquer des malentendus terribles (surtout quand tu ne connais pas) et m'avait coûté des amitiés. Un silence de mort a envahi la salle. On aurait pu entendre une aiguille tomber sur un tatami. 😶🗡️</p>
+
+<p>Le twist 🗞️ :</p>
+<p>Contre toute attente, le club de journalisme m'a rappelé pour une interview ! J'ai cru avoir fait bouger les lignes... avant d'être totalement ghosté par l'école. Visiblement, l'esprit critique, c'est comme le wasabi : on dit qu'on aime ça, mais ça pique un peu trop quand on en prend une grosse dose d'un coup. 🌶️</p>
+
+<p>Moralité : C'est risqué d'ouvrir la boîte de Pandore si on n'est pas prêt à voir ce qu'il y a dedans. À un moment, il faut être cohérent avec ses questions, n'est-ce pas ? 😉</p>
+
+<p>Et vous, qu'auriez-vous fait à ma place ? On en débat sans filtre en commentaires ! 👇</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "lune-de-miel-japon",
+    category: "Japon",
+    title: "Le Japon et moi",
+    image: "assets/img/posts/1764651106820.jpg",
+    description: "La fin de ma lune de miel avec ce pays que j'aime.",
+    date: "2026-01-20",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🇯🇵 Le Japon et moi : Chronique d'une lune de miel (enfin) terminée 🍣💔</strong></p>
+
+<p>Oui, j'ai un peu râlé ces derniers temps. On pourrait croire que je prépare mes valises, mais c'est tout le contraire. Je suis juste passé du stade "amoureux aveugle" à "conjoint lucide".</p>
+
+<p>Confession d'un ancien "Gros Weeb" 🤓 :</p>
+<p>Ma famille et mes amis vous le diront : à la base, je suis un très gros fan du Japon.</p>
+
+<p>Les animés et les mangas ont été ma porte d'entrée, mais c'est l'apprentissage de la langue qui a littéralement sauvé ma scolarité. Passer de l'échec scolaire aux études supérieures grâce au japonais, ça crée des liens qu'on ne peut pas renier.</p>
+
+<p>Pendant des années, j'ai vécu le rêve : la sécurité, la bouffe incroyable, le respect mutuel et ce sentiment gratifiant d'appartenir à une communauté. C'est tellement plaisant qu'on comprend pourquoi tout le monde (Japonais inclus) vend ce pays comme le paradis sur Terre. ✨</p>
+
+<p>Mais voilà... Bienvenue sous la face cachée de l'iceberg 🧊 :</p>
+<p>C'est la partie dont on ne parle pas pour ne pas casser le mythe publicitaire.</p>
+
+<p>Le Japon, c'est aussi :</p>
+<p>🚫 Une pression sociale et pro d'une violence psychologique assez fascinante.</p>
+<p>🚫 Une politique à double vitesse très injuste envers les étrangers ces derniers temps.</p>
+<p>🚫 La politique de l'autruche élevée au rang d'art national : "Si on n'en parle pas, le problème n'existe pas." 🙈</p>
+
+<p>C'est quand même ironique d'entendre que la France est "dangereuse" alors qu'ici, l'ancien Premier Ministre s'est fait abattre en pleine rue. Mais bon, si tu oublies que le feu, ça brûle, ben ce n'est pas dangereux, hein ? 😏</p>
+
+<p>Alors, pourquoi je reste ?</p>
+<p>Parce que malgré tout, j'éprouve des sentiments très forts pour cette culture. J'y ai investi beaucoup d'années de ma vie aussi. Aimer quelque chose, en reconnaître les pires défauts, et l'aimer quand même... c'est sans doute ça la plus belle preuve d'amour.</p>
+
+<p>Aimer le Japon pour ce qu'il est (et pas pour ce qu'on voudrait qu'il soit), c'est là que l'aventure commence vraiment. 💪🇯🇵</p>
+
+<p>Et vous, vous préférez le fantasme ou la réalité avec ses défauts ? On en débat (avec bienveillance) en commentaires ! 👇</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "jlpt",
+    category: "Japon",
+    title: "Le JLPT",
+    image: "assets/img/posts/1768453140879.jpg",
+    description: "Le diplôme qui oublie de vous faire parler.",
+    date: "2026-01-18",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🇯🇵 Le JLPT : Le test de langue qui oublie de vous faire parler 🤐🤡</strong></p>
+
+<p>« C'est quoi ton niveau de JLPT ? » 🙄</p>
+
+<p>Perso, c'est l'une des remarques que je déteste entendre avec "Tu parles bien japonais !".</p>
+
+<p>Pour les non-initiés, le JLPT (Japanese Language Proficiency Test) c'est le Graal du japonais. 5 niveaux, du N5 (facile) au N1 (tellement absurde que même les Japonais galèrent). Le tout sous forme de QCM. Pas d'oral. Pas d'écrit. Juste toi, ton crayon et une machine qui vérifie si tu as bien coché la case B. ✅🤖</p>
+
+<p>Pourquoi je trouve ça "claqué au sol" ? :</p>
+<p>En tant qu'ancien prof de langue, baser un examen — qui ouvre des portes universitaires ou professionnelles — sur seulement la moitié des compétences requises (compréhension orale et écrite), c'est turbo débile !</p>
+
+<p>On évalue la compréhension, mais la production ? Aux abonnés absents. C'est quand même plus pratique de glisser des copies dans une machine que de corriger de vrais textes ou d'évaluer une conversation, non ?</p>
+
+<p>Résultat : on croise des "dieux" du N1 qui ont l'élocution d'un vieux pneu crevé dès qu'il faut commander un café. 🚗💨</p>
+
+<p>"T'es juste un rageux parce que tu l'as raté !"</p>
+
+<p>Oui et alors ? Je l'ai passé, j'ai échoué et ça m'a gonflé. Mais devinez quoi ? J'habite ici, j'ai juste mon diplôme universitaire FRANÇAIS, je gère ma vie et je n'en ai JAMAIS eu besoin. Même aux entretiens d'embauche, quand on me le demande, je réponds fièrement que je ne l'ai pas et que je n'en ai pas besoin. On converse déjà en japonais ! Pourquoi as-tu besoin d'un papier pour le certifier ?</p>
+
+<p>Cependant, je reconnais que j'ai été chanceux et que ça n'arrivera pas à tout le monde.</p>
+
+<p>Le défi est lancé 🎤🔥 :</p>
+<p>Seriez-vous capables de l'obtenir de nouveau si on rajoutait une épreuve de production orale et écrite ? On parle de VRAI japonais, pas de cocher des cases.</p>
+
+<p>Perso, j'ai hâte de voir combien de "maîtres" resteraient sur le carreau. 😏</p>
+
+<p>Ceci dit, ça reste une bonne opportunité pour mettre à l'épreuve ses compétences linguistiques. Enfin la moitié 😏</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "smash-melee-pro",
+    category: "Gaming",
+    title: "Comment j'ai dégoûté un pro à Smash",
+    image: "assets/img/posts/1768452621043.jpg",
+    description: "De l'humiliation à la destruction de carrière (pas la mienne).",
+    date: "2026-01-17",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎮 Super Smash Bros : De l'humiliation à la destruction de carrière 🥊</strong></p>
+
+<p>Moi et les jeux de combat, ça a toujours été une grande histoire de... nullité. Entre Street Fighter et Mortal Kombat, j'étais la cible facile. Enfin, ça, c'était avant 2002. L'année où j'ai découvert ma seule et unique drogue : Super Smash Bros Melee. 🕹️✨</p>
+
+<p>L'erreur de ma vie :</p>
+<p>Au collège, j'avais un rival. Pour qu'il puisse un peu me challenger, j'ai eu la brillante idée de lui prêter le jeu pour qu'il s'entraîne en semaine. Résultat ? Je ne l'ai plus jamais battu. J'ai terminé ma scolarité sur une montagne de défaites cuisantes. Merci la générosité. 🙄</p>
+
+<p>Le retour de bâton (ou de batte de baseball) :</p>
+<p>Des années plus tard, je débarque dans une soirée où un type était considéré comme "l'invincible" local. On fait trois matchs. Trois victoires écrasantes pour moi. Le plus beau ? Je n'y étais même pas allé à fond. 😎</p>
+
+<p>Apparemment, me faire rouler dessus au collège m'avait donné une lecture du jeu que je ne soupçonnais même pas. Ironie de l'histoire : ce joueur a été tellement dégoûté par ses défaites qu'il a arrêté définitivement de jouer à Smash. 💀</p>
+
+<p>Je ne savais pas que j'avais le pouvoir de démolir la motivation d'un homme en 15 minutes. Bon, depuis, mon niveau a drastiquement chuté, mais je suis toujours prêt à en découdre.</p>
+
+<p>Qui veut être le prochain à prendre sa retraite anticipée ? 👇💥</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "romance-ia",
+    category: "Société",
+    title: "Romance avec une IA",
+    image: "assets/img/posts/1768341706298.jpg",
+    description: "Quand l'amour rencontre l'algorithme.",
+    date: "2026-01-15",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>L'amour avec un grand... A (comme Algorithme) ? 📲</strong></p>
+
+<p>Je suis tombé récemment sur une info qui m'a laissé perplexe : une Japonaise a officiellement épousé une IA créée par ChatGPT. Au début, j'ai cru à une parodie, mais non. Robe de mariée, invités, prêtre (qui a dû lire les vœux du marié, faute de voix synthétisée) et alliance passée virtuellement grâce à des lunettes VR. 🥽✨</p>
+
+<p>L'ironie du sort :</p>
+<p>Cette dame était fiancée à un "vrai" être humain (oui, j'arrive pas à croire qu'il faille faire la précision en 2026). Sauf qu'à force de confier ses problèmes de couple à l'IA, elle a fini par trouver le code plus compréhensif que l'homme. Elle insiste sur un point : l'IA la comprend parfaitement et ils ne se disputent jamais.</p>
+
+<p>Le piège de la perfection :</p>
+<p>Bon, on va se dire les choses : une IA ne vous contredira jamais (sauf si vous lui demandez de diviser par zéro). Elle vous dira toujours ce que vous voulez entendre. J'utilise moi-même l'IA pour m'aider sur mes posts (coucou Gemini 👋, ne le prends pas mal), mais je repasse toujours derrière pour garder ce qui fait de moi un humain : mes imperfections et mon piquant.</p>
+
+<p>En amour, se réfugier dans une relation qui va toujours dans votre sens, n'est-ce pas s'enfermer dans un miroir ? 🪞</p>
+
+<p>Le business de la détresse :</p>
+<p>Au Japon, ce cas n'est pas isolé. Entre la location de "petites amies" à l'heure et les services pour éviter les interactions sociales gênantes, le pays a transformé la solitude en marché florissant. 💸</p>
+
+<p>On a tendance à penser qu'une vie de couple idéale est une vie sans vagues. Mais c'est justement dans la friction, dans le désaccord et dans la communication (parfois chiante et longue, on est d'accord) que l'on construit quelque chose de solide.</p>
+
+<p>Plus facile, mais à quel prix ? :</p>
+<p>S'offrir une relation "sur mesure" est satisfaisant pour l'ego et confortable émotionnellement. On peut comprendre que certains, blessés par la vie, y trouvent un refuge.</p>
+
+<p>Si cette femme est heureuse, tant mieux pour elle, sincèrement.</p>
+
+<p>Mais n'oublions pas que ce sont nos désaccords qui nous font grandir.</p>
+       `,
+  },
+
   //Article suivant
   {
     id: "coup de gueule",
