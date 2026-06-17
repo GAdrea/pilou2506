@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>宅配便管理システム</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <h1>宅配便荷受け・貨物販売記録</h1>
+        <div class="current-date" id="currentDate"></div>
+      </div>
+
+      <div class="button-container">
+        <button id="clearAllBtn" class="action-btn clear-btn">
+          データを消去
+        </button>
+        <button id="saveBtn" class="action-btn save-btn">保存</button>
+        <button id="printBtn" class="action-btn print-btn">印刷</button>
+        <button id="transferBtn" class="action-btn transfer-btn">
+          データを転送
+        </button>
+      </div>
+
+      <div class="staff-selector-container">
+        <label for="transferStaffSelect">担当者</label>
+        <select
+          id="transferStaffSelect"
+          class="staff-select"
+          aria-label="担当者選択"
+        >
+          <option value="">選択してください</option>
+        </select>
+      </div>
+
+      <div class="checkbox-control">
+        <button id="toggleAllCheckboxes" class="action-btn toggle-btn">
+          全選択
+        </button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>チェック</th>
+            <th>部屋番号</th>
+            <th>名前</th>
+            <th>品名</th>
+            <th class="freight-column">運賃</th>
+            <th class="material-type-column">資材</th>
+            <th class="quantity-column">数量</th>
+            <th class="material-price-column">資材</th>
+            <th class="total-column">合計金額</th>
+            <th>預かり金</th>
+            <th>お釣り</th>
+            <th class="payment-method-column">支払方法</th>
+            <th>伝票番号</th>
+            <th>担当者</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- JavaScriptで行が生成されます -->
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="copyright" id="copyright">&copy; ADRÉA</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,12 +1,12 @@
 // script.js — Carousels de la page d'accueil
 
 // --- CAROUSEL INFINI À DÉFILEMENT AUTOMATIQUE ---
-function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60 }) {
+function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60, cardWidth = 280, gap = 20 }) {
     const trackEl = document.getElementById(trackId);
     if (!trackEl || !Array.isArray(items) || items.length === 0) return;
 
-    const CARD_W = 280;
-    const GAP    = 20;
+    const CARD_W = cardWidth;
+    const GAP    = gap;
     const STEP   = CARD_W + GAP;
 
     trackEl.innerHTML = '';
@@ -164,22 +164,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Carousel projets web
+    // Carousel projets web (défilement infini, façon blog, cartes plus riches)
     if (document.getElementById('homeWebCarousel') && window.WEB_PROJECTS) {
         const projects = sortByDateDesc(window.WEB_PROJECTS);
-        buildCarousel({
+        buildInfiniteScroll({
             items: projects,
-            maxItems: 3,
-            slidesId: 'homeWebSlides',
-            dotsId: 'homeWebDots',
-            renderSlide: (project) => {
+            trackId: 'homeWebSlides',
+            cardWidth: 340,
+            renderCard: (project) => {
                 const imgSrc = resolveHomeImage(project.image || '');
                 const tags   = Array.isArray(project.tags) ? project.tags : [];
                 const demoUrl = project.demoUrl || project.url || '';
                 return `
-                    <div class="flex justify-center">
-                      <div class="hud-card w-full max-w-xs flex flex-col items-stretch">
-                        <div class="h-52 overflow-hidden" style="background:#0d1525">
+                    <div class="hud-card h-full flex flex-col items-stretch">
+                        <div class="h-40 overflow-hidden flex-shrink-0" style="background:#0d1525">
                             ${imgSrc
                                 ? `<img src="${imgSrc}" alt="${project.title || ''}" class="w-full h-full object-cover object-center" loading="lazy">`
                                 : `<div class="w-full h-full flex items-center justify-center text-4xl" style="color:#00d4ff">💻</div>`}
@@ -193,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink">Voir la démo</a>` : ''}
                             </div>
                         </div>
-                      </div>
                     </div>
                 `;
             }

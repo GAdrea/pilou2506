@@ -1,0 +1,28 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.esLint": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "window.zoomLevel": 0,
+    "editor.renderWhitespace": "trailing",
+    "editor.suggest.insertMode": "replace",
+    "files.autoSave": "afterDelay",
+    "workbench.tree.indent": 15,
+    "workbench.editor.limit.value": 6,
+    "workbench.editor.limit.enabled": true,
+    "git.enableSmartCommit": true,
+    "editor.fontFamily": "'JetBrains Mono',Consolas, 'Courier New', monospace",
+    "editor.lineHeight": 25,
+    "editor.fontSize": 18,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.tokenColorCustomizations": {
+      "comments": "#009127"
+    }
+  }
+  

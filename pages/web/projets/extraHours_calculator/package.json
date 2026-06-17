@@ -1,0 +1,15 @@
+{
+  "name": "extrahours_calculator",
+  "version": "1.0.0",
+  "description": "La solution que j'ai trouvé pour convertir mes heures supplémentaires en minutes. Ce projet m'a sauvé de bien des manières",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx-populate": "^1.21.0"
+  }
+}

@@ -1,0 +1,296 @@
+/* Style pour l'impression A4 */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  padding: 15mm;
+  font-family: "MS Gothic", "Yu Gothic", sans-serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+.form-container {
+  width: 210mm;
+  min-height: 297mm;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* En-tête */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10mm;
+  padding-bottom: 10mm;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.logo-container {
+  margin-right: 20mm;
+}
+
+.logo {
+  max-height: 40mm;
+  width: auto;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 16pt;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.date-field {
+  display: flex;
+  gap: 15mm;
+  margin-top: 5mm;
+}
+
+.date-field span {
+  border-bottom: 1px solid #000;
+  min-width: 30mm;
+  text-align: center;
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 14pt;
+  color: #444;
+}
+
+.staff-field {
+  margin-top: 10px;
+  font-size: 12pt;
+  text-align: right;
+  color: #555;
+}
+
+.staff-label {
+  font-weight: 500;
+}
+
+.staff-name {
+  font-weight: 500;
+  margin-left: 5px;
+  color: #333;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 10mm;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 5mm;
+}
+
+.section h2 {
+  font-size: 12pt;
+  margin-bottom: 5mm;
+  font-weight: bold;
+  color: #333;
+  padding-bottom: 2mm;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 3mm;
+  background-color: #fff;
+}
+
+th,
+td {
+  border: 1px solid #e0e0e0;
+  padding: 2mm 3mm;
+  text-align: center;
+  height: 7mm;
+}
+
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+}
+
+.category {
+  width: 15mm;
+  background-color: #f8f8f8;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Colonnes spécifiques */
+td:nth-child(2) {
+  width: 35mm;
+}
+
+td:nth-child(3) {
+  width: 20mm;
+}
+
+td:nth-child(4) {
+  width: 35mm;
+}
+
+td:nth-child(5) {
+  width: 80mm;
+}
+
+td:last-child {
+  width: 30mm;
+}
+
+/* Lignes de total */
+.subtotal-row td {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2mm 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2mm;
+}
+
+.total-row span {
+  margin-left: 5mm;
+  color: #333;
+}
+
+.amount {
+  min-width: 25mm;
+  text-align: right;
+  border-bottom: 1px solid #000;
+  color: #333;
+}
+
+/* Grand total */
+.grand-total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10mm;
+  padding-top: 5mm;
+  border-top: double 3px #e0e0e0;
+}
+
+.grand-total span {
+  font-size: 12pt;
+  font-weight: bold;
+  margin-left: 5mm;
+  color: #333;
+}
+
+/* Style pour le copyright */
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Style pour les boutons d'action */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "MS Gothic", "Yu Gothic", sans-serif;
+}
+
+.action-button:hover {
+  background-color: #357abd;
+}
+
+.action-button:active {
+  background-color: #2a5f8f;
+}
+
+/* Style pour l'impression */
+@media print {
+  html {
+    background-color: white;
+    display: block;
+    font-size: 12px;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background-color: white;
+  }
+
+  .form-container {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-shadow: none;
+    page-break-after: always;
+    padding-bottom: 30px;
+  }
+
+  .copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: center;
+    display: block;
+    border-top: none;
+  }
+
+  .logo {
+    max-height: 30mm;
+  }
+
+  .action-buttons {
+    display: none;
+  }
+}
