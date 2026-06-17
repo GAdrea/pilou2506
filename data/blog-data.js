@@ -20,6 +20,386 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "efforts-ne-trahissent-jamais",
+    category: "Carrière",
+    title: "Les efforts ne trahissent jamais !",
+    image: "assets/img/posts/1768154325287.jpg",
+    description: "Quand l'initiative se heurte au mur de l'inertie.",
+    date: "2026-06-15",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p>Je sais, ça fait un bail que je n'ai rien posté. J'ai passé les trois derniers mois à enchaîner les services de nuit pour remplacer un collègue qui s'est blessé au boulot. (Il va bien, au passage).</p>
+
+<p>Mais aujourd'hui, j'ai un nouveau coup de gueule à évacuer. Et celui-là, il me tient particulièrement à cœur.</p>
+
+<p>L'art d'optimiser dans le vide :</p>
+<p>Comme je vous l'avais dit, mes heures de nuit m'ont permis de me former à pas mal de logiciels. Pas pour faire joli, mais pour créer des outils et des systèmes concrets afin de fluidifier notre travail d'équipe et nous éviter des tâches répétitives et pénibles. J'ai tout documenté, j'ai fait des présentations propres, j'ai partagé l'avancement... 📈💻</p>
+
+<p>Tout ça pour un silence radio digne de l'espace intersidéral. 🌌🦗</p>
+
+<p>Dans une boîte qui se vante d'être "moderne" et loin des vieux standards archaïques japonais, j'ai pris une magnifique douche froide. Les rares retours que j'ai eus ?</p>
+
+<p>« Oh, c'est super utile, quelle bonne idée ! » ... pour ensuite ne JAMAIS l'utiliser.</p>
+
+<p>Le festival des excuses bidons :</p>
+
+<p>👶 « Ah mais c'est too compliqué, on n'a pas l'habitude de ces outils. » (Spoiler : ils n'ont même pas cliqué sur le lien pour tester. J'ai pourtant fait une interface tellement intuitive qu'un enfant de CP s'en sortirait).</p>
+
+<p>📋 « Oui mais ton système n'est pas officiel, il faut attendre l'approbation de la hiérarchie. » (Le tout dans une entreprise qui, je le rappelle, encourage théoriquement la prise d'initiative).</p>
+
+<p>Beaucoup d'entreprises ici adorent chanter les louanges du "changement" et de la "modernisation", mais dès qu'il s'agit de bousculer un tout petit peu la routine ou de lâcher les process vieux de 20 ans, il n'y a plus personne. 🦖</p>
+
+<p>Ma vraie force, c'est d'être ce travailleur de l'ombre qui fluidifie et optimise le quotidien de toute l'équipe. Mais visiblement, dans un système où "avoir l'air occupé" est plus important que d'être efficace, c'est un concept totalement incompris. 🌑🕴️</p>
+
+<p>Bref, j'ai créé des systèmes pour faire gagner du temps à des gens qui préfèrent visiblement continuer à galérer à l'ancienne. On ne se refait pas.</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "japon-a-lille-wakuwaku",
+    category: "Japon",
+    title: "Le Japon à Lille ! ça vaut le détour !",
+    image: "",
+    description: "Une asso lilloise qui fait découvrir le vrai Japon.",
+    date: "2026-05-08",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🏮 Wakuwaku à Lille : Quand le Japon débarque dans le Nord ! 🇫🇷🇯🇵</strong></p>
+
+<p>Il y a des jours où le hasard fait vraiment bien les choses. La semaine dernière, une amie japonaise a repris contact avec moi après... un certain temps. Ok, ça faisait des années et j'aurais pu la rappeler avant, ne me jugez pas ! 😅</p>
+
+<p>La nouvelle ? Elle vit désormais à Lille et vient de fonder une association pour faire découvrir la culture japonaise : Wakuwaku.</p>
+
+<p>Le nom ? Pour les fans de Spy x Family, c'est la réplique culte d'Anya Forger. Pour les autres, c'est l'onomatopée de l'excitation joyeuse. C'est simple, c'est frais, et ça résume parfaitement l'esprit du projet : découvrir le Japon sans se prendre la tête. 🤩✨</p>
+
+<p>Pourquoi j'en parle ? 🎤🔥 :</p>
+<p>Alors oui, je ne suis pas une influenceuse avec des millions de followers, je n'ai jamais mis les pieds dans cette asso (vu que j'habite à Fukuoka, Captain Obvious) et mon impact médiatique est proche de zéro. Mais c'est mon amie, alors je fais ce que je veux ! 🤷‍♂️</p>
+
+<p>Au programme :</p>
+<p>L'équipe (5 Japonais, 6 Français) propose des ateliers ludiques. Pour l'instant, ils ont 28 followers sur Instagram, et j'espère bien que ça va grimper. 📈</p>
+
+<p>Leur premier atelier portait sur l'Origami. Vous savez, l'art de plier du papier pour en faire des grues par exemple. Dans mon ancien hôtel, c'était obligatoire d'en mettre dans les chambres des clients. Enfin, "obligatoire" pour les autres, parce que moi, je ne l'ai jamais fait. Trop de skill demandé pour mes mains de sédentaire. 🦢🚫</p>
+
+<p>Bientôt, ils proposeront des cours de japonais. Donc si vous voulez apprendre la langue autrement qu'avec une appli qui vous harcèle, vous savez où aller ! 📖🏯</p>
+
+<p>Si vous habitez à Lille ou dans les environs et que vous aimez le Japon (le vrai, pas celui des clichés), allez faire un tour sur leur compte et soutenez-les. Vous ne serez pas déçus, promis ! 🙌</p>
+
+<p>👉 Suivez @wakuwakuasso (ou cherchez-les, vous allez trouver !)</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "visa-gijinkoku-2026",
+    category: "Japon",
+    title: "Toucher le fond et creuser encore",
+    image: "",
+    description: "Le visa qui veut des bras, pas des gens.",
+    date: "2026-04-30",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🛂 Visas 2026 : Bienvenue au Japon (mais restez invisibles, merci) 🚫🇯🇵</strong></p>
+
+<p>Juste au moment où tu penses que les choses ne peuvent pas empirer, Sanae Takaichi nous rappelle qu'en politique, l'imagination est sans limite quand il s'agit de verrouiller les frontières. La sentence est tombée le 15 avril : le visa « Gijinkoku » a officiellement perdu son insouciance. 🎡</p>
+
+<p>Désormais, si tu bosses dans le service, l'hôtellerie ou la traduction (bref, là où on parle à des humains), il va falloir prouver que ton japonais n'est pas juste du « survie-Konbini ». Le niveau CEFR B2 est devenu le nouveau sésame.</p>
+
+<p>Les options pour avoir le droit de rester (ne choisis pas, l'Immigration l'a fait pour toi) 😅 :</p>
+
+<p>1️⃣ Le duo JLPT N2 ou BJT 400+ : Le JLPT, c'est toujours aussi archaïque. Le BJT (Business Japanese Test), c'est la même souffrance mais en version « Salaryman » sur ordinateur. Sans l'un des deux, ton dossier pour une PME (Catégories 3 et 4) finit direct à la broyeuse. 👔💩</p>
+
+<p>2️⃣ Le diplôme universitaire JAPONAIS : La seule vraie « carte sortie de prison ». Mais vu le prix des facs (même si on est loin des tarifs US, ça pique quand même entre ¥800k et ¥1,3M l'année), autant dire que c'est un investissement sur 20 ans. 🎓💸</p>
+
+<p>3️⃣ Le bonus « Légende Urbaine » : Avoir vécu au Japon pendant... 20 ANS. 🤯 Vingt ans ? Sérieusement ? Soit tu es arrivé ici avant l'invention de l'iPhone, soit tu attends la crise de la quarantaine pour avoir le droit de parler à un client. À ce stade, tu es plus japonais que les distributeurs de boissons.</p>
+
+<p>L'ironie du sort :</p>
+<p>C'est fascinant qu'un pays aussi fâché avec les langues étrangères impose des barrières linguistiques de niveau académique aux autres. Sous couvert de « coexistence ordonnée », le but n'est pas de réduire l'immigration (ils en ont besoin), mais de l'éradiquer socialement : on veut des bras qui travaillent, pas des gens qui s'installent. 🧹💨</p>
+
+<p>Dans un pays qui perd des habitants par millions, je me demande qui va faire les tâches ingrates ? L'IA ?</p>
+
+<p>Bonne chance pour coder l'Omotenashi dans un algorithme. Vraiment. Vous allez en avoir besoin.</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "nuitard-formation-autodidacte",
+    category: "Hôtellerie",
+    title: "Être payé pour étudier, c'est pas si mal en fait !",
+    image: "",
+    description: "Ce qu'on fait vraiment quand on travaille la nuit à l'hôtel.",
+    date: "2026-04-25",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🌙 Ma vie de nuitard : Entre cirage de pompes et hack de carrière 🏨💻</strong></p>
+
+<p>Dans mon dernier post, je me plaignais (avec raison, avouons-le) de mon rythme de travail. Mais au fait, je fais quoi exactement quand vous dormez ? 🕵️‍♂️</p>
+
+<p>Le "fun" commence après le briefing :</p>
+<p>Une fois les 20 minutes de briefing passées, la foire aux livraisons est ouverte. Eau, serviettes, chargeurs... Mon record personnel est de 12 livraisons en une nuit. Parfois, on me demande de changer des draps ou de faire des lits supplémentaires à 3h du matin. Si vous vous demandiez, c'est EXTRÊMEMENT chiant. 🛌💢</p>
+
+<p>Le spectacle de rue (version VIP) :</p>
+<p>Le reste du temps, je suis dehors à surveiller l'entrée. C'est là qu'on croise le gratin :</p>
+<p>🥂 Des clients qui rentrent dans un état lamentable (merci l'alcool).</p>
+<p>😏 D'autres qui commandent des services... un peu plus "adultes".</p>
+<p>Pendant ce temps-là, je reste debout, j'attends qu'il se passe un truc, et je savoure ce "summum du fun". Ah, j'oubliais : je cire aussi des chaussures et je livre les journaux. On est loin de James Bond, hein ? 👞✨</p>
+
+<p>Le braquage légal : être payé pour apprendre 📈🏆 :</p>
+<p>Mais voici le secret : mon entreprise me fournit une licence Microsoft 365. Alors, plutôt que de rester debout à compter les pavés, j'utilise tout ce temps mort pour me former en autodidacte sur des logiciels de travail collaboratif.</p>
+<p>Je viens même bosser plus tôt pour avoir plus de temps sur l'ordi ! Pourquoi ? Parce que développer ces compétences techniques en étant payé pour le faire, c'est une opportunité en or. C'est toujours plus utile que de fixer le vide en attendant que le soleil se lève. 🌅🤓</p>
+
+<p>En résumé :</p>
+<p>Le travail de nuit est d'un ennui mortel, mais c'est devenu mon laboratoire personnel pour préparer l'avenir.</p>
+
+<p>Qui a dit que l'hôtellerie ne servait à rien ? 🥂</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "omotenashi-rythme-effrene",
+    category: "Hôtellerie",
+    title: "Un rythme effréné et destructeur",
+    image: "",
+    description: "Le prix caché de l'excellence du service japonais.",
+    date: "2026-04-12",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🏨 Omotenashi : L'excellence au prix de ma santé 🌙📉</strong></p>
+
+<p>Ça faisait un petit moment que je ne m'étais pas exprimé ici. Pas parce que j'étais en vacances aux Maldives, mais parce que depuis deux mois, ma vie sociale est officiellement plus plate qu'un tapis de yoga. 🧘‍♂️🚫</p>
+
+<p>Bienvenue dans la caricature du "métro boulot dodo" version nippone. Je vis pour travailler, et comme vous allez le constater, j'adore ça !</p>
+
+<p>La magie du service de nuit 🌌 :</p>
+<p>On m'accorde des "jours de repos". Enfin, sur le papier. En réalité, le système est d'une connerie aussi profonde que la fosse des Mariannes. 🌊</p>
+<p>Je termine mon service SUR mon jour de repos. Je rentre dormir (parce que le sommeil, c'est utile pour ne pas mourir), et quand je me réveille... pouf ! C'est déjà la fin de mon "congé" et il faut repartir au front le lendemain. Payé un peu mieux ? Oui. Suffisant pour réparer ma santé et mon rythme de vie désastreux ? Absolument pas. 💸🩺</p>
+
+<p>L'Omotenashi : Le coût humain caché 🎎☕ :</p>
+<p>Le Japon est réputé pour son service exceptionnel. Mais cette excellence a un prix, et ce prix, c'est le "petit personnel" qui le paie.</p>
+<p>On me dit souvent que j'ai de la chance de bosser dans le luxe. Ce que ces gens oublient, c'est que je ne suis pas le concierge stylé que tout le monde admire. Je fais partie de l'ombre. Indispensable pour que l'hôtel tourne, mais totalement invisible. Le cadre est sexy, mon quotidien ne l'est pas. 🌫️💼</p>
+
+<p>Pourquoi tout le monde démissionne ? 🚶💨 :</p>
+<p>Si ce secteur manque de personnel, ce n'est pas un hasard. Entre les burn-outs, les dépressions ou juste la pénibilité du travail, l'hôtellerie de luxe dévore ses propres employés. J'adore le Japon, mais je déteste ce secteur pour ces raisons.</p>
+
+<p>Il serait peut-être temps que les "génies" de l'industrie réfléchissent à une excellence qui ne détruit pas la vie de ceux qui la rendent possible.</p>
+
+<p>Bref, c'était mon coup de gueule du jour. Merci de m'avoir lu jusqu'au bout ! 🙏</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "confessions-intimes",
+    category: "Société",
+    title: "Confessions (pas trop) intimes",
+    image: "",
+    description: "Le CV (presque) complet du type derrière le blog.",
+    date: "2026-04-02",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>👤 Qui est vraiment le type derrière les "coups de gueule" ? 🇫🇷🇯🇵</strong></p>
+
+<p>J'ai beaucoup parlé de mes passions, de mes critiques sur la société japonaise et de mes doutes existentiels. Mais je n'ai pas vraiment déballé mon CV (enfin, pas tout, faut pas déconner non plus !). Alors, faisons un peu connaissance.</p>
+
+<p>Le GPS de ma vie 🗺️ :</p>
+<p>J'ai passé la majeure partie de ma vie à Paris, avec une escale de trois ans en Martinique. J'ai eu la chance de tomber dans une famille aimante qui, malgré quelques ratés (personne n'est parfait, hein ?), m'a inculqué des valeurs humaines qui se font aussi rares que des places assises dans le métro de Tokyo à 18h. J'espère pouvoir transmettre ça un jour !</p>
+
+<p>Le naufrage scolaire 🎓⚓ :</p>
+<p>À l'école, j'étais l'élève "moyen" par excellence. Primaire correct (merci l'épée de Damoclès parentale), puis chute libre au collège et au lycée. J'ai eu mon bac, certes après un redoublement, mais on ne va pas chipoter sur les détails.</p>
+<p>Avant le japonais, j'ai tenté la fac de gestion : économie, droit, RH... À part le droit civil, tout m'emmerdait royalement. J'ai fini par abandonner la filière, confirmant que je n'étais définitivement pas fait pour les bilans comptables. 📉🚫</p>
+
+<p>La révélation (Merci les animés) ⛩️✨ :</p>
+<p>C'est là que j'ai bifurqué vers le japonais. Ces trois années d'université ont été les meilleures de ma vie. Enfin, j'étudiais un truc qui me plaisait ! Je réussissais (sauf en histoire du Japon, où j'étais officiellement une cause perdue) et je me faisais des amis géniaux.</p>
+
+<p>L'introverti 😶💬 :</p>
+<p>De nature plutôt introvertie, je ne suis pas le genre de mec qui va taper la discute à un inconnu dans la rue. Je manque souvent de confiance en moi et je suis d'une indécision chronique pour mes projets.</p>
+<p>Quand je doute trop, j'écoute "Pas trop de peine" de Francis Cabrel. Ne me demandez pas pourquoi, cette chanson résonne en moi comme un écho familier. 🎶🛶</p>
+
+<p>En résumé :</p>
+<p>Je traîne mes casseroles comme tout le monde, mais j'essaie de m'améliorer. Bref, je suis juste une personne parmi tant d'autres.</p>
+
+<p>Ravi de vous rencontrer 😊🤝</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "tales-of-anglais",
+    category: "Gaming",
+    title: "Tales of : Mon meilleur professeur d'anglais",
+    image: "",
+    description: "Comment ma PSP m'a sauvé en cours d'anglais.",
+    date: "2026-03-26",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎮 Tales of l'Anglais : Comment ma PSP a sauvé mes notes 📖🏛️</strong></p>
+
+<p>Je ne suis pas spécialement bon en anglais. Mais j'en ai besoin pour mon boulot dans l'hôtellerie (que je déteste cordialement, petit rappel hebdomadaire). M'enfin, je reste meilleur que certains de mes collègues japonais. Oui, ceux-là mêmes qui me jugent sur mon japonais alors qu'ils bafouillent trois mots d'anglais après 10 ans de cours. Mais je m'égare... 🙄</p>
+
+<p>Le traumatisme "Tales of" 😱 :</p>
+<p>Au collège, j'étais l'élève moyen par excellence. Mon implication dans les cours d'anglais l'était tout autant, la faute à un système scolaire un peu trop fan de grammaire poussiéreuse. Après, faire parler une classe de 30 gosses devait être un sacré défi aussi...</p>
+<p>Tout a basculé au lycée. Je craque pour Tales of Eternia sur PSP. Je rentre, je lance le jeu... et là, le choc : 100% anglais. Seul le manuel était en français. Autant vous dire que pour un RPG où l'histoire est capitale, avancer à l'aveugle, c'était suicidaire. 💀 J'ai essayé...</p>
+
+<p>L'arme ultime : Le Dictionnaire 📖⚔️ :</p>
+<p>Pas question de le rendre ! Je me suis donc armé d'un dictionnaire franco-anglais et d'une patience infinie. Les premières semaines ont été une purge. Pour chaque dialogue, chaque objet, chaque sort, je cherchais le mot. Progression : 2 mètres par heure. Heureusement que le gameplay était bon, sinon la console passait par la fenêtre. 🖼️💨</p>
+
+<p>Le Miracle ✨ :</p>
+<p>Au bout de trois mois, c'est le dictionnaire qui prenait la poussière. Ma compréhension avait explosé. Résultat ? Je suis passé de "fond de panier" à meilleur élève de ma classe en anglais. Sans même chercher à apprendre, juste en voulant sauver le monde virtuellement. 🌍🏆</p>
+
+<p>Moralité 🎤🔥 :</p>
+<p>Si vous voulez maîtriser une compétence, liez-la à une passion. C'est dix fois plus efficace que n'importe quel cours magistral. Apprendre en s'amusant, ce n'est pas qu'un slogan pour enfants, c'est la stricte vérité.</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "zelda-legende",
+    category: "Gaming",
+    title: "Une autre de mes licences préférées ! Quelle légende !",
+    image: "",
+    description: "L'autre licence qui a fait pleurer (et dépenser) mon portefeuille.",
+    date: "2026-03-24",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🗡️ The Legend of Zelda : L'autre élue de mon cœur (pas désolé Peach) 🛡️🌲</strong></p>
+
+<p>On a parlé de baston, de hérissons bleus et de chasseuses de primes de l'espace. Mais il manque une pièce maîtresse au puzzle de mon enfance : The Legend of Zelda.</p>
+
+<p>Le vrai départ : La 3D qui change tout 🎮 :</p>
+<p>J'ai un peu touché à Link's Awakening sur GameBoy, mais le vrai choc, le tsunami émotionnel, ça a été Ocarina of Time sur N64. Mon dieu, quel chef-d'œuvre ! 🤯</p>
+<p>Explorer Hyrule en 3D pour la première fois, c'était comme découvrir le feu. Le combat final contre Ganondorf reste gravé dans ma mémoire (et dans mes cauchemars d'enfant).</p>
+
+<p>Le parcours du combattant (et l'aveu honteux) ⚔️ :</p>
+<p>J'ai enchaîné avec les pépites de la GameCube : le style cartoon assumé de Wind Waker et la noirceur sublime de Twilight Princess. J'ai même poncé les épisodes GBA.</p>
+<p>Par contre... je vous demande pardon d'avance : je n'ai jamais touché aux épisodes sur Nintendo DS. Je sais, c'est la honte. Jetez-moi des rubis si vous voulez. 😅💎</p>
+
+<p>La claque Breath of the Wild & le coup de gueule TOTK 🏞️🤬 :</p>
+<p>Puis est arrivé Breath of the Wild sur Switch. Clairement, je n'étais pas prêt pour cette liberté absolue. J'ai passé des centaines d'heures à juste me promener et cueillir des pommes, oubliant complètement que Zelda m'attendait (la routine, quoi).</p>
+<p>Et sa suite, Tears of the Kingdom, a fait encore mieux. Je case ça ici, mais je ne comprends pas les abrutis qui disent que TOTK est moins bien que BOTW. C'est EXACTEMENT la MÊME formule, bandes de génies ! Sauf qu'on peut explorer les cieux ET le sous-sol ! Si vous n'aimez pas le "plus", restez avec la version que vous aimez, mais arrêtez de râler ! 😤☁️🕳️</p>
+
+<p>Mes Links préférés : Ocarina of Time, Twilight Princess et Breath of the Wild.</p>
+
+<p>Bref, Zelda, c'est la licence qui m'aura fait voyager, pleurer, et surtout dépenser sans compter à chaque nouvelle sortie. 💸✨</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "sommet-takaichi-trump",
+    category: "Japon",
+    title: "Nan sérieusement, fallait oser !",
+    image: "",
+    description: "Quand la diplomatie ressemble à une capitulation polie.",
+    date: "2026-03-21",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🤝 Sommet Takaichi-Trump : Diplomatie de haut vol ou mise sous tutelle ? 🎤</strong></p>
+
+<p>On va faire court, car les chiffres font plus mal que les discours. Je voulais revenir sur les échanges lunaires entre Sanae Takaichi et Donald Trump, alors que le Japon tente de survivre au chaos énergétique mondial. 🇺🇸🇯🇵🏛️</p>
+
+<p>Le "Malaise" du siècle 🤣 :</p>
+<p>Sanae a déclaré que Donald Trump est LA SEULE personne capable d'apporter la paix. On parle du même "Donald" qui l'a publiquement humiliée en plein Bureau Ovale avec une blague douteuse sur Pearl Harbor pour justifier ses frappes secrètes en Iran ?</p>
+<p>On sentait la gêne à travers l'écran, et pour cause : reculer sur son siège devant les caméras du monde entier, c'est le prix de l'alliance en 2026.</p>
+
+<p>Petit rappel pour ceux qui croient au conte de fées 🧠💨 :</p>
+<p>Trump, c'est le président qui :</p>
+<p>☢️ Relance la surenchère avec la Corée du Nord tout en ignorant les appels au dialogue.</p>
+<p>♟️ Traite l'Ukraine comme une mine à ciel ouvert : 50% des revenus miniers (Lithium, Titane) iront directement dans un fonds géré par les USA. C'est ça, le "payback".</p>
+<p>🇮🇷 Co-pilote une guerre en Iran avec Israël, fait bondir le baril à 120$, puis demande au Japon de payer pour sécuriser le détroit d'Hormuz.</p>
+<p>💸 Impose une taxe de 15% sur nos produits tout en exigeant qu'on injecte 550 MILLIARDS de dollars dans son économie.</p>
+
+<p>La réalité du terrain 🧊 :</p>
+<p>Sanae n'a pas le choix. Quand ton pays dépend à 95% du pétrole passant par un détroit en feu et que tes factures d'électricité explosent de 30%, tu ne négocies pas, tu capitules poliment.</p>
+
+<p>Mon avis :</p>
+<p>Takaichi n'a pas d'absences. Elle est dans une Realpolitik brutale. Elle est prête à sortir les énormités les plus "lunaires" et à acheter des Ford F-150 par milliers pour que Trump ne nous lâche pas face à la Chine. Pour ce pragmatisme de survie, elle a mon respect. Pour la dignité nationale, on repassera. 📋🥴</p>
+
+<p>Quelle sacrée dinguerie, mais surtout, quel prix exorbitant pour une "paix" sous perfusion ! 🤣🤣</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "jesta-visa-prix-or",
+    category: "Japon",
+    title: "Il serait peut-être temps de partir",
+    image: "",
+    description: "JESTA, visa à 200 000 yens... Sanae frappe encore.",
+    date: "2026-03-17",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎟️ JESTA & Visas à prix d'or : Le nouveau « Welcome » à la japonaise 💴🚫</strong></p>
+
+<p>C'est officiel, Sanae a frappé ! Le projet de loi sur le contrôle de l'immigration a été approuvé ce mardi 10 mars 2026. Et accrochez-vous à vos portefeuilles, parce que la descente va être rapide. 🎢</p>
+
+<p>1️⃣ Le JESTA ✍️ :</p>
+<p>Le Japon instaure son propre système d'autorisation en ligne à l'instar de l'ESTA américain. Le concept ? Remplir un formulaire avec des questions, je l'espère, plus pertinentes que l'équivalent américain avant d'entrer sur le territoire.</p>
+<p>À ce stade, on peut aussi supposer qu'il sera payant tout comme son homologue américain. Reste à confirmer la durée de validité...</p>
+<p>La raison ? Se caler sur les politiques des autres pays en matière d'immigration. Ça serait vraiment chouette d'arrêter de copier les conneries des autres...</p>
+
+<p>2️⃣ Le visa permanent au prix d'une Rolex ⌚️🔥 :</p>
+<p>Mais le clou du spectacle, c'est l'augmentation des frais de visa. Le visa permanent passe de 10 000 yens à 200 000 yens. Oui, vous avez bien lu. Une petite hausse de 1900% au calme. 📈</p>
+
+<p>À ce prix-là, j'espère au moins que le tampon est en or massif ou que Sanae vient nous l'apporter en personne avec un bouquet de fleurs. 💐</p>
+
+<p>Bon au moins la durée est illimitée même s'il faut renouveler la carte de séjour tous les 5 ans.</p>
+
+<p>On sent que le chèque envoyé à Trump pour éviter les surtaxes américaines a laissé un trou dans les caisses, n'est-ce pas ? Faut bien renflouer tout ça comme on peut 💸🐭</p>
+
+<p>Sanae tient ses promesses de fermeté, on ne peut pas lui enlever ça. Pour le reste (genre, le pouvoir d'achat ou la démographie), il faudra attendre encore un peu. L'histoire nous dira si vider les poches des résidents étrangers était l'idée du siècle. 🧐📖</p>
+       `,
+  },
+
+  //Article suivant
+  {
+    id: "communaute-francaise-fukuoka",
+    category: "Société",
+    title: "Une communauté bienveillante",
+    image: "",
+    description: "Le secret pour survivre à l'expatriation : ne pas se couper de ses racines.",
+    date: "2026-03-11",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🇫🇷 La communauté française de Fukuoka 🍜🍷</strong></p>
+
+<p>On a déjà parlé de mon amour pour Fukuoka, la ville parfaite, le sud relax, tout ça. Mais il y a un sujet dont je n'avais pas parlé jusqu'ici : les Français. 🥖</p>
+
+<p>Oui, parce qu'à mon arrivée, j'étais dans cette phase très spécifique de l'expatrié : le "syndrome de l'immersion totale". Mon but ? Ne fréquenter aucun Français, ne parler que Japonais, devenir un habitant de Fukuoka plus vrai que nature. 🙅‍♂️🇯🇵</p>
+
+<p><em>Spoiler : Quelle erreur monumentale.</em></p>
+
+<p>Vivre au Japon sans rentrer régulièrement, ça finit par te rattraper. Et ce n'est pas qu'une question de baguettes ou de fromage (même si, bon...). C'est une question de santé mentale. 🧠💥</p>
+
+<p>Pourquoi la communauté française de Fukuoka est indispensable :</p>
+
+<p>🗣️ Le droit de râler (enfin !) : Essayer d'avoir un échange critique sur la société avec des Japonais, c'est très difficile et délicat. Le Japonais moyen manque souvent de recul sur son propre système ou accepte mal la critique "extérieure". Avec un Français, tu peux déballer ton sac sur l'administration, le travail ou... Sanae (je t'oublie pas !), et ça fait un bien fou.</p>
+
+<p>📄 Le mode survie : Quand tu galères avec un visa ou un document indéchiffrable, les "vétérans" de la communauté sont des dieux vivants. Ils ont déjà vécu tes galères et t'évitent de finir en PLS devant un guichet de mairie.</p>
+
+<p>🧠 Le bug linguistique : À force de parler Japonais toute la journée, on finit par oublier ses propres mots. Fréquenter des Français, c'est aussi s'assurer que ton cerveau ne remplace pas définitivement le français par des onomatopées japonaises.</p>
+
+<p>Fukuoka, ce grand village 🏘️ :</p>
+<p>Comme tous les bars et lieux de fête sont concentrés au centre-ville (Tenjin/Daimyo), tu finis forcément par croiser les mêmes têtes. Que tu sois là pour le karaté, le mariage, la tech ou juste parce que tu as trop lu de mangas, on finit tous par boire une bière au même endroit. 🍻</p>
+
+<p>Profiter du meilleur des deux mondes, c'est ça la vraie réussite de l'expat. La communauté française ici est prévenante, sympathique et toujours prête à aider !</p>
+       `,
+  },
+
+  //Article suivant
+  {
     id: "Sonic",
     category: "Gaming",
     title: "Sonic le héros de ma vie !",
