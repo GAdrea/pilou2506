@@ -18,6 +18,7 @@ if (closeMenu)  closeMenu.addEventListener('click', toggleMenu);
 mobileLinks.forEach(l => l.addEventListener('click', toggleMenu));
 
 // ─── IntersectionObserver — révélations au scroll ────────────
+window.__customRevealHandled = true; // évite le doublon avec digital-bg.js
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
         if (!entry.isIntersecting) return;
