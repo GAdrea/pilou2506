@@ -129,9 +129,9 @@ function renderCards(filtered) {
 
         card.innerHTML = `
             <a href="${url}" class="block flex-1 flex flex-col">
-                <div class="h-48 overflow-hidden relative">
+                <div class="h-48 overflow-hidden relative bg-hudSurface">
                     <img src="${imgSrc}" alt="${escapeHtml(article.title)}"
-                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500" loading="lazy">
                     ${cat ? `<span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
                         style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">${escapeHtml(cat)}</span>` : ''}
                 </div>
