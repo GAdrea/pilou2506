@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="${link}" class="hud-card flex flex-col hover:scale-[1.02] transition-transform duration-300 block">
                         <div class="h-44 overflow-hidden flex-shrink-0" style="background:rgba(13,21,37,0.6)">
                             ${imgSrc
-                                ? `<img src="${imgSrc}" alt="${article.title || ''}" class="w-full h-full object-contain" loading="lazy">`
+                                ? `<img src="${imgSrc}" alt="${article.title || ''}" class="w-full h-full object-cover object-center" loading="lazy">`
                                 : '<div class="w-full h-full flex items-center justify-center text-4xl">📝</div>'}
                         </div>
                         <div class="p-4 flex flex-col flex-1">
