@@ -119,7 +119,7 @@
       >
         <div class="space-y-6">
           <!-- Badge HUD -->
-          <div class="hud-badge">
+          <div class="hud-badge fade-in-up">
             <span
               class="w-2 h-2 rounded-full blink"
               style="background: #bc002d"
@@ -128,7 +128,7 @@
           </div>
 
           <!-- Titre -->
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight fade-in-up delay-1">
             Bonjour,<br />je suis
             <span class="block mt-2">
               PI<span style="color: #00d4ff" class="neon-text-cyan">L</span
@@ -138,7 +138,7 @@
           </h1>
 
           <!-- Description -->
-          <p class="text-lg text-slate-400 max-w-xl leading-relaxed">
+          <p class="text-lg text-slate-400 max-w-xl leading-relaxed fade-in-up delay-2">
             Français originaire de la
             <span style="color: #ff4d6d" class="font-semibold">Martinique</span
             >, expatrié au
@@ -147,7 +147,7 @@
           </p>
 
           <!-- Stats HUD -->
-          <div class="flex gap-6 flex-wrap">
+          <div class="flex gap-6 flex-wrap fade-in-up delay-3">
             <div class="hud-stat">
               LOC <span class="val">35.67°N 139.65°E</span>
             </div>
@@ -160,7 +160,7 @@
           </div>
 
           <!-- CTAs -->
-          <div class="flex flex-wrap gap-4 pt-2">
+          <div class="flex flex-wrap gap-4 pt-2 fade-in-up delay-4">
             <a href="#web" class="hud-btn hud-btn-primary">Mes Projets</a>
             <a href="#contact" class="hud-btn hud-btn-outline">Me contacter</a>
             <a
@@ -203,7 +203,7 @@
       style="background: rgba(13, 21, 37, 0.5)"
     >
       <div class="max-w-7xl mx-auto px-6 mb-12">
-        <h2 class="text-4xl font-bold section-title">Derniers Articles</h2>
+        <h2 class="text-4xl font-bold section-title reveal">Derniers Articles</h2>
       </div>
       <div id="homeBlogCarousel">
         <div id="homeBlogSlides"></div>
@@ -213,7 +213,7 @@
     <!-- Web Projects -->
     <section id="web" class="py-24 overflow-hidden">
       <div class="max-w-7xl mx-auto px-6 mb-12">
-        <h2 class="text-4xl font-bold section-title">Projets Web</h2>
+        <h2 class="text-4xl font-bold section-title reveal">Projets Web</h2>
       </div>
       <div id="homeWebCarousel">
         <div id="homeWebSlides"></div>
@@ -251,8 +251,8 @@
           </div>
 
           <div class="order-1 lg:order-2 space-y-8">
-            <h2 class="text-5xl font-extrabold section-title">Qui suis-je ?</h2>
-            <div class="space-y-4 text-slate-400 leading-relaxed text-lg">
+            <h2 class="text-5xl font-extrabold section-title reveal">Qui suis-je ?</h2>
+            <div class="space-y-4 text-slate-400 leading-relaxed text-lg reveal">
               <p>
                 Je m'appelle Pilou. Mon parcours est un pont entre trois
                 cultures magnifiques. Né à
@@ -275,7 +275,7 @@
             </div>
 
             <!-- Flag cards -->
-            <div class="flex gap-4">
+            <div class="flex gap-4 reveal">
               <div class="hud-card text-center p-4 flex-1">
                 <div class="text-3xl mb-2">🇲🇶</div>
                 <div class="hud-stat">Origine</div>
@@ -301,14 +301,14 @@
       style="background: rgba(13, 21, 37, 0.5)"
     >
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold section-title mb-4">
+        <h2 class="text-4xl font-bold section-title mb-4 reveal">
           On travaille ensemble ?
         </h2>
-        <p class="text-slate-400 mb-10">
+        <p class="text-slate-400 mb-10 reveal">
           Un projet web, une collaboration vidéo, ou juste un bonjour.
         </p>
 
-        <div class="hud-card p-8 md:p-12">
+        <div class="hud-card p-8 md:p-12 reveal">
           <form class="space-y-6 text-left" onsubmit="event.preventDefault()">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
