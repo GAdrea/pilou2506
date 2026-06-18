@@ -158,8 +158,8 @@ function renderRelated(currentId, category) {
         return `
         <a href="article.html?id=${encodeURIComponent(a.id)}"
            class="hud-card group flex flex-col overflow-hidden hover:border-neonCyan transition">
-            ${img ? `<div class="h-32 overflow-hidden">
-                <img src="${img}" alt="${escapeHtml(a.title)}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+            ${img ? `<div class="h-32 overflow-hidden bg-hudSurface">
+                <img src="${img}" alt="${escapeHtml(a.title)}" class="w-full h-full object-contain group-hover:scale-110 transition duration-500" loading="lazy">
             </div>` : ''}
             <div class="p-4">
                 <p class="text-sm font-bold leading-snug group-hover:text-neonCyan transition">${escapeHtml(a.title)}</p>
@@ -239,60 +239,62 @@ function renderArticle(article) {
 
     container.innerHTML = `
         <!-- Fil d'Ariane -->
-        <div class="flex items-center gap-2 text-sm text-slate-500 mb-10">
+        <div class="max-w-3xl mx-auto flex items-center gap-2 text-sm text-slate-500 mb-8">
             <a href="blog.html" class="hover:text-neonCyan transition">Blog</a>
             <span>/</span>
             ${cat ? `<span style="color:#00d4ff">${escapeHtml(cat)}</span><span>/</span>` : ''}
             <span class="text-slate-400 truncate max-w-xs">${escapeHtml(article.title)}</span>
         </div>
 
-        <!-- Image hero -->
-        ${img ? `<div class="rounded-xl overflow-hidden mb-8 aspect-video">
+        <!-- Image hero : pleine largeur du conteneur pour plus de présence visuelle -->
+        ${img ? `<div class="rounded-xl overflow-hidden mb-10 aspect-video" style="border:1px solid rgba(0,212,255,0.12); box-shadow:0 0 50px rgba(0,212,255,0.08)">
             <img src="${img}" alt="${escapeHtml(article.title)}" class="w-full h-full object-cover">
         </div>` : ''}
 
-        <!-- En-tête article -->
-        <header class="mb-8">
-            ${cat ? `<span class="inline-block px-3 py-1 text-xs font-bold rounded mb-4"
-                style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">${escapeHtml(cat)}</span>` : ''}
-            <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">${escapeHtml(article.title)}</h1>
-            <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
-                ${date ? `<span>📅 ${date}</span>` : ''}
-                <span>⏱ ${time} de lecture</span>
-                <a href="blog.html" class="ml-auto text-hibiscus hover:underline font-medium">← Retour au blog</a>
-            </div>
-        </header>
+        <div class="max-w-3xl mx-auto">
+            <!-- En-tête article -->
+            <header class="mb-8">
+                ${cat ? `<span class="inline-block px-3 py-1 text-xs font-bold rounded mb-4"
+                    style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">${escapeHtml(cat)}</span>` : ''}
+                <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">${escapeHtml(article.title)}</h1>
+                <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+                    ${date ? `<span>📅 ${date}</span>` : ''}
+                    <span>⏱ ${time} de lecture</span>
+                    <a href="blog.html" class="ml-auto text-hibiscus hover:underline font-medium">← Retour au blog</a>
+                </div>
+            </header>
 
-        <!-- Contenu -->
-        <div class="article-content prose-pilou">${content}</div>
+            <!-- Contenu -->
+            <div class="article-content prose-pilou">${content}</div>
 
-        <!-- Partage -->
-        ${renderShare(article.title)}
+            <!-- Partage -->
+            ${renderShare(article.title)}
 
-        <!-- Articles similaires -->
-        ${renderRelated(article.id, cat)}
+            <!-- Articles similaires -->
+            ${renderRelated(article.id, cat)}
 
-        <!-- Prev / Next -->
-        ${renderPrevNext(article.id)}
+            <!-- Prev / Next -->
+            ${renderPrevNext(article.id)}
 
-        <!-- Commentaires -->
-        <section class="mt-16 pt-10 border-t border-slate-800" id="commentsSection">
-            <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Commentaires</p>
-            <form id="commentForm" class="hud-card p-6 mb-8 space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="hud-label" for="commentAuthorName">Nom</label>
-                        <input type="text" id="commentAuthorName" required placeholder="Votre nom" class="hud-input" />
+            <!-- Commentaires -->
+            <section class="mt-16 pt-10 border-t border-slate-800" id="commentsSection">
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Commentaires</p>
+                <form id="commentForm" class="hud-card p-6 mb-8 space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="hud-label" for="commentAuthorName">Nom</label>
+                            <input type="text" id="commentAuthorName" required placeholder="Votre nom" class="hud-input" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <label class="hud-label" for="commentText">Commentaire</label>
-                    <textarea id="commentText" rows="4" required placeholder="Votre réaction..." class="hud-input"></textarea>
-                </div>
-                <button type="submit" class="hud-btn hud-btn-primary">Publier</button>
-            </form>
-            <div id="commentsList"></div>
-        </section>
+                    <div>
+                        <label class="hud-label" for="commentText">Commentaire</label>
+                        <textarea id="commentText" rows="4" required placeholder="Votre réaction..." class="hud-input"></textarea>
+                    </div>
+                    <button type="submit" class="hud-btn hud-btn-primary">Publier</button>
+                </form>
+                <div id="commentsList"></div>
+            </section>
+        </div>
     `;
 
     initComments(article.id);
