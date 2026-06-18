@@ -139,7 +139,7 @@ function resolveHomeImage(path) {
 document.addEventListener('DOMContentLoaded', () => {
     // Carousel blog (défilement infini)
     if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
-        const articles = sortByDateDesc(window.BLOG_ARTICLES);
+        const articles = sortByDateDesc(window.BLOG_ARTICLES).slice(0, 5);
         buildInfiniteScroll({
             items: articles,
             trackId: 'homeBlogSlides',
