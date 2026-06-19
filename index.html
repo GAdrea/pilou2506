@@ -309,25 +309,34 @@
         </p>
 
         <div class="hud-card p-8 md:p-12 reveal">
-          <form class="space-y-6 text-left" onsubmit="event.preventDefault()">
+          <form class="space-y-6 text-left" data-web3forms="true">
+            <input type="hidden" name="access_key" value="fbfbb782-fc2e-4ef3-b6a8-475a032551eb" />
+            <input type="hidden" name="subject" value="[Pilou Portfolio] Nouveau message depuis l'accueil" />
+            <input type="hidden" name="from_name" value="Pilou Portfolio" />
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <label class="hud-label">Nom</label>
-                <input type="text" placeholder="Votre nom" class="hud-input" />
+                <label class="hud-label" for="home-name">Nom</label>
+                <input id="home-name" name="name" type="text" required placeholder="Votre nom" class="hud-input" />
               </div>
               <div>
-                <label class="hud-label">Email</label>
+                <label class="hud-label" for="home-email">Email</label>
                 <input
+                  id="home-email"
+                  name="email"
                   type="email"
+                  required
                   placeholder="votre@email.com"
                   class="hud-input"
                 />
               </div>
             </div>
             <div>
-              <label class="hud-label">Message</label>
+              <label class="hud-label" for="home-message">Message</label>
               <textarea
+                id="home-message"
+                name="message"
                 rows="4"
+                required
                 placeholder="Votre message..."
                 class="hud-input"
               ></textarea>
@@ -335,6 +344,7 @@
             <button type="submit" class="hud-btn hud-btn-primary w-full">
               Envoyer le message
             </button>
+            <div class="form-feedback hidden"></div>
           </form>
         </div>
       </div>
@@ -422,5 +432,6 @@
     <script src="data/video-data.js"></script>
     <script src="assets/js/digital-bg.js"></script>
     <script src="script.js"></script>
+    <script src="assets/js/contact-form.js"></script>
 </body>
 </html>
