@@ -59,8 +59,10 @@
     const ctx = canvas.getContext('2d');
     const LINE_COUNT   = 45;
     const GRID_SPACING = 40;
-    const NODE_COUNT    = 55;
-    const NODE_LINK_DIST = 130;
+    const NODE_COUNT_NEAR = 75;
+    const NODE_LINK_DIST_NEAR = 130;
+    const NODE_COUNT_FAR  = 55;
+    const NODE_LINK_DIST_FAR  = 170;
     const SCAN_PERIOD   = 14000; // ms, aller-retour complet du faisceau
     const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     const PALETTE = [
@@ -148,17 +150,23 @@
 
     let lines = Array.from({ length: LINE_COUNT }, () => new DigitalLine());
 
-    // ─── Constellation de nœuds connectés (effet "circuit/réseau") ────
+    // ─── Constellations de nœuds connectés (effet "circuit/réseau") ───
+    // Deux couches superposées (proche / lointaine) pour multiplier les
+    // constellations visibles à l'écran sans perdre en légèreté.
     class Node {
-        constructor() { this.reset(); }
+        constructor(opts) {
+            this.opts = opts;
+            this.reset();
+        }
         reset() {
+            const o = this.opts;
             this.x  = Math.random() * canvas.width;
             this.y  = Math.random() * canvas.height;
             const angle = Math.random() * Math.PI * 2;
-            const speed = 0.12 + Math.random() * 0.18;
+            const speed = o.speedMin + Math.random() * o.speedRange;
             this.vx = Math.cos(angle) * speed;
             this.vy = Math.sin(angle) * speed;
-            this.radius = 1 + Math.random() * 1.4;
+            this.radius = o.radiusMin + Math.random() * o.radiusRange;
             this.color  = Math.random() < 0.85 ? '0, 212, 255' : '255, 77, 109';
         }
         update() {
@@ -171,34 +179,39 @@
         }
     }
 
-    let nodes = [];
+    const NEAR_OPTS = { speedMin: 0.12, speedRange: 0.18, radiusMin: 1,   radiusRange: 1.4 };
+    const FAR_OPTS  = { speedMin: 0.05, speedRange: 0.09, radiusMin: 0.6, radiusRange: 0.9 };
+
+    let nodesNear = [];
+    let nodesFar  = [];
     function initNodes() {
-        nodes = Array.from({ length: NODE_COUNT }, () => new Node());
+        nodesNear = Array.from({ length: NODE_COUNT_NEAR }, () => new Node(NEAR_OPTS));
+        nodesFar  = Array.from({ length: NODE_COUNT_FAR  }, () => new Node(FAR_OPTS));
     }
     initNodes();
 
-    function drawNodes() {
-        for (let i = 0; i < nodes.length; i++) {
-            for (let j = i + 1; j < nodes.length; j++) {
-                const dx = nodes[i].x - nodes[j].x;
-                const dy = nodes[i].y - nodes[j].y;
+    function drawNodeLayer(list, linkDist, lineAlphaMax, nodeAlphaMax) {
+        for (let i = 0; i < list.length; i++) {
+            for (let j = i + 1; j < list.length; j++) {
+                const dx = list[i].x - list[j].x;
+                const dy = list[i].y - list[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < NODE_LINK_DIST) {
-                    const alpha = (1 - dist / NODE_LINK_DIST) * 0.18;
+                if (dist < linkDist) {
+                    const alpha = (1 - dist / linkDist) * lineAlphaMax;
                     ctx.strokeStyle = 'rgba(0, 212, 255, ' + alpha + ')';
                     ctx.lineWidth   = 0.6;
                     ctx.beginPath();
-                    ctx.moveTo(nodes[i].x, nodes[i].y);
-                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.moveTo(list[i].x, list[i].y);
+                    ctx.lineTo(list[j].x, list[j].y);
                     ctx.stroke();
                 }
             }
         }
-        nodes.forEach(n => {
+        list.forEach(n => {
             ctx.save();
             ctx.shadowBlur  = 6;
             ctx.shadowColor = 'rgb(' + n.color + ')';
-            ctx.fillStyle   = 'rgba(' + n.color + ', 0.8)';
+            ctx.fillStyle   = 'rgba(' + n.color + ', ' + nodeAlphaMax + ')';
             ctx.beginPath();
             ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
             ctx.fill();
@@ -314,6 +327,11 @@
         });
     }
 
+    function drawNodes() {
+        drawNodeLayer(nodesFar,  NODE_LINK_DIST_FAR,  0.10, 0.45);
+        drawNodeLayer(nodesNear, NODE_LINK_DIST_NEAR, 0.18, 0.8);
+    }
+
     // ─── Faisceau de scan ambiant (sweep vertical doux, en boucle) ────
     function drawScanBeam(ts) {
         const phase = (ts % SCAN_PERIOD) / SCAN_PERIOD;
@@ -394,7 +412,8 @@
             line.draw();
             if (line.done) lines[i] = new DigitalLine();
         });
-        nodes.forEach(n => n.update());
+        nodesNear.forEach(n => n.update());
+        nodesFar.forEach(n => n.update());
 
         requestAnimationFrame(animate);
     }
