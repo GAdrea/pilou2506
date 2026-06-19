@@ -76,6 +76,7 @@
         canvas.height = window.innerHeight;
         bgGrad = null;
         initNodes();
+        buildCountryShapes();
     }
     window.addEventListener('resize', resize);
 
@@ -205,6 +206,114 @@
         });
     }
 
+    // ─── Constellations "pays" (France, Martinique, Japon) ────────────
+    // Silhouettes stylisées (coordonnées normalisées 0..1 dans une boîte
+    // locale), reliées entre elles comme une vraie constellation : on ne
+    // cherche pas l'exactitude cartographique, juste une forme reconnaissable
+    // dessinée avec le même langage visuel que le reste du fond (nœuds +
+    // fils fins).
+    const COUNTRY_SHAPES = [
+        {
+            name: 'France',
+            color: '59, 130, 246', // bleu France
+            closed: true,
+            anchor: { xPct: 0.84, yPct: 0.16 },
+            size: 230,
+            points: [
+                [0.55, 0.02], [0.68, 0.06], [0.85, 0.25], [0.92, 0.62],
+                [0.80, 0.85], [0.55, 0.95], [0.30, 0.92], [0.18, 0.68],
+                [0.02, 0.35], [0.15, 0.18]
+            ],
+            crossLinks: [[0, 4], [8, 2]]
+        },
+        {
+            name: 'Martinique',
+            color: '255, 140, 0', // orange Antilles
+            closed: true,
+            anchor: { xPct: 0.09, yPct: 0.80 },
+            size: 120,
+            points: [
+                [0.42, 0.02], [0.62, 0.10], [0.75, 0.30], [0.95, 0.38],
+                [0.72, 0.45], [0.80, 0.62], [0.70, 0.92], [0.45, 0.88],
+                [0.22, 0.72], [0.12, 0.45], [0.22, 0.15]
+            ],
+            crossLinks: [[0, 6]]
+        },
+        {
+            name: 'Japon',
+            color: '188, 0, 45', // rouge Japon
+            closed: false,
+            anchor: { xPct: 0.91, yPct: 0.74 },
+            size: 200,
+            points: [
+                [0.78, 0.04], [0.68, 0.16], [0.72, 0.22], [0.85, 0.38],
+                [0.70, 0.50], [0.50, 0.58], [0.30, 0.66], [0.42, 0.74],
+                [0.18, 0.78], [0.10, 0.92]
+            ],
+            crossLinks: [[0, 8]],
+            highlightIndex: 8 // Fukuoka
+        }
+    ];
+
+    let countryShapes = [];
+    function buildCountryShapes() {
+        const scaleFactor = Math.max(0.45, Math.min(1, Math.min(canvas.width, canvas.height) / 900));
+        countryShapes = COUNTRY_SHAPES.map((def, idx) => {
+            const cx = canvas.width  * def.anchor.xPct;
+            const cy = canvas.height * def.anchor.yPct;
+            const scale = def.size * scaleFactor;
+            const pts = def.points.map(([nx, ny]) => ({
+                x: cx + (nx - 0.5) * scale,
+                y: cy + (ny - 0.5) * scale
+            }));
+            return { ...def, pts, phase: idx * 1.7 };
+        });
+    }
+    buildCountryShapes();
+
+    function drawCountryShapes(ts) {
+        countryShapes.forEach(shape => {
+            const bobX = prefersReducedMotion ? 0 : Math.sin(ts * 0.00018 + shape.phase) * 4;
+            const bobY = prefersReducedMotion ? 0 : Math.cos(ts * 0.00014 + shape.phase * 1.3) * 4;
+            const pts  = shape.pts.map(p => ({ x: p.x + bobX, y: p.y + bobY }));
+
+            // Contour (silhouette du pays)
+            ctx.save();
+            ctx.strokeStyle = 'rgba(' + shape.color + ', 0.28)';
+            ctx.lineWidth   = 0.8;
+            ctx.shadowBlur  = 4;
+            ctx.shadowColor = 'rgb(' + shape.color + ')';
+            ctx.beginPath();
+            pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+            if (shape.closed) ctx.closePath();
+            ctx.stroke();
+            ctx.restore();
+
+            // Traces "circuit" internes
+            (shape.crossLinks || []).forEach(([a, b]) => {
+                ctx.strokeStyle = 'rgba(' + shape.color + ', 0.12)';
+                ctx.lineWidth   = 0.6;
+                ctx.beginPath();
+                ctx.moveTo(pts[a].x, pts[a].y);
+                ctx.lineTo(pts[b].x, pts[b].y);
+                ctx.stroke();
+            });
+
+            // Nœuds lumineux à chaque sommet
+            pts.forEach((p, i) => {
+                const isHighlight = shape.highlightIndex === i;
+                ctx.save();
+                ctx.shadowBlur  = isHighlight ? 12 : 6;
+                ctx.shadowColor = 'rgb(' + shape.color + ')';
+                ctx.fillStyle   = 'rgba(' + shape.color + ', ' + (isHighlight ? 1 : 0.85) + ')';
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, isHighlight ? 3.2 : 1.8, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            });
+        });
+    }
+
     // ─── Faisceau de scan ambiant (sweep vertical doux, en boucle) ────
     function drawScanBeam(ts) {
         const phase = (ts % SCAN_PERIOD) / SCAN_PERIOD;
@@ -275,6 +384,7 @@
         ctx.translate(parallaxX, parallaxY);
         drawGrid();
         drawNodes();
+        drawCountryShapes(ts || 0);
         ctx.restore();
 
         if (!prefersReducedMotion) drawScanBeam(ts || 0);
