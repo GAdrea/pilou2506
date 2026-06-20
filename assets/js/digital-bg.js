@@ -57,18 +57,12 @@
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    const LINE_COUNT   = 45;
     const GRID_SPACING = 40;
     const NODE_COUNT_NEAR = 75;
     const NODE_LINK_DIST_NEAR = 130;
     const NODE_COUNT_FAR  = 55;
     const NODE_LINK_DIST_FAR  = 170;
     const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    const PALETTE = [
-        '#00d4ff','#00d4ff','#00d4ff','#00b4d8',
-        '#ff4d6d','#ff4d6d',
-        '#3b82f6','#bc002d','#f59e0b'
-    ];
 
     let bgGrad = null;
 
@@ -80,74 +74,6 @@
         buildCountryShapes();
     }
     window.addEventListener('resize', resize);
-
-    class DigitalLine {
-        constructor() { this.reset(); }
-
-        reset() {
-            const w = canvas.width, h = canvas.height;
-            this.startX = Math.random() * w;
-            this.startY = Math.random() * h;
-            const angle = Math.floor(Math.random() * 8) * (Math.PI / 4);
-            this.dx = Math.cos(angle);
-            this.dy = Math.sin(angle);
-            this.speed         = 1.5 + Math.random() * 3.5;
-            this.segmentLength = 60  + Math.random() * 200;
-            this.maxTravel     = this.segmentLength + Math.sqrt(w * w + h * h);
-            this.headDist      = Math.random() * this.segmentLength * 0.8;
-            this.done          = false;
-            this.color         = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-            this.width         = 0.5 + Math.random() * 1.5;
-            this.glow          = 8   + Math.random() * 12;
-        }
-
-        get tailDist() { return Math.max(0, this.headDist - this.segmentLength); }
-
-        update() {
-            this.headDist += this.speed;
-            if (this.tailDist >= this.maxTravel) this.done = true;
-        }
-
-        draw() {
-            const hx = this.startX + this.dx * this.headDist;
-            const hy = this.startY + this.dy * this.headDist;
-            const tx = this.startX + this.dx * this.tailDist;
-            const ty = this.startY + this.dy * this.tailDist;
-            if (hx === tx && hy === ty) return;
-
-            ctx.save();
-            ctx.lineWidth   = this.width;
-            ctx.shadowBlur  = this.glow;
-            ctx.shadowColor = this.color;
-
-            try {
-                const grad = ctx.createLinearGradient(tx, ty, hx, hy);
-                grad.addColorStop(0,   'rgba(0,0,0,0)');
-                grad.addColorStop(0.4, this.color + '55');
-                grad.addColorStop(1,   this.color);
-                ctx.strokeStyle = grad;
-            } catch (_) {
-                ctx.strokeStyle = this.color;
-            }
-
-            ctx.beginPath();
-            ctx.moveTo(tx, ty);
-            ctx.lineTo(hx, hy);
-            ctx.stroke();
-
-            // Nœud lumineux en tête
-            ctx.beginPath();
-            ctx.fillStyle   = '#ffffff';
-            ctx.globalAlpha = 0.9;
-            ctx.shadowBlur  = 14;
-            ctx.arc(hx, hy, this.width + 0.8, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.restore();
-        }
-    }
-
-    let lines = Array.from({ length: LINE_COUNT }, () => new DigitalLine());
 
     // ─── Constellations de nœuds connectés (effet "circuit/réseau") ───
     // Deux couches superposées (proche / lointaine) pour multiplier les
@@ -386,11 +312,6 @@
         drawCountryShapes(ts || 0);
         ctx.restore();
 
-        lines.forEach((line, i) => {
-            line.update();
-            line.draw();
-            if (line.done) lines[i] = new DigitalLine();
-        });
         nodesNear.forEach(n => n.update());
         nodesFar.forEach(n => n.update());
 
