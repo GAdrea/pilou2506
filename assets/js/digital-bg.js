@@ -63,7 +63,6 @@
     const NODE_LINK_DIST_NEAR = 130;
     const NODE_COUNT_FAR  = 55;
     const NODE_LINK_DIST_FAR  = 170;
-    const SCAN_PERIOD   = 14000; // ms, aller-retour complet du faisceau
     const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     const PALETTE = [
         '#00d4ff','#00d4ff','#00d4ff','#00b4d8',
@@ -332,24 +331,6 @@
         drawNodeLayer(nodesNear, NODE_LINK_DIST_NEAR, 0.18, 0.8);
     }
 
-    // ─── Faisceau de scan ambiant (sweep vertical doux, en boucle) ────
-    function drawScanBeam(ts) {
-        const phase = (ts % SCAN_PERIOD) / SCAN_PERIOD;
-        const wave  = (Math.sin(phase * Math.PI * 2 - Math.PI / 2) + 1) / 2;
-        const beamY = wave * canvas.height;
-        const beamH = Math.max(120, canvas.height * 0.18);
-
-        const grad = ctx.createLinearGradient(0, beamY - beamH / 2, 0, beamY + beamH / 2);
-        grad.addColorStop(0,   'rgba(0, 212, 255, 0)');
-        grad.addColorStop(0.5, 'rgba(0, 212, 255, 0.05)');
-        grad.addColorStop(1,   'rgba(0, 212, 255, 0)');
-
-        ctx.save();
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, beamY - beamH / 2, canvas.width, beamH);
-        ctx.restore();
-    }
-
     // ─── Parallax léger au mouvement de la souris ─────────────────────
     let mouseTX = 0, mouseTY = 0;
     let parallaxX = 0, parallaxY = 0;
@@ -404,8 +385,6 @@
         drawNodes();
         drawCountryShapes(ts || 0);
         ctx.restore();
-
-        if (!prefersReducedMotion) drawScanBeam(ts || 0);
 
         lines.forEach((line, i) => {
             line.update();
