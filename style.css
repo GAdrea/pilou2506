@@ -488,6 +488,49 @@ body::after {
 .timeline-item.reveal { transition-delay: 0.1s; }
 
 /* ==========================================================
+   LIGHTBOX — agrandir une image au clic (page article)
+   ========================================================== */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 3, 8, 0.92);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+.lightbox-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+.lightbox-overlay img {
+    max-width: 92vw;
+    max-height: 88vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.18);
+}
+.lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: var(--neon-cyan);
+    cursor: pointer;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: background 0.2s ease;
+}
+.lightbox-close:hover {
+    background: rgba(0, 212, 255, 0.18);
+}
+
+/* ==========================================================
    ACCESSIBILITÉ — réduction des animations si demandée
    ========================================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -506,5 +549,8 @@ body::after {
     .reveal {
         opacity: 1 !important;
         transform: none !important;
+    }
+    .lightbox-overlay {
+        transition: none !important;
     }
 }

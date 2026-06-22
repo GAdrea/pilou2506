@@ -246,9 +246,12 @@ function renderArticle(article) {
             <span class="text-slate-400 truncate max-w-xs">${escapeHtml(article.title)}</span>
         </div>
 
-        <!-- Image hero -->
-        ${img ? `<div class="rounded-xl overflow-hidden mb-8 aspect-video">
-            <img src="${img}" alt="${escapeHtml(article.title)}" class="w-full h-full object-cover">
+        <!-- Image hero : affichée en entier (jamais recadrée), cliquable pour l'agrandir -->
+        ${img ? `<div class="rounded-xl overflow-hidden mb-8 text-center bg-hudSurface">
+            <img src="${img}" alt="${escapeHtml(article.title)}"
+                 class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
+                 style="max-height:65vh"
+                 data-lightbox="${img}">
         </div>` : ''}
 
         <!-- En-tête article -->
@@ -312,10 +315,50 @@ function renderNotFound() {
         </div>`;
 }
 
+// ─── Lightbox — agrandir l'image hero au clic ──────────────────
+
+function initLightbox() {
+    const overlay = document.getElementById('lightboxOverlay');
+    const imgEl   = document.getElementById('lightboxImage');
+    const closeBtn = document.getElementById('lightboxClose');
+    if (!overlay || !imgEl) return;
+
+    function openLightbox(src, alt) {
+        imgEl.src = src;
+        imgEl.alt = alt || '';
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        imgEl.src = '';
+    }
+
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-lightbox]');
+        if (trigger) {
+            openLightbox(trigger.getAttribute('data-lightbox'), trigger.alt);
+            return;
+        }
+        if (e.target === overlay || (closeBtn && e.target.closest('#lightboxClose'))) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+}
+
 // ─── Init ─────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
     initProgressBar();
+    initLightbox();
     const id = getArticleId();
     const article = id ? findArticle(id) : null;
     article ? renderArticle(article) : renderNotFound();
