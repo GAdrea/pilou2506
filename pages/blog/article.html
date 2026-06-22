@@ -80,6 +80,16 @@
         </div>
     </main>
 
+    <!-- Lightbox : agrandir l'image hero au clic -->
+    <div id="lightboxOverlay" class="lightbox-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Fermer l'image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <img id="lightboxImage" src="" alt="">
+    </div>
+
     <footer class="py-12 px-6 hud-footer">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="../../index.html" class="text-xl font-black">
