@@ -23,7 +23,7 @@ window.BLOG_ARTICLES = [
     id: "mon-sejour-en-martinique",
     category: "Antilles",
     title: "Mon séjour en Martinique",
-    image: "",
+    image: "assets/img/posts/1782031811272.jpg",
     description: "Mon enfance mouvementée en Martinique : chiens de garde, ruisseaux façon Indiana Jones et coups de règle à l'ancienne.",
     date: "2026-06-21",
     content: `
