@@ -44,21 +44,29 @@ function renderCards() {
 
     projects.forEach((project) => {
         const card = document.createElement('article');
-        card.className = 'hud-card group';
+        card.className = 'hud-card group flex flex-col';
         const imgSrc = imageSrc(project.image);
+        const detailUrl = `projet.html?id=${encodeURIComponent(project.id)}`;
         const demoUrl = resolveUrl(project.demoUrl || project.url);
         const tagsHtml = Array.isArray(project.tags) && project.tags.length
             ? `<div class="flex gap-2 mt-3 flex-wrap">${project.tags.map(t => `<span class="hud-tag">${escapeHtml(t)}</span>`).join('')}</div>`
             : '';
         card.innerHTML = `
-            <div class="h-48 overflow-hidden">
-                <img src="${imgSrc}" alt="${escapeHtml(project.title)}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
-            </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold">${escapeHtml(project.title)}</h3>
+            <a href="${detailUrl}" class="block">
+                <div class="h-48 overflow-hidden bg-hudSurface">
+                    <img src="${imgSrc}" alt="${escapeHtml(project.title)}" class="w-full h-full object-contain group-hover:scale-110 transition duration-500" loading="lazy">
+                </div>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+                <a href="${detailUrl}" class="hover:text-neonCyan transition">
+                    <h3 class="text-xl font-bold">${escapeHtml(project.title)}</h3>
+                </a>
                 ${project.description ? `<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">${escapeHtml(project.description)}</p>` : ''}
                 ${tagsHtml}
-                ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink mt-4">Voir la démo</a>` : ''}
+                <div class="mt-4 flex flex-col gap-2">
+                    <a href="${detailUrl}" class="hud-btn-inline">Voir le projet</a>
+                    ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink">Voir la démo</a>` : ''}
+                </div>
             </div>
         `;
         container.appendChild(card);
