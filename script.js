@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${project.description ? `<p class="text-sm mb-4" style="color:#64748b">${project.description}</p>` : ''}
                             ${tags.length ? `<div class="flex gap-2 flex-wrap mb-4">${tags.map(t => `<span class="hud-tag">${t}</span>`).join('')}</div>` : ''}
                             <div class="mt-auto pt-2 flex flex-col gap-2">
-                                <a href="pages/web/projets-web.html" class="hud-btn-inline">Consulter le projet</a>
+                                <a href="pages/web/projet.html?id=${encodeURIComponent(project.id)}" class="hud-btn-inline">Consulter le projet</a>
                                 ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink">Voir la démo</a>` : ''}
                             </div>
                         </div>
