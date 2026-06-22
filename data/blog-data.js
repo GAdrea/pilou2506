@@ -20,6 +20,47 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "mon-sejour-en-martinique",
+    category: "Antilles",
+    title: "Mon séjour en Martinique",
+    image: "",
+    description: "Mon enfance mouvementée en Martinique : chiens de garde, ruisseaux façon Indiana Jones et coups de règle à l'ancienne.",
+    date: "2026-06-21",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🌴 Mon séjour en Martinique</strong></p>
+
+<p>J'ai beaucoup parlé du Japon, de mes coups de gueule contre l'hôtellerie ou de mes sessions de code nocturnes. Pourtant, il y a un sujet que j'ai à peine effleuré : la Martinique. Et non, je n'y ai pas seulement passé mes vacances à bronzer. J'y ai vécu pendant 3 ans (du CM2 à la 5ème).</p>
+
+<p>Et autant vous dire que mon quotidien de l'époque était légèrement différent de ma vie à Paris... ou de celle à Fukuoka. 🏝️</p>
+
+<p><strong>Le parcours du combattant quotidien 🏃‍♂️💨</strong></p>
+
+<p>Chaque matin, c'était 30 minutes de marche pour aller à l'école. Rien de bien méchant, me direz-vous. Sauf quand le trajet comprend :</p>
+
+<p>🐕 Les chiens de garde du voisinage, parfois non attachés, qu'il fallait tenir en respect (merci la batte de baseball).</p>
+
+<p>🌧️ Des raccourcis "naturels" à travers des ruisseaux. Quand il pleuvait, traverser ces trucs devenait un sport extrême. C'est simple, l'illustration de ce post, c'est littéralement moi à 10 ans en mode Indiana Jones du CM2 ! 🧗‍♂️</p>
+
+<p>Sinon, pas de cantine pour moi. À midi, je filais chez mes grands-parents. Et franchement, rien ne bat la cuisine de ma grand-mère. C'était le cheat code ultime de ma scolarité. 🍲👵</p>
+
+<p><strong>L'école de la "vieille époque" 📏💥</strong></p>
+
+<p>L'éducation y était stricte. J'ai testé (et pas approuvé) le fameux coup de règle sur les doigts pour bavardage. Aujourd'hui, les parents porteraient plainte et appelleraient les syndicats. À mon époque, si tu avais le malheur de te plaindre à la maison, tes parents te remettaient une double dose. 😅</p>
+
+<p>Une autre époque, certes. Mais quand je vois le comportement de certains aujourd'hui, je me dis que ce n'était peut-être pas si mal. Oui, je parle comme un vieux grincheux, et alors ? J'assume ! 👴</p>
+
+<p><strong>Le bon côté des choses 🎄🍹</strong></p>
+
+<p>Pour le reste, j'ai profité à fond : la plage, le soleil, les fêtes de fin d'année qui durent des jours (Noël et le Jour de l'An là-bas, c'est un autre monde comparé à Paris).</p>
+
+<p>Je garde un excellent souvenir de ces années. C'était surtout l'occasion d'être proche de ma famille, que je vois beaucoup moins.</p>
+       `,
+  },
+
+  //Article suivant
+  {
     id: "efforts-ne-trahissent-jamais",
     category: "Carrière",
     title: "Les efforts ne trahissent jamais !",
