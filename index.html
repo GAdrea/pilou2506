@@ -184,8 +184,21 @@
             </div>
           </div>
 
+          <!-- World Clock HUD : France / Martinique / Japon en direct -->
+          <div class="flex gap-6 flex-wrap fade-in-up delay-4">
+            <div class="hud-stat">
+              🇫🇷 FR <span class="val" data-clock-tz="Europe/Paris">--:--:--</span>
+            </div>
+            <div class="hud-stat">
+              🇲🇶 MQ <span class="val" data-clock-tz="America/Martinique">--:--:--</span>
+            </div>
+            <div class="hud-stat">
+              🇯🇵 JP <span class="val" data-clock-tz="Asia/Tokyo">--:--:--</span>
+            </div>
+          </div>
+
           <!-- CTAs -->
-          <div class="flex flex-wrap gap-4 pt-2 fade-in-up delay-4">
+          <div class="flex flex-wrap gap-4 pt-2 fade-in-up delay-5">
             <a href="#web" class="hud-btn hud-btn-primary">Mes Projets</a>
             <a href="#contact" class="hud-btn hud-btn-outline">Me contacter</a>
             <a
@@ -304,14 +317,23 @@
               <div class="hud-card text-center p-4 flex-1">
                 <div class="text-3xl mb-2">🇲🇶</div>
                 <div class="hud-stat">Origine</div>
+                <div class="hud-stat mt-1">
+                  <span class="val" data-clock-tz="America/Martinique">--:--:--</span>
+                </div>
               </div>
               <div class="hud-card text-center p-4 flex-1">
                 <div class="text-3xl mb-2">🇫🇷</div>
                 <div class="hud-stat">Culture</div>
+                <div class="hud-stat mt-1">
+                  <span class="val" data-clock-tz="Europe/Paris">--:--:--</span>
+                </div>
               </div>
               <div class="hud-card text-center p-4 flex-1">
                 <div class="text-3xl mb-2">🇯🇵</div>
                 <div class="hud-stat">Présent</div>
+                <div class="hud-stat mt-1">
+                  <span class="val" data-clock-tz="Asia/Tokyo">--:--:--</span>
+                </div>
               </div>
             </div>
           </div>
@@ -456,6 +478,7 @@
     <script src="data/web-data.js"></script>
     <script src="data/video-data.js"></script>
     <script src="assets/js/digital-bg.js"></script>
+    <script src="assets/js/world-clock.js"></script>
     <script src="script.js"></script>
     <script src="assets/js/contact-form.js"></script>
 </body>
