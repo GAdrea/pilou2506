@@ -80,14 +80,17 @@
         </div>
     </main>
 
-    <!-- Lightbox : agrandir l'image hero au clic -->
+    <!-- Lightbox : agrandir l'image (hero ou carrousel) au clic, navigable si plusieurs photos -->
     <div id="lightboxOverlay" class="lightbox-overlay" role="dialog" aria-modal="true" aria-hidden="true">
         <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Fermer l'image">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
+        <button type="button" id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Photo précédente" hidden>‹</button>
+        <button type="button" id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Photo suivante" hidden>›</button>
         <img id="lightboxImage" src="" alt="">
+        <div id="lightboxCounter" class="lightbox-counter" hidden></div>
     </div>
 
     <footer class="py-12 px-6 hud-footer">
