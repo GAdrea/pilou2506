@@ -223,6 +223,68 @@ function initComments(id) {
     });
 }
 
+// ─── Carrousel photos (galerie multi-images) ───────────────────
+
+function renderCarousel(gallery, title) {
+    const slides = gallery.map((src, i) => `
+        <div class="carousel-slide">
+            <img src="${imageSrc(src)}" alt="${escapeHtml(title)} — photo ${i + 1}/${gallery.length}"
+                 data-lightbox="${imageSrc(src)}" data-lightbox-index="${i}"
+                 loading="${i === 0 ? 'eager' : 'lazy'}">
+        </div>`).join('');
+
+    const dots = gallery.map((_, i) => `
+        <button type="button" class="carousel-dot ${i === 0 ? 'active' : ''}" data-index="${i}"
+                aria-label="Aller à la photo ${i + 1}"></button>`).join('');
+
+    return `
+    <div class="article-carousel mb-8" id="articleCarousel" data-count="${gallery.length}">
+        <div class="carousel-track-wrap rounded-xl overflow-hidden">
+            <div class="carousel-track" id="carouselTrack">${slides}</div>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" id="carouselPrev" aria-label="Photo précédente">‹</button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" id="carouselNext" aria-label="Photo suivante">›</button>
+            <div class="carousel-counter" id="carouselCounter">1 / ${gallery.length}</div>
+        </div>
+        <div class="carousel-dots" id="carouselDots">${dots}</div>
+    </div>`;
+}
+
+function initCarousel() {
+    const root = document.getElementById('articleCarousel');
+    if (!root) return;
+
+    const track   = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const counter = document.getElementById('carouselCounter');
+    const dots    = Array.from(root.querySelectorAll('.carousel-dot'));
+    const count   = parseInt(root.dataset.count, 10) || 1;
+    let index = 0;
+
+    function goTo(i) {
+        index = ((i % count) + count) % count;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        counter.textContent = `${index + 1} / ${count}`;
+        dots.forEach((d, di) => d.classList.toggle('active', di === index));
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(index - 1));
+    nextBtn?.addEventListener('click', () => goTo(index + 1));
+    dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index, 10))));
+
+    // Swipe tactile
+    let touchStartX = null;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const delta = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 40) goTo(delta < 0 ? index + 1 : index - 1);
+        touchStartX = null;
+    }, { passive: true });
+
+    goTo(0);
+}
+
 // ─── Render principal ─────────────────────────────────────────
 
 function renderArticle(article) {
@@ -237,6 +299,19 @@ function renderArticle(article) {
     const cat       = article.category || '';
     const content   = (article.content || '').trim();
 
+    const gallery = Array.isArray(article.images) && article.images.length > 0
+        ? article.images
+        : (article.image ? [article.image] : []);
+
+    const heroBlock = gallery.length > 1
+        ? renderCarousel(gallery, article.title)
+        : (img ? `<div class="rounded-xl overflow-hidden mb-8 text-center bg-hudSurface">
+            <img src="${img}" alt="${escapeHtml(article.title)}"
+                 class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
+                 style="max-height:65vh"
+                 data-lightbox="${img}">
+        </div>` : '');
+
     container.innerHTML = `
         <!-- Fil d'Ariane -->
         <div class="flex items-center gap-2 text-sm text-slate-500 mb-10">
@@ -246,13 +321,8 @@ function renderArticle(article) {
             <span class="text-slate-400 truncate max-w-xs">${escapeHtml(article.title)}</span>
         </div>
 
-        <!-- Image hero : affichée en entier (jamais recadrée), cliquable pour l'agrandir -->
-        ${img ? `<div class="rounded-xl overflow-hidden mb-8 text-center bg-hudSurface">
-            <img src="${img}" alt="${escapeHtml(article.title)}"
-                 class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
-                 style="max-height:65vh"
-                 data-lightbox="${img}">
-        </div>` : ''}
+        <!-- Image hero ou carrousel photo : affichée en entier (jamais recadrée), cliquable pour l'agrandir -->
+        ${heroBlock}
 
         <!-- En-tête article -->
         <header class="mb-8">
@@ -298,6 +368,7 @@ function renderArticle(article) {
         </section>
     `;
 
+    initCarousel();
     initComments(article.id);
     initCopyLink();
 }
@@ -315,17 +386,47 @@ function renderNotFound() {
         </div>`;
 }
 
-// ─── Lightbox — agrandir l'image hero au clic ──────────────────
+// ─── Lightbox — agrandir une image au clic, navigable si galerie ──
 
 function initLightbox() {
-    const overlay = document.getElementById('lightboxOverlay');
-    const imgEl   = document.getElementById('lightboxImage');
+    const overlay  = document.getElementById('lightboxOverlay');
+    const imgEl    = document.getElementById('lightboxImage');
     const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn  = document.getElementById('lightboxPrev');
+    const nextBtn  = document.getElementById('lightboxNext');
+    const counter  = document.getElementById('lightboxCounter');
     if (!overlay || !imgEl) return;
 
-    function openLightbox(src, alt) {
-        imgEl.src = src;
-        imgEl.alt = alt || '';
+    let gallery = [];   // [{src, alt}, ...] du groupe courant
+    let index   = 0;
+
+    function updateNav() {
+        const multi = gallery.length > 1;
+        [prevBtn, nextBtn, counter].forEach(el => { if (el) el.hidden = !multi; });
+        if (multi && counter) counter.textContent = `${index + 1} / ${gallery.length}`;
+    }
+
+    function show(i) {
+        index = ((i % gallery.length) + gallery.length) % gallery.length;
+        const item = gallery[index];
+        imgEl.src = item.src;
+        imgEl.alt = item.alt || '';
+        updateNav();
+    }
+
+    function openLightbox(triggerEl) {
+        const carousel = triggerEl.closest('#articleCarousel');
+        if (carousel) {
+            gallery = Array.from(carousel.querySelectorAll('[data-lightbox]')).map(el => ({
+                src: el.getAttribute('data-lightbox'),
+                alt: el.alt || ''
+            }));
+            index = parseInt(triggerEl.dataset.lightboxIndex, 10) || 0;
+        } else {
+            gallery = [{ src: triggerEl.getAttribute('data-lightbox'), alt: triggerEl.alt || '' }];
+            index = 0;
+        }
+        show(index);
         overlay.classList.add('open');
         overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -336,22 +437,38 @@ function initLightbox() {
         overlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         imgEl.src = '';
+        gallery = [];
     }
 
     document.addEventListener('click', (e) => {
         const trigger = e.target.closest('[data-lightbox]');
         if (trigger) {
-            openLightbox(trigger.getAttribute('data-lightbox'), trigger.alt);
+            openLightbox(trigger);
             return;
         }
+        if (e.target.closest('#lightboxPrev')) { show(index - 1); return; }
+        if (e.target.closest('#lightboxNext')) { show(index + 1); return; }
         if (e.target === overlay || (closeBtn && e.target.closest('#lightboxClose'))) {
             closeLightbox();
         }
     });
 
     document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('open')) return;
         if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft' && gallery.length > 1) show(index - 1);
+        if (e.key === 'ArrowRight' && gallery.length > 1) show(index + 1);
     });
+
+    // Swipe tactile sur l'image agrandie
+    let touchStartX = null;
+    overlay.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    overlay.addEventListener('touchend', (e) => {
+        if (touchStartX === null || gallery.length <= 1) { touchStartX = null; return; }
+        const delta = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 40) show(delta < 0 ? index + 1 : index - 1);
+        touchStartX = null;
+    }, { passive: true });
 }
 
 // ─── Init ─────────────────────────────────────────────────────

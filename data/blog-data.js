@@ -20,6 +20,52 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "parcours-universitaire-couteau-suisse",
+    category: "Carrière",
+    title: "Mon parcours universitaire atypique : de la gestion ratée au profil \"couteau suisse\" au Japon",
+    image: "assets/img/posts/parcours-universitaire/parcours-univ-01.jpg",
+    images: [
+      "assets/img/posts/parcours-universitaire/parcours-univ-01.jpg",
+      "assets/img/posts/parcours-universitaire/parcours-univ-02.jpg",
+      "assets/img/posts/parcours-universitaire/parcours-univ-03.jpg",
+      "assets/img/posts/parcours-universitaire/parcours-univ-04.jpg",
+      "assets/img/posts/parcours-universitaire/parcours-univ-05.jpg",
+    ],
+    description: "De l'IUT de Gestion à la Sorbonne en passant par l'INALCO : retour sur un parcours universitaire pas du tout linéaire, mais qui a fait de moi un vrai couteau suisse.",
+    date: "2026-07-02",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎓 Mon parcours universitaire atypique : de la gestion ratée au profil "couteau suisse" au Japon</strong></p>
+
+<p>J'ai déjà un peu abordé l'éducation que j'ai reçue dans ma famille et survolé mes années de scolarité. Aujourd'hui, on va parler de mon parcours universitaire... disons très "créatif" et pas du tout linéaire. 🎢</p>
+
+<p><strong>1️⃣ L'IUT de Gestion : l'erreur d'aiguillage 📉💻</strong></p>
+
+<p>Après mon bac STG, je me suis dirigé tout naturellement vers un IUT de Gestion. La suite logique, sur le papier. En pratique ? Un désastre. N'ayant pas le bagage suffisant dans des matières hautement sympathiques comme la comptabilité ou les mathématiques, j'ai accumulé de sacrées lacunes et des notes proches du niveau de la mer.</p>
+
+<p>Le seul point positif ? Les cours de droit pénal qui étaient franchement intéressants (on ne sait jamais, ça peut servir). Bref, à la fin de l'année, le verdict tombe : même pas le droit de redoubler. J'ai été poliment invité à prendre la porte. 🚶💨</p>
+
+<p><strong>2️⃣ La bouffée d'air frais : l'INALCO 🏛️✨</strong></p>
+
+<p>C'est suite à ce magnifique échec que je suis arrivé à l'INALCO pour étudier le japonais. J'avais déjà commencé à l'apprendre via des cours privés, alors autant y aller à fond. Je ne vais pas m'étaler sur cette période puisqu'elle a déjà son propre post dédié, mais c'était sans conteste l'une des meilleures périodes de ma vie.</p>
+
+<p><strong>3️⃣ Le Master de FLE à la Sorbonne : prof de français en herbe 📚🎓</strong></p>
+
+<p>Après ma licence, direction la Sorbonne pour un Master de FLE (Français Langue Étrangère) pour devenir enseignant. Beaucoup de théories poussiéreuses, très peu de pratique, mais l'expérience globale était intéressante, même si moins marquante que l'INALCO. Le vrai point positif ? Ça m'aura permis de faire deux stages pratiques : un mois à Paris, et surtout... mon stage de 6 mois à Fukuoka qui a tout déclenché.</p>
+
+<p><strong>La prise de conscience existentielle 🤔💡</strong></p>
+
+<p>En écrivant ces lignes, je me rends compte d'une chose assez magique : à l'exception du japonais, absolument toutes les études que j'ai faites jusqu'à présent ne me servent à rien au quotidien. Je bosse aujourd'hui dans un secteur (l'hôtellerie, que je déteste, petit rappel gratuit) pour lequel je n'ai reçu aucune formation théorique ou pratique. Cherchez la logique. 🤷‍♂️🏨</p>
+
+<p>Mais avec le recul, je ne regrette rien. Ce parcours m'a quand même apporté des connaissances variées dans plein de domaines et m'aura permis de faire des rencontres formidables tout au long du chemin.</p>
+
+<p>Alors oui, je ne suis peut-être pas un expert absolu dans un domaine précis, mais ma vraie force, c'est la diversité de mes compétences. Un vrai profil de couteau suisse. Et au fond, ce n'est pas une si mauvaise chose en soi ! 🛠️✨</p>
+       `,
+  },
+
+  //Article suivant
+  {
     id: "mon-sejour-en-martinique",
     category: "Antilles",
     title: "Mon séjour en Martinique",
