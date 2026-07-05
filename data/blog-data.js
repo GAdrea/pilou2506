@@ -20,6 +20,58 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "raler-sur-le-japon-preuve-d-amour",
+    category: "Société",
+    title: "Râler sur le Japon : la plus belle preuve d'amour ?",
+    image: "assets/img/posts/raler-sur-le-japon/raler-japon-01.jpg",
+    images: [
+      "assets/img/posts/raler-sur-le-japon/raler-japon-01.jpg",
+      "assets/img/posts/raler-sur-le-japon/raler-japon-02.jpg",
+      "assets/img/posts/raler-sur-le-japon/raler-japon-03.jpg",
+      "assets/img/posts/raler-sur-le-japon/raler-japon-04.jpg",
+      "assets/img/posts/raler-sur-le-japon/raler-japon-05.jpg",
+    ],
+    description: "Critiquer le Japon qu'on aime, sans tomber dans le cliché ni la haine : retour sur mes coups de gueule et sur ce qui fait, au fond, une critique juste.",
+    date: "2026-07-05",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🌋 Râler sur le Japon : la plus belle preuve d'amour ? 🇫🇷 critique mais juste 🎌</strong></p>
+
+<p>En jetant un œil à mes anciens posts (et bon dieu, j'en avais des choses à dire), j'ai réalisé que j'avais accumulé un sacré palmarès de coups de gueule. 😅</p>
+
+<p>De la politique au social, en passant par le monde pro, je me suis exprimé sans filtre. Je ne prétends pas avoir la science infuse : mon avis est simplement le fruit de mon vécu ici. Et ce vécu varie selon les gens, ce qui fait toute la beauté de l'expatriation !</p>
+
+<p>Mais soyons honnêtes deux minutes. Pour beaucoup, le Japon est ce pays parfait, ultra-sécurisé et pratique au quotidien. C'est vrai. Mais c'est aussi un pays avec une politique à deux vitesses et une discrimination bien réelle. Parler de l'un sans évoquer l'autre est, au mieux, d'une stupidité sans nom, au pire, d'une profonde hypocrisie. Le tout est de trouver l'équilibre et de rester juste. ⚖️</p>
+
+<p><strong>Parce que oui : j'adore le Japon ! ❤️</strong></p>
+
+<p>J'adore sa culture, sa gastronomie, ses paysages et sa langue que je trouve magnifique à écouter. J'ai consacré 3 ans de ma vie à l'étudier pour pouvoir m'installer ici, et je me suis battu pour y rester. C'est difficile, la terre natale est loin, mais cette expérience de vie est inestimable (bon, ça va juste me coûter ma retraite, mais tant pis, je mourrai sûrement avant 😅).</p>
+
+<p>J'ai rencontré des gens formidables avec qui je passe des moments incroyables. J'ai voyagé, et parler la langue a sublimé chaque expérience. Vivre ici sans parler japonais ? Trop handicapant sur le long terme. Bon courage pour affronter les démarches administratives ou médicales sans ça ! 🏥📋</p>
+
+<p><strong>Le revers de la médaille... 🪙</strong></p>
+
+<p>Plus l'amour est fort, plus le revers fait mal. J'ai trop fantasmé au début, et j'ai laissé des plumes sur des travers que j'ai mis du temps à comprendre.</p>
+
+<p>Sauf toi, Sanae ! Ta politique est tout simplement injuste et franchement, t'abuses ! 😤📉</p>
+
+<p>Ça me fait chier que les bons côtés du pays soient gâchés par des discriminations gratuites ou des remarques désobligeantes. C'est encore pire dans le monde professionnel, et je ne parle même pas de ce que subit la gent féminine...</p>
+
+<p>Alors pourquoi j'en parle ? Déjà, pour faire honneur à mes racines françaises de râleur professionnel. Mais surtout pour mettre en lumière ce que les Japonais s'efforcent de cacher sous le tatami. Vous n'entendrez jamais un Japonais porter un regard critique sur son pays en public. La culture prône l'harmonie et le consensus (parfois forcé, mais passons !). Pour eux, critiquer le Japon est souvent perçu comme une attaque personnelle. Alors, ils esquivent. 🤫🔇</p>
+
+<p><strong>Dire la vérité, sans haine 🎤✨</strong></p>
+
+<p>Les choses ne changeront pas dans le silence. Il ne s'agit pas de critiquer pour le plaisir. Ceux qui ne font que cracher sur le Japon sont souvent des aigris qui n'ont pas obtenu ce qu'ils voulaient et qui ragent (pourquoi vous me regardez comme ça ? 😅). Quant aux autres créateurs de contenu, beaucoup ont des partenariats ou des visas liés à des institutions japonaises, ce qui évite gentiment de marquer contre son camp. Simple théorie, bien sûr.</p>
+
+<p>Moi, je préfère être honnête.</p>
+
+<p>Au fond, aimer un pays parfait avec des œillères, c'est facile. Mais voir ses problèmes en face, les accepter, et continuer à l'aimer malgré tout... c'est une bien plus belle preuve d'amour. 🌹🎌</p>
+       `,
+  },
+
+  //Article suivant
+  {
     id: "parcours-universitaire-couteau-suisse",
     category: "Carrière",
     title: "Mon parcours universitaire atypique : de la gestion ratée au profil \"couteau suisse\" au Japon",
