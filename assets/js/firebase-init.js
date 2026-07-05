@@ -13,12 +13,12 @@
    ============================================================ */
 
 const firebaseConfig = {
-    apiKey: "REMPLACE_MOI",
-    authDomain: "REMPLACE_MOI.firebaseapp.com",
-    projectId: "REMPLACE_MOI",
-    storageBucket: "REMPLACE_MOI.appspot.com",
-    messagingSenderId: "REMPLACE_MOI",
-    appId: "REMPLACE_MOI"
+    apiKey: "AIzaSyBeJbUTwpcNrUGZ8Dx7UU8stmGewFYEcrc",
+    authDomain: "sodium-hour-451511-n6.firebaseapp.com",
+    projectId: "sodium-hour-451511-n6",
+    storageBucket: "sodium-hour-451511-n6.firebasestorage.app",
+    messagingSenderId: "109258013426",
+    appId: "1:109258013426:web:d29757b8bb91e9b301ae6b"
 };
 
 firebase.initializeApp(firebaseConfig);
