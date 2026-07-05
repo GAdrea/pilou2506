@@ -1,24 +1,21 @@
 /* ============================================================
    firebase-init.js — Initialisation Firebase (projet Pilou)
-   ------------------------------------------------------------
-   ⚠️ À FAIRE : remplace les valeurs ci-dessous par celles de
-   TON projet Firebase.
-   Où les trouver : console.firebase.google.com → ton projet →
-   ⚙️ Paramètres du projet → onglet "Général" → section
-   "Vos applications" → app Web → "Configuration du SDK".
-
+   ============================================================
+   La configuration Firebase est chargée depuis les variables
+   d'environnement (voir .env.example pour les variables requises).
+   
    Ces valeurs sont publiques par nature (elles partent dans le
    navigateur de chaque visiteur) — la sécurité ne vient pas
    d'ici mais des règles Firestore (voir FIREBASE_SETUP.md).
    ============================================================ */
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBeJbUTwpcNrUGZ8Dx7UU8stmGewFYEcrc",
-    authDomain: "sodium-hour-451511-n6.firebaseapp.com",
-    projectId: "sodium-hour-451511-n6",
-    storageBucket: "sodium-hour-451511-n6.firebasestorage.app",
-    messagingSenderId: "109258013426",
-    appId: "1:109258013426:web:d29757b8bb91e9b301ae6b"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 firebase.initializeApp(firebaseConfig);
