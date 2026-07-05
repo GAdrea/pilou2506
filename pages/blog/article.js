@@ -176,52 +176,8 @@ function renderRelated(currentId, category) {
 }
 
 // ─── Commentaires (HUD) ───────────────────────────────────────
-
-const COMMENTS_KEY = 'pilou_blog_comments_';
-
-function getComments(id) {
-    try { return JSON.parse(localStorage.getItem(COMMENTS_KEY + id) || '[]'); }
-    catch { return []; }
-}
-
-function saveComments(id, list) {
-    localStorage.setItem(COMMENTS_KEY + id, JSON.stringify(list));
-}
-
-function renderCommentsList(id) {
-    const el = document.getElementById('commentsList');
-    if (!el) return;
-    const list = getComments(id);
-    if (list.length === 0) {
-        el.innerHTML = '<p class="text-sm text-slate-500">Aucun commentaire pour le moment. Sois le premier !</p>';
-        return;
-    }
-    el.innerHTML = list.map(c => `
-        <div class="hud-card p-4 mb-3">
-            <div class="flex items-center justify-between mb-2">
-                <span class="text-sm font-bold" style="color:#00d4ff">${escapeHtml(c.authorName)}</span>
-                ${c.date ? `<span class="text-xs text-slate-500">${escapeHtml(formatDate(c.date))}</span>` : ''}
-            </div>
-            <p class="text-sm text-slate-300 whitespace-pre-wrap">${escapeHtml(c.text)}</p>
-        </div>`).join('');
-}
-
-function initComments(id) {
-    renderCommentsList(id);
-    const form = document.getElementById('commentForm');
-    if (!form) return;
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        const name = (document.getElementById('commentAuthorName')?.value || '').trim();
-        const text = (document.getElementById('commentText')?.value || '').trim();
-        if (!name || !text) return;
-        const list = getComments(id);
-        list.unshift({ id: Date.now(), authorName: name, text, date: new Date().toISOString().slice(0, 10) });
-        saveComments(id, list);
-        form.reset();
-        renderCommentsList(id);
-    });
-}
+// La logique complète (Firestore + modération) vit dans
+// assets/js/comments.js, chargé avant ce fichier → window.PilouComments
 
 // ─── Carrousel photos (galerie multi-images) ───────────────────
 
@@ -355,21 +311,27 @@ function renderArticle(article) {
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <label class="hud-label" for="commentAuthorName">Nom</label>
-                        <input type="text" id="commentAuthorName" required placeholder="Votre nom" class="hud-input" />
+                        <input type="text" id="commentAuthorName" required maxlength="60" placeholder="Votre nom" class="hud-input" />
                     </div>
                 </div>
                 <div>
                     <label class="hud-label" for="commentText">Commentaire</label>
-                    <textarea id="commentText" rows="4" required placeholder="Votre réaction..." class="hud-input"></textarea>
+                    <textarea id="commentText" rows="4" required maxlength="1000" placeholder="Votre réaction..." class="hud-input"></textarea>
+                </div>
+                <!-- Piège à bots : invisible pour un humain, souvent rempli par un script -->
+                <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <label for="commentWebsite">Ne pas remplir</label>
+                    <input type="text" id="commentWebsite" name="website" tabindex="-1" autocomplete="off">
                 </div>
                 <button type="submit" class="hud-btn hud-btn-primary">Publier</button>
+                <p id="commentFormFeedback" class="text-sm hidden"></p>
             </form>
             <div id="commentsList"></div>
         </section>
     `;
 
     initCarousel();
-    initComments(article.id);
+    window.PilouComments?.init(article.id, article.title);
     initCopyLink();
 }
 
