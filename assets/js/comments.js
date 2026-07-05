@@ -22,6 +22,18 @@ const PilouComments = (() => {
     const MAX_NAME_LEN = 60;
     const MAX_TEXT_LEN = 1000;
 
+    // Filtre anti-spam basique (couche 1/2 — la vraie barrière est dans
+    // les règles Firestore, qui appliquent EXACTEMENT le même motif :
+    // voir FIREBASE_SETUP.md). Bloque les signatures de spam les plus
+    // courantes : liens, mots-clés classiques. Si tu ajoutes un mot-clé
+    // ici, ajoute-le aussi dans les règles Firestore, sinon un bot qui
+    // contourne le formulaire (appel direct à l'API Firestore) passera.
+    const SPAM_PATTERN = /(https?:\/\/|www\.|viagra|cialis|casino|forex|crypto|bitcoin|escort|xxx|porn|backlink)/i;
+
+    function isLikelySpam(name, text) {
+        return SPAM_PATTERN.test(name) || SPAM_PATTERN.test(text);
+    }
+
     function escapeHtml(text) {
         const d = document.createElement('div');
         d.textContent = text || '';
@@ -118,6 +130,11 @@ const PilouComments = (() => {
             const name = (nameEl?.value || '').trim().slice(0, MAX_NAME_LEN);
             const text = (textEl?.value || '').trim().slice(0, MAX_TEXT_LEN);
             if (!name || !text) return;
+
+            if (isLikelySpam(name, text)) {
+                showFeedback(feedback, '❌ Ton commentaire contient un lien ou un terme non autorisé. Retire-le et réessaie.', 'error');
+                return;
+            }
 
             const btn = form.querySelector('button[type="submit"]');
             if (btn) { btn.disabled = true; btn.textContent = '⏳ Envoi...'; }

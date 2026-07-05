@@ -22,6 +22,13 @@ Compte à 5-10 min, tout est gratuit (tier Spark).
 
 Dans Firestore → onglet **Règles**, remplace tout par :
 
+🆕 **Mise à jour (filtre anti-spam)** : le bloc ci-dessous inclut maintenant un
+rejet automatique des commentaires contenant un lien ou un mot-clé de spam
+classique. Si tes règles Firestore datent d'avant cette mise à jour,
+**republie ce bloc dans Firestore Database → Règles → Publier** — sinon
+le filtre ne s'applique que côté navigateur (contournable en appelant
+l'API Firestore directement).
+
 ```
 rules_version = '2';
 service cloud.firestore {
@@ -39,9 +46,11 @@ service cloud.firestore {
                     && request.resource.data.authorName is string
                     && request.resource.data.authorName.size() > 0
                     && request.resource.data.authorName.size() <= 60
+                    && !request.resource.data.authorName.matches('(?i).*(https?://|www\\.|viagra|cialis|casino|forex|crypto|bitcoin|escort|xxx|porn|backlink).*')
                     && request.resource.data.text is string
                     && request.resource.data.text.size() > 0
                     && request.resource.data.text.size() <= 1000
+                    && !request.resource.data.text.matches('(?i).*(https?://|www\\.|viagra|cialis|casino|forex|crypto|bitcoin|escort|xxx|porn|backlink).*')
                     && request.resource.data.createdAt == request.time;
 
       // Seul toi (connecté via Firebase Auth) peux approuver/supprimer.
