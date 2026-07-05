@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Icône Calculateur d'heures supplémentaires">
+  <defs>
+    <radialGradient id="glow-hours" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="150" cy="150" r="132" fill="url(#glow-hours)"/>
+  <circle cx="150" cy="150" r="112" fill="none" stroke="#00d4ff" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 7"/>
+
+  <path d="M22 44 V22 H44" fill="none" stroke="#00d4ff" stroke-width="4" stroke-opacity="0.6" stroke-linecap="square"/>
+  <path d="M278 256 V278 H256" fill="none" stroke="#00d4ff" stroke-width="4" stroke-opacity="0.6" stroke-linecap="square"/>
+
+  <!-- cadran d'horloge -->
+  <circle cx="128" cy="120" r="56" fill="#0d1525" fill-opacity="0.55" stroke="#00d4ff" stroke-width="4"/>
+  <g stroke="#00d4ff" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5">
+    <line x1="128" y1="70" x2="128" y2="78"/>
+    <line x1="128" y1="162" x2="128" y2="170"/>
+    <line x1="78" y1="120" x2="86" y2="120"/>
+    <line x1="170" y1="120" x2="178" y2="120"/>
+  </g>
+  <g stroke="#00d4ff" stroke-width="5" stroke-linecap="round">
+    <line x1="128" y1="120" x2="128" y2="90"/>
+    <line x1="128" y1="120" x2="150" y2="132"/>
+  </g>
+  <circle cx="128" cy="120" r="4" fill="#00d4ff"/>
+
+  <!-- flèche de conversion -->
+  <path d="M172,150 C186,164 186,180 172,190" fill="none" stroke="#ff4d6d" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M164,184 L172,190 L166,198" fill="none" stroke="#ff4d6d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- touches de calculatrice -->
+  <g fill="#0d1525" fill-opacity="0.6" stroke="#ff4d6d" stroke-width="3">
+    <rect x="152" y="176" width="24" height="20" rx="3"/>
+    <rect x="180" y="176" width="24" height="20" rx="3"/>
+    <rect x="152" y="200" width="24" height="20" rx="3"/>
+    <rect x="180" y="200" width="24" height="20" rx="3"/>
+  </g>
+</svg>
