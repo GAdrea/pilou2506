@@ -11,7 +11,7 @@ function getProjects() {
 }
 
 function imageSrc(path) {
-    if (!path) return 'https://via.placeholder.com/400x240?text=Projet';
+    if (!path) return BASE_URL + '/assets/img/web/icons/generic-project.svg';
     if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('//')) return path;
     return BASE_URL + '/' + path.replace(/^\//, '');
 }

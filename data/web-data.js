@@ -24,7 +24,7 @@ window.WEB_PROJECTS = [
   {
     id: 'app-ritz',
     title: 'Luxury Shipping Assistant',
-    image: '',
+    image: 'assets/img/web/icons/app-ritz.svg',
     description: 'Un calculateur de frais de port raffiné pour estimer les coûts d\'expédition à travers les régions du Japon.',
     goal: 'Fiabiliser et accélérer le calcul des frais d\'expédition pour le personnel d\'un hôtel haut de gamme, en évitant les erreurs de tarification manuelles et en gardant une trace des devis précédents.',
     content: `
@@ -38,7 +38,7 @@ window.WEB_PROJECTS = [
   {
     id: 'colisjp',
     title: 'ColisJP',
-    image: '',
+    image: 'assets/img/web/icons/colisjp.svg',
     description: 'Application de gestion des colis et de facturation pour les hôtels au Japon : enregistrement, calcul des tarifs, suivi des paiements.',
     goal: 'Simplifier et accélérer l\'enregistrement des colis à la réception, réduire les erreurs de calcul de tarifs, et garder une traçabilité claire des paiements pour le personnel.',
     content: `
@@ -52,7 +52,7 @@ window.WEB_PROJECTS = [
   {
     id: 'extra-hours-calculator',
     title: 'Calculateur d\'heures supplémentaires',
-    image: '',
+    image: 'assets/img/web/icons/extra-hours-calculator.svg',
     description: 'La solution que j\'ai trouvée pour convertir mes heures supplémentaires en minutes. Ce projet m\'a sauvé de bien des manières.',
     goal: 'Avoir un outil rapide et fiable sous la main pour convertir des heures supplémentaires en minutes, sans risque d\'erreur de calcul.',
     content: `
@@ -65,7 +65,7 @@ window.WEB_PROJECTS = [
   {
     id: 'lifetime-count',
     title: 'Temps vécu',
-    image: '',
+    image: 'assets/img/web/icons/lifetime-count.svg',
     description: 'Petit projet pour compter combien de temps j\'ai vécu jusqu\'à présent.',
     goal: 'Visualiser concrètement le temps vécu pour garder à l\'esprit qu\'il est précieux — un rappel personnel autant qu\'un exercice technique.',
     content: `

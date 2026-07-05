@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Icône Temps vécu">
+  <defs>
+    <radialGradient id="glow-life" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="150" cy="150" r="132" fill="url(#glow-life)"/>
+  <circle cx="150" cy="150" r="112" fill="none" stroke="#00d4ff" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 7"/>
+
+  <path d="M22 44 V22 H44" fill="none" stroke="#00d4ff" stroke-width="4" stroke-opacity="0.6" stroke-linecap="square"/>
+  <path d="M278 256 V278 H256" fill="none" stroke="#00d4ff" stroke-width="4" stroke-opacity="0.6" stroke-linecap="square"/>
+
+  <!-- sablier -->
+  <g stroke="#00d4ff" stroke-width="4" stroke-linejoin="round" fill="none">
+    <path d="M112,86 H188 V96 L154,150 L188,204 V214 H112 V204 L146,150 L112,96 Z"/>
+    <line x1="106" y1="86" x2="194" y2="86" stroke-linecap="round"/>
+    <line x1="106" y1="214" x2="194" y2="214" stroke-linecap="round"/>
+  </g>
+
+  <!-- sable haut -->
+  <path d="M122,96 H178 L150,124 Z" fill="#00d4ff" fill-opacity="0.35"/>
+  <!-- sable bas accumulé -->
+  <path d="M126,204 H174 L150,182 Z" fill="#ff4d6d" fill-opacity="0.4"/>
+  <!-- filet qui tombe -->
+  <line x1="150" y1="128" x2="150" y2="176" stroke="#ff4d6d" stroke-width="2.5" stroke-dasharray="1 5" stroke-linecap="round"/>
+
+  <!-- particules de temps envolées -->
+  <g fill="#ff4d6d">
+    <circle cx="222" cy="108" r="3.5"/>
+    <circle cx="238" cy="140" r="2.5"/>
+    <circle cx="80" cy="176" r="3"/>
+    <circle cx="212" cy="196" r="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Icône projet web">
+  <defs>
+    <radialGradient id="glow-generic" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="150" cy="150" r="132" fill="url(#glow-generic)"/>
+  <circle cx="150" cy="150" r="112" fill="none" stroke="#00d4ff" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 7"/>
+
+  <path d="M22 44 V22 H44" fill="none" stroke="#00d4ff" stroke-width="4" stroke-opacity="0.6" stroke-linecap="square"/>
+  <path d="M278 256 V278 H256" fill="none" stroke="#00d4ff" stroke-width="4" stroke-opacity="0.6" stroke-linecap="square"/>
+
+  <!-- chevrons de code -->
+  <g stroke="#00d4ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M110,110 L74,150 L110,190"/>
+    <path d="M190,110 L226,150 L190,190"/>
+  </g>
+  <line x1="164" y1="100" x2="136" y2="200" stroke="#ff4d6d" stroke-width="5" stroke-linecap="round"/>
+</svg>
