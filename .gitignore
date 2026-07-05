@@ -1,3 +1,9 @@
 node_modules/
 .DS_Store
 *.log
+
+# Vrais secrets futurs (clé de service Firebase Admin, etc.)
+# — jamais commités, même par erreur
+.env
+.env.*
+!.env.example
