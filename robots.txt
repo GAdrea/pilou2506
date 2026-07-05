@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pages/admin/
 
 Sitemap: https://pilou2506.vercel.app/sitemap.xml
