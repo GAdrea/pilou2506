@@ -388,10 +388,39 @@ body::after {
     animation: fadeInUp 0.7s ease forwards;
 }
 .delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.22s; }
-.delay-3 { animation-delay: 0.34s; }
-.delay-4 { animation-delay: 0.46s; }
-.delay-5 { animation-delay: 0.58s; }
+.delay-2 { animation-delay: 1.3s; }
+.delay-3 { animation-delay: 1.55s; }
+.delay-4 { animation-delay: 1.7s; }
+.delay-5 { animation-delay: 1.85s; }
+.delay-6 { animation-delay: 2.05s; }
+
+/* Hero — animation "boot terminal" : le prénom PILOU s'affiche façon frappe clavier */
+@keyframes heroTypeReveal {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0 0 0); }
+}
+@keyframes heroCursorHide {
+    to { opacity: 0; }
+}
+.hero-name-type {
+    display: inline-block;
+    position: relative;
+    clip-path: inset(0 100% 0 0);
+    animation: heroTypeReveal 0.7s steps(6, end) 0.6s forwards;
+}
+.hero-name-type::after {
+    content: "";
+    position: absolute;
+    top: 0.12em;
+    right: -0.12em;
+    width: 3px;
+    height: 0.8em;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 6px rgba(0, 212, 255, 0.8);
+    animation:
+        blink 0.6s step-end infinite,
+        heroCursorHide 0.01s linear 1.45s forwards;
+}
 
 /* ==========================================================
    SCROLL TOP
@@ -677,7 +706,9 @@ body::after {
     .hud-btn::before,
     .hud-btn-inline::before,
     .nav-link::after,
-    .carousel-track {
+    .carousel-track,
+    .hero-name-type,
+    .hero-name-type::after {
         animation: none !important;
         transition: none !important;
     }
@@ -685,6 +716,12 @@ body::after {
     .reveal {
         opacity: 1 !important;
         transform: none !important;
+    }
+    .hero-name-type {
+        clip-path: inset(0 0 0 0) !important;
+    }
+    .hero-name-type::after {
+        display: none !important;
     }
     .lightbox-overlay {
         transition: none !important;
