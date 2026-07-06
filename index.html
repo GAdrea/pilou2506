@@ -199,7 +199,7 @@
 
           <!-- CTAs -->
           <div class="flex flex-wrap gap-4 pt-2 fade-in-up delay-5">
-            <a href="#web" class="hud-btn hud-btn-primary">Mes Projets</a>
+            <a href="pages/web/projets-web.html" class="hud-btn hud-btn-primary">Mes Projets</a>
             <a href="#contact" class="hud-btn hud-btn-outline">Me contacter</a>
             <a
               href="https://www.instagram.com/pilou2506?igsh=aTA0dGJvc2lmZGZ4"
@@ -248,13 +248,11 @@
       </div>
     </section>
 
-    <!-- Web Projects -->
-    <section id="web" class="py-24 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6 mb-12">
-        <h2 class="text-4xl font-bold section-title reveal">Projets Web</h2>
-      </div>
-      <div id="homeWebCarousel">
-        <div id="homeWebSlides"></div>
+    <!-- Galerie d'articles (pioche aléatoire, pour garder la home vivante) -->
+    <section id="gallery" class="py-24 px-6">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold section-title mb-12 reveal">Pioche dans les Archives</h2>
+        <div id="homeGalleryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
       </div>
     </section>
 
@@ -335,6 +333,11 @@
                   <span class="val" data-clock-tz="Asia/Tokyo">--:--:--</span>
                 </div>
               </div>
+            </div>
+
+            <!-- CTA vers la page "Qui suis-je ?" complète -->
+            <div class="reveal">
+              <a href="pages/about/qui-suis-je.html" class="hud-btn hud-btn-outline">En savoir plus</a>
             </div>
           </div>
         </div>
@@ -475,7 +478,6 @@
     </button>
 
     <script src="data/blog-data.js"></script>
-    <script src="data/web-data.js"></script>
     <script src="data/video-data.js"></script>
     <script src="assets/js/digital-bg.js"></script>
     <script src="assets/js/world-clock.js"></script>
