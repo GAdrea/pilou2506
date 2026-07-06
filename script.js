@@ -136,6 +136,22 @@ function resolveHomeImage(path) {
     return path;
 }
 
+// Mélange Fisher-Yates (ne modifie pas le tableau d'origine)
+function shuffleArray(list) {
+    const arr = Array.isArray(list) ? [...list] : [];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text == null ? '' : String(text);
+    return div.innerHTML;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Carousel blog (défilement infini)
     if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
@@ -164,37 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Carousel projets web (défilement infini, façon blog, cartes plus riches)
-    if (document.getElementById('homeWebCarousel') && window.WEB_PROJECTS) {
-        const projects = sortByDateDesc(window.WEB_PROJECTS);
-        buildInfiniteScroll({
-            items: projects,
-            trackId: 'homeWebSlides',
-            cardWidth: 340,
-            renderCard: (project) => {
-                const imgSrc = resolveHomeImage(project.image || '');
-                const tags   = Array.isArray(project.tags) ? project.tags : [];
-                const demoUrl = project.demoUrl || project.url || '';
-                return `
-                    <div class="hud-card h-full flex flex-col items-stretch">
-                        <div class="h-40 overflow-hidden flex-shrink-0" style="background:#0d1525">
-                            ${imgSrc
-                                ? `<img src="${imgSrc}" alt="${project.title || ''}" class="w-full h-full object-cover object-center" loading="lazy">`
-                                : `<div class="w-full h-full flex items-center justify-center text-4xl" style="color:#00d4ff">💻</div>`}
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold mb-2" style="color:#e2e8f0">${project.title}</h3>
-                            ${project.description ? `<p class="text-sm mb-4" style="color:#64748b">${project.description}</p>` : ''}
-                            ${tags.length ? `<div class="flex gap-2 flex-wrap mb-4">${tags.map(t => `<span class="hud-tag">${t}</span>`).join('')}</div>` : ''}
-                            <div class="mt-auto pt-2 flex flex-col gap-2">
-                                <a href="pages/web/projet.html?id=${encodeURIComponent(project.id)}" class="hud-btn-inline">Consulter le projet</a>
-                                ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink">Voir la démo</a>` : ''}
-                            </div>
-                        </div>
+    // Galerie d'articles piochés au hasard (remplace l'ancien carousel de projets web sur la home)
+    if (document.getElementById('homeGalleryGrid') && window.BLOG_ARTICLES) {
+        const grid = document.getElementById('homeGalleryGrid');
+        const shuffled = shuffleArray(window.BLOG_ARTICLES);
+        const picks = shuffled.slice(0, 6);
+
+        grid.innerHTML = picks.map(article => {
+            const imgSrc = resolveHomeImage(article.image || '');
+            const link   = 'pages/blog/article.html?id=' + encodeURIComponent(article.id);
+            const cat    = article.category || '';
+            const desc   = article.description || '';
+            return `
+                <a href="${link}" class="hud-card group flex flex-col">
+                    <div class="h-48 overflow-hidden relative flex-shrink-0" style="background:rgba(13,21,37,0.6)">
+                        ${imgSrc
+                            ? `<img src="${imgSrc}" alt="${escapeHtml(article.title || '')}" class="w-full h-full object-cover object-center group-hover:scale-110 transition duration-500" loading="lazy">`
+                            : '<div class="w-full h-full flex items-center justify-center text-4xl">📝</div>'}
+                        ${cat ? `<span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded" style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">${escapeHtml(cat)}</span>` : ''}
                     </div>
-                `;
-            }
-        });
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold leading-snug mb-2" style="color:#e2e8f0">${escapeHtml(article.title || '')}</h3>
+                        ${desc ? `<p class="text-sm flex-1" style="color:#64748b">${escapeHtml(desc)}</p>` : ''}
+                    </div>
+                </a>
+            `;
+        }).join('');
     }
 
     // Carousel projets vidéo
