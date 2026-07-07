@@ -104,6 +104,42 @@ body::after {
 .hud-card:hover::before,
 .hud-card:hover::after { opacity: 1; }
 
+/* Navigation manuelle du carousel infini (précédent / suivant) */
+.hud-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(13, 21, 37, 0.85);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    color: var(--neon-cyan);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, transform 0.2s ease;
+}
+.hud-carousel-nav:hover {
+    border-color: rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    background: rgba(0, 212, 255, 0.12);
+}
+.hud-carousel-nav:active { transform: translateY(-50%) scale(0.92); }
+.hud-carousel-nav svg { width: 20px; height: 20px; }
+.hud-carousel-nav-prev { left: 12px; }
+.hud-carousel-nav-next { right: 12px; }
+@media (max-width: 640px) {
+    .hud-carousel-nav       { width: 36px; height: 36px; }
+    .hud-carousel-nav svg   { width: 16px; height: 16px; }
+    .hud-carousel-nav-prev  { left: 6px; }
+    .hud-carousel-nav-next  { right: 6px; }
+}
+
 /* Bouton HUD — coin découpé */
 .hud-btn {
     display: inline-flex;

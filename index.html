@@ -230,8 +230,28 @@
       <div class="max-w-7xl mx-auto px-6 mb-12">
         <h2 class="text-4xl font-bold section-title reveal">Derniers Articles</h2>
       </div>
-      <div id="homeBlogCarousel">
+      <div id="homeBlogCarousel" class="relative">
         <div id="homeBlogSlides"></div>
+        <button
+          id="homeBlogPrev"
+          type="button"
+          aria-label="Articles précédents"
+          class="hud-carousel-nav hud-carousel-nav-prev"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button
+          id="homeBlogNext"
+          type="button"
+          aria-label="Articles suivants"
+          class="hud-carousel-nav hud-carousel-nav-next"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
       </div>
     </section>
 

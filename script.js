@@ -1,7 +1,7 @@
 // script.js — Carousels de la page d'accueil
 
-// --- CAROUSEL INFINI À DÉFILEMENT AUTOMATIQUE ---
-function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60, cardWidth = 280, gap = 20 }) {
+// --- CAROUSEL INFINI À DÉFILEMENT AUTOMATIQUE (+ navigation manuelle optionnelle) ---
+function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60, cardWidth = 280, gap = 20, prevBtnId, nextBtnId }) {
     const trackEl = document.getElementById(trackId);
     if (!trackEl || !Array.isArray(items) || items.length === 0) return;
 
@@ -20,9 +20,10 @@ function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60, cardWi
     });
 
     const loopWidth = items.length * STEP;
-    let offset   = 0;
-    let lastTime = null;
-    let paused   = false;
+    let offset      = 0;
+    let lastTime    = null;
+    let paused      = false;
+    let resumeTimer = null;
 
     function tick(ts) {
         if (lastTime !== null && !paused) {
@@ -38,6 +39,28 @@ function buildInfiniteScroll({ items, trackId, renderCard, pxPerSec = 60, cardWi
     const section = trackEl.closest('section') || trackEl.parentElement;
     section.addEventListener('mouseenter', () => { paused = true; });
     section.addEventListener('mouseleave', () => { paused = false; });
+
+    // Navigation manuelle : avancer ou reculer d'une carte, dans les deux sens, à la demande.
+    // Fonctionne aussi au clic/tactile (sans survol), donc on met en pause explicitement
+    // le défilement auto puis on le relance après un court délai d'inactivité.
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function goTo(direction) {
+        offset = ((offset + direction * STEP) % loopWidth + loopWidth) % loopWidth;
+        paused = true;
+        trackEl.style.transition = reduceMotion ? 'none' : 'transform 0.4s ease';
+        trackEl.style.transform  = 'translateX(-' + offset + 'px)';
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(() => {
+            trackEl.style.transition = '';
+            paused = false;
+        }, 2600);
+    }
+
+    const prevBtn = prevBtnId && document.getElementById(prevBtnId);
+    const nextBtn = nextBtnId && document.getElementById(nextBtnId);
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(1));
 }
 
 // --- HOME CAROUSELS (blog / web / vidéo) ---
@@ -159,6 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
         buildInfiniteScroll({
             items: latestArticles,
             trackId: 'homeBlogSlides',
+            prevBtnId: 'homeBlogPrev',
+            nextBtnId: 'homeBlogNext',
             renderCard: (article) => {
                 const imgSrc = resolveHomeImage(article.image || '');
                 const link   = 'pages/blog/article.html?id=' + encodeURIComponent(article.id);
