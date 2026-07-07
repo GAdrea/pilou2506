@@ -37,6 +37,7 @@ window.BLOG_ARTICLES = [
     ],
     description: "Critiquer le Japon qu'on aime, sans tomber dans le cliché ni la haine : retour sur mes coups de gueule et sur ce qui fait, au fond, une critique juste.",
     date: "2026-07-05",
+    instagramUrl: "https://www.instagram.com/p/DaaD9fekiA9/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -89,6 +90,7 @@ window.BLOG_ARTICLES = [
     ],
     description: "De l'IUT de Gestion à la Sorbonne en passant par l'INALCO : retour sur un parcours universitaire pas du tout linéaire, mais qui a fait de moi un vrai couteau suisse.",
     date: "2026-07-02",
+    instagramUrl: "https://www.instagram.com/p/DaSggUfkt6F/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -128,6 +130,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1782031811272.jpg",
     description: "Mon enfance mouvementée en Martinique : chiens de garde, ruisseaux façon Indiana Jones et coups de règle à l'ancienne.",
     date: "2026-06-21",
+    instagramUrl: "https://www.instagram.com/p/DZ2LbbKS4IB/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -169,6 +172,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1781334702125.png",
     description: "Quand l'initiative se heurte au mur de l'inertie.",
     date: "2026-06-15",
+    instagramUrl: "https://www.instagram.com/p/DZmrHQCyz_r/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -207,6 +211,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1778232908742.png",
     description: "Une asso lilloise qui fait découvrir le vrai Japon.",
     date: "2026-05-08",
+    instagramUrl: "https://www.instagram.com/p/DYEuuduEsFw/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -242,6 +247,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1777423195742.png",
     description: "Le visa qui veut des bras, pas des gens.",
     date: "2026-04-30",
+    instagramUrl: "https://www.instagram.com/p/DXvX4jUEiZZ/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -276,6 +282,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1777025133680.png",
     description: "Ce qu'on fait vraiment quand on travaille la nuit à l'hôtel.",
     date: "2026-04-25",
+    instagramUrl: "https://www.instagram.com/p/DXiLCVMknRQ/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -311,6 +318,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1775903217948.png",
     description: "Le prix caché de l'excellence du service japonais.",
     date: "2026-04-12",
+    instagramUrl: "https://www.instagram.com/p/DXC74ByE6CA/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -345,6 +353,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1774806564593.png",
     description: "Le CV (presque) complet du type derrière le blog.",
     date: "2026-04-02",
+    instagramUrl: "https://www.instagram.com/p/DWoTF02Ep3b/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -381,6 +390,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1774490198695.png",
     description: "Comment ma PSP m'a sauvé en cours d'anglais.",
     date: "2026-03-26",
+    instagramUrl: "https://www.instagram.com/p/DWWhPmmkq9s/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -411,6 +421,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1774323805268.png",
     description: "L'autre licence qui a fait pleurer (et dépenser) mon portefeuille.",
     date: "2026-03-24",
+    instagramUrl: "https://www.instagram.com/p/DWRXhYBEmMG/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -444,6 +455,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1774067311192.png",
     description: "Quand la diplomatie ressemble à une capitulation polie.",
     date: "2026-03-21",
+    instagramUrl: "https://www.instagram.com/p/DWJgHGBktBo/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -480,6 +492,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1773417901570.png",
     description: "JESTA, visa à 200 000 yens... Sanae frappe encore.",
     date: "2026-03-17",
+    instagramUrl: "https://www.instagram.com/p/DV_RZKwkvNF/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -513,6 +526,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1773198299391.png",
     description: "Le secret pour survivre à l'expatriation : ne pas se couper de ses racines.",
     date: "2026-03-11",
+    instagramUrl: "https://www.instagram.com/p/DVvTVv7EttP/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -550,6 +564,7 @@ window.BLOG_ARTICLES = [
     description:
       "La licence qui a fait de moi le gamer que je suis aujourd'hui !",
     date: "2026-03-08",
+    instagramUrl: "https://www.instagram.com/p/DVlmM4gEqYa/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -595,6 +610,7 @@ window.BLOG_ARTICLES = [
     image: "assets/img/posts/1772557605962.png",
     description: "Le phénomène existe malheureusement...",
     date: "2026-03-04",
+    instagramUrl: "https://www.instagram.com/p/DVbqFWiEhDM/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -634,6 +650,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
     description:
       "Franchement, je me prends trop la tête avec mon travail actuel...",
     date: "2026-03-01",
+    instagramUrl: "https://www.instagram.com/p/DVTG1p6kqpq/",
     content: `
          <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -668,6 +685,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
     image: "assets/img/posts/17716635736951.png",
     description: "Une des mes licences favorites !.",
     date: "2026-02-22",
+    instagramUrl: "https://www.instagram.com/p/DVCq5xrkj1K/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -700,6 +718,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
     image: "assets/img/posts/1771370392077.png",
     description: "Y'a des moments, faut savoir s'arrêter quand même...",
     date: "2026-02-19",
+    instagramUrl: "https://www.instagram.com/p/DU4XyyDklqM/",
     content: `
          <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -738,6 +757,7 @@ Le concept ? Bousculer délibérément des gens (souvent des femmes ou des plus 
     image: "/assets/img/posts/1771088738054.png",
     description: "Le déclic qui a changé ma vie",
     date: "2026-02-16",
+    instagramUrl: "https://www.instagram.com/p/DUv0gp2El00/",
     content: `
       <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -773,6 +793,7 @@ Même si vous échouez, il en restera toujours quelque chose. Et croyez-moi, c'e
     image: "/assets/img/posts/1770713031580.png",
     description: "On dirait pas comme ça mais je vous jure que c'est vrai !",
     date: "2026-02-11",
+    instagramUrl: "https://www.instagram.com/p/DUmGeN7EnO9/",
     content: `
       <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -809,6 +830,7 @@ Même si vous échouez, il en restera toujours quelque chose. Et croyez-moi, c'e
     description:
       "Pourquoi je ne travaillerai plus jamais pour un hôtel de luxe japonais.",
     date: "2026-02-08",
+    instagramUrl: "https://www.instagram.com/p/DUfXlnTEkeQ/",
     content: `
        <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -849,6 +871,7 @@ Je suis parti comme je suis rentré : dans l'indifférence générale. Pas de po
     description:
       "Sincèrement, je ne me verrai pas vivre autre part que dans cette ville.",
     date: "2026-02-05",
+    instagramUrl: "https://www.instagram.com/p/DUYnbobkuT2/",
     content: `
       <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -889,6 +912,7 @@ Je suis parti comme je suis rentré : dans l'indifférence générale. Pas de po
     image: "assets/img/posts/1770173203134.png",
     description: "Une expérience unique et inoubliable !",
     date: "2026-02-04",
+    instagramUrl: "https://www.instagram.com/p/DUUgC4fEsW6/",
     content: `
        <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -920,6 +944,7 @@ Le plus drôle ? Un joueur s'est plaint à mon rival que je le « sous-estimais 
     image: "assets/img/posts/1769992083148.png",
     description: "Entre les deux, mon coeur balance.",
     date: "2026-02-02",
+    instagramUrl: "https://www.instagram.com/p/DURHuyxEt1-/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -957,6 +982,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769880008559.png",
     description: "Une formation sur le harcèlement qui finit en sieste collective...",
     date: "2026-02-01",
+    instagramUrl: "https://www.instagram.com/p/DUOVwY4ElBC/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -994,6 +1020,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769792263447.png",
     description: "Le prix de l'irrespect de certains touristes au Japon.",
     date: "2026-01-31",
+    instagramUrl: "https://www.instagram.com/p/DUMHMYdkyT4/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1026,6 +1053,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769733316941.png",
     description: "Les règles strictes du Japon... sauf pour certains.",
     date: "2026-01-30",
+    instagramUrl: "https://www.instagram.com/p/DUIauneEvdh/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1068,6 +1096,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769601864471.png",
     description: "Une question d'écolière qui relativise tous mes problèmes.",
     date: "2026-01-29",
+    instagramUrl: "https://www.instagram.com/p/DUFIWStEjW6/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1106,6 +1135,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769166413114.png",
     description: "La licence qui m'a fait rencontrer un de mes meilleurs amis.",
     date: "2026-01-27",
+    instagramUrl: "https://www.instagram.com/p/DUBe9BPkuMc/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1142,6 +1172,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769413692490.png",
     description: "Le jour où j'ai testé la patience (et le français) de mon supérieur.",
     date: "2026-01-26",
+    instagramUrl: "https://www.instagram.com/p/DT-_Oa-Ej9y/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1186,6 +1217,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1769159259210.png",
     description: "Quand le karma frappe plus fort que prévu, en public.",
     date: "2026-01-24",
+    instagramUrl: "https://www.instagram.com/p/DT5KN6yEqNn/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1224,6 +1256,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1768310993048.jpg",
     description: "Dire la vérité au Japon, mauvaise idée ?",
     date: "2026-01-23",
+    instagramUrl: "https://www.instagram.com/p/DT1oQT4kr5D/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1264,6 +1297,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1764651106820.jpg",
     description: "La fin de ma lune de miel avec ce pays que j'aime.",
     date: "2026-01-20",
+    instagramUrl: "https://www.instagram.com/p/DTvCTIJkgKE/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1305,6 +1339,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1768453140879.jpg",
     description: "Le diplôme qui oublie de vous faire parler.",
     date: "2026-01-18",
+    instagramUrl: "https://www.instagram.com/p/DTpUKcaEumH/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1346,6 +1381,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1768452621043.jpg",
     description: "De l'humiliation à la destruction de carrière (pas la mienne).",
     date: "2026-01-17",
+    instagramUrl: "https://www.instagram.com/p/DTmSJsAknlT/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1375,6 +1411,7 @@ Et aujourd'hui, je suis fatigué.
     image: "assets/img/posts/1768341706298.jpg",
     description: "Quand l'amour rencontre l'algorithme.",
     date: "2026-01-15",
+    instagramUrl: "https://www.instagram.com/p/DThJZR7Em4F/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1412,6 +1449,7 @@ Et aujourd'hui, je suis fatigué.
     image: "/assets/img/posts/1764849244855.jpg",
     description: "Et loin d'être le seul...",
     date: "2026-01-14",
+    instagramUrl: "https://www.instagram.com/p/DTel704koi0/",
     content: `
       <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1447,6 +1485,7 @@ Et aujourd'hui, je suis fatigué.
     image: "/assets/img/posts/1768158884660.jpg",
     description: "Faire découvrir la France aux jeunes Japonais.",
     date: "2026-01-13",
+    instagramUrl: "https://www.instagram.com/p/DTb6LrXklr2/",
     content: `
       <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1485,6 +1524,7 @@ Et aujourd'hui, je suis fatigué.
     image: "/assets/img/posts/hotelpost.png",
     description: "Le rêve des uns, le cauchemar des autres...",
     date: "2026-01-12",
+    instagramUrl: "https://www.instagram.com/p/DTY_1AzksJE/",
     content: `
       <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1531,6 +1571,7 @@ Et aujourd'hui, je suis fatigué.
     image: "/assets/img/posts/1767992050685.jpg",
     description: "Parce que je n'oublie pas d'où je viens.",
     date: "2026-01-10",
+    instagramUrl: "https://www.instagram.com/p/DTWH1WCEwNM/",
     content: `
       <p>Salut c'est Pilou !👋
 
@@ -1561,6 +1602,7 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
     image: "assets/img/posts/1767949329427.jpg",
     description: "Parfois, il suffit d'un rien pour aller loin",
     date: "2026-01-09",
+    instagramUrl: "https://www.instagram.com/p/DTSoDmxkgpw/",
     content: `
          <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1591,6 +1633,7 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
     image: "assets/img/posts/1767770770640.jpg",
     description: "Mon expérience de professeur de FLE au Japon.",
     date: "2026-01-08",
+    instagramUrl: "https://www.instagram.com/p/DTPITbZkkZW/",
     content: `
          <p><strong>Salut c'est Pilou 👋</strong></p>
 
@@ -1617,6 +1660,7 @@ En tant que "n*gropolitain" (c'est de l'humour, on se détend !), j'avais un mal
     image: "assets/img/posts/Gemini_Generated_Image_lornm2lornm2lorn.png",
     description: "Une petite présentation de ma modeste personne.",
     date: "2026-01-07",
+    instagramUrl: "https://www.instagram.com/p/DTMUa6KkkTF/",
     content: `
   
 
