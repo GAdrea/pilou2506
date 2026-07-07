@@ -11,6 +11,10 @@
  *   image: 'assets/img/blog/mon-image.jpg',
  *   description: 'Courte description pour la carte.',
  *   date: '2024-01-15',
+ *   instagramUrl: 'https://www.instagram.com/p/XXXXXXXXXXX/', // optionnel : lien vers LE post Instagram
+ *                                                              // correspondant. Si absent, le bouton
+ *                                                              // "Réagir sur Instagram" pointe vers ton
+ *                                                              // profil (https://instagram.com/pilou2506) par défaut.
  *   content: `
  *     <p>Premier paragraphe de l'article...</p>
  *     <h2>Sous-titre</h2>
