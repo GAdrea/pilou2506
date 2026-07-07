@@ -153,11 +153,11 @@ function escapeHtml(text) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Carousel blog (défilement infini)
+    // Carousel blog (défilement infini) — les N articles les plus récents
+    const latestArticles = window.BLOG_ARTICLES ? sortByDateDesc(window.BLOG_ARTICLES).slice(0, 5) : [];
     if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
-        const articles = sortByDateDesc(window.BLOG_ARTICLES).slice(0, 5);
         buildInfiniteScroll({
-            items: articles,
+            items: latestArticles,
             trackId: 'homeBlogSlides',
             renderCard: (article) => {
                 const imgSrc = resolveHomeImage(article.image || '');
@@ -181,10 +181,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Galerie d'articles piochés au hasard (remplace l'ancien carousel de projets web sur la home)
+    // On exclut les articles déjà visibles dans "Derniers Articles" pour éviter les doublons entre les deux sections.
     if (document.getElementById('homeGalleryGrid') && window.BLOG_ARTICLES) {
         const grid = document.getElementById('homeGalleryGrid');
-        const shuffled = shuffleArray(window.BLOG_ARTICLES);
-        const picks = shuffled.slice(0, 6);
+        const latestIds = new Set(latestArticles.map(a => a.id));
+        const pool = window.BLOG_ARTICLES.filter(a => !latestIds.has(a.id));
+        const picks = shuffleArray(pool).slice(0, 6);
 
         grid.innerHTML = picks.map(article => {
             const imgSrc = resolveHomeImage(article.image || '');
