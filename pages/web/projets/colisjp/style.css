@@ -1,28 +1,81 @@
+/* ==========================================================
+   COLISJP — Version claire modernisée
+   Palette professionnelle, lisible, pensée pour l'impression.
+   Aucun sélecteur utilisé par script.js n'a été renommé.
+   ========================================================== */
+
+:root {
+  --accent:       #0e7490;
+  --accent-dark:  #155e75;
+  --accent-light: #ecfeff;
+  --danger:       #dc2626;
+  --danger-light: #fef2f2;
+  --success:      #16a34a;
+  --success-light:#f0fdf4;
+  --info:         #0284c7;
+  --info-light:   #f0f9ff;
+  --purple:       #7c3aed;
+  --purple-light: #f5f3ff;
+  --bg-page:      #f1f5f9;
+  --bg-card:      #ffffff;
+  --border:       #e2e8f0;
+  --text:         #1e293b;
+  --text-dim:     #64748b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: 'Poppins', 'Noto Sans JP', Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text);
+  margin: 0;
+  padding: 24px 16px 48px;
+}
+
+/* Lien de retour vers le portfolio */
+.back-link {
+  display: block;
+  max-width: 1600px;
+  margin: 0 auto 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  width: fit-content;
+}
+.back-link:hover {
+  color: var(--accent);
 }
 
 .container {
   max-width: 1600px;
   margin: 0 auto;
   overflow-x: auto;
-  padding: 0 15px;
+  padding: 28px 28px 36px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 8px;
   table-layout: fixed;
   min-width: 1200px;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
-  padding: 12px;
+  border: 1px solid var(--border);
+  padding: 10px;
   text-align: left;
+  font-size: 13.5px;
 }
 
 th:nth-child(1),
@@ -86,32 +139,59 @@ td:nth-child(15) {
   width: 140px;
 }
 
+/* En-tête de tableau fixe : précieux avec 50 lignes à faire défiler */
 th {
-  background-color: #f4f4f4;
+  background: #f8fafc;
+  color: var(--text);
+  font-weight: 700;
   white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 1px 0 var(--border);
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #fafbfc;
+}
+tbody tr:hover {
+  background-color: rgba(14, 116, 144, 0.05);
 }
 
 input[type="text"],
 input[type="number"] {
   width: 95%;
-  padding: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13.5px;
   box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
 }
 
 .payment-mode {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   background-color: white;
+  font-family: inherit;
+  font-size: 13.5px;
 }
 
 select.payment-mode:focus {
   outline: none;
-  border-color: #aaa;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
 }
 
 .price-container {
@@ -122,24 +202,15 @@ select.payment-mode:focus {
 
 .price-container input {
   width: calc(95% - 25px);
-  padding: 8px;
+  padding: 8px 10px;
 }
 
 .price-container span {
   position: absolute;
   right: 10px;
-  color: #666;
-  font-size: 14px;
-}
-
-/* 日付入力フィールドのスタイル */
-.date-input {
-  display: none;
-}
-
-/* 日付表示のスタイル */
-.date-display {
-  display: none;
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 td {
@@ -164,7 +235,6 @@ input[type="date"]::-webkit-inner-spin-button {
   display: none;
 }
 
-/* カレンダーアイコンのカスタマイズ */
 input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: transparent;
   padding: 0;
@@ -175,15 +245,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .container {
     max-width: 100%;
   }
+  .back-link {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
   body {
-    margin: 10px;
+    padding: 16px 10px 32px;
   }
 
   .container {
-    padding: 0 10px;
+    padding: 18px 14px 24px;
+    border-radius: 8px;
   }
 
   .container::-webkit-scrollbar {
@@ -191,49 +265,67 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f5f9;
   }
 
   .container::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #94a3b8;
     border-radius: 4px;
   }
 
   th,
   td {
     padding: 8px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   input[type="text"],
   input[type="number"],
   .payment-mode {
-    padding: 6px;
-    font-size: 14px;
+    padding: 6px 8px;
+    font-size: 13px;
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 19px;
     margin-bottom: 15px;
     text-align: center;
   }
 
   input[type="date"] {
     padding: 6px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .staff-select {
     padding: 6px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
 @media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .back-link,
+  .button-container,
+  .checkbox-control {
+    display: none;
+  }
+
   .container {
     max-width: 100%;
     margin: 0;
     padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  th {
+    position: static;
+    box-shadow: none;
   }
 
   table {
@@ -269,7 +361,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* 合計金額フィールドのスタイル */
 .total-price {
-  background-color: #f8f9fa;
+  background-color: #f8fafc;
+  color: var(--accent-dark);
+  font-weight: 600;
   cursor: not-allowed;
 }
 
@@ -279,7 +373,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* 無効化された入力フィールドのスタイル */
 .disabled-input {
-  background-color: #e9ecef;
+  background-color: #f1f5f9;
   cursor: not-allowed;
   opacity: 0.65;
 }
@@ -291,7 +385,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* 合計金額と釣銭フィールドのスタイル */
 .total-price,
 .change-output {
-  background-color: #f8f9fa;
+  background-color: #f8fafc;
+  color: var(--accent-dark);
+  font-weight: 600;
   cursor: not-allowed;
 }
 
@@ -300,183 +396,172 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   outline: none;
 }
 
-/* Style uniforme pour tous les selects */
 select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   background-color: white;
-  font-size: 14px;
+  font-size: 13.5px;
+  font-family: inherit;
   box-sizing: border-box;
 }
 
 select:focus {
   outline: none;
-  border-color: #aaa;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
 }
 
-/* Style spécifique pour le select de la colonne 担当者 */
 .staff-select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   background-color: white;
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .staff-select:focus {
   outline: none;
-  border-color: #aaa;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
+  font-weight: 700;
 }
 
-/* Style pour le champ de quantité */
 .box-quantity {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   background-color: white;
-  font-size: 14px;
+  font-size: 13.5px;
   text-align: center;
 }
 
 .box-quantity:focus {
   outline: none;
-  border-color: #aaa;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
 }
 
-/* Style pour le bouton d'ajout de colis */
-.add-package-btn {
-  padding: 5px 10px;
-  border: 2px solid #2196f3;
-  background-color: white;
-  color: #2196f3;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-align: center;
-}
-
-.add-package-btn:hover {
-  background-color: #2196f3;
-  color: white;
-}
-
-.add-package-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
-}
-
-/* Style pour les champs en lecture seule */
 .readonly-input {
-  background-color: #f8f9fa;
+  background-color: #f8fafc;
   cursor: not-allowed;
-  border-color: #dee2e6;
+  border-color: var(--border);
 }
 
 .readonly-input:focus {
   outline: none;
-  border-color: #dee2e6;
+  border-color: var(--border);
 }
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   margin: 20px 0;
 }
 
 .action-btn {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 22px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+}
+.action-btn:active {
+  transform: translateY(0);
 }
 
 .clear-btn {
-  background-color: #dc3545;
+  background-color: var(--danger);
   color: white;
 }
-
 .clear-btn:hover {
-  background-color: #c82333;
+  background-color: #c81e1e;
 }
 
 .save-btn {
-  background-color: #28a745;
+  background-color: var(--success);
   color: white;
 }
-
 .save-btn:hover {
-  background-color: #218838;
+  background-color: #128a3e;
 }
 
 .print-btn {
-  background-color: #17a2b8;
+  background-color: var(--info);
   color: white;
 }
-
 .print-btn:hover {
-  background-color: #138496;
+  background-color: #0270a8;
 }
 
 .transfer-btn {
-  background-color: #6f42c1;
+  background-color: var(--purple);
   color: white;
 }
-
 .transfer-btn:hover {
-  background-color: #5a32a3;
+  background-color: #6d28d9;
 }
 
 .header-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
-  padding: 10px 0;
-  border-bottom: 2px solid #eee;
+  padding: 0 0 16px;
+  border-bottom: 2px solid var(--border);
 }
 
 .header-container h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .current-date {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 8px 15px;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-  border: 1px solid #dee2e6;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background-color: var(--accent-light);
+  color: var(--accent-dark);
+  border-radius: 8px;
+  border: 1px solid rgba(14, 116, 144, 0.15);
   min-width: 200px;
   text-align: center;
 }
 
-/* Style pour les champs verrouillés */
 .locked-input {
-  background-color: #f8f9fa !important;
-  border-color: #dee2e6 !important;
-  color: #495057 !important;
+  background-color: #f1f5f9 !important;
+  border-color: var(--border) !important;
+  color: #475569 !important;
   cursor: not-allowed !important;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 select.locked-input {
-  background-color: #f8f9fa !important;
-  border-color: #dee2e6 !important;
-  color: #495057 !important;
+  background-color: #f1f5f9 !important;
+  border-color: var(--border) !important;
+  color: #475569 !important;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -487,9 +572,8 @@ select.locked-input {
   box-shadow: none !important;
 }
 
-/* Style pour la case à cocher lorsque la ligne est verrouillée */
 input[type="checkbox"]:checked {
-  accent-color: #28a745;
+  accent-color: var(--success);
 }
 
 .transfer-container {
@@ -505,54 +589,53 @@ input[type="checkbox"]:checked {
 .staff-selector-container {
   display: flex;
   align-items: center;
-  margin: 15px 0;
+  margin: 16px 0;
   gap: 10px;
 }
 
 .staff-selector-container label {
-  font-weight: bold;
+  font-weight: 600;
   min-width: 80px;
 }
 
 .staff-selector-container select {
   min-width: 200px;
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
 }
 
-/* Style pour le contrôle des cases à cocher */
 .checkbox-control {
-  margin: 10px 0;
+  margin: 10px 0 16px;
   display: flex;
   align-items: center;
   position: relative;
 }
 
 .toggle-btn {
-  background-color: #6c757d;
+  background-color: #64748b;
   color: white;
   border: none;
-  padding: 5px 15px;
-  border-radius: 4px;
+  padding: 6px 16px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
 .toggle-btn:hover {
-  background-color: #5a6268;
+  background-color: #475569;
 }
 
 .toggle-btn.active {
-  background-color: #28a745;
+  background-color: var(--success);
 }
 
 .toggle-btn.active:hover {
-  background-color: #218838;
+  background-color: #128a3e;
 }
 
-/* Style pour le conteneur de nom */
 .name-container {
   position: relative;
   display: flex;
@@ -567,26 +650,27 @@ input[type="checkbox"]:checked {
 
 .name-suffix {
   position: absolute;
-  right: 5px;
-  font-weight: normal;
-  color: #333;
+  right: 8px;
+  font-weight: 500;
+  color: var(--text-dim);
   pointer-events: none;
 }
 
-/* Style pour les messages temporaires */
 .temporary-message {
   position: absolute;
   right: 0;
   top: 100%;
-  margin-top: 5px;
-  padding: 8px 15px;
-  border-radius: 4px;
-  font-size: 14px;
+  margin-top: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+  border-left: 4px solid transparent;
 }
 
 .temporary-message.show {
@@ -595,32 +679,31 @@ input[type="checkbox"]:checked {
 }
 
 .temporary-message.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+  background-color: var(--success-light);
+  color: #15803d;
+  border-left-color: var(--success);
 }
 
 .temporary-message.info {
-  background-color: #d1ecf1;
-  color: #0c5460;
-  border: 1px solid #bee5eb;
+  background-color: var(--info-light);
+  color: #0369a1;
+  border-left-color: var(--info);
 }
 
 .temporary-message.warning {
-  background-color: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffeeba;
+  background-color: #fffbeb;
+  color: #92400e;
+  border-left-color: #f59e0b;
 }
 
 .temporary-message.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background-color: var(--danger-light);
+  color: #b91c1c;
+  border-left-color: var(--danger);
 }
 
-/* Style pour les lignes qui ont à la fois des frais de transport et des frais de matériaux */
 tr.mixed-item {
-  background-color: #f0f0ff; /* Violet très clair */
+  background-color: var(--purple-light);
   position: relative;
 }
 
@@ -630,20 +713,20 @@ tr.mixed-item::after {
   right: 5px;
   top: 5px;
   font-size: 10px;
-  color: #8a2be2; /* Violet */
-  background-color: rgba(240, 240, 255, 0.8);
+  font-weight: 700;
+  color: var(--purple);
+  background-color: rgba(245, 243, 255, 0.85);
   padding: 2px 5px;
-  border-radius: 3px;
+  border-radius: 4px;
   pointer-events: none;
 }
 
-/* Style pour le copyright */
 .copyright {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: var(--text-dim);
   font-weight: 500;
   width: 100%;
   display: flex;
@@ -665,3 +748,4 @@ tr.mixed-item::after {
     display: block;
   }
 }
+
