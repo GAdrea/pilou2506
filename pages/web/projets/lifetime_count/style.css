@@ -1,3 +1,21 @@
+/* ==========================================================
+   TEMPS VÉCU — Skin HUD (aligné sur la charte du portfolio)
+   Palette : #050a12 fond | #00d4ff cyan | #ff4d6d hibiscus
+   ========================================================== */
+
+:root {
+  --neon-cyan:    #00d4ff;
+  --neon-pink:    #ff4d6d;
+  --neon-blue:    #3b82f6;
+  --neon-crimson: #bc002d;
+  --neon-amber:   #f59e0b;
+  --bg-deep:      #050a12;
+  --bg-mid:       #0d1525;
+  --bg-surface:   #111827;
+  --text-primary: #e2e8f0;
+  --text-dim:     #64748b;
+}
+
 *,
 ::before,
 ::after {
@@ -6,28 +24,224 @@
   padding: 0;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #111;
-  color: #f1f1f1;
-  padding-top: 75px;
+html, body {
+  min-height: 100%;
 }
+
+body {
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+  overflow-x: hidden;
+}
+
+/* Fond canvas fixe : poussière du temps */
+#dust-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.hud-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+}
+
+/* Lien de retour vers le portfolio */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.2s ease;
+}
+.back-link:hover {
+  color: var(--neon-cyan);
+}
+
+/* Étiquette "kicker" en tête de page */
+.page-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 6px var(--neon-cyan), 0 0 12px rgba(0, 212, 255, 0.6);
+  animation: dotBlink 2.4s ease-in-out infinite;
+}
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+/* Carte HUD principale, avec coins découpés comme sur le reste du site */
+.hud-card {
+  position: relative;
+  background: rgba(13, 21, 37, 0.82);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 2.75rem 2.25rem;
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
+}
+.hud-card::before,
+.hud-card::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--neon-cyan);
+  border-style: solid;
+  opacity: 0.65;
+  pointer-events: none;
+}
+.hud-card::before { top: 8px; left: 8px;     border-width: 2px 0 0 2px; }
+.hud-card::after  { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+/* Blocs de contenu (date / compteur FR / compteur JP) */
+.block {
+  position: relative;
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+.block:not(.block--jp)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.25), transparent);
+}
+.block--jp {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
 h2 {
   text-align: center;
-  font-size: 42px;
-  margin-bottom: 50px;
+  font-weight: 400;
 }
 
+h2.full-date-now {
+  font-size: clamp(1rem, 0.85rem + 1vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+h2.lifetime-count,
+h2.jptext {
+  font-size: clamp(1.05rem, 0.9rem + 1.1vw, 1.55rem);
+  line-height: 1.85;
+  color: var(--text-primary);
+}
+
+h2.jptext {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  line-height: 2.1;
+}
+
+/* Nombres mis en évidence — cyan côté FR, hibiscus côté JP */
+.num {
+  color: var(--neon-cyan);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.45);
+}
+.block--jp .num {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px rgba(255, 77, 109, 0.45);
+}
+.seconds-num {
+  animation: secondsPulse 1s ease-in-out infinite;
+}
+@keyframes secondsPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
+
+/* Message d'anniversaire — masqué automatiquement le reste de l'année */
 h3 {
   text-align: center;
-  font-size: 50px;
-  animation: colorChange 5s infinite ease-in-out;
+  font-size: clamp(1.4rem, 1rem + 2vw, 2.2rem);
+  font-weight: 800;
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px dashed rgba(0, 212, 255, 0.25);
+  animation: birthdayGlow 3s ease-in-out infinite;
+}
+h3:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@keyframes birthdayGlow {
+  0%   { color: var(--neon-cyan); }
+  50%  { color: var(--neon-pink); }
+  100% { color: var(--neon-cyan); }
 }
 
-@keyframes colorChange {
-  0% { color: blue; }
-  50% { color: white; }
-  90% { color: red; }
-  100% { color: blue; }
+/* Animation d'entrée en cascade */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+.delay-1 { animation-delay: 0.05s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.35s; }
+.delay-4 { animation-delay: 0.5s; }
+
+@media (max-width: 520px) {
+  body { padding: 2rem 1rem; }
+  .hud-card { padding: 2rem 1.35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up { opacity: 1; animation: none; transform: none; }
+  .dot,
+  .seconds-num,
+  h3 { animation: none; }
 }
 
