@@ -3,11 +3,33 @@ const fs = require("fs");
 const path = require("path");
 
 const PORT = 8000;
+// Dossier racine servi : tout chemin résolu en dehors est refusé.
+const ROOT = __dirname;
 
 http
   .createServer((req, res) => {
-    let filePath = "." + req.url;
-    if (filePath === "./") filePath = "./index.html";
+    // On isole le chemin (sans query string) et on le décode avant de le
+    // résoudre, pour empêcher toute sortie du dossier du projet via des
+    // séquences comme "/../../..." ou leurs variantes encodées.
+    let requestedPath;
+    try {
+      requestedPath = decodeURIComponent(req.url.split("?")[0]);
+    } catch (err) {
+      res.writeHead(400, { "Content-Type": "text/plain" });
+      res.end("400 Bad Request");
+      return;
+    }
+    if (requestedPath === "/") requestedPath = "/index.html";
+
+    const filePath = path.normalize(path.join(ROOT, requestedPath));
+
+    // Protection contre le path traversal : le fichier résolu doit rester
+    // à l'intérieur de ROOT.
+    if (filePath !== ROOT && !filePath.startsWith(ROOT + path.sep)) {
+      res.writeHead(403, { "Content-Type": "text/plain" });
+      res.end("403 Forbidden");
+      return;
+    }
 
     const extname = String(path.extname(filePath)).toLowerCase();
     const mimeTypes = {
