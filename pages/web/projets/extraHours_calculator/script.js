@@ -7,6 +7,7 @@ const actualEndingTime = document.getElementById("actual-ending-time");
 const form = document.querySelector("form");
 const workingHours = document.querySelector(".working-hours");
 const result = document.querySelector(".result");
+const commentPending = document.querySelector(".comment-pending");
 const comment = document.querySelector(".comment");
 
 // Constantes pour les messages
@@ -15,17 +16,37 @@ const MSG_IMPOSSIBLE =
 const MSG_NOT_WORKED =
   "Mais t'as pas bossé!! Tu te fous de moi?! / 仕事してないじゃん！ふざけてんのか？！";
 
+let pendingTimeoutId = null;
+
 form.addEventListener("submit", handleForm);
 
 function handleForm(e) {
   e.preventDefault();
 
-  calculateTotalWorkingHours();
-  getExtraHoursinMinutes();
+  resetOutput();
+
+  const isValid = calculateTotalWorkingHours();
+  if (isValid) {
+    getExtraHoursinMinutes();
+  }
+}
+
+/**
+ * Réinitialise l'affichage des résultats avant un nouveau calcul
+ * (et annule le suspense en cours s'il y en avait un).
+ */
+function resetOutput() {
+  if (pendingTimeoutId) clearTimeout(pendingTimeoutId);
+  workingHours.classList.remove("is-error");
+  workingHours.textContent = "";
+  result.textContent = "";
+  commentPending.textContent = "";
+  comment.textContent = "";
 }
 
 /**
  * Fonction qui calcule le temps de travail total en heures.
+ * @returns {boolean} true si les données sont valides, false sinon.
  */
 function calculateTotalWorkingHours() {
   // on récupère le temps de début de travail
@@ -46,15 +67,15 @@ function calculateTotalWorkingHours() {
 
   // on vérifie si la date de début est postérieure à la date de fin
   if (startDateTime > endDateTime || actualEndDate !== endDate) {
-    alert(MSG_IMPOSSIBLE);
-    return; // Ajout d'un return pour arrêter l'exécution en cas d'erreur
+    workingHours.classList.add("is-error");
+    workingHours.textContent = MSG_IMPOSSIBLE;
+    return false; // on arrête l'exécution en cas d'erreur
   }
 
   // on convertit les millisecondes en heures
   const totalWorkingHours = totalWorkingMilliseconds / 1000 / 60 / 60;
 
   // on affiche le résultat dans l'élément HTML approprié
-
   if (totalWorkingHours <= 0) {
     workingHours.textContent = MSG_NOT_WORKED;
   } else {
@@ -64,6 +85,7 @@ function calculateTotalWorkingHours() {
       2
     )}時間です`;
   }
+  return true;
 }
 
 /**
@@ -82,7 +104,7 @@ function convertToMinutes(time) {
   return hoursInMinutes + minutesInMinutes;
 }
 
-function getExtraHoursinMinutes(event) {
+function getExtraHoursinMinutes() {
   const endTime = endingTime.value;
   const actualEndDate = actualEndingDate.value;
   const actualEndTime = actualEndingTime.value;
@@ -107,8 +129,15 @@ function getExtraHoursinMinutes(event) {
     result.textContent = `T'as fait ${differenceInMinutes} minutes d'heures supplémentaires / 残業${differenceInMinutes}分`;
   }
 
+  // Petit suspense avant le verdict (visible pendant les 2s d'attente),
+  // sauf s'il n'y a rien à commenter (sortie pile à l'heure).
+  if (differenceInMinutes !== 0) {
+    commentPending.textContent = "Verdict en approche… / 判定中…";
+  }
+
   // Gestion des commentaires basée sur la différence de temps
-  setTimeout(() => {
+  pendingTimeoutId = setTimeout(() => {
+    commentPending.textContent = "";
     if (differenceInMinutes < 0) {
       comment.textContent = `Tu te fous de moi ?! / ふざけんな！`;
     } else if (differenceInMinutes === 0) {
