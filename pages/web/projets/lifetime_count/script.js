@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     day: "numeric",
   });
 
-  function pluralize(value, word) {
-    return value + " " + word + (value > 1 ? "s" : "");
+  function numSpan(value, extraClass) {
+    return `<span class="num${extraClass ? " " + extraClass : ""}">${value}</span>`;
+  }
+
+  function pluralize(value, word, extraClass) {
+    return `${numSpan(value, extraClass)} ${word}${value > 1 ? "s" : ""}`;
   }
 
   function handleLifeTimeCount() {
@@ -30,14 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-      lifetimeCount.textContent = `Tu as vécu ${pluralize(
+      lifetimeCount.innerHTML = `Tu as vécu ${pluralize(
         years,
         "année"
       )} soit: ${pluralize(days, "jour")} ${pluralize(
         hours,
         "heure"
-      )} ${pluralize(minutes, "minute")} ${pluralize(seconds, "seconde")}`;
-      jptext.textContent = `あなたは${years}年生きている。つまり、${days}日${hours}時間${minutes}分${seconds}秒`;
+      )} ${pluralize(minutes, "minute")} ${pluralize(
+        seconds,
+        "seconde",
+        "seconds-num"
+      )}`;
+      jptext.innerHTML = `あなたは${numSpan(years)}年生きている。つまり、${numSpan(
+        days
+      )}日${numSpan(hours)}時間${numSpan(minutes)}分${numSpan(
+        seconds,
+        "seconds-num"
+      )}秒`;
     }
     if (
       dateNow.getMonth() === birthDate.getMonth() &&
@@ -49,5 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  handleLifeTimeCount();
   const intervalId = setInterval(handleLifeTimeCount, 1000);
 });
