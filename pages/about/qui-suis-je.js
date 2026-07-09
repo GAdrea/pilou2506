@@ -72,7 +72,7 @@ function buildLangBars() {
         el.innerHTML = `
             <div class="flex justify-between items-center mb-1">
                 <span class="text-sm font-medium text-slate-300">${label}</span>
-                <span class="text-xs text-slate-500 lang-pct-label">0%</span>
+                <span class="text-xs text-slate-400 lang-pct-label">0%</span>
             </div>
             <div class="lang-bar-track">
                 <div class="lang-bar-fill" style="background:${color}"></div>

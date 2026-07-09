@@ -66,7 +66,7 @@
 
             return `
     <section class="mt-16 pt-10 border-t border-slate-800">
-        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Autres projets</p>
+        <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-6">Autres projets</p>
         <div class="grid sm:grid-cols-3 gap-4">${cards}</div>
     </section>`;
         }
@@ -79,7 +79,7 @@
 
             return `
         <!-- Fil d'Ariane -->
-        <div class="max-w-3xl mx-auto flex items-center gap-2 text-sm text-slate-500 mb-8">
+        <div class="max-w-3xl mx-auto flex items-center gap-2 text-sm text-slate-400 mb-8">
             <a href="${listHref}" class="hover:text-neonCyan transition">Projets Web</a>
             <span>/</span>
             <span class="text-slate-400 truncate max-w-xs">${escapeHtml(project.title)}</span>

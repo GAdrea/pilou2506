@@ -61,7 +61,7 @@ function renderCards() {
                 <a href="${detailUrl}" class="hover:text-neonCyan transition">
                     <h3 class="text-xl font-bold">${escapeHtml(project.title)}</h3>
                 </a>
-                ${project.description ? `<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">${escapeHtml(project.description)}</p>` : ''}
+                ${project.description ? `<p class="text-slate-400 dark:text-slate-400 mt-2 text-sm">${escapeHtml(project.description)}</p>` : ''}
                 ${tagsHtml}
                 <div class="mt-4 flex flex-col gap-2">
                     <a href="${detailUrl}" class="hud-btn-inline">Voir le projet</a>

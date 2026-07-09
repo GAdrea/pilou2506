@@ -55,7 +55,7 @@ function renderCards() {
         const textBlock = `
             <div class="p-5">
                 <h3 class="text-xl font-bold">${escapeHtml(video.title)}</h3>
-                ${video.description ? `<p class="mt-2 text-sm" style="color:#64748b">${escapeHtml(video.description)}</p>` : ''}
+                ${video.description ? `<p class="mt-2 text-sm" style="color:#94a3b8">${escapeHtml(video.description)}</p>` : ''}
             </div>
         `;
         if (video.url) {

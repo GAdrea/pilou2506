@@ -119,7 +119,7 @@
             const encodedTitle = encodeURIComponent(title || '');
             return `
     <div class="mt-10 pt-8 border-t border-slate-800">
-        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-4">Partager</p>
+        <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-4">Partager</p>
         <div class="flex flex-wrap gap-3">
             <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}"
                target="_blank" rel="noopener"
@@ -158,14 +158,14 @@
             </div>` : ''}
             <div class="p-4">
                 <p class="text-sm font-bold leading-snug group-hover:text-neonCyan transition">${escapeHtml(a.title)}</p>
-                <p class="text-xs text-slate-500 mt-1">${formatDate(a.date)}</p>
+                <p class="text-xs text-slate-400 mt-1">${formatDate(a.date)}</p>
             </div>
         </a>`;
             }).join('');
 
             return `
     <section class="mt-16 pt-10 border-t border-slate-800">
-        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Dans la même catégorie</p>
+        <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-6">Dans la même catégorie</p>
         <div class="grid sm:grid-cols-3 gap-4">${cards}</div>
     </section>`;
         }
@@ -181,7 +181,7 @@
                 return `
         <a href="${hrefFor(a.id)}"
            class="hud-card p-4 flex-1 min-w-0 hover:border-neonCyan transition group block ${align}">
-            <p class="text-xs text-slate-500 mb-1">${label}</p>
+            <p class="text-xs text-slate-400 mb-1">${label}</p>
             <p class="text-sm font-bold text-slate-200 group-hover:text-neonCyan transition line-clamp-2">${escapeHtml(a.title)}</p>
         </a>`;
             };
@@ -217,7 +217,7 @@
 
             return `
         <!-- Fil d'Ariane -->
-        <div class="flex items-center gap-2 text-sm text-slate-500 mb-10">
+        <div class="flex items-center gap-2 text-sm text-slate-400 mb-10">
             <a href="${blogHref}" class="hover:text-neonCyan transition">Blog</a>
             <span>/</span>
             ${cat ? `<span style="color:#00d4ff">${escapeHtml(cat)}</span><span>/</span>` : ''}
@@ -232,7 +232,7 @@
             ${cat ? `<span class="inline-block px-3 py-1 text-xs font-bold rounded mb-4"
                 style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">${escapeHtml(cat)}</span>` : ''}
             <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">${escapeHtml(article.title)}</h1>
-            <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+            <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400">
                 ${date ? `<span>📅 ${date}</span>` : ''}
                 <span>⏱ ${time} de lecture</span>
                 <a href="${blogHref}" class="ml-auto text-hibiscus hover:underline font-medium">← Retour au blog</a>

@@ -93,7 +93,7 @@ function renderNotFound() {
         <div class="text-center py-24">
             <p class="text-6xl mb-6">404</p>
             <h1 class="text-2xl font-bold mb-4">Article introuvable</h1>
-            <p class="text-slate-500 mb-8">L'article demandé n'existe pas.</p>
+            <p class="text-slate-400 mb-8">L'article demandé n'existe pas.</p>
             <a href="blog.html" class="hud-btn hud-btn-primary">Retour au blog</a>
         </div>`;
 }
