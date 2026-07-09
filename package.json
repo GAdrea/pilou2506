@@ -2,8 +2,9 @@
   "name": "pilou2506",
   "version": "1.0.0",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
-    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch"
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify && node scripts/generate-static-pages.js",
+    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch",
+    "generate:pages": "node scripts/generate-static-pages.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19"

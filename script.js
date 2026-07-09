@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtnId: 'homeBlogNext',
             renderCard: (article) => {
                 const imgSrc = resolveHomeImage(article.image || '');
-                const link   = 'pages/blog/article.html?id=' + encodeURIComponent(article.id);
+                const link   = 'pages/blog/articles/' + window.ArticleRender.slugify(article.id) + '.html';
                 const desc   = article.description || '';
                 return `
                     <a href="${link}" class="hud-card flex flex-col hover:scale-[1.02] transition-transform duration-300 block">
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         grid.innerHTML = picks.map(article => {
             const imgSrc = resolveHomeImage(article.image || '');
-            const link   = 'pages/blog/article.html?id=' + encodeURIComponent(article.id);
+            const link   = 'pages/blog/articles/' + window.ArticleRender.slugify(article.id) + '.html';
             const cat    = article.category || '';
             const desc   = article.description || '';
             return `
