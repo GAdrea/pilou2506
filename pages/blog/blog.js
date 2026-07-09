@@ -122,7 +122,7 @@ function renderCards(filtered) {
         const card = document.createElement('article');
         card.className = 'hud-card group flex flex-col';
         const imgSrc = imageSrc(article.image);
-        const url = `article.html?id=${encodeURIComponent(article.id)}`;
+        const url = `articles/${window.ArticleRender.slugify(article.id)}.html`;
         const date = formatDate(article.date);
         const time = readingTime(article.content);
         const cat = article.category || '';

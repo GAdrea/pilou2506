@@ -46,7 +46,7 @@ function renderCards() {
         const card = document.createElement('article');
         card.className = 'hud-card group flex flex-col';
         const imgSrc = imageSrc(project.image);
-        const detailUrl = `projet.html?id=${encodeURIComponent(project.id)}`;
+        const detailUrl = `details/${encodeURIComponent(project.id)}.html`;
         const demoUrl = resolveUrl(project.demoUrl || project.url);
         const tagsHtml = Array.isArray(project.tags) && project.tags.length
             ? `<div class="flex gap-2 mt-3 flex-wrap">${project.tags.map(t => `<span class="hud-tag">${escapeHtml(t)}</span>`).join('')}</div>`

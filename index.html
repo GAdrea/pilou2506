@@ -22,19 +22,51 @@
     <meta property="og:title" content="Pilou | Portfolio Expatrié au Japon" />
     <meta property="og:description" content="Pilou, expatrié franco-antillais à Fukuoka depuis 2014. Entre hôtellerie de luxe et développement web en vibe coding. Blog, projets et vlogs depuis le Japon." />
     <meta property="og:url" content="https://pilou2506.vercel.app/" />
-    <meta property="og:image" content="https://pilou2506.vercel.app/assets/img/posts/1764651106820.jpg" />
+    <meta property="og:image" content="https://pilou2506.vercel.app/assets/img/avatar/pilou/portrait-flags-fr-jp.jpg" />
     <meta property="og:locale" content="fr_FR" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pilou | Portfolio Expatrié au Japon" />
     <meta name="twitter:description" content="Pilou, expatrié franco-antillais à Fukuoka depuis 2014. Entre hôtellerie de luxe et développement web en vibe coding. Blog, projets et vlogs depuis le Japon." />
-    <meta name="twitter:image" content="https://pilou2506.vercel.app/assets/img/posts/1764651106820.jpg" />
+    <meta name="twitter:image" content="https://pilou2506.vercel.app/assets/img/avatar/pilou/portrait-flags-fr-jp.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/tailwind.css" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Données structurées : identité + site -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://pilou2506.vercel.app/#pilou",
+            "name": "Pilou",
+            "url": "https://pilou2506.vercel.app/",
+            "image": "https://pilou2506.vercel.app/assets/img/avatar/pilou/portrait-flags-fr-jp.jpg",
+            "description": "Expatrié franco-antillais à Fukuoka depuis 2014, entre hôtellerie de luxe et développement web en vibe coding.",
+            "jobTitle": "Développeur web",
+            "sameAs": [
+              "https://www.instagram.com/pilou2506?igsh=aTA0dGJvc2lmZGZ4",
+              "https://youtube.com/@pilou2506?si=jvN2n2Nxd32YEn-u"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://pilou2506.vercel.app/#website",
+            "url": "https://pilou2506.vercel.app/",
+            "name": "Pilou Portfolio",
+            "description": "Portfolio, blog et projets web de Pilou, expatrié franco-antillais à Fukuoka.",
+            "inLanguage": "fr-FR",
+            "author": { "@id": "https://pilou2506.vercel.app/#pilou" }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body class="text-slate-100 min-h-screen">
@@ -213,7 +245,7 @@
         <!-- Image -->
         <div class="relative flex justify-center">
           <img
-            src="/assets/img/posts/1764651106820.jpg"
+            src="/assets/img/avatar/pilou/portrait-flags-fr-jp.jpg"
             alt="Pilou"
             class="w-full max-w-md animate-float"
           />
@@ -287,7 +319,7 @@
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="order-2 lg:order-1 relative flex justify-center">
             <img
-              src="assets/img/avatar/pilou/1763656713266(1).png"
+              src="assets/img/avatar/pilou/portrait-flags-fr-jp.jpg"
               class="w-full max-w-md mx-auto drop-shadow-2xl"
               alt="Pilou About"
             />
@@ -486,6 +518,7 @@
 
     <script src="data/blog-data.js"></script>
     <script src="data/video-data.js"></script>
+    <script src="pages/blog/article-render.js"></script>
     <script src="assets/js/digital-bg.js"></script>
     <script src="assets/js/world-clock.js"></script>
     <script src="script.js"></script>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculateur d&#39;heures supplémentaires | Pilou - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../../../assets/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#050a12" />
+    <!-- SEO -->
+    <meta name="description" content="Avoir un outil rapide et fiable sous la main pour convertir des heures supplémentaires en minutes, sans risque d&#39;erreur de calcul." />
+    <meta name="author" content="Pilou" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pilou2506.vercel.app/pages/web/details/extra-hours-calculator.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pilou Portfolio" />
+    <meta property="og:title" content="Calculateur d&#39;heures supplémentaires | Pilou - Portfolio" />
+    <meta property="og:description" content="Avoir un outil rapide et fiable sous la main pour convertir des heures supplémentaires en minutes, sans risque d&#39;erreur de calcul." />
+    <meta property="og:url" content="https://pilou2506.vercel.app/pages/web/details/extra-hours-calculator.html" />
+    <meta property="og:image" content="https://pilou2506.vercel.app/assets/img/web/icons/extra-hours-calculator.svg" />
+    <meta property="og:locale" content="fr_FR" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Calculateur d&#39;heures supplémentaires | Pilou - Portfolio" />
+    <meta name="twitter:description" content="Avoir un outil rapide et fiable sous la main pour convertir des heures supplémentaires en minutes, sans risque d&#39;erreur de calcul." />
+    <meta name="twitter:image" content="https://pilou2506.vercel.app/assets/img/web/icons/extra-hours-calculator.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../assets/css/tailwind.css" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Calculateur d'heures supplémentaires","description":"Avoir un outil rapide et fiable sous la main pour convertir des heures supplémentaires en minutes, sans risque d'erreur de calcul.","image":"https://pilou2506.vercel.app/assets/img/web/icons/extra-hours-calculator.svg","inLanguage":"fr-FR","author":{"@type":"Person","name":"Pilou","url":"https://pilou2506.vercel.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://pilou2506.vercel.app/pages/web/details/extra-hours-calculator.html"}}</script>
+</head>
+<body class="text-slate-100 min-h-screen">
+
+    <canvas id="particles-canvas"></canvas>
+    
+    <nav class="fixed top-0 w-full z-50 hud-nav-bar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <a href="../../../index.html" class="text-2xl font-black tracking-tighter">
+                PI<span style="color:#00d4ff">L</span><span style="color:#ff4d6d">OU</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="../../../index.html#home" class="nav-link">Accueil</a>
+                <a href="../../../pages/blog/blog.html" class="nav-link">Blog</a>
+                <a href="../../../pages/web/projets-web.html" class="nav-link active">Projets Web</a>
+                <a href="../../../pages/about/qui-suis-je.html" class="nav-link">Qui suis-je ?</a>
+                <a href="../../../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex lg:hidden">
+                <button id="burgerBtn" type="button" class="p-2" title="Menu" style="color:#00d4ff">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 lg:hidden">
+        <button id="closeMenu" type="button" class="absolute top-6 right-6" title="Fermer" style="color:#00d4ff">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="../../../index.html#home" class="mobile-nav-link">// Accueil</a>
+        <a href="../../../pages/blog/blog.html" class="mobile-nav-link">// Blog</a>
+        <a href="../../../pages/web/projets-web.html" class="mobile-nav-link active">// Projets Web</a>
+        <a href="../../../pages/about/qui-suis-je.html" class="mobile-nav-link">// Qui suis-je ?</a>
+        <a href="../../../index.html#contact" class="mobile-nav-link">// Contact</a>
+    </div>
+
+    <main class="pt-28 pb-24 px-6" id="projetMain">
+        <div class="max-w-4xl mx-auto" id="projetContainer">
+        <!-- Fil d'Ariane -->
+        <div class="max-w-3xl mx-auto flex items-center gap-2 text-sm text-slate-500 mb-8">
+            <a href="../../../pages/web/projets-web.html" class="hover:text-neonCyan transition">Projets Web</a>
+            <span>/</span>
+            <span class="text-slate-400 truncate max-w-xs">Calculateur d&#39;heures supplémentaires</span>
+        </div>
+
+        <!-- Image hero : pleine largeur du conteneur pour plus de présence -->
+        <div class="rounded-xl overflow-hidden mb-10 aspect-video bg-hudSurface" style="border:1px solid rgba(0,212,255,0.12); box-shadow:0 0 50px rgba(0,212,255,0.08)">
+            <img src="../../../assets/img/web/icons/extra-hours-calculator.svg" alt="Calculateur d&#39;heures supplémentaires" class="w-full h-full object-contain">
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <!-- En-tête -->
+            <header class="mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">Calculateur d&#39;heures supplémentaires</h1>
+                <div class="flex gap-2 flex-wrap mb-5"><span class="hud-tag">HTML</span><span class="hud-tag">CSS</span><span class="hud-tag">JavaScript</span></div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="../../../pages/web/projets/extraHours_calculator/index.html" target="_blank" rel="noopener" class="hud-btn hud-btn-primary">Voir la démo</a>
+                    <a href="../../../pages/web/projets-web.html" class="hud-btn hud-btn-outline">← Tous les projets</a>
+                </div>
+            </header>
+
+            <!-- Description complète -->
+            <div class="article-content prose-pilou">
+        <p>Au Japon, les heures supplémentaires sont parfois décomptées d'une façon qui ne facilite pas la vie de celui qui doit les déclarer ou les vérifier. Ce petit outil convertit rapidement des heures en minutes, pour éviter les erreurs de calcul à la main en fin de service.</p>
+        <p>Un projet volontairement minimaliste — pas de framework, juste du <strong>HTML</strong>, <strong>CSS</strong> et <strong>JavaScript</strong> — pensé pour résoudre un vrai problème du quotidien plutôt que pour impressionner.</p>
+    </div>
+
+            <!-- But du projet -->
+            
+            <div class="hud-card p-6 md:p-8 mt-10" style="border-color: rgba(255, 77, 109, 0.3)">
+                <p class="text-xs uppercase font-bold tracking-widest mb-3" style="color:#ff4d6d">🎯 Le but du projet</p>
+                <p class="text-slate-300 leading-relaxed">Avoir un outil rapide et fiable sous la main pour convertir des heures supplémentaires en minutes, sans risque d&#39;erreur de calcul.</p>
+            </div>
+
+            <!-- Autres projets -->
+            
+    <section class="mt-16 pt-10 border-t border-slate-800">
+        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Autres projets</p>
+        <div class="grid sm:grid-cols-3 gap-4">
+        <a href="app-ritz.html"
+           class="hud-card group flex flex-col overflow-hidden hover:border-neonCyan transition">
+            <div class="h-32 overflow-hidden bg-hudSurface">
+                <img src="../../../assets/img/web/icons/app-ritz.svg" alt="Luxury Shipping Assistant" class="w-full h-full object-contain group-hover:scale-110 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+                <p class="text-sm font-bold leading-snug group-hover:text-neonCyan transition">Luxury Shipping Assistant</p>
+            </div>
+        </a>
+        <a href="colisjp.html"
+           class="hud-card group flex flex-col overflow-hidden hover:border-neonCyan transition">
+            <div class="h-32 overflow-hidden bg-hudSurface">
+                <img src="../../../assets/img/web/icons/colisjp.svg" alt="ColisJP" class="w-full h-full object-contain group-hover:scale-110 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+                <p class="text-sm font-bold leading-snug group-hover:text-neonCyan transition">ColisJP</p>
+            </div>
+        </a>
+        <a href="lifetime-count.html"
+           class="hud-card group flex flex-col overflow-hidden hover:border-neonCyan transition">
+            <div class="h-32 overflow-hidden bg-hudSurface">
+                <img src="../../../assets/img/web/icons/lifetime-count.svg" alt="Temps vécu" class="w-full h-full object-contain group-hover:scale-110 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+                <p class="text-sm font-bold leading-snug group-hover:text-neonCyan transition">Temps vécu</p>
+            </div>
+        </a></div>
+    </section>
+        </div>
+    </div>
+    </main>
+    
+    <footer class="py-12 px-6 hud-footer">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="../../../index.html" class="text-xl font-black">
+                PI<span style="color:#00d4ff">L</span><span style="color:#ff4d6d">OU</span>
+            </a>
+            <div class="flex items-center space-x-6 text-slate-500">
+                <a href="https://youtube.com/@pilou2506?si=jvN2n2Nxd32YEn-u" aria-label="YouTube" title="YouTube" class="transition" style="color:#64748b" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#64748b'">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/pilou2506?igsh=aTA0dGJvc2lmZGZ4" aria-label="Instagram" title="Instagram" class="transition" style="color:#64748b" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#64748b'">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+            <p class="text-xs text-slate-600">© Pilou</p>
+        </div>
+    </footer>
+
+    <script src="../../../assets/js/digital-bg.js"></script>
+    <script src="../../../assets/js/vercel-analytics.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="../../../assets/js/vercel-speed-insights.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
