@@ -41,7 +41,7 @@ function renderNotFound(container) {
     container.innerHTML = `
         <div class="max-w-3xl mx-auto text-center py-24">
             <p class="text-2xl font-bold mb-4">Projet introuvable</p>
-            <p class="text-slate-500 mb-8">Ce projet n'existe pas ou a été retiré.</p>
+            <p class="text-slate-400 mb-8">Ce projet n'existe pas ou a été retiré.</p>
             <a href="${LIST_HREF}" class="hud-btn hud-btn-primary">← Retour aux projets</a>
         </div>`;
 }

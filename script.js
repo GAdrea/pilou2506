@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="p-4 flex flex-col flex-1">
                             <h3 class="font-bold text-sm leading-snug mb-1" style="color:#e2e8f0">${article.title}</h3>
-                            ${desc ? `<p class="text-xs line-clamp-2" style="color:#64748b">${desc}</p>` : ''}
+                            ${desc ? `<p class="text-xs line-clamp-2" style="color:#94a3b8">${desc}</p>` : ''}
                         </div>
                     </a>
                 `;
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <h3 class="text-lg font-bold leading-snug mb-2" style="color:#e2e8f0">${escapeHtml(article.title || '')}</h3>
-                        ${desc ? `<p class="text-sm flex-1" style="color:#64748b">${escapeHtml(desc)}</p>` : ''}
+                        ${desc ? `<p class="text-sm flex-1" style="color:#94a3b8">${escapeHtml(desc)}</p>` : ''}
                     </div>
                 </a>
             `;
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="p-6 flex-1 flex flex-col">
                             <h3 class="text-xl font-bold mb-2" style="color:#e2e8f0">${video.title}</h3>
-                            ${video.description ? `<p class="text-sm mb-4" style="color:#64748b">${video.description}</p>` : ''}
+                            ${video.description ? `<p class="text-sm mb-4" style="color:#94a3b8">${video.description}</p>` : ''}
                             <div class="mt-auto pt-2 flex flex-col gap-2">
                                 <a href="pages/video/projets-video.html" class="hud-btn-inline">Consulter le projet</a>
                                 ${demoUrl ? `<a href="${demoUrl}" target="_blank" rel="noopener" class="hud-btn-inline hud-btn-inline-pink">Voir la démo</a>` : ''}

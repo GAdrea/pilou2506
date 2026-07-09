@@ -138,7 +138,7 @@ function renderCards(filtered) {
                 <div class="p-6 flex flex-col flex-1">
                     <h3 class="text-lg font-bold leading-snug mb-2">${escapeHtml(article.title)}</h3>
                     ${article.description ? `<p class="text-slate-400 text-sm flex-1 mb-4">${escapeHtml(article.description)}</p>` : ''}
-                    <div class="flex items-center justify-between text-xs text-slate-500 mt-auto pt-3 border-t border-slate-800">
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
                         <span>${date}</span>
                         <span>${time} de lecture</span>
                     </div>
