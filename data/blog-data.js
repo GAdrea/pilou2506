@@ -24,6 +24,51 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "nouveau-portfolio-en-ligne",
+    category: "Carrière",
+    title: "Mon nouveau portfolio est en ligne",
+    image: "assets/img/posts/nouveau-portfolio/portfolio-01.jpg",
+    images: [
+      "assets/img/posts/nouveau-portfolio/portfolio-01.jpg",
+      "assets/img/posts/nouveau-portfolio/portfolio-02.jpg",
+      "assets/img/posts/nouveau-portfolio/portfolio-03.jpg",
+      "assets/img/posts/nouveau-portfolio/portfolio-04.jpg",
+      "assets/img/posts/nouveau-portfolio/portfolio-05.jpg",
+    ],
+    description: "Du code spaghetti codé entre deux clients bourrés à 4h du mat au portfolio flambant neuf avec blog intégré : retour sur la refonte complète du site.",
+    date: "2026-07-09",
+    instagramUrl: "https://www.instagram.com/p/DajV8lmkvpN/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🖥️ Mon nouveau portfolio est en ligne : adieu la limite de caractères, bonjour la liberté ! 🚀✨</strong></p>
+
+<p>Depuis que je me suis lancé dans le développement web, j'avais un objectif en tête : créer mon propre portfolio. Un endroit bien à moi pour centraliser mes projets, parler de mon parcours (un peu comme sur YouTube... d'ailleurs, je compte bien reprendre les vidéos, c'est juste que le planning est un enfer en ce moment 😅) et surtout, afficher mon CV.</p>
+
+<p><strong>L'époque du code spaghetti 🍝💀</strong></p>
+
+<p>Avec mes déboires dans l'hôtellerie (que je déteste toujours autant, rassurez-vous), j'avais codé une première version de mon CV en ligne. Entre deux clients ivres à 4h du matin, j'avais pondu un code tellement bugué et complexe à maintenir que même un archéologue du web s'y serait perdu.</p>
+
+<p>J'étais débutant, soyez indulgents ! Mais franchement ? Quand je l'ai fini, j'étais fier de moi. Il faut bien commencer quelque part.</p>
+
+<p><strong>Le cheat code de l'IA (merci les robots) 🤖⚡</strong></p>
+
+<p>Depuis, les choses ont changé. Avec l'essor d'outils comme Gemini et Claude, j'ai pu donner vie à mes idées sans avoir à passer des mois à étudier chaque ligne de syntaxe (temps que je n'ai absolument pas, merci le travail de nuit).</p>
+
+<p>Évidemment, avoir des bases solides m'a sauvé la vie pour comprendre ce que je faisais. Grâce à ça, j'ai même pu coder des petites applications pour résoudre mes propres galères au boulot. Résultat : un gain de temps précieux et une efficacité maximale (pendant que l'hôtel pense sûrement que je fais de la magie). 🧙‍♂️💻</p>
+
+<p><strong>Ce qui change aujourd'hui 📝🔓</strong></p>
+
+<p>J'ai enfin pu mettre à jour mon portfolio avec le design exact que je voulais et des fonctionnalités bien pensées.</p>
+
+<p>Mais surtout... il y a un BLOG intégré ! 🎉 Pourquoi c'est une révolution ? Parce qu'Instagram et sa limite de caractères commençaient sérieusement à brider mon ADN de râleur français.</p>
+
+<p>Désormais, mes posts ici seront plus courts, plus digestes et plus faciles à lire. Et pour ceux qui aiment les versions longues, croustillantes et sans filtre, tout sera publié directement ici, sur le site. 🇫🇷🌴⛩️</p>
+
+<p>Vous en pensez quoi de la refonte ?</p>
+    `,
+  },
+  {
     id: "raler-sur-le-japon-preuve-d-amour",
     category: "Société",
     title: "Râler sur le Japon : la plus belle preuve d'amour ?",
