@@ -1,0 +1,34 @@
+name: Notify Discord — Nouvel article
+
+# Se déclenche uniquement quand data/blog-data.js change sur main,
+# donc jamais sur les commits de code/style/sécurité qui ne touchent
+# pas aux articles.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/blog-data.js'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (historique complet nécessaire pour le diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Marge de sécurité pour laisser Vercel déployer
+        run: sleep 20
+
+      - name: Notifier Discord si nouvel article détecté
+        run: node scripts/notify-discord.js
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          BASE_SHA: ${{ github.event.before }}
+          SITE_URL: https://pilou2506.vercel.app
