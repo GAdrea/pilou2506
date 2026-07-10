@@ -52,6 +52,60 @@ const WEB_PROJECTS = Array.isArray(webWindow.WEB_PROJECTS) ? webWindow.WEB_PROJE
 const ArticleRender = require(path.join(ROOT, 'pages/blog/article-render.js'));
 const ProjectRender = require(path.join(ROOT, 'pages/web/project-render.js'));
 
+// ─── Dimensions d'image (anti-CLS) ───────────────────────────────
+// Lecture directe des en-têtes PNG/JPEG, sans dépendance npm
+// (cohérent avec le reste du projet : vanilla avant tout).
+// Résultat mis en cache car une même image peut être référencée
+// plusieurs fois (hero + carrousel + carte "articles similaires").
+
+const dimensionsCache = new Map();
+
+function readImageSize(absPath) {
+    const buf = fs.readFileSync(absPath);
+
+    // PNG : signature 8 octets, puis chunk IHDR (largeur/hauteur en big-endian
+    // aux offsets 16 et 20)
+    if (buf.length >= 24 && buf.readUInt32BE(0) === 0x89504e47 && buf.readUInt32BE(4) === 0x0d0a1a0a) {
+        return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+    }
+
+    // JPEG : on parcourt les marqueurs jusqu'au premier SOF (Start Of Frame)
+    if (buf.length >= 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+        let offset = 2;
+        while (offset + 9 < buf.length) {
+            if (buf[offset] !== 0xff) { offset += 1; continue; }
+            const marker = buf[offset + 1];
+            const isSOF = marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc;
+            if (isSOF) {
+                return { height: buf.readUInt16BE(offset + 5), width: buf.readUInt16BE(offset + 7) };
+            }
+            if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+                offset += 2; // marqueurs sans segment de longueur
+                continue;
+            }
+            const segLength = buf.readUInt16BE(offset + 2);
+            offset += 2 + segLength;
+        }
+    }
+
+    return null;
+}
+
+function getImageDimensions(relPath) {
+    if (!relPath || relPath.startsWith('http')) return null;
+    const cleanPath = relPath.replace(/^\//, '');
+    if (dimensionsCache.has(cleanPath)) return dimensionsCache.get(cleanPath);
+
+    let dim = null;
+    try {
+        dim = readImageSize(path.join(ROOT, cleanPath));
+    } catch (err) {
+        console.warn(`⚠️  Dimensions illisibles pour ${cleanPath} : ${err.message}`);
+    }
+    dimensionsCache.set(cleanPath, dim);
+    return dim;
+}
+
 const sortedArticles = ArticleRender.sortedArticles(BLOG_ARTICLES);
 
 // ─── Garde-fous : ids manquants ou dupliqués ─────────────────────
@@ -248,6 +302,7 @@ function buildArticlePage(article) {
     const renderer = ArticleRender.create({
         baseUrl: root,
         blogHref,
+        getImageDimensions,
         hrefFor: (id) => ArticleRender.slugify(id) + '.html'
     });
 

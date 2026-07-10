@@ -83,6 +83,10 @@
         const baseUrl  = ctx.baseUrl || '.';          // pour résoudre les chemins d'images relatifs
         const hrefFor  = ctx.hrefFor || function (id) { return encodeURIComponent(id) + '.html'; };
         const blogHref = ctx.blogHref || 'blog.html';
+        // Optionnel : fourni côté Node (build) par scripts/generate-static-pages.js pour
+        // lire les dimensions réelles des fichiers et éviter le CLS (layout shift) au
+        // chargement. Absent côté navigateur (rendu dynamique) -> pas de width/height, sans risque.
+        const getImageDimensions = typeof ctx.getImageDimensions === 'function' ? ctx.getImageDimensions : null;
 
         function imageSrc(path) {
             if (!path) return '';
@@ -90,12 +94,20 @@
             return baseUrl + '/' + path.replace(/^\//, '');
         }
 
+        // Retourne ' width="…" height="…"' (avec l'espace en tête) si les dimensions
+        // sont connues, sinon une chaîne vide — à insérer directement dans le template.
+        function dimAttrs(path) {
+            if (!getImageDimensions || !path) return '';
+            const dim = getImageDimensions(path);
+            return dim && dim.width && dim.height ? ` width="${dim.width}" height="${dim.height}"` : '';
+        }
+
         function renderCarousel(gallery, title) {
             const slides = gallery.map((src, i) => `
         <div class="carousel-slide">
             <img src="${imageSrc(src)}" alt="${escapeHtml(title)} — photo ${i + 1}/${gallery.length}"
                  data-lightbox="${imageSrc(src)}" data-lightbox-index="${i}"
-                 loading="${i === 0 ? 'eager' : 'lazy'}">
+                 loading="${i === 0 ? 'eager' : 'lazy'}"${dimAttrs(src)}>
         </div>`).join('');
 
             const dots = gallery.map((_, i) => `
@@ -212,7 +224,7 @@
             <img src="${img}" alt="${escapeHtml(article.title)}"
                  class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
                  style="max-height:65vh"
-                 data-lightbox="${img}">
+                 data-lightbox="${img}"${dimAttrs(article.image)} fetchpriority="high" loading="eager" decoding="async">
         </div>` : '');
 
             return `
