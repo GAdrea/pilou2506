@@ -7,3 +7,9 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Sources brutes non compressées (ex: exports IA type Gemini/Midjourney)
+# À traiter (compression + renommage) AVANT tout commit dans assets/img/
+Gemini_Generated_Image_*
+*_raw.*
+*_original.*
