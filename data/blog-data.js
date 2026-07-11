@@ -24,6 +24,68 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "lart-de-regarder-ailleurs",
+    category: "Société",
+    title: "L'art de regarder ailleurs",
+    image: "assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-01.jpg",
+    images: [
+      "assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-01.jpg",
+      "assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-02.jpg",
+      "assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-03.jpg",
+      "assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-04.jpg",
+      "assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-05.jpg",
+    ],
+    description: "Un streamer, une agression en pleine rue et une foule qui regarde ailleurs. Petit coup de gueule sur la lâcheté collective (et ses excuses bidon) au Japon.",
+    date: "2026-07-11",
+    instagramUrl: "https://www.instagram.com/p/DapZQ88EuQ_/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>👥 L'art de regarder ailleurs : Quand la lâcheté devient une spécialité locale 🎌🤫</strong></p>
+
+<p>Allez, on reprend les bonnes vieilles habitudes avec un petit coup de gueule bien senti. Je voulais initialement vous reparler de Sanae (ne t'inquiète pas, le dossier sur tes réformes de visa permanent n'est que partie remise, on va y revenir très vite !).</p>
+
+<p>Mais je suis tombé sur une vidéo qui m'a tellement fait vriller que je me devais de réagir aujourd'hui. 🎥🔥</p>
+
+<p><strong>La scène du crime (virtuel) :</strong></p>
+
+<p>Un streamer japonais en plein direct assiste à une agression. Un homme plaque une femme au sol dans la rue, sous les yeux de plusieurs passants. Personne ne bouge.</p>
+
+<p>Le streamer s'approche et entend la femme hurler à l'aide. Sa réaction ? Il lui demande, d'un ton d'une nonchalance absolue : « Tout va bien madame ? ».</p>
+
+<p>À ce niveau-là, n'importe qui avec un début de cerveau serait intervenu. Mais visiblement, certains ont été bercés un peu trop près du mur. 😑🧱</p>
+
+<p><strong>Le motif le plus éclaté au sol de l'histoire :</strong></p>
+
+<p>La victime continue de supplier qu'on l'aide. L'agresseur, tout en essayant clairement de l'étrangler, sort une excuse magique : « Mais non, elle est trop ivre, j'essaie juste de l'empêcher de commettre l'irréparable ! ».</p>
+
+<p>Et notre cher streamer, totalement convaincu par cette explication digne d'un mauvais film de série B, s'en va tranquillement. Il filme sa retraite tout en expliquant calmement à sa communauté que ce n'est pas une agression, mais un geste d'altruisme.</p>
+
+<p>Bah oui, c'est évident ! Un mec qui étrangle une nana au sol qui hurle à la mort, c'est clairement du secourisme. T'es vraiment pas le pingouin le plus glissant de la banquise toi... 🐧🤡</p>
+
+<p><strong>Pourquoi tout le monde tourne le dos ?</strong></p>
+
+<p>Cette lâcheté collective donne la nausée, mais elle est malheureusement ultra-banale ici pour trois raisons :</p>
+
+<p>1️⃣ <strong>La peur physique :</strong> C'est humain. Je fais le malin derrière mon écran, mais j'aurais eu la trouille comme tout le monde. On ne peut pas lui en vouloir d'avoir eu peur. En revanche, ne pas appeler les flics ou chercher de l'aide quand on a un téléphone dans la main ? Impardonnable. 📱❌</p>
+
+<p>2️⃣ <strong>Le conformisme et l'harmonie ("Wa") :</strong> La règle d'or ici, c'est de ne jamais se mêler de ce qui ne nous regarde pas. Faut surtout pas perturber la tranquillité publique pour une femme qui se fait étrangler, voyons ! 🤫🤐</p>
+
+<p>3️⃣ <strong>Le vide juridique :</strong> On est dans une société qui, sur le plan légal et social, a trop souvent tendance à protéger l'agresseur et à compliquer la vie de la victime (la gent féminine au Japon pourrait en témoigner des heures). Intervenir, c'est prendre le risque de finir au poste ou d'avoir des ennuis. Alors, on passe son chemin.</p>
+
+<p><strong>Le déni des "bisounours" :</strong></p>
+
+<p>Je vois déjà venir ceux qui diront : « Oui mais c'est peut-être simulé », « C'est une arnaque à l'assurance » ou encore « C'est leur culture, on n'a pas à juger ». À ceux-là, je répondrai très poliment que vous ne devriez pas avoir le droit de vote. 🗳️🚫</p>
+
+<p>Cette femme était en détresse absolue, et la seule personne qui pouvait l'aider a choisi de filmer son propre départ. C'est lamentable. J'espère sincèrement qu'elle s'en est sortie et que quelqu'un de plus courageux a fini par intervenir.</p>
+
+<p>Le Japon est un pays formidable, je le répéterai toujours. Mais il est gangrené par des tabous et des failles dont les Japonais — et surtout les Japonaises — sont les premières victimes. Pour que ça change, il faut briser le silence.</p>
+
+<p>C'est d'ailleurs l'une des plus belles morales de mon manga préféré, Naruto (car oui, derrière les ninjas qui courent les bras en arrière, les Japonais écrivent des récits d'une profondeur incroyable) : il vaut mieux un ami qui te rentre dedans pour te corriger durement qu'un ami qui te regarde t'égarer en silence. 🦊🍥</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "nouveau-portfolio-en-ligne",
     category: "Carrière",
     title: "Mon nouveau portfolio est en ligne",
