@@ -51,6 +51,7 @@ const WEB_PROJECTS = Array.isArray(webWindow.WEB_PROJECTS) ? webWindow.WEB_PROJE
 
 const ArticleRender = require(path.join(ROOT, 'pages/blog/article-render.js'));
 const ProjectRender = require(path.join(ROOT, 'pages/web/project-render.js'));
+const BlogRender = require(path.join(ROOT, 'pages/blog/blog-render.js'));
 
 // ─── Dimensions d'image (anti-CLS) ───────────────────────────────
 // Lecture directe des en-têtes PNG/JPEG, sans dépendance npm
@@ -156,6 +157,31 @@ function truncate(text, max) {
     if (!text) return '';
     const clean = String(text).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
     return clean.length > max ? clean.slice(0, max - 1).trimEnd() + '…' : clean;
+}
+
+// Beaucoup d'accroches (champ "description") sont de bons punchlines UI mais
+// trop courtes pour une meta description (Google affiche ~120-158 caractères).
+// En dessous du seuil, on la complète avec un extrait du contenu de l'article.
+// Ça ne change rien à ce qui est affiché sur le site : uniquement le SEO.
+const META_DESCRIPTION_MIN = 70;
+const META_DESCRIPTION_MAX = 160;
+
+function buildMetaDescription(article) {
+    const tagline = (article.description || '').trim();
+    if (tagline.length >= META_DESCRIPTION_MIN) {
+        return truncate(tagline, META_DESCRIPTION_MAX);
+    }
+    let plainContent = String(article.content || '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/^\s*Salut c['’]est Pilou\s*/i, '') // hook répétitif, sans valeur pour un extrait Google
+        .replace(/[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\uFE0F\u200D]/gu, '') // emojis (dont drapeaux)
+        .replace(/\s+/g, ' ')
+        .trim();
+    if (!tagline && !plainContent) {
+        return `Un article de Pilou, expatrié franco-antillais à Fukuoka. ${article.title}`;
+    }
+    const sep = tagline ? (/[.!?…]$/.test(tagline) ? ' ' : '. ') : '';
+    return truncate(tagline + sep + plainContent, META_DESCRIPTION_MAX);
 }
 
 function safeJsonLd(obj) {
@@ -279,8 +305,7 @@ function buildArticlePage(article) {
     const slug = ArticleRender.slugify(article.id);
     const canonical = `${SITE_URL}/pages/blog/articles/${slug}.html`;
     const title = `${article.title} | Pilou - Portfolio`;
-    const description = truncate(article.description || article.content, 160)
-        || `Un article de Pilou, expatrié franco-antillais à Fukuoka. ${article.title}`;
+    const description = buildMetaDescription(article);
     const ogImage = absoluteUrl(article.image);
     const dateIso = /^\d{4}-\d{2}-\d{2}$/.test(article.date || '') ? article.date : undefined;
     const blogHref = `${root}/pages/blog/blog.html`;
@@ -412,6 +437,50 @@ function writeGeneratedDir(dir, items, buildFn, slugFn, label) {
 
 writeGeneratedDir(ARTICLES_DIR, sortedArticles, buildArticlePage, ArticleRender.slugify, 'article');
 writeGeneratedDir(DETAILS_DIR, WEB_PROJECTS, buildProjectPage, (id) => id, 'projet');
+
+// ─── Pré-rendu de blog.html (page 1 / "Tout" / sans recherche) ──
+//
+// blog.html est un template édité à la main (pas un fichier par item comme
+// les articles), donc on ne le régénère pas entièrement : on injecte le HTML
+// entre des marqueurs <!--SSR:X--><!--/SSR:X--> déjà présents dans le fichier.
+// C'est l'état par défaut au chargement (page 1, catégorie "Tout", pas de
+// recherche) — exactement ce que blog.js recalcule au DOMContentLoaded, donc
+// aucun flash ni divergence entre le HTML pré-rendu et le rendu JS.
+
+function injectBetweenMarkers(html, marker, content) {
+    const re = new RegExp(`(<!--SSR:${marker}-->)([\\s\\S]*?)(<!--\\/SSR:${marker}-->)`);
+    if (!re.test(html)) {
+        throw new Error(`Marqueur SSR:${marker} introuvable dans blog.html — le template a dû changer.`);
+    }
+    return html.replace(re, `$1${content}$3`);
+}
+
+function buildBlogListing() {
+    const blogHtmlPath = path.join(ROOT, 'pages/blog/blog.html');
+    let html = fs.readFileSync(blogHtmlPath, 'utf8');
+
+    const renderer = BlogRender.create({
+        baseUrl: '../..',
+        hrefFor: (id) => 'articles/' + ArticleRender.slugify(id) + '.html'
+    });
+    const result = renderer.renderPage(sortedArticles, { activeCategory: 'Tout', searchQuery: '', page: 1 });
+
+    html = injectBetweenMarkers(html, 'COUNT', result.count);
+    html = injectBetweenMarkers(html, 'FILTERS', result.filtersHtml);
+    html = injectBetweenMarkers(html, 'CARDS', result.cardsHtml);
+    html = injectBetweenMarkers(html, 'PAGINATION', result.paginationHtml);
+
+    // La pagination doit être visible dès le chargement si plus d'une page.
+    html = html.replace(
+        /(<nav id="blogPagination" class="flex justify-center items-center gap-2 mt-12)( hidden)?(")/,
+        (_m, pre, _hidden, post) => `${pre}${result.paginationHidden ? ' hidden' : ''}${post}`
+    );
+
+    fs.writeFileSync(blogHtmlPath, html, 'utf8');
+    console.log(`✔ blog.html pré-rendu (page 1 : ${result.count})`);
+}
+
+buildBlogListing();
 
 // ─── Sitemap ───────────────────────────────────────────────────
 
