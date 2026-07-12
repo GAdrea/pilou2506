@@ -176,6 +176,40 @@ function escapeHtml(text) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // À La Une : spotlight sur LE tout dernier article publié (un seul, en grand format)
+    if (document.getElementById('latestArticleSpotlight') && window.BLOG_ARTICLES) {
+        const spotlightEl = document.getElementById('latestArticleSpotlight');
+        const latest = sortByDateDesc(window.BLOG_ARTICLES)[0];
+        if (latest) {
+            const imgSrc = resolveHomeImage(latest.image || '');
+            const link   = 'pages/blog/articles/' + window.ArticleRender.slugify(latest.id) + '.html';
+            const cat    = latest.category || '';
+            const desc   = latest.description || '';
+            const dateFr = window.ArticleRender.formatDate ? window.ArticleRender.formatDate(latest.date) : '';
+
+            spotlightEl.innerHTML = `
+                <a href="${link}" class="hud-card grid lg:grid-cols-2 overflow-hidden group">
+                    <div class="h-72 lg:h-full overflow-hidden relative" style="background:rgba(13,21,37,0.6)">
+                        ${imgSrc
+                            ? `<img src="${imgSrc}" alt="${escapeHtml(latest.title || '')}" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" loading="lazy">`
+                            : '<div class="w-full h-full flex items-center justify-center text-6xl">📝</div>'}
+                    </div>
+                    <div class="p-8 lg:p-10 flex flex-col justify-center gap-4">
+                        <div class="hud-badge w-fit">
+                            <span class="w-2 h-2 rounded-full blink" style="background:#ff4d6d"></span>
+                            Nouvel article
+                        </div>
+                        ${cat ? `<span class="hud-tag w-fit">${escapeHtml(cat)}</span>` : ''}
+                        <h3 class="text-2xl lg:text-3xl font-bold leading-snug" style="color:#e2e8f0">${escapeHtml(latest.title || '')}</h3>
+                        ${desc ? `<p class="text-sm lg:text-base" style="color:#94a3b8">${escapeHtml(desc)}</p>` : ''}
+                        ${dateFr ? `<p class="text-xs uppercase tracking-wide" style="color:#64748b">${escapeHtml(dateFr)}</p>` : ''}
+                        <span class="hud-btn hud-btn-primary w-fit mt-2">Lire l'article →</span>
+                    </div>
+                </a>
+            `;
+        }
+    }
+
     // Carousel blog (défilement infini) — les N articles les plus récents
     const latestArticles = window.BLOG_ARTICLES ? sortByDateDesc(window.BLOG_ARTICLES).slice(0, 5) : [];
     if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
