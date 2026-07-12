@@ -95,22 +95,130 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
                     </svg>
                 </div>
-                <p id="blogCount" class="text-sm text-slate-400 shrink-0"></p>
+                <p id="blogCount" class="text-sm text-slate-400 shrink-0"><!--SSR:COUNT-->46 articles<!--/SSR:COUNT--></p>
             </div>
 
             <!-- Filtres catégories -->
-            <div id="blogFilters" class="flex flex-wrap gap-2 mb-8"></div>
+            <div id="blogFilters" class="flex flex-wrap gap-2 mb-8"><!--SSR:FILTERS--><button type="button" data-category="Tout" class="px-4 py-1.5 rounded text-sm font-medium border transition border-neonCyan text-neonCyan bg-neonCyan/10">Tout</button><button type="button" data-category="Antilles" class="px-4 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">Antilles</button><button type="button" data-category="Carrière" class="px-4 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">Carrière</button><button type="button" data-category="Gaming" class="px-4 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">Gaming</button><button type="button" data-category="Hôtellerie" class="px-4 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">Hôtellerie</button><button type="button" data-category="Japon" class="px-4 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">Japon</button><button type="button" data-category="Société" class="px-4 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">Société</button><!--/SSR:FILTERS--></div>
 
             <!-- Grille d'articles -->
             <section>
-                <div id="blogCards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="blogCards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!--SSR:CARDS-->
+        <article class="hud-card group flex flex-col">
+            <a href="articles/lart-de-regarder-ailleurs.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/lart-de-regarder-ailleurs/regarder-ailleurs-01.jpg" alt="L&#39;art de regarder ailleurs"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Société</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">L&#39;art de regarder ailleurs</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">Un streamer, une agression en pleine rue et une foule qui regarde ailleurs. Petit coup de gueule sur la lâcheté collective (et ses excuses bidon) au Japon.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>11 juillet 2026</span>
+                        <span>3 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <article class="hud-card group flex flex-col">
+            <a href="articles/nouveau-portfolio-en-ligne.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/nouveau-portfolio/portfolio-01.jpg" alt="Mon nouveau portfolio est en ligne"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Carrière</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">Mon nouveau portfolio est en ligne</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">Du code spaghetti codé entre deux clients bourrés à 4h du mat au portfolio flambant neuf avec blog intégré : retour sur la refonte complète du site.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>9 juillet 2026</span>
+                        <span>2 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <article class="hud-card group flex flex-col">
+            <a href="articles/raler-sur-le-japon-preuve-d-amour.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/raler-sur-le-japon/raler-japon-01.jpg" alt="Râler sur le Japon : la plus belle preuve d&#39;amour ?"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Société</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">Râler sur le Japon : la plus belle preuve d&#39;amour ?</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">Critiquer le Japon qu&#39;on aime, sans tomber dans le cliché ni la haine : retour sur mes coups de gueule et sur ce qui fait, au fond, une critique juste.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>5 juillet 2026</span>
+                        <span>3 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <article class="hud-card group flex flex-col">
+            <a href="articles/parcours-universitaire-couteau-suisse.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/parcours-universitaire/parcours-univ-01.jpg" alt="Mon parcours universitaire atypique : de la gestion ratée au profil &quot;couteau suisse&quot; au Japon"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Carrière</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">Mon parcours universitaire atypique : de la gestion ratée au profil &quot;couteau suisse&quot; au Japon</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">De l&#39;IUT de Gestion à la Sorbonne en passant par l&#39;INALCO : retour sur un parcours universitaire pas du tout linéaire, mais qui a fait de moi un vrai couteau suisse.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>2 juillet 2026</span>
+                        <span>2 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <article class="hud-card group flex flex-col">
+            <a href="articles/mon-sejour-en-martinique.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/1782031811272.jpg" alt="Mon séjour en Martinique"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Antilles</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">Mon séjour en Martinique</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">Mon enfance mouvementée en Martinique : chiens de garde, ruisseaux façon Indiana Jones et coups de règle à l&#39;ancienne.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>21 juin 2026</span>
+                        <span>2 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <article class="hud-card group flex flex-col">
+            <a href="articles/efforts-ne-trahissent-jamais.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/1781334702125.jpg" alt="Les efforts ne trahissent jamais !"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Carrière</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">Les efforts ne trahissent jamais !</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">Quand l&#39;initiative se heurte au mur de l&#39;inertie.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>15 juin 2026</span>
+                        <span>2 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article><!--/SSR:CARDS--></div>
                 <p id="blogEmpty" class="text-slate-400 text-center py-12 hidden">
                     Aucun article pour cette recherche.
                 </p>
             </section>
 
             <!-- Pagination -->
-            <nav id="blogPagination" class="flex justify-center items-center gap-2 mt-12 hidden"></nav>
+            <nav id="blogPagination" class="flex justify-center items-center gap-2 mt-12"><!--SSR:PAGINATION--><button type="button" data-page="0" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan opacity-30 pointer-events-none">&#8592;</button><button type="button" data-page="1" class="px-3 py-1.5 rounded text-sm font-medium border transition border-neonCyan text-neonCyan bg-neonCyan/10 cursor-default">1</button><button type="button" data-page="2" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">2</button><button type="button" data-page="3" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">3</button><button type="button" data-page="4" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">4</button><button type="button" data-page="5" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">5</button><button type="button" data-page="6" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">6</button><button type="button" data-page="7" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">7</button><button type="button" data-page="8" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">8</button><button type="button" data-page="2" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">&#8594;</button><!--/SSR:PAGINATION--></nav>
         </div>
     </main>
 
@@ -133,6 +241,7 @@
 
     <script src="../../data/blog-data.js"></script>
     <script src="article-render.js"></script>
+    <script src="blog-render.js"></script>
     <script src="blog.js"></script>
     <script src="../../assets/js/digital-bg.js"></script>
     <script src="../../assets/js/vercel-analytics.js"></script>
