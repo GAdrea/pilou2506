@@ -24,6 +24,62 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "dossier-sanae-reformes-2026",
+    category: "Japon",
+    title: "Le Dossier Sanae : Réformes 2026 ou comment saborder son propre navire",
+    image: "assets/img/posts/dossier-sanae-reformes-2026/dossier-sanae-01.jpg",
+    images: [
+      "assets/img/posts/dossier-sanae-reformes-2026/dossier-sanae-01.jpg",
+      "assets/img/posts/dossier-sanae-reformes-2026/dossier-sanae-02.jpg",
+      "assets/img/posts/dossier-sanae-reformes-2026/dossier-sanae-03.jpg",
+      "assets/img/posts/dossier-sanae-reformes-2026/dossier-sanae-04.jpg",
+      "assets/img/posts/dossier-sanae-reformes-2026/dossier-sanae-05.jpg",
+    ],
+    description: "Cours de japonais obligatoires, frais de visa permanent multipliés par 20, capital business multiplié par 6 : le dossier des réformes visas 2026 signées Sanae, décortiqué sans filtre.",
+    date: "2026-07-15",
+    instagramUrl: "https://www.instagram.com/p/DayMJ0cki3Q/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🛂 Le Dossier Sanae : Réformes 2026 ou comment saborder son propre navire ? 🛳️💥</strong></p>
+
+<p>Désolé de t'avoir fait attendre, Sanae. Ton dossier prenait la poussière sur mon bureau, mais il est grand temps qu'on s'occupe de ton cas ! 📁👀</p>
+
+<p>Eh oui, notre Première Ministre préférée a encore frappé avec ses nouvelles réglementations sur les visas (travail, permanent, business). Et cette fois, il y a beaucoup à dire.</p>
+
+<p><strong>Le "Bon" (oui, je vais lui faire des compliments, profitez-en) : 📝🌸</strong></p>
+
+<p>La réforme prévoit des cours de japonais et d'éducation civique obligatoires pour le visa permanent. Honnêtement ? Je valide. Si tu veux t'installer ici à vie, parler la langue, c'est le strict minimum. Sans cela, les démarches administratives, médicales ou bancaires sont un cauchemar absolu. Eux ne parlent pas anglais (et n'y sont pas obligés, après tout, on est chez eux).</p>
+
+<p>Pour l'éducation civique (tri des déchets, gestes de survie en cas de séisme), je valide aussi. Même si, soyons réalistes : le tri à trois catégories est écrit en anglais sur les sacs. Si tu n'as pas compris ça, ce n'est pas des cours civiques qu'il te faut, c'est recommencer ton éducation depuis la maternelle. 🚮👶</p>
+
+<p>J'espère que vous avez bien profité des compliments envers cette chère Sanae car à partir de maintenant, elle va s'en prendre plein la gueule ! 💢</p>
+
+<p><strong>Le "Grand N'importe Quoi" 📉🎪</strong></p>
+
+<p>C'est là que ça dérape sévère :</p>
+
+<p>1️⃣ <strong>L'évaluation stupide :</strong> On suppose qu'ils vont exiger un niveau JLPT N2. Un examen qui n'évalue que la compréhension passive et absolument pas la production écrite ou orale. Complètement idiot. 🧠❌</p>
+
+<p>2️⃣ <strong>La hausse des prix façon cartel :</strong> Les frais du visa permanent passent de 10 000 yens (54 €) à 200 000 yens (1090 €) ! Une augmentation de 20 fois le tarif initial. Je ne savais pas que la consommation de stupéfiants était autorisée au Parlement japonais, mais visiblement, ils tournent à un très bon produit. 🌿🤪</p>
+
+<p>3️⃣ <strong>L'exécution publique des entrepreneurs :</strong> Pour le visa business, on passe d'un capital requis de 5 millions de yens (27 000 €) à 30 millions de yens (165 000 €) ! Soit 6 fois plus ! Ajoutez à ça l'obligation d'embaucher un Japonais à plein temps, un Master/Doctorat, 3 ans d'expérience et des bureaux dédiés. 🏢🚪</p>
+
+<p><strong>L'injustice de l'épée de Damoclès : 🗡️💔</strong></p>
+
+<p>Certains diront que c'est pour "éviter les fraudes". D'accord. Mais pourquoi pénaliser les étrangers qui font déjà tourner l'économie locale ? J'ai vu passer l'histoire d'une commerçante népalaise établie ici depuis des années. Elle a fondé sa famille, paye ses taxes, le loyer de ses commerces, scolarise ses enfants... et aujourd'hui, elle doit tout fermer et rentrer chez elle parce qu'elle n'a pas 165k € sur son compte ?</p>
+
+<p>C'est ça, le "Japon à deux vitesses". Tu vis avec une épée de Damoclès au-dessus de la tête qui peut détruire ta vie sur une simple décision politique, sans aucun recours possible. Le Japon veut s'ouvrir mais érige des barrières de riches. 🧗‍♂️💸</p>
+
+<p><strong>Et pourtant... 🤝🇯🇵</strong></p>
+
+<p>Aussi injustes soient ces mesures pour nous, j'espère sincèrement qu'elles aideront le pays à remonter la pente sur le plan économique. Le Japon fait face à une crise démographique sans précédent. Si ces réformes visent à protéger une population qui n'a pas envie de se mélanger, c'est leur droit le plus strict. Ils sont chez eux, après tout.</p>
+
+<p>Relancer l'économie ou la démographie d'abord ? Les deux se défendent. J'espère juste qu'ils feront les bons choix. 🌅🎌</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "lart-de-regarder-ailleurs",
     category: "Société",
     title: "L'art de regarder ailleurs",
