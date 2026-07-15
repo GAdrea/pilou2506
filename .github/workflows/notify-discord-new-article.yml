@@ -3,10 +3,6 @@ name: Notify Discord — Nouvel article
 # Se déclenche uniquement quand data/blog-data.js change sur main,
 # donc jamais sur les commits de code/style/sécurité qui ne touchent
 # pas aux articles.
-- name: Debug (longueur du secret uniquement, pas la valeur)
-        run: echo "Longueur du secret = ${#DISCORD_WEBHOOK_URL}"
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 on:
   push:
     branches: [main]
