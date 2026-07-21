@@ -24,6 +24,60 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "prof-d-un-jour-a-la-fac",
+    category: "Société",
+    title: "Prof d'un jour : quand j'échappe à l'hôtellerie pour traumatiser des étudiants",
+    image: "assets/img/posts/prof-d-un-jour-a-la-fac/prof-fac-01.jpg",
+    images: [
+      "assets/img/posts/prof-d-un-jour-a-la-fac/prof-fac-01.jpg",
+      "assets/img/posts/prof-d-un-jour-a-la-fac/prof-fac-02.jpg",
+      "assets/img/posts/prof-d-un-jour-a-la-fac/prof-fac-03.jpg",
+      "assets/img/posts/prof-d-un-jour-a-la-fac/prof-fac-04.jpg",
+      "assets/img/posts/prof-d-un-jour-a-la-fac/prof-fac-05.jpg",
+    ],
+    description: "0 yen, 100% bénévole : comment je fais croire à des étudiants japonais que je ne parle pas leur langue, pour mieux libérer la parole en cours de français.",
+    date: "2026-07-21",
+    instagramUrl: "",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🎓 Prof d'un jour : Quand j'échappe à l'hôtellerie pour traumatiser des étudiants 🇫🇷🇯🇵🏫</strong></p>
+
+<p>Vous connaissez déjà mon passé de prof de français et mes interventions dans les écoles primaires ou les collèges. Mais il y a une autre facette de ma vie d'enseignant bénévole dont je n'avais pas encore parlé : mes interventions à l'université.</p>
+
+<p><strong>Le deal secret : 🤫💼</strong></p>
+
+<p>Mettons les choses au clair tout de suite : ce n'est absolument pas rémunéré, je fais ça sur mon temps libre. Il se trouve que la femme de mon propriétaire est enseignante à la fac. De temps en temps, elle m'invite dans ses classes pour que ses étudiants puissent se frotter à un "vrai" natif.</p>
+
+<p>Moi, j'y vais avec grand plaisir. Déjà pour aider ces jeunes, mais surtout... parce que ça me permet de m'échapper quelques heures de mon travail à l'hôtel. (Est-ce que je vous ai déjà dit à quel point je déteste l'hôtellerie ? Bref). 🏨 Civil war personnelle à part.</p>
+
+<p><strong>La grande farce de l'immersion : 🎭🤫</strong></p>
+
+<p>À chaque fois, on fait le même coup aux étudiants : on leur fait croire que je ne parle pas un traître mot de japonais.</p>
+
+<p>C'est cruel ? Peut-être un peu. Mais c'est d'une efficacité redoutable ! Si je leur disais dès le début que je maîtrise leur langue, ils choisiraient la facilité et la communication en français mourrait instantanément.</p>
+
+<p>Mes visites commencent donc par une présentation personnelle. J'essaie de faire simple : la plupart des classes ont un niveau débutant, donc je ne vais pas commencer à leur balancer des subordonnées relatives ou du conditionnel passé. On n'est pas là pour les achever dès la première minute !</p>
+
+<p>Ensuite, je leur pose des questions basiques (leurs goûts, leurs passions, parler d'eux) pour débloquer la parole. 💬🗣️</p>
+
+<p><strong>Le soulagement général : 😮‍💨✨</strong></p>
+
+<p>Vient enfin le moment de la révélation : je lâche quelques phrases en japonais. À ce moment-là, on entend presque un soupir de soulagement collectif traverser la salle de classe !</p>
+
+<p>Certes, on perd un peu le côté "immersion forcée", mais ça libère complètement la parole. Ils se lâchent, posent plein de questions sur la France, sa culture, et s'intéressent vraiment à notre façon de vivre.</p>
+
+<p><strong>La transmission (et un peu de nostalgie) : ❤️🌍</strong></p>
+
+<p>Comme pour mes interventions avec les plus jeunes, c'est un plaisir immense d'échanger avec eux. C'est une opportunité que je n'ai pas vraiment eue quand j'avais leur âge, alors je suis super content de pouvoir la leur offrir aujourd'hui.</p>
+
+<p>Ils sont curieux, pertinents (certaines questions sur les problèmes sociaux en France m'ont d'ailleurs bien surpris) et extrêmement volontaires.</p>
+
+<p>Les voir faire des efforts surhumains pour aligner trois mots de français, rigoler avec moi de nos différences culturelles, et repartir avec l'envie furieuse de visiter la France... franchement, ça n'a pas de prix. Et ça me fait oublier, le temps d'un après-midi, mes dossiers de nuit ! 🌟✈️</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "dossier-sanae-reformes-2026",
     category: "Japon",
     title: "Le Dossier Sanae : Réformes 2026 ou comment saborder son propre navire",
