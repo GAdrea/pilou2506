@@ -95,7 +95,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
                     </svg>
                 </div>
-                <p id="blogCount" class="text-sm text-slate-400 shrink-0"><!--SSR:COUNT-->48 articles<!--/SSR:COUNT--></p>
+                <p id="blogCount" class="text-sm text-slate-400 shrink-0"><!--SSR:COUNT-->49 articles<!--/SSR:COUNT--></p>
             </div>
 
             <!-- Filtres catégories -->
@@ -104,6 +104,24 @@
             <!-- Grille d'articles -->
             <section>
                 <div id="blogCards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!--SSR:CARDS-->
+        <article class="hud-card group flex flex-col">
+            <a href="articles/retour-boulot-viriliste.html" class="block flex-1 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="../../assets/img/posts/retour-boulot-viriliste/viriliste-01.jpg" alt="&quot;Retour au travail viriliste&quot; : quand la jeunesse japonaise réclame du sang et des larmes"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
+                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Japon</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold leading-snug mb-2">&quot;Retour au travail viriliste&quot; : quand la jeunesse japonaise réclame du sang et des larmes</h3>
+                    <p class="text-slate-400 text-sm flex-1 mb-4">Le management japonais serait &quot;trop gentil&quot; : une partie de la jeunesse réclamerait un retour aux engueulades et au surmenage héroïque. Petit tour d&#39;horizon d&#39;une nostalgie toxique, entre records de karoshi et insomnie assumée de Sanae.</p>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
+                        <span>28 juillet 2026</span>
+                        <span>3 min de lecture</span>
+                    </div>
+                </div>
+            </a>
+        </article>
         <article class="hud-card group flex flex-col">
             <a href="articles/prof-d-un-jour-a-la-fac.html" class="block flex-1 flex flex-col">
                 <div class="h-48 overflow-hidden relative">
@@ -193,24 +211,6 @@
                     </div>
                 </div>
             </a>
-        </article>
-        <article class="hud-card group flex flex-col">
-            <a href="articles/parcours-universitaire-couteau-suisse.html" class="block flex-1 flex flex-col">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="../../assets/img/posts/parcours-universitaire/parcours-univ-01.jpg" alt="Mon parcours universitaire atypique : de la gestion ratée au profil &quot;couteau suisse&quot; au Japon"
-                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
-                    <span class="absolute top-3 left-3 px-2 py-0.5 text-xs font-bold rounded"
-                        style="background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.4);color:#00d4ff">Carrière</span>
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <h3 class="text-lg font-bold leading-snug mb-2">Mon parcours universitaire atypique : de la gestion ratée au profil &quot;couteau suisse&quot; au Japon</h3>
-                    <p class="text-slate-400 text-sm flex-1 mb-4">De l&#39;IUT de Gestion à la Sorbonne en passant par l&#39;INALCO : retour sur un parcours universitaire pas du tout linéaire, mais qui a fait de moi un vrai couteau suisse.</p>
-                    <div class="flex items-center justify-between text-xs text-slate-400 mt-auto pt-3 border-t border-slate-800">
-                        <span>2 juillet 2026</span>
-                        <span>2 min de lecture</span>
-                    </div>
-                </div>
-            </a>
         </article><!--/SSR:CARDS--></div>
                 <p id="blogEmpty" class="text-slate-400 text-center py-12 hidden">
                     Aucun article pour cette recherche.
@@ -218,7 +218,7 @@
             </section>
 
             <!-- Pagination -->
-            <nav id="blogPagination" class="flex justify-center items-center gap-2 mt-12"><!--SSR:PAGINATION--><button type="button" data-page="0" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan opacity-30 pointer-events-none">&#8592;</button><button type="button" data-page="1" class="px-3 py-1.5 rounded text-sm font-medium border transition border-neonCyan text-neonCyan bg-neonCyan/10 cursor-default">1</button><button type="button" data-page="2" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">2</button><button type="button" data-page="3" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">3</button><button type="button" data-page="4" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">4</button><button type="button" data-page="5" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">5</button><button type="button" data-page="6" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">6</button><button type="button" data-page="7" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">7</button><button type="button" data-page="8" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">8</button><button type="button" data-page="2" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">&#8594;</button><!--/SSR:PAGINATION--></nav>
+            <nav id="blogPagination" class="flex justify-center items-center gap-2 mt-12"><!--SSR:PAGINATION--><button type="button" data-page="0" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan opacity-30 pointer-events-none">&#8592;</button><button type="button" data-page="1" class="px-3 py-1.5 rounded text-sm font-medium border transition border-neonCyan text-neonCyan bg-neonCyan/10 cursor-default">1</button><button type="button" data-page="2" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">2</button><button type="button" data-page="3" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">3</button><button type="button" data-page="4" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">4</button><button type="button" data-page="5" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">5</button><button type="button" data-page="6" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">6</button><button type="button" data-page="7" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">7</button><button type="button" data-page="8" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">8</button><button type="button" data-page="9" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">9</button><button type="button" data-page="2" class="px-3 py-1.5 rounded text-sm font-medium border transition border-slate-700 text-slate-400 hover:border-neonCyan hover:text-neonCyan">&#8594;</button><!--/SSR:PAGINATION--></nav>
         </div>
     </main>
 
