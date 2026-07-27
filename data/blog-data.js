@@ -37,7 +37,7 @@ window.BLOG_ARTICLES = [
     ],
     description: "0 yen, 100% bénévole : comment je fais croire à des étudiants japonais que je ne parle pas leur langue, pour mieux libérer la parole en cours de français.",
     date: "2026-07-21",
-    instagramUrl: "",
+    instagramUrl: "https://www.instagram.com/p/DbCa141krTG/",
     content: `
         <p><strong>Salut c'est Pilou 👋</strong></p>
 
