@@ -24,6 +24,64 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "retour-boulot-viriliste",
+    category: "Japon",
+    title: "\"Retour au travail viriliste\" : quand la jeunesse japonaise réclame du sang et des larmes",
+    image: "assets/img/posts/retour-boulot-viriliste/viriliste-01.jpg",
+    images: [
+      "assets/img/posts/retour-boulot-viriliste/viriliste-01.jpg",
+      "assets/img/posts/retour-boulot-viriliste/viriliste-02.jpg",
+      "assets/img/posts/retour-boulot-viriliste/viriliste-03.jpg",
+      "assets/img/posts/retour-boulot-viriliste/viriliste-04.jpg",
+      "assets/img/posts/retour-boulot-viriliste/viriliste-05.jpg",
+    ],
+    description: "Le management japonais serait \"trop gentil\" : une partie de la jeunesse réclamerait un retour aux engueulades et au surmenage héroïque. Petit tour d'horizon d'une nostalgie toxique, entre records de karoshi et insomnie assumée de Sanae.",
+    date: "2026-07-28",
+    instagramUrl: "https://www.instagram.com/p/DbTtTjEEl8v/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>💼 "Retour au travail viriliste" : quand la jeunesse japonaise réclame du sang et des larmes 🏋️‍♂️🎪</strong></p>
+
+<p>Dernièrement, j'ai vu passer une info hallucinante : une partie des jeunes travailleurs japonais réclamerait un retour à la culture de travail "hardcore" des anciennes générations. Le management actuel serait "trop doux" (yurui shokuba), alors ils voudraient retrouver les engueulades, la compétition sauvage et le surmenage héroïque.</p>
+
+<p>Parce que oui, se faire démolir sa santé mentale au bureau, c'est tellement plus agréable, n'est-ce pas ? 😉</p>
+
+<p><strong>📜 Un peu d'histoire, pour la route :</strong></p>
+
+<p>Le Japon a été 2ème puissance économique mondiale de 1968 à 2010. Aujourd'hui, il glisse tranquillement à la 4ème place. Ça reste honorable, même en sortant du podium (pour info, la France est 7ème, on ne va pas non plus faire les fiers 🇫🇷).</p>
+
+<p>Ce "miracle économique" reposait sur un trépied magique : emploi à vie, promotion à l'ancienneté, dévotion totale à la boîte. À l'époque, un seul salaire faisait vivre toute une famille. Aujourd'hui, ce contrat social est mort et enterré. Même les meilleures choses ont une fin 📉💥</p>
+
+<p><strong>🤷‍♂️ Le quiproquo du "Yurui Shokuba" :</strong></p>
+
+<p>En creusant le sujet, on comprend mieux le délire. Les jeunes de la Gen Z ne sont pas devenus masochistes du jour au lendemain. Leur vraie trouille, c'est que les managers, par peur d'être accusés de harcèlement (pawahara), n'osent plus rien leur apprendre. Résultat : ils flippent de stagner et de devenir inemployables ailleurs.</p>
+
+<p>Mais passer de "je ne te forme pas par peur" à "je te hurle dessus pour te forger le caractère", ce n'est pas du progrès. C'est juste changer de maladie mentale 🧠🚫</p>
+
+<p><strong>🏆💩 Présentéisme et productivité, le grand bêtisier du G7 :</strong></p>
+
+<p>Finir au bureau à 22h reste vu, par certains, comme la preuve ultime de dévotion. Une ancienne collègue m'a sorti un jour, très sérieusement : "rester plus longtemps, c'est rendre service à l'entreprise." En plein XXIe siècle, pour un Français, j'ai cru à une caméra cachée 🪐</p>
+
+<p>Dans les faits, beaucoup font traîner leur boulot pour gratter des heures sup et payer leurs factures. Résultat : le Japon est 28ème mondial en productivité horaire, et bon dernier du G7. Rester 14h assis à faire semblant de taper sur un clavier n'a jamais créé de richesse, juste des cernes 😴💸</p>
+
+<p>45% des jeunes pratiquent le quiet quitting (le strict minimum contractuel), et ceux qui veulent démissionner paient jusqu'à 118€ à des agences spécialisées (taishoku daikō) parce que le management est trop toxique pour recevoir une lettre en main propre 🏃‍♂️✉️</p>
+
+<p><strong>🏃‍♀️💨 Sanae et le concours de la plus grande insomnie :</strong></p>
+
+<p>Pendant ce temps, au sommet de l'État, Sanae fanfaronne sur les réseaux : elle ne dormirait que 0 à 3 heures par nuit, et il faudrait "travailler, travailler, travailler." Pendant qu'elle fait l'apologie du surmenage, le Ministère de la Santé enregistre un sommet historique : plus de 1 300 cas officiels de karōshi, mort ou suicide par surcharge de travail 👏💔</p>
+
+<p><strong>💡 En résumé :</strong></p>
+
+<p>Le Japon adore passer d'un extrême à l'autre sans jamais trouver le juste milieu. Réinventer les erreurs d'hier pour compenser l'incompétence managériale d'aujourd'hui, ce n'est franchement pas la meilleure idée de l'armurerie 🗡️🥴</p>
+
+<p>L'argent va et vient. La santé, une fois flinguée, ne revient jamais. Le Japon traverse une crise démographique sévère : il ne peut pas se permettre de sacrifier la main-d'œuvre qu'il lui reste.</p>
+
+<p>Et pourtant, pour finir sur une note positive 🌟 : certaines entreprises japonaises ont testé la semaine de 3 à 4 jours. Résultat : une hausse de la productivité ET du bien-être. Comme quoi, il faudrait peut-être changer d'approche... n'est-ce pas, Sanae ? 😉</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "prof-d-un-jour-a-la-fac",
     category: "Société",
     title: "Prof d'un jour : quand j'échappe à l'hôtellerie pour traumatiser des étudiants",
