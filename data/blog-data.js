@@ -24,6 +24,58 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "devil-may-cry-mon-exutoire",
+    category: "Gaming",
+    title: "Devil May Cry : le défouloir ultime (et mon exutoire anti-managers)",
+    image: "assets/img/posts/devil-may-cry-mon-exutoire/dmc-01.jpg",
+    images: [
+      "assets/img/posts/devil-may-cry-mon-exutoire/dmc-01.jpg",
+      "assets/img/posts/devil-may-cry-mon-exutoire/dmc-02.jpg",
+      "assets/img/posts/devil-may-cry-mon-exutoire/dmc-03.jpg",
+      "assets/img/posts/devil-may-cry-mon-exutoire/dmc-04.jpg",
+      "assets/img/posts/devil-may-cry-mon-exutoire/dmc-05.jpg",
+    ],
+    description: "De Paris à Fukuoka, comment Devil May Cry est devenu le meilleur défouloir anti-manager de Pilou. Style, combos et 250 heures de thérapie vidéoludique.",
+    date: "2026-08-04",
+    instagramUrl: "https://www.instagram.com/p/DbnGD9_EsZk/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>⚔️ Devil May Cry : Le défouloir ultime (et mon exutoire anti-managers) 👹🔴</strong></p>
+
+<p>On va changer de registre aujourd'hui ! Après Sonic et Zelda, il est temps de parler d'une licence que j'ai découverte sur le tard, mais pour laquelle j'ai eu un coup de foudre monumental : Devil May Cry. ⚡</p>
+
+<p><strong>La révélation parisienne : 🇫🇷🎮</strong></p>
+
+<p>J'ai découvert la saga quand j'habitais encore à Paris grâce au 4ème opus (celui qui introduit Nero). C'est un de mes meilleurs amis qui me l'a conseillé avec un argument imparable : "Mec, la scène d'intro est trop badass !". Et bordel, il avait tellement raison ! Nero qui défonce du démon en plein vol tout en écoutant sa copine chanter, avant d'affronter Dante dans un duel aussi stylé que violent... Il ne m'en fallait pas plus pour être mordu. 💥🔥</p>
+
+<p><strong>Un gameplay d'une profondeur folle : 🕹️🧠</strong></p>
+
+<p>Sous ses airs de "je tape sur tout ce qui bouge", DMC possède un système de combat d'une richesse incroyable :</p>
+
+<p>1️⃣ <strong>La jauge de style :</strong> Plus tu varies tes attaques sans te faire toucher, plus ton rang monte (SSTYLISH!!). Répéter le même combo en boucle ? Le jeu te punit et baisse ta note. Abattre un démon c'est bien, mais le faire avec classe, c'est la règle d'or. 😎</p>
+
+<p>2️⃣ <strong>Nero :</strong> Le perso à charge avec son bras démoniaque (Devil Bringer). Pouvoir attraper un monstre à distance et le fracasser au sol... Je vous jure qu'après une journée de boulot difficile, ça défoule d'une force ! 👊💥</p>
+
+<p>3️⃣ <strong>Dante :</strong> Le roi incontesté de la technique. 4 styles de combat interchangeables en temps réel (déplacement, corps à corps, distance, défense), armement lourd... C'est un pur bonheur à jouer, mais préparez le tube de baume pour la tendinite aux poignets. 🧴🖐️</p>
+
+<p>4️⃣ <strong>Vergil (mon favori absolu) :</strong> Téléportation, katana, précision chirurgicale et jauge de concentration. Tout ce qu'un gros weeb comme moi adore ! 🗡️⚡</p>
+
+<p>5️⃣ <strong>V (dans DMC5) :</strong> Le style marionnettiste qui apporte un vent de fraîcheur à la formule.</p>
+
+<p><strong>Pourquoi j'aime autant cette saga ? 🤷‍♂️💆‍♂️</strong></p>
+
+<p>Outre le charisme légendaire des personnages et la mise en scène hollywoodienne, c'est le meilleur défouloir de la terre. Pendant que j'exécute des combos aériens complexes, j'imagine très fort que le démon en face est un manager chiant ou un collègue incompétent qui m'a pris la tête pour un détail qu'il ne sait même pas régler lui-même. (Pourquoi vous me regardez comme ça ? Tout va très bien ! 😅)</p>
+
+<p>Pouvoir provoquer ses ennemis, se moquer des boss en plein combat et faire des chorégraphies de destruction pure avec une fluidité digne d'un jeu de baston... C'est d'une satisfaction inégalée ! 🏆</p>
+
+<p><strong>250 heures plus tard... ⏳</strong></p>
+
+<p>J'ai poncé le 4 et passé plus de 250 heures sur DMC5. Et avec les mods co-op sur PC, défoncer des vagues de démons avec un pote, c'est juste le summum du fun. Même si je n'ai jamais fait le 3 (mea culpa), DMC dépasse de loin Bayonetta dans mon cœur (même si la sorcière reste très cool, rendons à César ce qui appartient à César).
+       `,
+  },
+
+  {
     id: "retour-boulot-viriliste",
     category: "Japon",
     title: "\"Retour au travail viriliste\" : quand la jeunesse japonaise réclame du sang et des larmes",
