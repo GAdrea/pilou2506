@@ -24,6 +24,64 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "visa-permanent-ultra-nightmare",
+    category: "Japon",
+    title: "Visa Permanent au Japon : le patch \"Ultra Nightmare\" est de sortie",
+    image: "assets/img/posts/visa-permanent-ultra-nightmare/visa-nightmare-01.jpg",
+    images: [
+      "assets/img/posts/visa-permanent-ultra-nightmare/visa-nightmare-01.jpg",
+      "assets/img/posts/visa-permanent-ultra-nightmare/visa-nightmare-02.jpg",
+      "assets/img/posts/visa-permanent-ultra-nightmare/visa-nightmare-03.jpg",
+      "assets/img/posts/visa-permanent-ultra-nightmare/visa-nightmare-04.jpg",
+      "assets/img/posts/visa-permanent-ultra-nightmare/visa-nightmare-05.jpg",
+    ],
+    description: "Le Visa Permanent (Eijūken) passe en mode Ultra Nightmare : revenu record, tolérance zéro sur 7 ans, mariage sous contrôle et gacha du visa. Pilou décortique le nouveau patch, entre ironie et coup de gueule.",
+    date: "2026-08-12",
+    instagramUrl: "https://www.instagram.com/p/Db6dJSlEvIz/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🛂 VISA PERMANENT AU JAPON : Le patch "Ultra Nightmare" est de sortie 🎮📉</strong></p>
+
+<p>Quand je suis arrivé au Japon pendant mes études, mon Graal ultime, c'était la naturalisation ou le visa permanent.</p>
+
+<p>Entre-temps, la réalité m'a frappé : j'ai d'abord tiré un trait sur la naturalisation. Pourquoi ? Parce que le Japon interdit la double nationalité. Abandonner mon passeport d'origine pour un coup de tampon ? Très peu pour moi. On perd bien plus qu'un simple bout de papier (et attention, aucun jugement sur ceux qui le font, chacun son chemin !).</p>
+
+<p>L'alternative logique, c'était le Visa Permanent (Eijūken). Garder sa nationalité tout en vivant sereinement sur place avec (en théorie) les mêmes droits. À l'époque, c'était exigeant mais faisable.</p>
+
+<p>Sauf que ça, c'était avant... Avant que le gouvernement ne se dise que le mode "Normal" manquait un peu de piquant et qu'il fallait qu'on en chie encore un peu plus.</p>
+
+<p>Parce que oui, le Japon c'est déjà loin, difficile d'accès, la langue est un vrai casse-tête et trouver un taf relève parfois du miracle. Bref, faut VRAIMENT en avoir envie. Mais l'Immigration s'est dit que c'était pas suffisant à priori.</p>
+
+<p><strong>🏆 Petit tour d'horizon de la nouvelle mise à jour :</strong></p>
+
+<p>1️⃣ <strong>💰 Le revenu "famille nombreuse" pour un célibataire :</strong> Il ne suffit plus de gagner un salaire correct. Désormais, tes revenus doivent dépasser la moyenne d'un ménage japonais, avec une vérification sur tes 30 futures années de retraite ! Dans un pays où l'inflation grimpe et les salaires stagnent... Spoiler : je suis largement en dessous. C'est déjà mort pour moi avant même de sortir le dossier ! 😂👋</p>
+
+<p>2️⃣ <strong>📑 La tolérance zéro et la peine de 7 ans :</strong> Un retard de paiement d'impôts ou de cotisation santé il y a quelques années ? Carton rouge direct. L'immigration exige une ponctualité chirurgicale sur 2 à 5 ans. Et le pompon : lors du renouvellement de ta carte physique tous les 7 ans, ils vérifieront si tu es toujours irréprochable... sinon, tu pourras t'asseoir purement et simplement sur ton statut permanent ! La rancune administrative à son paroxysme. 💀</p>
+
+<p>3️⃣ <strong>💍 L'amour sous contrôle de police :</strong> Pour le visa conjoint, il faudra désormais prouver 5 ans de mariage et 3 ans de vie commune (contre 3 ans et 1 an auparavant). On se réjouit déjà des futurs interrogatoires conjugaux au guichet de l'immigration pour vérifier si nos sentiments sont réglementaires... 💒🔎</p>
+
+<p>4️⃣ <strong>🎰 Le Gacha du Visa de 5 ans :</strong> Pour AVOIR LE DROIT de demander le visa permanent, il faut détenir la durée maximale de son visa actuel (en général 5 ans). Problème : l'immigration distribue les visas de 1 et 3 ans comme si c'étaient des lingots d'or. Bienvenue dans la boucle infinie ! 🎟️</p>
+
+<p><strong>🤖 L'immense ironie du spectacle</strong></p>
+
+<p>Plus on avance, plus j'ai l'impression que le Japon veut faire le tri par le vide sans avoir l'honnêteté de le dire.</p>
+
+<p>Si tu es millionnaire, bilingue et prêt à accepter des règles qui changent tous les mardis, bienvenue ! Mais quelle ironie mordante pour un pays en plein naufrage démographique et à l'économie sous perfusion...</p>
+
+<p>Dans 30 ans, qui va faire tourner les konbinis, les hôtels, les hôpitaux ou les administrations ? L'IA ?! Dans une société où les relations humaines et le respect des codes sont sacrés ?! J'ai vraiment hâte de voir le désastre. 🍿</p>
+
+<p>Évidemment, le Japon cherche à protéger son patrimoine et sa culture. C'est leur droit le plus légitime, ils sont chez eux et je ne peux pas faire la loi dans un pays qui n'est pas le mien. Même si, vu le nombre d'années que j'ai investies, ça me fout un peu les boules, faut bien l'avouer. 🤷‍♂️</p>
+
+<p>Mais on gardera en tête la déclaration de Sanae le 27 juillet dernier : « Il ne faut pas paraître inamical envers les étrangers. »</p>
+
+<p>Ma chère Sanae : C'est un chef-d'œuvre d'hypocrisie. Majestueusement raté ! 👏</p>
+
+<p>Mais comme on dit chez nous... c'est l'intention qui compte, n'est-ce pas ? 😉✨</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "devil-may-cry-mon-exutoire",
     category: "Gaming",
     title: "Devil May Cry : le défouloir ultime (et mon exutoire anti-managers)",
