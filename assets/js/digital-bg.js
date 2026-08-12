@@ -58,11 +58,23 @@
 
     const ctx = canvas.getContext('2d');
     const GRID_SPACING = 40;
-    const NODE_COUNT_NEAR = 75;
     const NODE_LINK_DIST_NEAR = 130;
-    const NODE_COUNT_FAR  = 55;
     const NODE_LINK_DIST_FAR  = 170;
     const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+    // ─── Profil de performance mobile ──────────────────────────────────
+    // Sur petit écran : moins de nœuds (coût O(n²) par frame) et pas de
+    // shadowBlur (opération la plus chère du canvas par appel).
+    const mobileMQ = window.matchMedia('(max-width: 768px)');
+    let isMobile = mobileMQ.matches;
+    let NODE_COUNT_NEAR, NODE_COUNT_FAR, NODE_SHADOW_BLUR;
+    function updatePerfProfile() {
+        isMobile = mobileMQ.matches;
+        NODE_COUNT_NEAR  = isMobile ? 30 : 75;
+        NODE_COUNT_FAR   = isMobile ? 20 : 55;
+        NODE_SHADOW_BLUR = isMobile ? 0  : 6;
+    }
+    updatePerfProfile();
 
     let bgGrad = null;
 
@@ -70,10 +82,19 @@
         canvas.width  = window.innerWidth;
         canvas.height = window.innerHeight;
         bgGrad = null;
+        updatePerfProfile();
         initNodes();
         buildCountryShapes();
     }
     window.addEventListener('resize', resize);
+    // Certains navigateurs (rotation d'écran, resize fenêtre desktop) ne
+    // déclenchent pas toujours 'resize' au franchissement du breakpoint :
+    // on écoute aussi le changement de media query directement.
+    if (mobileMQ.addEventListener) {
+        mobileMQ.addEventListener('change', () => { updatePerfProfile(); initNodes(); });
+    } else if (mobileMQ.addListener) {
+        mobileMQ.addListener(() => { updatePerfProfile(); initNodes(); });
+    }
 
     // ─── Constellations de nœuds connectés (effet "circuit/réseau") ───
     // Deux couches superposées (proche / lointaine) pour multiplier les
@@ -134,7 +155,7 @@
         }
         list.forEach(n => {
             ctx.save();
-            ctx.shadowBlur  = 6;
+            ctx.shadowBlur  = NODE_SHADOW_BLUR;
             ctx.shadowColor = 'rgb(' + n.color + ')';
             ctx.fillStyle   = 'rgba(' + n.color + ', ' + nodeAlphaMax + ')';
             ctx.beginPath();
@@ -210,6 +231,10 @@
     buildCountryShapes();
 
     function drawCountryShapes(ts) {
+        const shadowOutline   = isMobile ? 0 : 4;
+        const shadowNode      = isMobile ? 0 : 6;
+        const shadowHighlight = isMobile ? 3 : 12;
+
         countryShapes.forEach(shape => {
             const bobX = prefersReducedMotion ? 0 : Math.sin(ts * 0.00018 + shape.phase) * 4;
             const bobY = prefersReducedMotion ? 0 : Math.cos(ts * 0.00014 + shape.phase * 1.3) * 4;
@@ -219,7 +244,7 @@
             ctx.save();
             ctx.strokeStyle = 'rgba(' + shape.color + ', 0.28)';
             ctx.lineWidth   = 0.8;
-            ctx.shadowBlur  = 4;
+            ctx.shadowBlur  = shadowOutline;
             ctx.shadowColor = 'rgb(' + shape.color + ')';
             ctx.beginPath();
             pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
@@ -241,7 +266,7 @@
             pts.forEach((p, i) => {
                 const isHighlight = shape.highlightIndex === i;
                 ctx.save();
-                ctx.shadowBlur  = isHighlight ? 12 : 6;
+                ctx.shadowBlur  = isHighlight ? shadowHighlight : shadowNode;
                 ctx.shadowColor = 'rgb(' + shape.color + ')';
                 ctx.fillStyle   = 'rgba(' + shape.color + ', ' + (isHighlight ? 1 : 0.85) + ')';
                 ctx.beginPath();
@@ -297,7 +322,20 @@
         ctx.restore();
     }
 
+    // Cap ~30fps sur mobile (au lieu de 60/90/120Hz natif) pour économiser
+    // la batterie ; désactivé sur desktop où le budget CPU est plus large.
+    const FRAME_INTERVAL_MOBILE = 1000 / 30;
+    let lastFrameTs = 0;
+
     function animate(ts) {
+        ts = ts || 0;
+
+        if (isMobile && ts - lastFrameTs < FRAME_INTERVAL_MOBILE) {
+            requestAnimationFrame(animate);
+            return;
+        }
+        lastFrameTs = ts;
+
         drawBackground();
 
         if (!prefersReducedMotion) {
@@ -309,15 +347,19 @@
         ctx.translate(parallaxX, parallaxY);
         drawGrid();
         drawNodes();
-        drawCountryShapes(ts || 0);
+        drawCountryShapes(ts);
         ctx.restore();
 
         nodesNear.forEach(n => n.update());
         nodesFar.forEach(n => n.update());
 
-        requestAnimationFrame(animate);
+        // Si l'utilisateur a demandé moins de mouvement, on dessine une
+        // frame propre et on arrête la boucle au lieu de tourner en continu.
+        if (!prefersReducedMotion) {
+            requestAnimationFrame(animate);
+        }
     }
 
     resize();
-    requestAnimationFrame(animate);
+    animate(0);
 })();
