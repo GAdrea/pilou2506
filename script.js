@@ -177,9 +177,9 @@ function escapeHtml(text) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // À La Une : spotlight sur LE tout dernier article publié (un seul, en grand format)
-    if (document.getElementById('latestArticleSpotlight') && window.BLOG_ARTICLES) {
+    if (document.getElementById('latestArticleSpotlight') && window.BLOG_ARTICLES_META) {
         const spotlightEl = document.getElementById('latestArticleSpotlight');
-        const latest = sortByDateDesc(window.BLOG_ARTICLES)[0];
+        const latest = sortByDateDesc(window.BLOG_ARTICLES_META)[0];
         if (latest) {
             const imgSrc = resolveHomeImage(latest.image || '');
             const link   = 'pages/blog/articles/' + window.ArticleRender.slugify(latest.id) + '.html';
@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Carousel blog (défilement infini) — les N articles les plus récents
-    const latestArticles = window.BLOG_ARTICLES ? sortByDateDesc(window.BLOG_ARTICLES).slice(0, 5) : [];
-    if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES) {
+    const latestArticles = window.BLOG_ARTICLES_META ? sortByDateDesc(window.BLOG_ARTICLES_META).slice(0, 5) : [];
+    if (document.getElementById('homeBlogCarousel') && window.BLOG_ARTICLES_META) {
         buildInfiniteScroll({
             items: latestArticles,
             trackId: 'homeBlogSlides',
@@ -241,10 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Galerie d'articles piochés au hasard (remplace l'ancien carousel de projets web sur la home)
     // On exclut les articles déjà visibles dans "Derniers Articles" pour éviter les doublons entre les deux sections.
-    if (document.getElementById('homeGalleryGrid') && window.BLOG_ARTICLES) {
+    if (document.getElementById('homeGalleryGrid') && window.BLOG_ARTICLES_META) {
         const grid = document.getElementById('homeGalleryGrid');
         const latestIds = new Set(latestArticles.map(a => a.id));
-        const pool = window.BLOG_ARTICLES.filter(a => !latestIds.has(a.id));
+        const pool = window.BLOG_ARTICLES_META.filter(a => !latestIds.has(a.id));
         const picks = shuffleArray(pool).slice(0, 6);
 
         grid.innerHTML = picks.map(article => {

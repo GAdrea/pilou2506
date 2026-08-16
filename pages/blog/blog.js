@@ -16,7 +16,9 @@ let activeCategory = 'Tout';
 let searchQuery = '';
 
 function getArticles() {
-    return window.BlogRender.sortedArticles(window.BLOG_ARTICLES);
+    // data/blog-meta.js (index léger, sans le contenu complet des articles) —
+    // voir buildMeta() dans scripts/generate-static-pages.js.
+    return window.BlogRender.sortedArticles(window.BLOG_ARTICLES_META);
 }
 
 function getRenderer() {
