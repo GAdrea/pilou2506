@@ -455,7 +455,55 @@ function injectBetweenMarkers(html, marker, content) {
     return html.replace(re, `$1${content}$3`);
 }
 
-function buildBlogListing() {
+// ─── data/blog-meta.js — index léger pour la home + blog.html ───
+//
+// Problème : la home et blog.html chargeaient data/blog-data.js en entier
+// (contenu HTML complet des 51 articles, ~146 Ko / 53 Ko gzip) alors qu'elles
+// n'affichent que des cartes (image, titre, description, date, catégorie,
+// temps de lecture) — jamais le corps de l'article.
+//
+// Solution : on dérive ici un index sans le champ `content` (ni le tableau
+// `images` du carrousel, inutile pour une carte), avec le temps de lecture
+// pré-calculé une fois pour toutes au build. C'est ce fichier — beaucoup
+// plus léger — que chargent désormais index.html et blog.html.
+//
+// Les pages articles individuelles (pages/blog/articles/{slug}.html) et la
+// route historique article.html?id=... continuent de charger blog-data.js
+// en entier : elles ont besoin du contenu complet.
+
+function buildMetaArticles() {
+    return sortedArticles.map((a) => ({
+        id: a.id,
+        category: a.category || '',
+        title: a.title,
+        image: a.image || '',
+        description: a.description || '',
+        date: a.date || '',
+        instagramUrl: a.instagramUrl || '',
+        readingTime: BlogRender.readingTime(a.content)
+    }));
+}
+
+function buildMeta(metaArticles) {
+    const metaPath = path.join(ROOT, 'data/blog-meta.js');
+    const banner = `/* ============================================================
+   blog-meta.js — GÉNÉRÉ AUTOMATIQUEMENT, NE PAS ÉDITER À LA MAIN
+
+   Dérivé de data/blog-data.js par scripts/generate-static-pages.js
+   (fonction buildMeta). Contient les mêmes articles que BLOG_ARTICLES
+   mais sans le champ "content" (ni le tableau "images" du carrousel) :
+   uniquement ce qu'il faut pour afficher des cartes (home, blog.html).
+
+   Pour changer ces données : édite data/blog-data.js, puis relance
+   npm run build (ou npm run generate:pages).
+   ============================================================ */
+`;
+    const content = `${banner}window.BLOG_ARTICLES_META = ${JSON.stringify(metaArticles, null, 2)};\n`;
+    fs.writeFileSync(metaPath, content, 'utf8');
+    console.log(`✔ data/blog-meta.js régénéré (${metaArticles.length} articles, sans contenu complet)`);
+}
+
+function buildBlogListing(metaArticles) {
     const blogHtmlPath = path.join(ROOT, 'pages/blog/blog.html');
     let html = fs.readFileSync(blogHtmlPath, 'utf8');
 
@@ -463,7 +511,10 @@ function buildBlogListing() {
         baseUrl: '../..',
         hrefFor: (id) => 'articles/' + ArticleRender.slugify(id) + '.html'
     });
-    const result = renderer.renderPage(sortedArticles, { activeCategory: 'Tout', searchQuery: '', page: 1 });
+    // On rend la page 1 à partir du même index léger que celui chargé au
+    // runtime par blog.html (data/blog-meta.js) : le HTML pré-rendu et
+    // l'hydratation JS produisent alors un résultat strictement identique.
+    const result = renderer.renderPage(metaArticles, { activeCategory: 'Tout', searchQuery: '', page: 1 });
 
     html = injectBetweenMarkers(html, 'COUNT', result.count);
     html = injectBetweenMarkers(html, 'FILTERS', result.filtersHtml);
@@ -480,7 +531,9 @@ function buildBlogListing() {
     console.log(`✔ blog.html pré-rendu (page 1 : ${result.count})`);
 }
 
-buildBlogListing();
+const metaArticles = buildMetaArticles();
+buildMeta(metaArticles);
+buildBlogListing(metaArticles);
 
 // ─── Sitemap ───────────────────────────────────────────────────
 

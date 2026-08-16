@@ -97,7 +97,10 @@
             const imgSrc = imageSrc(article.image);
             const url = hrefFor(article.id);
             const date = formatDate(article.date);
-            const time = readingTime(article.content);
+            // article.readingTime : valeur pré-calculée au build par generate-static-pages.js
+            // (data/blog-meta.js n'embarque pas le contenu complet — voir buildMeta()).
+            // Fallback sur le calcul à la volée si jamais un appelant passe un article complet.
+            const time = article.readingTime || readingTime(article.content);
             const cat = article.category || '';
             return `
         <article class="hud-card group flex flex-col">
