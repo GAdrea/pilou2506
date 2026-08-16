@@ -357,11 +357,11 @@ function buildArticlePage(article) {
     </div>
     ${footerBlock(root)}
 
-    <script src="../article.js"></script>
-    <script src="${root}/assets/js/digital-bg.js"></script>
-    <script src="${root}/assets/js/vercel-analytics.js"></script>
+    <script defer src="../article.js"></script>
+    <script defer src="${root}/assets/js/digital-bg.js"></script>
+    <script defer src="${root}/assets/js/vercel-analytics.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <script src="${root}/assets/js/vercel-speed-insights.js"></script>
+    <script defer src="${root}/assets/js/vercel-speed-insights.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
@@ -412,10 +412,10 @@ function buildProjectPage(project) {
     </main>
     ${footerBlock(root)}
 
-    <script src="${root}/assets/js/digital-bg.js"></script>
-    <script src="${root}/assets/js/vercel-analytics.js"></script>
+    <script defer src="${root}/assets/js/digital-bg.js"></script>
+    <script defer src="${root}/assets/js/vercel-analytics.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <script src="${root}/assets/js/vercel-speed-insights.js"></script>
+    <script defer src="${root}/assets/js/vercel-speed-insights.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
