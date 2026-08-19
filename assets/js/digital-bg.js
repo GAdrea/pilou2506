@@ -329,6 +329,7 @@
     let lastFrameTs = 0;
 
     function animate(ts) {
+        if (document.hidden) return;
         ts = ts || 0;
 
         if (isMobile && ts - lastFrameTs < FRAME_INTERVAL_MOBILE) {
@@ -360,6 +361,10 @@
             requestAnimationFrame(animate);
         }
     }
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) requestAnimationFrame(animate);
+    });
 
     resize();
     animate(0);

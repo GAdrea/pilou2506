@@ -53,7 +53,7 @@
     function readingTime(content) {
         if (!content) return '1 min';
         const words = content.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length;
-        return Math.max(1, Math.round(words / 200)) + ' min';
+        return Math.max(1, Math.round(words / 230)) + ' min';
     }
 
     function sortedArticles(list) {

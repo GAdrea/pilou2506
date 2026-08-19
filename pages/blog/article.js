@@ -101,6 +101,19 @@ function buildToc() {
     articleEl.insertBefore(nav, articleEl.firstChild);
 }
 
+// ─── OG meta tags (route historique uniquement) ────────────────
+
+function patchOgMeta(article) {
+    const set = (prop, val) => {
+        const el = document.querySelector(`meta[property="${prop}"]`);
+        if (el) el.setAttribute('content', val);
+    };
+    set('og:title', article.title);
+    set('og:description', article.description || article.title);
+    set('og:type', 'article');
+    if (article.image) set('og:image', article.image);
+}
+
 // ─── Rendu (route historique article.html?id=...) ──────────────
 
 function renderArticle(article) {
@@ -108,6 +121,7 @@ function renderArticle(article) {
     if (!container) return;
 
     document.title = article.title + ' | Pilou - Portfolio';
+    patchOgMeta(article);
     container.innerHTML = getRenderer().renderArticleBody(article, getArticles(), window.location.href);
 
     initCarousel();
