@@ -27,7 +27,11 @@ const burgerBtn = document.getElementById('burgerBtn');
 const closeMenu = document.getElementById('closeMenu');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-function toggleMenu() { mobileMenu.classList.toggle('open'); document.body.classList.toggle('overflow-hidden'); }
+function toggleMenu() {
+    mobileMenu.classList.toggle('open');
+    document.body.classList.toggle('overflow-hidden');
+    if (burgerBtn) burgerBtn.setAttribute('aria-expanded', String(mobileMenu.classList.contains('open')));
+}
 if (burgerBtn) burgerBtn.addEventListener('click', toggleMenu);
 if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
 mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));

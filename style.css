@@ -16,6 +16,23 @@
     --text-dim:     #94a3b8;
 }
 
+/* Lien d'évitement clavier (accessible, invisible sauf au focus) */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    padding: .45rem 1rem;
+    background: var(--neon-cyan);
+    color: #050a12;
+    font-weight: 700;
+    font-size: .875rem;
+    border-radius: 0 0 4px 4px;
+    z-index: 9999;
+    transition: top .15s;
+    text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
 html, html.dark {
     background-color: var(--bg-deep);
 }
@@ -424,11 +441,11 @@ body::after {
     animation: fadeInUp 0.7s ease forwards;
 }
 .delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 1.3s; }
-.delay-3 { animation-delay: 1.55s; }
-.delay-4 { animation-delay: 1.7s; }
-.delay-5 { animation-delay: 1.85s; }
-.delay-6 { animation-delay: 2.05s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
 
 /* Hero — animation "boot terminal" : le prénom PILOU s'affiche façon frappe clavier */
 @keyframes heroTypeReveal {
@@ -482,6 +499,23 @@ body::after {
 /* ==========================================================
    CONTENU ARTICLE (lecture)
    ========================================================== */
+
+/* Table des matières générée dynamiquement */
+.toc-nav ul { list-style: none; padding: 0; margin: 0; }
+.toc-nav li { margin-bottom: .35rem; }
+.toc-link {
+    display: block;
+    font-size: .875rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: .2rem .5rem;
+    border-left: 2px solid rgba(0,212,255,.25);
+    transition: color .2s, border-color .2s;
+}
+.toc-link:hover {
+    color: var(--neon-cyan);
+    border-left-color: var(--neon-cyan);
+}
 
 .article-content {
     line-height: 1.8;

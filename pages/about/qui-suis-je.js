@@ -12,6 +12,7 @@ const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 function toggleMenu() {
     mobileMenu.classList.toggle('open');
     document.body.classList.toggle('overflow-hidden');
+    if (burgerBtn) burgerBtn.setAttribute('aria-expanded', String(mobileMenu.classList.contains('open')));
 }
 if (burgerBtn)  burgerBtn.addEventListener('click', toggleMenu);
 if (closeMenu)  closeMenu.addEventListener('click', toggleMenu);
@@ -57,6 +58,12 @@ const counterObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
+// Compteur articles dynamique
+const articleCountEl = document.querySelector('[data-articles-count]');
+if (articleCountEl && window.BLOG_ARTICLES) {
+    articleCountEl.dataset.count = window.BLOG_ARTICLES.length;
+}
+
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
 // ─── Barres de langues ────────────────────────────────────────
@@ -74,7 +81,7 @@ function buildLangBars() {
                 <span class="text-sm font-medium text-slate-300">${label}</span>
                 <span class="text-xs text-slate-400 lang-pct-label">0%</span>
             </div>
-            <div class="lang-bar-track">
+            <div class="lang-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="${label}">
                 <div class="lang-bar-fill" style="background:${color}"></div>
             </div>`;
     });
@@ -86,12 +93,13 @@ const barObserver = new IntersectionObserver((entries) => {
         const container = entry.target;
         container.querySelectorAll('[data-lang]').forEach(el => {
             const pct  = parseInt(el.dataset.pct, 10);
-            const fill = el.querySelector('.lang-bar-fill');
-            const lbl  = el.querySelector('.lang-pct-label');
+            const track = el.querySelector('.lang-bar-track');
+            const fill  = el.querySelector('.lang-bar-fill');
+            const lbl   = el.querySelector('.lang-pct-label');
             if (fill) {
                 setTimeout(() => {
                     fill.style.width = pct + '%';
-                    // Animer le chiffre en parallèle
+                    if (track) track.setAttribute('aria-valuenow', pct);
                     let current = 0;
                     const step = () => {
                         current = Math.min(current + 2, pct);

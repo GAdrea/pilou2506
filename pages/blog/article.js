@@ -58,18 +58,47 @@ function initProgressBar() {
     }, { passive: true });
 }
 
-// ─── Partage : bouton copier le lien ───────────────────────────
+// ─── Partage : natif sur mobile, copie en fallback ─────────────
 
 function initCopyLink() {
     const btn   = document.getElementById('btnCopyLink');
     const label = document.getElementById('copyLinkLabel');
     if (!btn || !label) return;
-    btn.addEventListener('click', () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-            label.textContent = '✅ Lien copié !';
-            setTimeout(() => { label.textContent = 'Copier le lien'; }, 2000);
+
+    if (navigator.share) {
+        btn.addEventListener('click', () => {
+            navigator.share({ title: document.title, url: window.location.href }).catch(() => {});
         });
-    });
+    } else {
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                label.textContent = '✅ Lien copié !';
+                setTimeout(() => { label.textContent = 'Copier le lien'; }, 2000);
+            });
+        });
+    }
+}
+
+// ─── Table des matières (générée depuis les <h2> de l'article) ─
+
+function buildToc() {
+    const articleEl = document.querySelector('.article-content');
+    if (!articleEl) return;
+    const headings = Array.from(articleEl.querySelectorAll('h2'));
+    if (headings.length < 2) return;
+
+    headings.forEach((h, i) => { if (!h.id) h.id = 'section-' + i; });
+
+    const nav = document.createElement('nav');
+    nav.setAttribute('aria-label', 'Table des matières');
+    nav.className = 'toc-nav hud-card p-4 mb-8';
+    nav.innerHTML =
+        '<p class="text-xs uppercase tracking-widest mb-3" style="color:#00d4ff">Sommaire</p>' +
+        '<ul>' +
+        headings.map(h => `<li><a href="#${h.id}" class="toc-link">${h.textContent}</a></li>`).join('') +
+        '</ul>';
+
+    articleEl.insertBefore(nav, articleEl.firstChild);
 }
 
 // ─── Rendu (route historique article.html?id=...) ──────────────
@@ -83,6 +112,7 @@ function renderArticle(article) {
 
     initCarousel();
     initCopyLink();
+    buildToc();
 }
 
 function renderNotFound() {
@@ -232,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // on attache juste l'interactivité.
         initCarousel();
         initCopyLink();
+        buildToc();
         return;
     }
 

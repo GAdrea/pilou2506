@@ -17,6 +17,7 @@
         if (!mobileMenu) return;
         mobileMenu.classList.toggle('open');
         document.body.classList.toggle('overflow-hidden');
+        if (burgerBtn) burgerBtn.setAttribute('aria-expanded', String(mobileMenu.classList.contains('open')));
     }
 
     if (burgerBtn)     burgerBtn.addEventListener('click', toggleMenu);
