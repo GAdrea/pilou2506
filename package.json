@@ -2,12 +2,13 @@
   "name": "pilou2506",
   "version": "1.0.0",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify && node scripts/generate-static-pages.js",
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify && node scripts/generate-static-pages.js && cleancss style.css -o style.min.css",
     "dev": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch",
     "generate:pages": "node scripts/generate-static-pages.js",
     "generate:rss": "node scripts/generate-rss.js"
   },
   "devDependencies": {
+    "clean-css-cli": "^5.6.3",
     "tailwindcss": "^3.4.19"
   },
   "dependencies": {

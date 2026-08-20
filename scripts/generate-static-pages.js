@@ -291,7 +291,7 @@ function headBlock({ root, title, description, canonical, ogImage, ogType, artic
       rel="stylesheet"
     />
     <link rel="stylesheet" href="${root}/assets/css/tailwind.css" />
-    <link rel="stylesheet" href="${root}/style.css" />
+    <link rel="stylesheet" href="${root}/style.min.css" />
     <script type="application/ld+json">${safeJsonLd(jsonLd)}</script>
 </head>`;
 }
