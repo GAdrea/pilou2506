@@ -9,13 +9,38 @@ const closeMenu  = document.getElementById('closeMenu');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
+function handleMenuKeydown(e) {
+    if (e.key !== 'Tab') return;
+    const focusable = Array.from(mobileMenu.querySelectorAll('a, button'));
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+    }
+}
+
 function toggleMenu() {
     mobileMenu.classList.toggle('open');
     document.body.classList.toggle('overflow-hidden');
+    const isOpen = mobileMenu.classList.contains('open');
+    if (burgerBtn) burgerBtn.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) {
+        mobileMenu.addEventListener('keydown', handleMenuKeydown);
+        const first = mobileMenu.querySelector('button, a');
+        if (first) first.focus();
+    } else {
+        mobileMenu.removeEventListener('keydown', handleMenuKeydown);
+        if (burgerBtn) burgerBtn.focus();
+    }
 }
 if (burgerBtn)  burgerBtn.addEventListener('click', toggleMenu);
 if (closeMenu)  closeMenu.addEventListener('click', toggleMenu);
 mobileLinks.forEach(l => l.addEventListener('click', toggleMenu));
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) toggleMenu();
+});
 
 // ─── IntersectionObserver — révélations au scroll ────────────
 window.__customRevealHandled = true; // évite le doublon avec digital-bg.js
@@ -57,6 +82,12 @@ const counterObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
+// Compteur articles dynamique
+const articleCountEl = document.querySelector('[data-articles-count]');
+if (articleCountEl && window.BLOG_ARTICLES) {
+    articleCountEl.dataset.count = window.BLOG_ARTICLES.length;
+}
+
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
 // ─── Barres de langues ────────────────────────────────────────
@@ -74,7 +105,7 @@ function buildLangBars() {
                 <span class="text-sm font-medium text-slate-300">${label}</span>
                 <span class="text-xs text-slate-400 lang-pct-label">0%</span>
             </div>
-            <div class="lang-bar-track">
+            <div class="lang-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="${label}">
                 <div class="lang-bar-fill" style="background:${color}"></div>
             </div>`;
     });
@@ -86,12 +117,13 @@ const barObserver = new IntersectionObserver((entries) => {
         const container = entry.target;
         container.querySelectorAll('[data-lang]').forEach(el => {
             const pct  = parseInt(el.dataset.pct, 10);
-            const fill = el.querySelector('.lang-bar-fill');
-            const lbl  = el.querySelector('.lang-pct-label');
+            const track = el.querySelector('.lang-bar-track');
+            const fill  = el.querySelector('.lang-bar-fill');
+            const lbl   = el.querySelector('.lang-pct-label');
             if (fill) {
                 setTimeout(() => {
                     fill.style.width = pct + '%';
-                    // Animer le chiffre en parallèle
+                    if (track) track.setAttribute('aria-valuenow', pct);
                     let current = 0;
                     const step = () => {
                         current = Math.min(current + 2, pct);

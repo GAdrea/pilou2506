@@ -13,10 +13,32 @@
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
+    function handleMenuKeydown(e) {
+        if (e.key !== 'Tab') return;
+        const focusable = Array.from(mobileMenu.querySelectorAll('a, button'));
+        const first = focusable[0];
+        const last  = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+            if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+        }
+    }
+
     function toggleMenu() {
         if (!mobileMenu) return;
         mobileMenu.classList.toggle('open');
         document.body.classList.toggle('overflow-hidden');
+        const isOpen = mobileMenu.classList.contains('open');
+        if (burgerBtn) burgerBtn.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+            mobileMenu.addEventListener('keydown', handleMenuKeydown);
+            const first = mobileMenu.querySelector('button, a');
+            if (first) first.focus();
+        } else {
+            mobileMenu.removeEventListener('keydown', handleMenuKeydown);
+            if (burgerBtn) burgerBtn.focus();
+        }
     }
 
     if (burgerBtn)     burgerBtn.addEventListener('click', toggleMenu);
@@ -328,6 +350,7 @@
     let lastFrameTs = 0;
 
     function animate(ts) {
+        if (document.hidden) return;
         ts = ts || 0;
 
         if (isMobile && ts - lastFrameTs < FRAME_INTERVAL_MOBILE) {
@@ -359,6 +382,22 @@
             requestAnimationFrame(animate);
         }
     }
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) requestAnimationFrame(animate);
+    });
+
+    // Fermer le menu avec Échap
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+            toggleMenu();
+        }
+    });
+
+    // Année du footer dynamique
+    document.querySelectorAll('.footer-year').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
 
     resize();
     animate(0);

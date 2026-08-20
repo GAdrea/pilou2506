@@ -4,7 +4,8 @@
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify && node scripts/generate-static-pages.js",
     "dev": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch",
-    "generate:pages": "node scripts/generate-static-pages.js"
+    "generate:pages": "node scripts/generate-static-pages.js",
+    "generate:rss": "node scripts/generate-rss.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19"

@@ -42,7 +42,9 @@
 </head>
 <body class="text-slate-100 min-h-screen">
 
-    <canvas id="particles-canvas"></canvas>
+    <a href="#articleMain" class="skip-link">Passer au contenu</a>
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
     
     <nav class="fixed top-0 w-full z-50 hud-nav-bar">
         <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -57,7 +59,7 @@
                 <a href="../../../index.html#contact" class="nav-link">Contact</a>
             </div>
             <div class="flex lg:hidden">
-                <button id="burgerBtn" type="button" class="p-2" title="Menu" style="color:#00d4ff">
+                <button id="burgerBtn" type="button" class="p-2" title="Menu" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu" style="color:#00d4ff">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
@@ -143,7 +145,7 @@
             <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">Devil May Cry : le défouloir ultime (et mon exutoire anti-managers)</h1>
             <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400">
                 <span>📅 4 août 2026</span>
-                <span>⏱ 3 min de lecture</span>
+                <span>⏱ 2 min de lecture</span>
                 <a href="../../../pages/blog/blog.html" class="ml-auto text-hibiscus hover:underline font-medium">← Retour au blog</a>
             </div>
         </header>
@@ -301,7 +303,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
             </div>
-            <p class="text-xs text-slate-600">© Pilou</p>
+            <p class="text-xs text-slate-600">© <span class="footer-year">2026</span> Pilou</p>
         </div>
     </footer>
 
@@ -311,5 +313,14 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="../../../assets/js/vercel-speed-insights.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <button id="scrollTopBtn"
+      class="fixed bottom-8 right-8 w-14 h-14 flex items-center justify-center z-50"
+      title="Retour en haut" aria-label="Retour en haut"
+      style="background:#00d4ff;color:#050a12;box-shadow:0 0 20px rgba(0,212,255,0.5);">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
 </body>
 </html>

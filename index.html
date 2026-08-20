@@ -71,7 +71,9 @@
 
   <body class="text-slate-100 min-h-screen">
 
-    <canvas id="particles-canvas"></canvas>
+    <a href="#home" class="skip-link">Passer au contenu</a>
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 hud-nav-bar">
@@ -104,8 +106,12 @@
         <div class="flex lg:hidden">
           <button
             id="burgerBtn"
+            type="button"
             class="p-2"
             title="Menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Ouvrir le menu"
             style="color: #00d4ff"
           >
             <svg
@@ -190,7 +196,7 @@
             <span class="block mt-2 hero-name-type">
               PI<span style="color: #00d4ff" class="neon-text-cyan">L</span
               ><span style="color: #ff4d6d" class="neon-text-pink">OU</span
-              ><span style="font-size: 0.75em">👋</span>
+              ><span style="font-size: 0.75em" aria-hidden="true">👋</span>
             </span>
           </h1>
 
@@ -501,7 +507,7 @@
             </svg>
           </a>
         </div>
-        <p class="text-xs text-slate-600">© Pilou</p>
+        <p class="text-xs text-slate-600">© <span class="footer-year">2026</span> Pilou</p>
       </div>
     </footer>
 

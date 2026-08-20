@@ -28,21 +28,66 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+let activeTag = null;
+
+function buildFilters(projects) {
+    const filtersEl = document.getElementById('webFilters');
+    if (!filtersEl) return;
+
+    const allTags = [...new Set(projects.flatMap(p => Array.isArray(p.tags) ? p.tags : []))].sort();
+    if (allTags.length === 0) return;
+
+    const btnBase = 'hud-tag cursor-pointer transition-all';
+    filtersEl.innerHTML = '';
+
+    function makeBtn(label, tag) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = btnBase;
+        btn.textContent = label;
+        btn.dataset.tag = tag || '';
+        btn.setAttribute('aria-pressed', String(activeTag === tag));
+        btn.addEventListener('click', () => {
+            activeTag = activeTag === tag ? null : tag;
+            renderCards();
+        });
+        return btn;
+    }
+
+    filtersEl.appendChild(makeBtn('Tous', null));
+    allTags.forEach(t => filtersEl.appendChild(makeBtn(t, t)));
+}
+
 function renderCards() {
     const container = document.getElementById('webCards');
     const emptyMsg = document.getElementById('webEmpty');
     if (!container) return;
 
     const projects = getProjects();
+
+    buildFilters(projects);
+
+    // Mettre à jour aria-pressed sur les boutons filtre
+    const filtersEl = document.getElementById('webFilters');
+    if (filtersEl) {
+        filtersEl.querySelectorAll('button').forEach(btn => {
+            const tag = btn.dataset.tag || null;
+            btn.setAttribute('aria-pressed', String(activeTag === tag));
+            btn.style.opacity = activeTag === null || activeTag === tag ? '1' : '0.5';
+        });
+    }
+
+    const filtered = activeTag ? projects.filter(p => Array.isArray(p.tags) && p.tags.includes(activeTag)) : projects;
+
     container.innerHTML = '';
 
-    if (projects.length === 0) {
+    if (filtered.length === 0) {
         if (emptyMsg) emptyMsg.classList.remove('hidden');
         return;
     }
     if (emptyMsg) emptyMsg.classList.add('hidden');
 
-    projects.forEach((project) => {
+    filtered.forEach((project) => {
         const card = document.createElement('article');
         card.className = 'hud-card group flex flex-col';
         const imgSrc = imageSrc(project.image);
