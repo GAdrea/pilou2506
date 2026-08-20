@@ -101,6 +101,41 @@ function buildToc() {
     articleEl.insertBefore(nav, articleEl.firstChild);
 }
 
+// ─── Surlignage TOC selon la section visible ──────────────────
+
+function initTocObserver() {
+    const links = document.querySelectorAll('.toc-link');
+    if (!links.length) return;
+    const headings = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const link = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+            if (link) link.classList.toggle('toc-link--active', entry.isIntersecting);
+        });
+    }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
+    headings.filter(Boolean).forEach(h => obs.observe(h));
+}
+
+// ─── Boutons "Copier" sur les blocs <pre> ─────────────────────
+
+function addCopyButtons(container) {
+    if (!navigator.clipboard) return;
+    container.querySelectorAll('pre').forEach(pre => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-code-btn';
+        btn.textContent = 'Copier';
+        btn.setAttribute('aria-label', 'Copier le code');
+        btn.addEventListener('click', () => {
+            const code = pre.querySelector('code');
+            navigator.clipboard.writeText(code ? code.textContent : pre.textContent).then(() => {
+                btn.textContent = '✅ Copié !';
+                setTimeout(() => { btn.textContent = 'Copier'; }, 2000);
+            });
+        });
+        pre.appendChild(btn);
+    });
+}
+
 // ─── OG meta tags (route historique uniquement) ────────────────
 
 function patchOgMeta(article) {
@@ -127,6 +162,8 @@ function renderArticle(article) {
     initCarousel();
     initCopyLink();
     buildToc();
+    initTocObserver();
+    addCopyButtons(container);
 }
 
 function renderNotFound() {
@@ -277,6 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initCarousel();
         initCopyLink();
         buildToc();
+        initTocObserver();
+        addCopyButtons(document.querySelector('.article-content'));
         return;
     }
 

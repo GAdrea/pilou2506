@@ -58,14 +58,15 @@
         return ['Tout', ...Array.from(set).sort()];
     }
 
-    function filterArticles(articles, activeCategory, searchQuery) {
+    function filterArticles(articles, activeCategory, searchQuery, year) {
         const q = (searchQuery || '').toLowerCase();
         return articles.filter(a => {
             const matchCat = !activeCategory || activeCategory === 'Tout' || a.category === activeCategory;
             const matchSearch = !q
                 || a.title.toLowerCase().includes(q)
                 || (a.description || '').toLowerCase().includes(q);
-            return matchCat && matchSearch;
+            const matchYear = !year || (a.date && a.date.startsWith(year));
+            return matchCat && matchSearch && matchYear;
         });
     }
 
@@ -146,8 +147,8 @@
             return { html, hidden: false };
         }
 
-        function renderPage(articles, { activeCategory = 'Tout', searchQuery = '', page = 1 } = {}) {
-            const filtered = filterArticles(articles, activeCategory, searchQuery);
+        function renderPage(articles, { activeCategory = 'Tout', searchQuery = '', page = 1, year = '' } = {}) {
+            const filtered = filterArticles(articles, activeCategory, searchQuery, year);
             const start = (page - 1) * ARTICLES_PER_PAGE;
             const pageArticles = filtered.slice(start, start + ARTICLES_PER_PAGE);
             const pagination = renderPagination(filtered.length, page);
