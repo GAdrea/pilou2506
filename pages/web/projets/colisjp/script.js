@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
           type: "transferData",
           data: sortedData,
         },
-        "*"
+        window.location.origin
       );
 
       // Nettoyer le localStorage après transfert
