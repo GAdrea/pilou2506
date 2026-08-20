@@ -38,6 +38,9 @@ function toggleMenu() {
 if (burgerBtn)  burgerBtn.addEventListener('click', toggleMenu);
 if (closeMenu)  closeMenu.addEventListener('click', toggleMenu);
 mobileLinks.forEach(l => l.addEventListener('click', toggleMenu));
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) toggleMenu();
+});
 
 // ─── IntersectionObserver — révélations au scroll ────────────
 window.__customRevealHandled = true; // évite le doublon avec digital-bg.js

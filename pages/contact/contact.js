@@ -56,6 +56,9 @@ function toggleMenu() {
 if (burgerBtn) burgerBtn.addEventListener('click', toggleMenu);
 if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
 mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) toggleMenu();
+});
 const canvas = document.getElementById('particles-canvas');
 if (canvas) {
     const ctx = canvas.getContext('2d');

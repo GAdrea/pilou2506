@@ -387,6 +387,18 @@
         if (!document.hidden) requestAnimationFrame(animate);
     });
 
+    // Fermer le menu avec Échap
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+            toggleMenu();
+        }
+    });
+
+    // Année du footer dynamique
+    document.querySelectorAll('.footer-year').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+
     resize();
     animate(0);
 })();
