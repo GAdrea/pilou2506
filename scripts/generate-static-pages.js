@@ -107,6 +107,79 @@ function getImageDimensions(relPath) {
     return dim;
 }
 
+// ─── Variantes d'images responsives ──────────────────────────────
+// sharp est utilisé uniquement au build pour générer 500w et 750w à côté
+// de chaque image source. Les originaux ne sont jamais écrasés. Dégradation
+// gracieuse si sharp n'est pas installé (srcset omis, pas d'erreur).
+
+let sharp;
+try { sharp = require('sharp'); } catch { /* not installed – srcset skipped */ }
+
+const VARIANT_WIDTHS = [500, 750];
+const srcsetCache = new Map();
+
+async function preGenerateVariants(articles) {
+    if (!sharp) return;
+    const seen = new Set();
+    const tasks = [];
+
+    for (const article of articles) {
+        const images = [article.image];
+        if (Array.isArray(article.images)) {
+            article.images.forEach(img => images.push(typeof img === 'string' ? img : img && img.src));
+        }
+        for (const relPath of images) {
+            if (!relPath || relPath.startsWith('http') || seen.has(relPath)) continue;
+            seen.add(relPath);
+            const cleanPath = relPath.replace(/^\//, '');
+            const absPath = path.join(ROOT, cleanPath);
+            try { fs.accessSync(absPath); } catch { continue; }
+
+            const dim = getImageDimensions(cleanPath);
+            const origW = dim ? dim.width : 9999;
+            const ext = path.extname(absPath).toLowerCase();
+            const base = absPath.slice(0, -ext.length);
+
+            for (const w of VARIANT_WIDTHS) {
+                if (w >= origW) continue;
+                const outPath = `${base}-${w}w${ext}`;
+                try { fs.accessSync(outPath); continue; } catch { /* needs generating */ }
+                tasks.push(
+                    sharp(absPath).resize(w).toFile(outPath)
+                        .catch(err => console.warn(`⚠️  Variante ${w}w impossible pour ${cleanPath}: ${err.message}`))
+                );
+            }
+        }
+    }
+
+    if (tasks.length > 0) {
+        process.stdout.write(`⏳ Génération de ${tasks.length} variante(s) d'images responsives…`);
+        await Promise.all(tasks);
+        console.log(' OK');
+    }
+}
+
+function getSrcset(relPath) {
+    if (!relPath || relPath.startsWith('http')) return null;
+    const cleanPath = relPath.replace(/^\//, '');
+    if (srcsetCache.has(cleanPath)) return srcsetCache.get(cleanPath);
+
+    const dim = getImageDimensions(cleanPath);
+    if (!dim || !dim.width) { srcsetCache.set(cleanPath, null); return null; }
+
+    const ext = path.extname(cleanPath);
+    const base = cleanPath.slice(0, -ext.length);
+    const parts = [];
+    for (const w of VARIANT_WIDTHS) {
+        if (w >= dim.width) continue;
+        parts.push(`${base}-${w}w${ext} ${w}w`);
+    }
+    parts.push(`${cleanPath} ${dim.width}w`);
+    const srcset = parts.join(', ');
+    srcsetCache.set(cleanPath, srcset);
+    return srcset;
+}
+
 const sortedArticles = ArticleRender.sortedArticles(BLOG_ARTICLES);
 
 // ─── Garde-fous : ids manquants ou dupliqués ─────────────────────
@@ -328,6 +401,7 @@ function buildArticlePage(article) {
         baseUrl: root,
         blogHref,
         getImageDimensions,
+        getSrcset,
         hrefFor: (id) => ArticleRender.slugify(id) + '.html'
     });
 
@@ -457,10 +531,15 @@ function writeGeneratedDir(dir, items, buildFn, slugFn, label) {
     console.log(`✔ ${items.length} page(s) ${label} générée(s) dans ${path.relative(ROOT, dir)}/`);
 }
 
-writeGeneratedDir(ARTICLES_DIR, sortedArticles, buildArticlePage, ArticleRender.slugify, 'article');
-writeGeneratedDir(DETAILS_DIR, WEB_PROJECTS, buildProjectPage, (id) => id, 'projet');
+// ─── Point d'entrée async (preGenerateVariants nécessite await) ──
 
-// ─── Pré-rendu de blog.html (page 1 / "Tout" / sans recherche) ──
+async function main() {
+    await preGenerateVariants(sortedArticles);
+
+    writeGeneratedDir(ARTICLES_DIR, sortedArticles, buildArticlePage, ArticleRender.slugify, 'article');
+    writeGeneratedDir(DETAILS_DIR, WEB_PROJECTS, buildProjectPage, (id) => id, 'projet');
+
+    // ─── Pré-rendu de blog.html (page 1 / "Tout" / sans recherche) ──
 //
 // blog.html est un template édité à la main (pas un fichier par item comme
 // les articles), donc on ne le régénère pas entièrement : on injecte le HTML
@@ -553,9 +632,14 @@ function buildBlogListing(metaArticles) {
     console.log(`✔ blog.html pré-rendu (page 1 : ${result.count})`);
 }
 
-const metaArticles = buildMetaArticles();
-buildMeta(metaArticles);
-buildBlogListing(metaArticles);
+    const metaArticles = buildMetaArticles();
+    buildMeta(metaArticles);
+    buildBlogListing(metaArticles);
+    buildSitemap();
+    console.log('✔ Pré-rendu SEO terminé.');
+}
+
+main().catch(err => { console.error('❌ Build échoué :', err.message); process.exit(1); });
 
 // ─── Sitemap ───────────────────────────────────────────────────
 
@@ -602,6 +686,4 @@ ${u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>\n` : ''}    <changefreq>${u.c
     console.log(`✔ sitemap.xml régénéré : ${all.length} URLs (${staticUrls.length} statiques + ${articleUrls.length} articles + ${projectUrls.length} projets)`);
 }
 
-buildSitemap();
-
-console.log('✔ Pré-rendu SEO terminé.');
+// (buildSitemap est appelé depuis main() ci-dessus)

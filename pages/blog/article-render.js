@@ -87,6 +87,10 @@
         // lire les dimensions réelles des fichiers et éviter le CLS (layout shift) au
         // chargement. Absent côté navigateur (rendu dynamique) -> pas de width/height, sans risque.
         const getImageDimensions = typeof ctx.getImageDimensions === 'function' ? ctx.getImageDimensions : null;
+        // Optionnel : fourni côté Node (build) pour injecter srcset/sizes sur les <img>.
+        // Retourne une chaîne srcset (ex. "assets/img/foo-500w.jpg 500w, assets/img/foo.jpg 1000w")
+        // ou null si non disponible. Absent côté navigateur : pas de srcset, sans risque.
+        const getSrcset = typeof ctx.getSrcset === 'function' ? ctx.getSrcset : null;
 
         function imageSrc(path) {
             if (!path) return '';
@@ -102,12 +106,26 @@
             return dim && dim.width && dim.height ? ` width="${dim.width}" height="${dim.height}"` : '';
         }
 
+        // Retourne ' srcset="…" sizes="…"' si les variantes sont disponibles (build only).
+        function srcsetAttrs(relPath) {
+            if (!getSrcset || !relPath) return '';
+            const raw = getSrcset(relPath);
+            if (!raw) return '';
+            // Chaque entrée du srcset a la forme "relPath Xw" ; on y applique imageSrc()
+            // pour résoudre le chemin relatif à la profondeur de la page courante.
+            const resolved = raw.split(', ').map(entry => {
+                const spaceIdx = entry.lastIndexOf(' ');
+                return imageSrc(entry.slice(0, spaceIdx)) + entry.slice(spaceIdx);
+            }).join(', ');
+            return ` srcset="${escapeHtml(resolved)}" sizes="(max-width:640px) 100vw, (max-width:1024px) 80vw, 1000px"`;
+        }
+
         function renderCarousel(gallery, title) {
             const slides = gallery.map((src, i) => `
         <div class="carousel-slide">
             <img src="${imageSrc(src)}" alt="${escapeHtml(title)} — photo ${i + 1}/${gallery.length}"
                  data-lightbox="${imageSrc(src)}" data-lightbox-index="${i}"
-                 loading="${i === 0 ? 'eager' : 'lazy'}"${dimAttrs(src)}>
+                 loading="${i === 0 ? 'eager' : 'lazy'}"${srcsetAttrs(src)}${dimAttrs(src)}>
         </div>`).join('');
 
             const dots = gallery.map((_, i) => `
@@ -224,7 +242,7 @@
             <img src="${img}" alt="${escapeHtml(article.title)}"
                  class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
                  style="max-height:65vh"
-                 data-lightbox="${img}"${dimAttrs(article.image)} fetchpriority="high" loading="eager" decoding="async">
+                 data-lightbox="${img}"${srcsetAttrs(article.image)}${dimAttrs(article.image)} fetchpriority="high" loading="eager" decoding="async">
         </div>` : '');
 
             return `
