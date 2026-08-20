@@ -166,7 +166,7 @@
         <a href="${hrefFor(a.id)}"
            class="hud-card group flex flex-col overflow-hidden hover:border-neonCyan transition">
             ${img ? `<div class="h-32 overflow-hidden">
-                <img src="${img}" alt="${escapeHtml(a.title)}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                <img src="${img}" alt="${escapeHtml(a.title)}"${dimAttrs(a.image)} class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
             </div>` : ''}
             <div class="p-4">
                 <p class="text-sm font-bold leading-snug group-hover:text-neonCyan transition">${escapeHtml(a.title)}</p>

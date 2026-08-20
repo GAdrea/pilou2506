@@ -354,7 +354,7 @@ function buildArticlePage(article) {
         </button>
         <button type="button" id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Photo précédente" hidden>‹</button>
         <button type="button" id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Photo suivante" hidden>›</button>
-        <img id="lightboxImage" src="" alt="" />
+        <img id="lightboxImage" src="" alt="" role="presentation" />
         <div id="lightboxCounter" class="lightbox-counter" hidden></div>
     </div>
     ${footerBlock(root)}
