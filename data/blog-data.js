@@ -24,6 +24,58 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "naruto-fukuoka",
+    category: "Gaming",
+    title: "De Naruto à Fukuoka : comment des dessins animés ont changé ma vie (et vidé mon compte)",
+    image: "assets/img/posts/naruto-fukuoka/naruto-fukuoka-01.jpg",
+    images: [
+      "assets/img/posts/naruto-fukuoka/naruto-fukuoka-01.jpg",
+      "assets/img/posts/naruto-fukuoka/naruto-fukuoka-02.jpg",
+      "assets/img/posts/naruto-fukuoka/naruto-fukuoka-03.jpg",
+      "assets/img/posts/naruto-fukuoka/naruto-fukuoka-04.jpg",
+      "assets/img/posts/naruto-fukuoka/naruto-fukuoka-05.jpg",
+    ],
+    description: "Pilou raconte comment les mangas et les animés l'ont mené des dessins animés de son enfance jusqu'à sa vie au Japon, en passant par le déclic Naruto et des années d'études motivées par des bulles et du papier.",
+    date: "2026-08-22",
+    instagramUrl: "https://www.instagram.com/p/DcTo_IIks7l/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>🦊 De Naruto à Fukuoka : Comment des petits dessins animés ont changé ma vie (et vidé mon compte) 📖🍥</strong></p>
+
+<p>Après quelques (énormément) de coups de gueule sur le Japon, ce que j'y fais et comment j'envisage ma vie au pays du soleil levant, je me suis rendu compte d'un truc : je suis resté très vague sur le départ.</p>
+
+<p>Comment ça m'a pris ? Pourquoi ai-je consacré mes études et une bonne partie de ma vie à ce pays ?</p>
+
+<p>Pour vous la faire courte : les mangas et les animés. Mais bon, ça serait dommage de m'arrêter là, alors développons un peu ! 🍿</p>
+
+<p><strong>📺 L'époque de l'innocence (et de l'ignorance)</strong></p>
+
+<p>Plus jeune, je regardais déjà Dragon Ball, Nicky Larson, Sailor Moon, Olive et Tom ou Les Chevaliers du Zodiaque. Pourtant, j'ignorais totalement que ces séries venaient du Japon. Ne me jugez pas : j'étais petit, c'était une autre époque, et au mieux je me disais que ça venait "quelque part en Asie" sans trop chercher à savoir où. 😅</p>
+
+<p>J'aimais beaucoup ces séries, mais l'élément déclencheur est arrivé bien plus tard, au lycée.</p>
+
+<p><strong>🍃 Le déclic : Naruto (Merci la petite sœur !)</strong></p>
+
+<p>Ce manga, c'est Naruto, et c'est ma sœur qui me l'avait conseillé à l'époque.</p>
+
+<p>Il y avait TOUT : des ninjas, de l'action, de l'humour, de l'émotion, du suspense, des révélations, des personnages ultra mémorables et une histoire bien plus profonde qu'elle n'en avait l'air. C'était l'un de mes premiers contacts avec un vrai manga dans le sens de lecture original (de droite à gauche). L'autre, c'était Chobits (mon premier et seul shojo, mais c'est un autre sujet !). 🤖🌸</p>
+
+<p>C'est grâce à Naruto que j'ai découvert le Japon et commencé à me passionner pour sa culture. À partir de là, j'ai englouti une quantité astronomique de séries (je ne ferai pas la liste, sinon ce post va ressembler à une dissertation du Bac). 📚🔥</p>
+
+<p><strong>🎓 Du chapitre de manga au diplôme universitaire</strong></p>
+
+<p>Ces mangas ont été le moteur absolu de mes années universitaires. Ce sont eux qui m'ont motivé à obtenir mes diplômes, à décrocher mon poste d'enseignant au Japon... et à me vider le portefeuille plus d'une fois. Mais bon, quand on aime, on ne compte pas ! 💸💸</p>
+
+<p>Avec l'âge, cette hype de départ s'est un peu dissipée, mais je reste très friand de mangas, notamment ceux qui abordent les problèmes sociaux au Japon — oui, exactement ceux dont la population locale évite de parler. 🤫</p>
+
+<p>Ça peut sembler évident, mais parfois, il suffit d'un tout petit truc pour aller très loin. En ce qui me concerne, c'était des bulles, du papier et de la motivation. Et c'était amplement suffisant !</p>
+
+<p>C'est tout pour moi ! Un tout petit post cette fois, je ne suis pas obligé d'écrire des romans à chaque fois non plus. 😉</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "visa-permanent-ultra-nightmare",
     category: "Japon",
     title: "Visa Permanent au Japon : le patch \"Ultra Nightmare\" est de sortie",
