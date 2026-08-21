@@ -11,6 +11,16 @@
    ============================================================ */
 window.BLOG_ARTICLES_META = [
   {
+    "id": "naruto-fukuoka",
+    "category": "Gaming",
+    "title": "De Naruto à Fukuoka : comment des dessins animés ont changé ma vie (et vidé mon compte)",
+    "image": "assets/img/posts/naruto-fukuoka/naruto-fukuoka-01.jpg",
+    "description": "Pilou raconte comment les mangas et les animés l'ont mené des dessins animés de son enfance jusqu'à sa vie au Japon, en passant par le déclic Naruto et des années d'études motivées par des bulles et du papier.",
+    "date": "2026-08-22",
+    "instagramUrl": "https://www.instagram.com/p/DcTo_IIks7l/",
+    "readingTime": "2 min"
+  },
+  {
     "id": "visa-permanent-ultra-nightmare",
     "category": "Japon",
     "title": "Visa Permanent au Japon : le patch \"Ultra Nightmare\" est de sortie",
