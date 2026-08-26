@@ -24,6 +24,94 @@
  */
 window.BLOG_ARTICLES = [
   {
+    id: "sante-mentale-japon",
+    category: "Société",
+    title: "Santé mentale au Japon : quand le système te laisse seul face au vide",
+    image: "assets/img/posts/sante-mentale-japon/sante-mentale-japon-01.jpg",
+    images: [
+      "assets/img/posts/sante-mentale-japon/sante-mentale-japon-01.jpg",
+      "assets/img/posts/sante-mentale-japon/sante-mentale-japon-02.jpg",
+      "assets/img/posts/sante-mentale-japon/sante-mentale-japon-03.jpg",
+      "assets/img/posts/sante-mentale-japon/sante-mentale-japon-04.jpg",
+      "assets/img/posts/sante-mentale-japon/sante-mentale-japon-05.jpg",
+    ],
+    description: "Pilou aborde un sujet grave : la solitude face à la détresse psychologique au Japon, entre une amie renvoyée par un hôpital, son propre burn-out chez les \"usines à pilules\", et le tabou total qui entoure la santé mentale dans la société japonaise.",
+    date: "2026-08-26",
+    instagramUrl: "https://www.instagram.com/p/Dcf63OJksLT/",
+    content: `
+        <p><strong>Salut c'est Pilou 👋</strong></p>
+
+<p><strong>💔 Santé mentale au Japon : Quand le système te laisse seul face au vide 🏥💊</strong></p>
+
+<p>Je vous préviens d'emblée : le post du jour va être très sérieux.</p>
+
+<p>C'est un mélange de coup de gueule et de sujets graves (dont je tairai certains détails qui ne m'appartiennent pas).</p>
+
+<p>Mais ce qui s'est passé récemment m'a fait réaliser une chose terrifiante : à quel point tu es démuni et dramatiquement seul quand la vie ne te fait pas de cadeaux au Japon.</p>
+
+<p><strong>🚨 L'histoire de mon amie : "Désolé, votre détresse est 'fâcheuse'"</strong></p>
+
+<p>Récemment, j'ai dû emmener une amie en détresse psychologique extrême à l'hôpital en urgence pour éviter qu'elle ne commette l'irréparable.</p>
+
+<p>J'ai réglé les frais, je l'ai raccompagnée chez elle, et j'ai pris régulièrement de ses nouvelles malgré mes obligations au boulot.</p>
+
+<p>Le lendemain, se sentant toujours mal, elle retourne à l'hôpital pour demander à être surveillée. La réponse du personnel médical ?</p>
+
+<p>"On ne peut pas vous prendre en charge pour ce genre de problème."</p>
+
+<p>Et pour couronner le tout, ils qualifient sa situation de "fâcheuse" (soupir...) avant de lui demander, le plus normalement du monde : "Vous n'avez pas de la famille ou des amis chez qui aller ?".</p>
+
+<p>Pardon ?! Faut quand même un sacré culot pour poser cette question à une personne étrangère ! Notre famille, on l'a laissée à 10 000 km d'ici.</p>
+
+<p>Ce manque de tact est d'une cruauté sans nom (et croyez-moi, j'y ai eu droit aussi à plusieurs reprises).</p>
+
+<p>Résultat ? Ils l'ont renvoyée chez elle, seule avec sa détresse, sans lever le moindre petit doigt.</p>
+
+<p>Heureusement, rien de grave n'est arrivé et sa famille a pu faire le déplacement pour la prendre en charge. Mais le constat est là : en cas d'urgence psychologique, le système te tourne le dos. 😶‍🌫️</p>
+
+<p><strong>🩺 Mon burn-out : "Mental Clinic" ou l'usine à pilules ?</strong></p>
+
+<p>Cette histoire fait malheureusement écho à ce que j'ai vécu moi-même. Dans mon ancien travail, la culture d'entreprise archaïque m'a poussé aux portes du burn-out à deux reprises.</p>
+
+<p>Le burn-out, ça ne te tombe pas dessus d'un coup. Ça s'installe gentiment : d'abord des troubles du sommeil, puis la perte d'appétit, des douleurs articulaires, et enfin des maux de tête et des vertiges violents.</p>
+
+<p>Quand le corps dit stop, je décide d'aller consulter dans une "Mental Clinic".</p>
+
+<p>L'infirmière note mes symptômes. Je rencontre le médecin, prêt à expliquer ce qui me détruit au quotidien. Sa réaction ? Il me prescrit immédiatement des médocs sans même écouter mon histoire.</p>
+
+<p>J'ai eu beau lui expliquer que j'avais besoin d'un professionnel à qui parler plutôt que de substances chimiques, il a insisté pour les pilules et m'a collé un arrêt maladie d'un mois.</p>
+
+<p>Au Japon, la psychiatrie moderne et l'accompagnement psychologique ont un retard monumental : on préfère étouffer le problème sous des molécules plutôt que de traiter la cause. 💊🤐</p>
+
+<p><strong>🙈 "C'est pas mes affaires" : Le tabou du travail et de la société</strong></p>
+
+<p>Quand je suis revenu au boulot après mon arrêt, l'accueil a été fascinant : silence radio.</p>
+
+<p>Ni la direction, ni la majorité de mes collègues n'ont pris de mes nouvelles. À mon retour, personne ne m'a demandé ce qui s'était passé.</p>
+
+<p>Au Japon, la règle d'or consiste à ne jamais se mêler des affaires des autres. La gestion des problèmes personnels est déléguée à 100 % au cercle familial (ce qui explique la question absurde de l'hôpital à mon amie, ou la gestion catastrophique des divorces et des gardes d'enfants).</p>
+
+<p>Quand tout va bien, le Japon est paisible, doux et ultra-agréable. Mais quand tu tombes, tu réalises très vite que le filet de sécurité est troué.</p>
+
+<p>Et sur ce point, étrangers et Japonais sont traités avec la même indifférence (avec un léger désavantage supplémentaire pour les femmes, mais bon, c'est un "détail", n'est-ce pas ? 🙄).</p>
+
+<p><strong>🤝 Normalisons la santé mentale</strong></p>
+
+<p>Aujourd'hui, j'en parle librement avec mes amis et je n'ai plus aucun problème à aborder ce sujet, même si je sais que ma famille aura des questions.</p>
+
+<p>J'en ferai sûrement une vidéo YouTube complète, car le sujet mérite plus qu'un post.</p>
+
+<p>Mais je terminerai sur ceci : il n'y a AUCUNE honte à voir un psy quand on va mal.</p>
+
+<p>Se moquer de quelqu'un qui consulte pour sa santé mentale, c'est aussi débile que de se moquer de quelqu'un qui va à l'hôpital pour une fracture ou à la salle de sport pour entretenir son corps.</p>
+
+<p>La personne est exactement là où elle doit être pour prendre soin d'elle.</p>
+
+<p>Prenez soin de vous et de vos proches. ❤️</p>
+    `,
+  },
+  //Article suivant
+  {
     id: "naruto-fukuoka",
     category: "Gaming",
     title: "De Naruto à Fukuoka : comment des dessins animés ont changé ma vie (et vidé mon compte)",
