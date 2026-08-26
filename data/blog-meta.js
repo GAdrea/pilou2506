@@ -11,6 +11,16 @@
    ============================================================ */
 window.BLOG_ARTICLES_META = [
   {
+    "id": "sante-mentale-japon",
+    "category": "Société",
+    "title": "Santé mentale au Japon : quand le système te laisse seul face au vide",
+    "image": "assets/img/posts/sante-mentale-japon/sante-mentale-japon-01.jpg",
+    "description": "Pilou aborde un sujet grave : la solitude face à la détresse psychologique au Japon, entre une amie renvoyée par un hôpital, son propre burn-out chez les \"usines à pilules\", et le tabou total qui entoure la santé mentale dans la société japonaise.",
+    "date": "2026-08-26",
+    "instagramUrl": "https://www.instagram.com/p/Dcf63OJksLT/",
+    "readingTime": "4 min"
+  },
+  {
     "id": "naruto-fukuoka",
     "category": "Gaming",
     "title": "De Naruto à Fukuoka : comment des dessins animés ont changé ma vie (et vidé mon compte)",
