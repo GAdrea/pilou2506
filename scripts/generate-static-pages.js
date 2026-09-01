@@ -371,6 +371,13 @@ function headBlock({ root, title, description, canonical, ogImage, ogType, artic
 <html lang="fr" class="dark">
 <head>
     <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNHD3DZX');</script>
+    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${safeTitle}</title>
     <!-- Favicon -->
@@ -469,6 +476,10 @@ function buildArticlePage(article) {
 
     return `${headBlock({ root, title, description, canonical, ogImage, ogType: 'article', articlePublishedTime: dateIso, jsonLd, preloadImage })}
 <body class="text-slate-100 min-h-screen">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNHD3DZX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <a href="#articleMain" class="skip-link">Passer au contenu</a>
 
@@ -548,6 +559,10 @@ function buildProjectPage(project) {
 
     return `${headBlock({ root, title, description, canonical, ogImage, ogType: 'website', articlePublishedTime: undefined, jsonLd })}
 <body class="text-slate-100 min-h-screen">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNHD3DZX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <a href="#articleMain" class="skip-link">Passer au contenu</a>
 
