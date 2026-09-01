@@ -91,6 +91,7 @@
         // Retourne une chaîne srcset (ex. "assets/img/foo-500w.jpg 500w, assets/img/foo.jpg 1000w")
         // ou null si non disponible. Absent côté navigateur : pas de srcset, sans risque.
         const getSrcset = typeof ctx.getSrcset === 'function' ? ctx.getSrcset : null;
+        const getWebpSrcset = typeof ctx.getWebpSrcset === 'function' ? ctx.getWebpSrcset : null;
 
         function imageSrc(path) {
             if (!path) return '';
@@ -104,6 +105,19 @@
             if (!getImageDimensions || !path) return '';
             const dim = getImageDimensions(path);
             return dim && dim.width && dim.height ? ` width="${dim.width}" height="${dim.height}"` : '';
+        }
+
+        // Retourne une balise <source type="image/webp" srcset="…"> si les variantes WebP
+        // sont disponibles (build only). Doit être insérée à l'intérieur d'un <picture>.
+        function webpSourceTag(relPath) {
+            if (!getWebpSrcset || !relPath) return '';
+            const raw = getWebpSrcset(relPath);
+            if (!raw) return '';
+            const resolved = raw.split(', ').map(entry => {
+                const spaceIdx = entry.lastIndexOf(' ');
+                return imageSrc(entry.slice(0, spaceIdx)) + entry.slice(spaceIdx);
+            }).join(', ');
+            return `<source type="image/webp" srcset="${escapeHtml(resolved)}" sizes="(max-width:640px) 100vw, (max-width:1024px) 80vw, 1000px">`;
         }
 
         // Retourne ' srcset="…" sizes="…"' si les variantes sont disponibles (build only).
@@ -121,12 +135,16 @@
         }
 
         function renderCarousel(gallery, title) {
-            const slides = gallery.map((src, i) => `
-        <div class="carousel-slide">
-            <img src="${imageSrc(src)}" alt="${escapeHtml(title)} — photo ${i + 1}/${gallery.length}"
+            const slides = gallery.map((src, i) => {
+                const wt = webpSourceTag(src);
+                const imgTag = `<img src="${imageSrc(src)}" alt="${escapeHtml(title)} — photo ${i + 1}/${gallery.length}"
                  data-lightbox="${imageSrc(src)}" data-lightbox-index="${i}"
-                 loading="${i === 0 ? 'eager' : 'lazy'}"${srcsetAttrs(src)}${dimAttrs(src)}>
-        </div>`).join('');
+                 loading="${i === 0 ? 'eager' : 'lazy'}"${srcsetAttrs(src)}${dimAttrs(src)}>`;
+                return `
+        <div class="carousel-slide">
+            ${wt ? `<picture style="display:contents">${wt}${imgTag}</picture>` : imgTag}
+        </div>`;
+            }).join('');
 
             const dots = gallery.map((_, i) => `
         <button type="button" class="carousel-dot ${i === 0 ? 'active' : ''}" data-index="${i}"
@@ -236,13 +254,15 @@
                 ? article.images
                 : (article.image ? [article.image] : []);
 
+            const heroImgTag = img ? `<img src="${img}" alt="${escapeHtml(article.title)}"
+                 class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
+                 style="max-height:65vh"
+                 data-lightbox="${img}"${srcsetAttrs(article.image)}${dimAttrs(article.image)} fetchpriority="high" loading="eager" decoding="async">` : '';
+            const heroWebp = img ? webpSourceTag(article.image) : '';
             const heroBlock = gallery.length > 1
                 ? renderCarousel(gallery, article.title)
                 : (img ? `<div class="rounded-xl overflow-hidden mb-8 text-center bg-hudSurface">
-            <img src="${img}" alt="${escapeHtml(article.title)}"
-                 class="max-w-full h-auto mx-auto cursor-zoom-in hover:opacity-90 transition"
-                 style="max-height:65vh"
-                 data-lightbox="${img}"${srcsetAttrs(article.image)}${dimAttrs(article.image)} fetchpriority="high" loading="eager" decoding="async">
+            ${heroWebp ? `<picture style="display:contents">${heroWebp}${heroImgTag}</picture>` : heroImgTag}
         </div>` : '');
 
             return `
