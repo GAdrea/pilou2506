@@ -5,10 +5,37 @@
 
 (function () {
 
+    function checkRateLimit() {
+        try {
+            const KEY = 'cf_send_times';
+            const WINDOW = 60 * 60 * 1000; // 1 heure
+            const MAX = 3;
+            const now = Date.now();
+            const history = JSON.parse(localStorage.getItem(KEY) || '[]');
+            const recent = history.filter(t => now - t < WINDOW);
+            if (recent.length >= MAX) return false;
+            recent.push(now);
+            localStorage.setItem(KEY, JSON.stringify(recent));
+            return true;
+        } catch { return true; }
+    }
+
     async function submitForm(form) {
         const btn = form.querySelector('button[type="submit"]');
         const feedback = form.querySelector('.form-feedback');
         const originalText = btn ? btn.textContent : '';
+
+        // Validation du contenu du message (champ "message" ou textarea)
+        const msgField = form.querySelector('textarea, [name="message"]');
+        if (msgField && msgField.value.trim().length < 20) {
+            showFeedback(feedback, '⚠️ Votre message est trop court (20 caractères minimum).', 'error');
+            return;
+        }
+
+        if (!checkRateLimit()) {
+            showFeedback(feedback, '⏳ Trop d\'envois en peu de temps. Réessayez dans une heure.', 'error');
+            return;
+        }
 
         if (btn) {
             btn.disabled = true;

@@ -117,6 +117,7 @@ try { sharp = require('sharp'); } catch { /* not installed – srcset skipped */
 
 const VARIANT_WIDTHS = [500, 750];
 const srcsetCache = new Map();
+const webpSrcsetCache = new Map();
 
 async function preGenerateVariants(articles) {
     if (!sharp) return;
@@ -143,10 +144,25 @@ async function preGenerateVariants(articles) {
             for (const w of VARIANT_WIDTHS) {
                 if (w >= origW) continue;
                 const outPath = `${base}-${w}w${ext}`;
-                try { fs.accessSync(outPath); continue; } catch { /* needs generating */ }
+                try { fs.accessSync(outPath); } catch {
+                    tasks.push(
+                        sharp(absPath).resize(w).toFile(outPath)
+                            .catch(err => console.warn(`⚠️  Variante ${w}w impossible pour ${cleanPath}: ${err.message}`))
+                    );
+                }
+                const outWebp = `${base}-${w}w.webp`;
+                try { fs.accessSync(outWebp); } catch {
+                    tasks.push(
+                        sharp(absPath).resize(w).webp({ quality: 82 }).toFile(outWebp)
+                            .catch(err => console.warn(`⚠️  WebP ${w}w impossible pour ${cleanPath}: ${err.message}`))
+                    );
+                }
+            }
+            const fullWebp = `${base}.webp`;
+            try { fs.accessSync(fullWebp); } catch {
                 tasks.push(
-                    sharp(absPath).resize(w).toFile(outPath)
-                        .catch(err => console.warn(`⚠️  Variante ${w}w impossible pour ${cleanPath}: ${err.message}`))
+                    sharp(absPath).webp({ quality: 85 }).toFile(fullWebp)
+                        .catch(err => console.warn(`⚠️  WebP plein format impossible pour ${cleanPath}: ${err.message}`))
                 );
             }
         }
@@ -177,6 +193,28 @@ function getSrcset(relPath) {
     parts.push(`${cleanPath} ${dim.width}w`);
     const srcset = parts.join(', ');
     srcsetCache.set(cleanPath, srcset);
+    return srcset;
+}
+
+function getWebpSrcset(relPath) {
+    if (!sharp) return null; // fichiers WebP seulement générés si sharp est disponible
+    if (!relPath || relPath.startsWith('http')) return null;
+    const cleanPath = relPath.replace(/^\//, '');
+    if (webpSrcsetCache.has(cleanPath)) return webpSrcsetCache.get(cleanPath);
+
+    const dim = getImageDimensions(cleanPath);
+    if (!dim || !dim.width) { webpSrcsetCache.set(cleanPath, null); return null; }
+
+    const ext = path.extname(cleanPath);
+    const base = cleanPath.slice(0, -ext.length);
+    const parts = [];
+    for (const w of VARIANT_WIDTHS) {
+        if (w >= dim.width) continue;
+        parts.push(`${base}-${w}w.webp ${w}w`);
+    }
+    parts.push(`${base}.webp ${dim.width}w`);
+    const srcset = parts.join(', ');
+    webpSrcsetCache.set(cleanPath, srcset);
     return srcset;
 }
 
@@ -317,13 +355,16 @@ function footerBlock(root) {
                 <a href="https://www.instagram.com/pilou2506?igsh=aTA0dGJvc2lmZGZ4" aria-label="Instagram" title="Instagram" class="transition" style="color:#64748b" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#64748b'">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
+                <a href="${SITE_URL}/rss.xml" aria-label="Flux RSS" title="Flux RSS" class="transition" style="color:#64748b" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#64748b'">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
+                </a>
             </div>
             <p class="text-xs text-slate-600">© <span class="footer-year">2026</span> Pilou</p>
         </div>
     </footer>`;
 }
 
-function headBlock({ root, title, description, canonical, ogImage, ogType, articlePublishedTime, jsonLd }) {
+function headBlock({ root, title, description, canonical, ogImage, ogType, articlePublishedTime, jsonLd, preloadImage }) {
     const safeTitle = escapeHtml(title);
     const safeDesc = escapeHtml(description);
     return `<!doctype html>
@@ -344,7 +385,8 @@ function headBlock({ root, title, description, canonical, ogImage, ogType, artic
     <meta name="author" content="Pilou" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="${canonical}" />
-    <!-- Open Graph -->
+    <link rel="alternate" type="application/rss+xml" title="Pilou — Blog RSS" href="${SITE_URL}/rss.xml" />
+    ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage}" fetchpriority="high" />` : ''}<!-- Open Graph -->
     <meta property="og:type" content="${ogType}" />
     <meta property="og:site_name" content="Pilou Portfolio" />
     <meta property="og:title" content="${safeTitle}" />
@@ -384,17 +426,34 @@ function buildArticlePage(article) {
     const blogHref = `${root}/pages/blog/blog.html`;
     const webHref = `${root}/pages/web/projets-web.html`;
 
+    const firstImagePath = Array.isArray(article.images) && article.images.length > 0
+        ? (typeof article.images[0] === 'string' ? article.images[0] : article.images[0] && article.images[0].src)
+        : article.image;
+    const preloadImage = firstImagePath ? absoluteUrl(firstImagePath) : undefined;
+
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        headline: article.title,
-        description,
-        image: ogImage,
-        datePublished: dateIso,
-        inLanguage: 'fr-FR',
-        author: { '@type': 'Person', name: 'Pilou', url: `${SITE_URL}/` },
-        publisher: { '@type': 'Person', name: 'Pilou' },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+        '@graph': [
+            {
+                '@type': 'BlogPosting',
+                headline: article.title,
+                description,
+                image: ogImage,
+                datePublished: dateIso,
+                inLanguage: 'fr-FR',
+                author: { '@type': 'Person', name: 'Pilou', url: `${SITE_URL}/` },
+                publisher: { '@type': 'Person', name: 'Pilou' },
+                mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+            },
+            {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
+                    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/pages/blog/blog.html` },
+                    { '@type': 'ListItem', position: 3, name: article.title, item: canonical }
+                ]
+            }
+        ]
     };
 
     const renderer = ArticleRender.create({
@@ -402,12 +461,13 @@ function buildArticlePage(article) {
         blogHref,
         getImageDimensions,
         getSrcset,
+        getWebpSrcset,
         hrefFor: (id) => ArticleRender.slugify(id) + '.html'
     });
 
     const bodyHtml = renderer.renderArticleBody(article, sortedArticles, canonical);
 
-    return `${headBlock({ root, title, description, canonical, ogImage, ogType: 'article', articlePublishedTime: dateIso, jsonLd })}
+    return `${headBlock({ root, title, description, canonical, ogImage, ogType: 'article', articlePublishedTime: dateIso, jsonLd, preloadImage })}
 <body class="text-slate-100 min-h-screen">
 
     <a href="#articleMain" class="skip-link">Passer au contenu</a>
